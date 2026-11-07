@@ -1,0 +1,4502 @@
+| contamination_type   |   contamination_pct |   repeat |   fold | strategy                             |   RMSE_log |   MAE_log |   P90_log |   MedAE_log |
+|:---------------------|--------------------:|---------:|-------:|:-------------------------------------|-----------:|----------:|----------:|------------:|
+| target noise         |                   0 |        1 |      1 | No handling — Ridge                  |    0.19195 |   0.09253 |   0.17024 |     0.0609  |
+| target noise         |                   0 |        1 |      1 | Hard removal — Ridge                 |    0.21574 |   0.09395 |   0.16993 |     0.0614  |
+| target noise         |                   0 |        1 |      1 | Winsorizing — Ridge                  |    0.1816  |   0.09163 |   0.17325 |     0.05564 |
+| target noise         |                   0 |        1 |      1 | Robust loss — HuberRegressor         |    0.2174  |   0.10363 |   0.20098 |     0.06084 |
+| target noise         |                   0 |        1 |      1 | Weighted — Ridge (linear)            |    0.21549 |   0.09371 |   0.17291 |     0.05866 |
+| target noise         |                   0 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.21491 |   0.09537 |   0.18685 |     0.05889 |
+| target noise         |                   0 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.217   |   0.09535 |   0.18282 |     0.05599 |
+| target noise         |                   0 |        1 |      1 | Weighted — Random Forest             |    0.17004 |   0.10735 |   0.24028 |     0.06803 |
+| target noise         |                   0 |        1 |      1 | Weighted — Gradient Boosting         |    0.16003 |   0.09782 |   0.23499 |     0.05753 |
+| target noise         |                   0 |        1 |      1 | IRLS — Ridge                         |    0.21545 |   0.09336 |   0.16557 |     0.05972 |
+| target noise         |                   0 |        1 |      2 | No handling — Ridge                  |    0.12091 |   0.08962 |   0.17231 |     0.07169 |
+| target noise         |                   0 |        1 |      2 | Hard removal — Ridge                 |    0.11976 |   0.08276 |   0.16665 |     0.0569  |
+| target noise         |                   0 |        1 |      2 | Winsorizing — Ridge                  |    0.1218  |   0.09029 |   0.1773  |     0.06846 |
+| target noise         |                   0 |        1 |      2 | Robust loss — HuberRegressor         |    0.12852 |   0.08847 |   0.18925 |     0.06325 |
+| target noise         |                   0 |        1 |      2 | Weighted — Ridge (linear)            |    0.11931 |   0.0831  |   0.16407 |     0.06208 |
+| target noise         |                   0 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.11992 |   0.08389 |   0.17479 |     0.06272 |
+| target noise         |                   0 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12117 |   0.08234 |   0.17422 |     0.05711 |
+| target noise         |                   0 |        1 |      2 | Weighted — Random Forest             |    0.14848 |   0.09915 |   0.24945 |     0.06921 |
+| target noise         |                   0 |        1 |      2 | Weighted — Gradient Boosting         |    0.13226 |   0.09483 |   0.19738 |     0.0759  |
+| target noise         |                   0 |        1 |      2 | IRLS — Ridge                         |    0.12082 |   0.08335 |   0.16422 |     0.06335 |
+| target noise         |                   0 |        1 |      3 | No handling — Ridge                  |    0.15529 |   0.09764 |   0.19479 |     0.06832 |
+| target noise         |                   0 |        1 |      3 | Hard removal — Ridge                 |    0.16615 |   0.08903 |   0.17762 |     0.0621  |
+| target noise         |                   0 |        1 |      3 | Winsorizing — Ridge                  |    0.15631 |   0.09971 |   0.18633 |     0.07296 |
+| target noise         |                   0 |        1 |      3 | Robust loss — HuberRegressor         |    0.17083 |   0.09345 |   0.20752 |     0.05395 |
+| target noise         |                   0 |        1 |      3 | Weighted — Ridge (linear)            |    0.16244 |   0.09148 |   0.1751  |     0.05986 |
+| target noise         |                   0 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16413 |   0.094   |   0.20138 |     0.05899 |
+| target noise         |                   0 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16544 |   0.09256 |   0.20534 |     0.05811 |
+| target noise         |                   0 |        1 |      3 | Weighted — Random Forest             |    0.16714 |   0.11017 |   0.26392 |     0.0679  |
+| target noise         |                   0 |        1 |      3 | Weighted — Gradient Boosting         |    0.1625  |   0.10472 |   0.22883 |     0.06156 |
+| target noise         |                   0 |        1 |      3 | IRLS — Ridge                         |    0.1648  |   0.0892  |   0.17984 |     0.05839 |
+| target noise         |                   0 |        1 |      4 | No handling — Ridge                  |    0.12307 |   0.08609 |   0.19985 |     0.05871 |
+| target noise         |                   0 |        1 |      4 | Hard removal — Ridge                 |    0.10698 |   0.07162 |   0.15119 |     0.04815 |
+| target noise         |                   0 |        1 |      4 | Winsorizing — Ridge                  |    0.12697 |   0.08848 |   0.18922 |     0.06316 |
+| target noise         |                   0 |        1 |      4 | Robust loss — HuberRegressor         |    0.11262 |   0.07568 |   0.16393 |     0.0518  |
+| target noise         |                   0 |        1 |      4 | Weighted — Ridge (linear)            |    0.10808 |   0.07477 |   0.17305 |     0.05597 |
+| target noise         |                   0 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11479 |   0.07999 |   0.17104 |     0.05977 |
+| target noise         |                   0 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11364 |   0.07808 |   0.17235 |     0.05785 |
+| target noise         |                   0 |        1 |      4 | Weighted — Random Forest             |    0.14859 |   0.09752 |   0.23696 |     0.06239 |
+| target noise         |                   0 |        1 |      4 | Weighted — Gradient Boosting         |    0.12446 |   0.08668 |   0.1783  |     0.06487 |
+| target noise         |                   0 |        1 |      4 | IRLS — Ridge                         |    0.1069  |   0.07163 |   0.15116 |     0.04864 |
+| target noise         |                   0 |        1 |      5 | No handling — Ridge                  |    0.12642 |   0.0927  |   0.19049 |     0.06955 |
+| target noise         |                   0 |        1 |      5 | Hard removal — Ridge                 |    0.10946 |   0.07869 |   0.16029 |     0.05422 |
+| target noise         |                   0 |        1 |      5 | Winsorizing — Ridge                  |    0.12571 |   0.09404 |   0.19058 |     0.0722  |
+| target noise         |                   0 |        1 |      5 | Robust loss — HuberRegressor         |    0.13241 |   0.08886 |   0.18901 |     0.05694 |
+| target noise         |                   0 |        1 |      5 | Weighted — Ridge (linear)            |    0.11028 |   0.08096 |   0.15378 |     0.05644 |
+| target noise         |                   0 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11314 |   0.08365 |   0.15882 |     0.0639  |
+| target noise         |                   0 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.10972 |   0.08065 |   0.16056 |     0.05997 |
+| target noise         |                   0 |        1 |      5 | Weighted — Random Forest             |    0.13442 |   0.09266 |   0.20704 |     0.06269 |
+| target noise         |                   0 |        1 |      5 | Weighted — Gradient Boosting         |    0.12985 |   0.09509 |   0.21682 |     0.07028 |
+| target noise         |                   0 |        1 |      5 | IRLS — Ridge                         |    0.10872 |   0.07792 |   0.16408 |     0.05191 |
+| target noise         |                   0 |        1 |      6 | No handling — Ridge                  |    0.10975 |   0.08469 |   0.16417 |     0.06659 |
+| target noise         |                   0 |        1 |      6 | Hard removal — Ridge                 |    0.10126 |   0.07621 |   0.15191 |     0.06243 |
+| target noise         |                   0 |        1 |      6 | Winsorizing — Ridge                  |    0.11083 |   0.0856  |   0.16767 |     0.06637 |
+| target noise         |                   0 |        1 |      6 | Robust loss — HuberRegressor         |    0.12833 |   0.08923 |   0.18022 |     0.06252 |
+| target noise         |                   0 |        1 |      6 | Weighted — Ridge (linear)            |    0.10176 |   0.07667 |   0.16264 |     0.0572  |
+| target noise         |                   0 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.10545 |   0.08026 |   0.17006 |     0.06228 |
+| target noise         |                   0 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10339 |   0.0774  |   0.17367 |     0.05662 |
+| target noise         |                   0 |        1 |      6 | Weighted — Random Forest             |    0.14549 |   0.09668 |   0.23512 |     0.06435 |
+| target noise         |                   0 |        1 |      6 | Weighted — Gradient Boosting         |    0.12829 |   0.09092 |   0.19821 |     0.06459 |
+| target noise         |                   0 |        1 |      6 | IRLS — Ridge                         |    0.1005  |   0.07477 |   0.14659 |     0.05929 |
+| target noise         |                   0 |        1 |      7 | No handling — Ridge                  |    0.15154 |   0.09442 |   0.19985 |     0.06502 |
+| target noise         |                   0 |        1 |      7 | Hard removal — Ridge                 |    0.16048 |   0.08752 |   0.18177 |     0.05397 |
+| target noise         |                   0 |        1 |      7 | Winsorizing — Ridge                  |    0.15139 |   0.09499 |   0.19796 |     0.06371 |
+| target noise         |                   0 |        1 |      7 | Robust loss — HuberRegressor         |    0.15247 |   0.09245 |   0.19618 |     0.05786 |
+| target noise         |                   0 |        1 |      7 | Weighted — Ridge (linear)            |    0.15637 |   0.08962 |   0.18791 |     0.06067 |
+| target noise         |                   0 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15943 |   0.09353 |   0.19443 |     0.06267 |
+| target noise         |                   0 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.16108 |   0.09157 |   0.19408 |     0.06335 |
+| target noise         |                   0 |        1 |      7 | Weighted — Random Forest             |    0.15599 |   0.1068  |   0.2397  |     0.07401 |
+| target noise         |                   0 |        1 |      7 | Weighted — Gradient Boosting         |    0.14637 |   0.09656 |   0.22192 |     0.07031 |
+| target noise         |                   0 |        1 |      7 | IRLS — Ridge                         |    0.15599 |   0.08668 |   0.18121 |     0.05695 |
+| target noise         |                   0 |        1 |      8 | No handling — Ridge                  |    0.1903  |   0.09105 |   0.17576 |     0.05664 |
+| target noise         |                   0 |        1 |      8 | Hard removal — Ridge                 |    0.21616 |   0.09136 |   0.17404 |     0.05637 |
+| target noise         |                   0 |        1 |      8 | Winsorizing — Ridge                  |    0.18155 |   0.08888 |   0.16983 |     0.05728 |
+| target noise         |                   0 |        1 |      8 | Robust loss — HuberRegressor         |    0.20683 |   0.09607 |   0.16485 |     0.05737 |
+| target noise         |                   0 |        1 |      8 | Weighted — Ridge (linear)            |    0.21356 |   0.09049 |   0.1609  |     0.05661 |
+| target noise         |                   0 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.21113 |   0.09052 |   0.17015 |     0.05842 |
+| target noise         |                   0 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21434 |   0.09    |   0.16586 |     0.05472 |
+| target noise         |                   0 |        1 |      8 | Weighted — Random Forest             |    0.161   |   0.10541 |   0.21527 |     0.07109 |
+| target noise         |                   0 |        1 |      8 | Weighted — Gradient Boosting         |    0.15729 |   0.09517 |   0.18808 |     0.06686 |
+| target noise         |                   0 |        1 |      8 | IRLS — Ridge                         |    0.2185  |   0.09057 |   0.16431 |     0.05266 |
+| target noise         |                   0 |        1 |      9 | No handling — Ridge                  |    0.12583 |   0.0945  |   0.19158 |     0.07699 |
+| target noise         |                   0 |        1 |      9 | Hard removal — Ridge                 |    0.10758 |   0.07715 |   0.17048 |     0.05485 |
+| target noise         |                   0 |        1 |      9 | Winsorizing — Ridge                  |    0.12519 |   0.09399 |   0.19106 |     0.07625 |
+| target noise         |                   0 |        1 |      9 | Robust loss — HuberRegressor         |    0.12507 |   0.08216 |   0.18085 |     0.05743 |
+| target noise         |                   0 |        1 |      9 | Weighted — Ridge (linear)            |    0.11485 |   0.08247 |   0.17801 |     0.0616  |
+| target noise         |                   0 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.11809 |   0.0851  |   0.18922 |     0.06569 |
+| target noise         |                   0 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.11657 |   0.08275 |   0.18013 |     0.06281 |
+| target noise         |                   0 |        1 |      9 | Weighted — Random Forest             |    0.13378 |   0.09036 |   0.19632 |     0.06052 |
+| target noise         |                   0 |        1 |      9 | Weighted — Gradient Boosting         |    0.12379 |   0.08905 |   0.19016 |     0.06516 |
+| target noise         |                   0 |        1 |      9 | IRLS — Ridge                         |    0.1085  |   0.07718 |   0.1738  |     0.05416 |
+| target noise         |                   0 |        1 |     10 | No handling — Ridge                  |    0.1462  |   0.09716 |   0.18327 |     0.07192 |
+| target noise         |                   0 |        1 |     10 | Hard removal — Ridge                 |    0.14327 |   0.08741 |   0.16576 |     0.05543 |
+| target noise         |                   0 |        1 |     10 | Winsorizing — Ridge                  |    0.1502  |   0.10019 |   0.18792 |     0.07508 |
+| target noise         |                   0 |        1 |     10 | Robust loss — HuberRegressor         |    0.14633 |   0.09429 |   0.1915  |     0.06287 |
+| target noise         |                   0 |        1 |     10 | Weighted — Ridge (linear)            |    0.14245 |   0.0885  |   0.1836  |     0.05619 |
+| target noise         |                   0 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.14573 |   0.09012 |   0.18492 |     0.05618 |
+| target noise         |                   0 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.14507 |   0.08922 |   0.18806 |     0.05793 |
+| target noise         |                   0 |        1 |     10 | Weighted — Random Forest             |    0.1773  |   0.10966 |   0.26464 |     0.06665 |
+| target noise         |                   0 |        1 |     10 | Weighted — Gradient Boosting         |    0.16151 |   0.10231 |   0.21784 |     0.06582 |
+| target noise         |                   0 |        1 |     10 | IRLS — Ridge                         |    0.14524 |   0.08756 |   0.16618 |     0.05628 |
+| target noise         |                   0 |        1 |     11 | No handling — Ridge                  |    0.19712 |   0.09209 |   0.17067 |     0.05445 |
+| target noise         |                   0 |        1 |     11 | Hard removal — Ridge                 |    0.21486 |   0.09026 |   0.16024 |     0.05548 |
+| target noise         |                   0 |        1 |     11 | Winsorizing — Ridge                  |    0.18634 |   0.09189 |   0.16799 |     0.05592 |
+| target noise         |                   0 |        1 |     11 | Robust loss — HuberRegressor         |    0.22583 |   0.10561 |   0.24602 |     0.05582 |
+| target noise         |                   0 |        1 |     11 | Weighted — Ridge (linear)            |    0.21327 |   0.0908  |   0.16756 |     0.05401 |
+| target noise         |                   0 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.21117 |   0.09201 |   0.18663 |     0.05618 |
+| target noise         |                   0 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.21306 |   0.09107 |   0.18233 |     0.05326 |
+| target noise         |                   0 |        1 |     11 | Weighted — Random Forest             |    0.15247 |   0.09514 |   0.20301 |     0.05934 |
+| target noise         |                   0 |        1 |     11 | Weighted — Gradient Boosting         |    0.14712 |   0.09447 |   0.21242 |     0.06303 |
+| target noise         |                   0 |        1 |     11 | IRLS — Ridge                         |    0.21363 |   0.08969 |   0.16705 |     0.0566  |
+| target noise         |                   0 |        1 |     12 | No handling — Ridge                  |    0.126   |   0.08984 |   0.17499 |     0.0715  |
+| target noise         |                   0 |        1 |     12 | Hard removal — Ridge                 |    0.11429 |   0.07934 |   0.15933 |     0.06078 |
+| target noise         |                   0 |        1 |     12 | Winsorizing — Ridge                  |    0.12723 |   0.09098 |   0.17765 |     0.07729 |
+| target noise         |                   0 |        1 |     12 | Robust loss — HuberRegressor         |    0.1528  |   0.09457 |   0.1791  |     0.06191 |
+| target noise         |                   0 |        1 |     12 | Weighted — Ridge (linear)            |    0.11213 |   0.07995 |   0.16096 |     0.06526 |
+| target noise         |                   0 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11536 |   0.08236 |   0.16553 |     0.06514 |
+| target noise         |                   0 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.11555 |   0.08159 |   0.15849 |     0.06324 |
+| target noise         |                   0 |        1 |     12 | Weighted — Random Forest             |    0.15277 |   0.10352 |   0.24452 |     0.0701  |
+| target noise         |                   0 |        1 |     12 | Weighted — Gradient Boosting         |    0.14111 |   0.09847 |   0.19374 |     0.07086 |
+| target noise         |                   0 |        1 |     12 | IRLS — Ridge                         |    0.11592 |   0.07987 |   0.16189 |     0.05914 |
+| target noise         |                   0 |        1 |     13 | No handling — Ridge                  |    0.12253 |   0.0894  |   0.20027 |     0.06463 |
+| target noise         |                   0 |        1 |     13 | Hard removal — Ridge                 |    0.10734 |   0.07969 |   0.17021 |     0.06284 |
+| target noise         |                   0 |        1 |     13 | Winsorizing — Ridge                  |    0.12652 |   0.09244 |   0.20638 |     0.06783 |
+| target noise         |                   0 |        1 |     13 | Robust loss — HuberRegressor         |    0.1212  |   0.08609 |   0.17353 |     0.06357 |
+| target noise         |                   0 |        1 |     13 | Weighted — Ridge (linear)            |    0.11107 |   0.07978 |   0.166   |     0.05974 |
+| target noise         |                   0 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.11808 |   0.08398 |   0.1782  |     0.06145 |
+| target noise         |                   0 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11694 |   0.08185 |   0.17622 |     0.06107 |
+| target noise         |                   0 |        1 |     13 | Weighted — Random Forest             |    0.13941 |   0.09938 |   0.22732 |     0.0704  |
+| target noise         |                   0 |        1 |     13 | Weighted — Gradient Boosting         |    0.13052 |   0.0926  |   0.19466 |     0.06778 |
+| target noise         |                   0 |        1 |     13 | IRLS — Ridge                         |    0.1057  |   0.07841 |   0.15811 |     0.06029 |
+| target noise         |                   0 |        1 |     14 | No handling — Ridge                  |    0.12505 |   0.09055 |   0.17824 |     0.07257 |
+| target noise         |                   0 |        1 |     14 | Hard removal — Ridge                 |    0.11847 |   0.07856 |   0.15471 |     0.05376 |
+| target noise         |                   0 |        1 |     14 | Winsorizing — Ridge                  |    0.12469 |   0.08849 |   0.17503 |     0.0726  |
+| target noise         |                   0 |        1 |     14 | Robust loss — HuberRegressor         |    0.13057 |   0.08737 |   0.16543 |     0.06366 |
+| target noise         |                   0 |        1 |     14 | Weighted — Ridge (linear)            |    0.11757 |   0.08031 |   0.16845 |     0.06165 |
+| target noise         |                   0 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.1199  |   0.08201 |   0.17153 |     0.06387 |
+| target noise         |                   0 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.1197  |   0.08066 |   0.16753 |     0.06088 |
+| target noise         |                   0 |        1 |     14 | Weighted — Random Forest             |    0.15748 |   0.10365 |   0.23501 |     0.07056 |
+| target noise         |                   0 |        1 |     14 | Weighted — Gradient Boosting         |    0.136   |   0.09347 |   0.19338 |     0.06867 |
+| target noise         |                   0 |        1 |     14 | IRLS — Ridge                         |    0.11886 |   0.07849 |   0.15559 |     0.05934 |
+| target noise         |                   0 |        1 |     15 | No handling — Ridge                  |    0.16585 |   0.10204 |   0.19992 |     0.06874 |
+| target noise         |                   0 |        1 |     15 | Hard removal — Ridge                 |    0.17351 |   0.09444 |   0.18271 |     0.05921 |
+| target noise         |                   0 |        1 |     15 | Winsorizing — Ridge                  |    0.1658  |   0.10333 |   0.20609 |     0.07126 |
+| target noise         |                   0 |        1 |     15 | Robust loss — HuberRegressor         |    0.17863 |   0.09971 |   0.22437 |     0.06101 |
+| target noise         |                   0 |        1 |     15 | Weighted — Ridge (linear)            |    0.16901 |   0.09306 |   0.20283 |     0.05667 |
+| target noise         |                   0 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16864 |   0.09445 |   0.19323 |     0.06166 |
+| target noise         |                   0 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16983 |   0.09305 |   0.19926 |     0.06162 |
+| target noise         |                   0 |        1 |     15 | Weighted — Random Forest             |    0.16509 |   0.10187 |   0.23979 |     0.06271 |
+| target noise         |                   0 |        1 |     15 | Weighted — Gradient Boosting         |    0.15946 |   0.10062 |   0.20925 |     0.06089 |
+| target noise         |                   0 |        1 |     15 | IRLS — Ridge                         |    0.17232 |   0.09243 |   0.19371 |     0.05808 |
+| target noise         |                   0 |        2 |      1 | No handling — Ridge                  |    0.19195 |   0.09253 |   0.17024 |     0.0609  |
+| target noise         |                   0 |        2 |      1 | Hard removal — Ridge                 |    0.21574 |   0.09395 |   0.16993 |     0.0614  |
+| target noise         |                   0 |        2 |      1 | Winsorizing — Ridge                  |    0.1816  |   0.09163 |   0.17325 |     0.05564 |
+| target noise         |                   0 |        2 |      1 | Robust loss — HuberRegressor         |    0.2174  |   0.10363 |   0.20098 |     0.06084 |
+| target noise         |                   0 |        2 |      1 | Weighted — Ridge (linear)            |    0.21549 |   0.09371 |   0.17291 |     0.05866 |
+| target noise         |                   0 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.21491 |   0.09537 |   0.18685 |     0.05889 |
+| target noise         |                   0 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.217   |   0.09535 |   0.18282 |     0.05599 |
+| target noise         |                   0 |        2 |      1 | Weighted — Random Forest             |    0.17004 |   0.10735 |   0.24028 |     0.06803 |
+| target noise         |                   0 |        2 |      1 | Weighted — Gradient Boosting         |    0.16003 |   0.09782 |   0.23499 |     0.05753 |
+| target noise         |                   0 |        2 |      1 | IRLS — Ridge                         |    0.21545 |   0.09336 |   0.16557 |     0.05972 |
+| target noise         |                   0 |        2 |      2 | No handling — Ridge                  |    0.12091 |   0.08962 |   0.17231 |     0.07169 |
+| target noise         |                   0 |        2 |      2 | Hard removal — Ridge                 |    0.11976 |   0.08276 |   0.16665 |     0.0569  |
+| target noise         |                   0 |        2 |      2 | Winsorizing — Ridge                  |    0.1218  |   0.09029 |   0.1773  |     0.06846 |
+| target noise         |                   0 |        2 |      2 | Robust loss — HuberRegressor         |    0.12852 |   0.08847 |   0.18925 |     0.06325 |
+| target noise         |                   0 |        2 |      2 | Weighted — Ridge (linear)            |    0.11931 |   0.0831  |   0.16407 |     0.06208 |
+| target noise         |                   0 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.11992 |   0.08389 |   0.17479 |     0.06272 |
+| target noise         |                   0 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12117 |   0.08234 |   0.17422 |     0.05711 |
+| target noise         |                   0 |        2 |      2 | Weighted — Random Forest             |    0.14848 |   0.09915 |   0.24945 |     0.06921 |
+| target noise         |                   0 |        2 |      2 | Weighted — Gradient Boosting         |    0.13226 |   0.09483 |   0.19738 |     0.0759  |
+| target noise         |                   0 |        2 |      2 | IRLS — Ridge                         |    0.12082 |   0.08335 |   0.16422 |     0.06335 |
+| target noise         |                   0 |        2 |      3 | No handling — Ridge                  |    0.15529 |   0.09764 |   0.19479 |     0.06832 |
+| target noise         |                   0 |        2 |      3 | Hard removal — Ridge                 |    0.16615 |   0.08903 |   0.17762 |     0.0621  |
+| target noise         |                   0 |        2 |      3 | Winsorizing — Ridge                  |    0.15631 |   0.09971 |   0.18633 |     0.07296 |
+| target noise         |                   0 |        2 |      3 | Robust loss — HuberRegressor         |    0.17083 |   0.09345 |   0.20752 |     0.05395 |
+| target noise         |                   0 |        2 |      3 | Weighted — Ridge (linear)            |    0.16244 |   0.09148 |   0.1751  |     0.05986 |
+| target noise         |                   0 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16413 |   0.094   |   0.20138 |     0.05899 |
+| target noise         |                   0 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16544 |   0.09256 |   0.20534 |     0.05811 |
+| target noise         |                   0 |        2 |      3 | Weighted — Random Forest             |    0.16714 |   0.11017 |   0.26392 |     0.0679  |
+| target noise         |                   0 |        2 |      3 | Weighted — Gradient Boosting         |    0.1625  |   0.10472 |   0.22883 |     0.06156 |
+| target noise         |                   0 |        2 |      3 | IRLS — Ridge                         |    0.1648  |   0.0892  |   0.17984 |     0.05839 |
+| target noise         |                   0 |        2 |      4 | No handling — Ridge                  |    0.12307 |   0.08609 |   0.19985 |     0.05871 |
+| target noise         |                   0 |        2 |      4 | Hard removal — Ridge                 |    0.10698 |   0.07162 |   0.15119 |     0.04815 |
+| target noise         |                   0 |        2 |      4 | Winsorizing — Ridge                  |    0.12697 |   0.08848 |   0.18922 |     0.06316 |
+| target noise         |                   0 |        2 |      4 | Robust loss — HuberRegressor         |    0.11262 |   0.07568 |   0.16393 |     0.0518  |
+| target noise         |                   0 |        2 |      4 | Weighted — Ridge (linear)            |    0.10808 |   0.07477 |   0.17305 |     0.05597 |
+| target noise         |                   0 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11479 |   0.07999 |   0.17104 |     0.05977 |
+| target noise         |                   0 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11364 |   0.07808 |   0.17235 |     0.05785 |
+| target noise         |                   0 |        2 |      4 | Weighted — Random Forest             |    0.14859 |   0.09752 |   0.23696 |     0.06239 |
+| target noise         |                   0 |        2 |      4 | Weighted — Gradient Boosting         |    0.12446 |   0.08668 |   0.1783  |     0.06487 |
+| target noise         |                   0 |        2 |      4 | IRLS — Ridge                         |    0.1069  |   0.07163 |   0.15116 |     0.04864 |
+| target noise         |                   0 |        2 |      5 | No handling — Ridge                  |    0.12642 |   0.0927  |   0.19049 |     0.06955 |
+| target noise         |                   0 |        2 |      5 | Hard removal — Ridge                 |    0.10946 |   0.07869 |   0.16029 |     0.05422 |
+| target noise         |                   0 |        2 |      5 | Winsorizing — Ridge                  |    0.12571 |   0.09404 |   0.19058 |     0.0722  |
+| target noise         |                   0 |        2 |      5 | Robust loss — HuberRegressor         |    0.13241 |   0.08886 |   0.18901 |     0.05694 |
+| target noise         |                   0 |        2 |      5 | Weighted — Ridge (linear)            |    0.11028 |   0.08096 |   0.15378 |     0.05644 |
+| target noise         |                   0 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11314 |   0.08365 |   0.15882 |     0.0639  |
+| target noise         |                   0 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.10972 |   0.08065 |   0.16056 |     0.05997 |
+| target noise         |                   0 |        2 |      5 | Weighted — Random Forest             |    0.13442 |   0.09266 |   0.20704 |     0.06269 |
+| target noise         |                   0 |        2 |      5 | Weighted — Gradient Boosting         |    0.12985 |   0.09509 |   0.21682 |     0.07028 |
+| target noise         |                   0 |        2 |      5 | IRLS — Ridge                         |    0.10872 |   0.07792 |   0.16408 |     0.05191 |
+| target noise         |                   0 |        2 |      6 | No handling — Ridge                  |    0.10975 |   0.08469 |   0.16417 |     0.06659 |
+| target noise         |                   0 |        2 |      6 | Hard removal — Ridge                 |    0.10126 |   0.07621 |   0.15191 |     0.06243 |
+| target noise         |                   0 |        2 |      6 | Winsorizing — Ridge                  |    0.11083 |   0.0856  |   0.16767 |     0.06637 |
+| target noise         |                   0 |        2 |      6 | Robust loss — HuberRegressor         |    0.12833 |   0.08923 |   0.18022 |     0.06252 |
+| target noise         |                   0 |        2 |      6 | Weighted — Ridge (linear)            |    0.10176 |   0.07667 |   0.16264 |     0.0572  |
+| target noise         |                   0 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.10545 |   0.08026 |   0.17006 |     0.06228 |
+| target noise         |                   0 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10339 |   0.0774  |   0.17367 |     0.05662 |
+| target noise         |                   0 |        2 |      6 | Weighted — Random Forest             |    0.14549 |   0.09668 |   0.23512 |     0.06435 |
+| target noise         |                   0 |        2 |      6 | Weighted — Gradient Boosting         |    0.12829 |   0.09092 |   0.19821 |     0.06459 |
+| target noise         |                   0 |        2 |      6 | IRLS — Ridge                         |    0.1005  |   0.07477 |   0.14659 |     0.05929 |
+| target noise         |                   0 |        2 |      7 | No handling — Ridge                  |    0.15154 |   0.09442 |   0.19985 |     0.06502 |
+| target noise         |                   0 |        2 |      7 | Hard removal — Ridge                 |    0.16048 |   0.08752 |   0.18177 |     0.05397 |
+| target noise         |                   0 |        2 |      7 | Winsorizing — Ridge                  |    0.15139 |   0.09499 |   0.19796 |     0.06371 |
+| target noise         |                   0 |        2 |      7 | Robust loss — HuberRegressor         |    0.15247 |   0.09245 |   0.19618 |     0.05786 |
+| target noise         |                   0 |        2 |      7 | Weighted — Ridge (linear)            |    0.15637 |   0.08962 |   0.18791 |     0.06067 |
+| target noise         |                   0 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.15943 |   0.09353 |   0.19443 |     0.06267 |
+| target noise         |                   0 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16108 |   0.09157 |   0.19408 |     0.06335 |
+| target noise         |                   0 |        2 |      7 | Weighted — Random Forest             |    0.15599 |   0.1068  |   0.2397  |     0.07401 |
+| target noise         |                   0 |        2 |      7 | Weighted — Gradient Boosting         |    0.14637 |   0.09656 |   0.22192 |     0.07031 |
+| target noise         |                   0 |        2 |      7 | IRLS — Ridge                         |    0.15599 |   0.08668 |   0.18121 |     0.05695 |
+| target noise         |                   0 |        2 |      8 | No handling — Ridge                  |    0.1903  |   0.09105 |   0.17576 |     0.05664 |
+| target noise         |                   0 |        2 |      8 | Hard removal — Ridge                 |    0.21616 |   0.09136 |   0.17404 |     0.05637 |
+| target noise         |                   0 |        2 |      8 | Winsorizing — Ridge                  |    0.18155 |   0.08888 |   0.16983 |     0.05728 |
+| target noise         |                   0 |        2 |      8 | Robust loss — HuberRegressor         |    0.20683 |   0.09607 |   0.16485 |     0.05737 |
+| target noise         |                   0 |        2 |      8 | Weighted — Ridge (linear)            |    0.21356 |   0.09049 |   0.1609  |     0.05661 |
+| target noise         |                   0 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.21113 |   0.09052 |   0.17015 |     0.05842 |
+| target noise         |                   0 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.21434 |   0.09    |   0.16586 |     0.05472 |
+| target noise         |                   0 |        2 |      8 | Weighted — Random Forest             |    0.161   |   0.10541 |   0.21527 |     0.07109 |
+| target noise         |                   0 |        2 |      8 | Weighted — Gradient Boosting         |    0.15729 |   0.09517 |   0.18808 |     0.06686 |
+| target noise         |                   0 |        2 |      8 | IRLS — Ridge                         |    0.2185  |   0.09057 |   0.16431 |     0.05266 |
+| target noise         |                   0 |        2 |      9 | No handling — Ridge                  |    0.12583 |   0.0945  |   0.19158 |     0.07699 |
+| target noise         |                   0 |        2 |      9 | Hard removal — Ridge                 |    0.10758 |   0.07715 |   0.17048 |     0.05485 |
+| target noise         |                   0 |        2 |      9 | Winsorizing — Ridge                  |    0.12519 |   0.09399 |   0.19106 |     0.07625 |
+| target noise         |                   0 |        2 |      9 | Robust loss — HuberRegressor         |    0.12507 |   0.08216 |   0.18085 |     0.05743 |
+| target noise         |                   0 |        2 |      9 | Weighted — Ridge (linear)            |    0.11485 |   0.08247 |   0.17801 |     0.0616  |
+| target noise         |                   0 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.11809 |   0.0851  |   0.18922 |     0.06569 |
+| target noise         |                   0 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11657 |   0.08275 |   0.18013 |     0.06281 |
+| target noise         |                   0 |        2 |      9 | Weighted — Random Forest             |    0.13378 |   0.09036 |   0.19632 |     0.06052 |
+| target noise         |                   0 |        2 |      9 | Weighted — Gradient Boosting         |    0.12379 |   0.08905 |   0.19016 |     0.06516 |
+| target noise         |                   0 |        2 |      9 | IRLS — Ridge                         |    0.1085  |   0.07718 |   0.1738  |     0.05416 |
+| target noise         |                   0 |        2 |     10 | No handling — Ridge                  |    0.1462  |   0.09716 |   0.18327 |     0.07192 |
+| target noise         |                   0 |        2 |     10 | Hard removal — Ridge                 |    0.14327 |   0.08741 |   0.16576 |     0.05543 |
+| target noise         |                   0 |        2 |     10 | Winsorizing — Ridge                  |    0.1502  |   0.10019 |   0.18792 |     0.07508 |
+| target noise         |                   0 |        2 |     10 | Robust loss — HuberRegressor         |    0.14633 |   0.09429 |   0.1915  |     0.06287 |
+| target noise         |                   0 |        2 |     10 | Weighted — Ridge (linear)            |    0.14245 |   0.0885  |   0.1836  |     0.05619 |
+| target noise         |                   0 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.14573 |   0.09012 |   0.18492 |     0.05618 |
+| target noise         |                   0 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14507 |   0.08922 |   0.18806 |     0.05793 |
+| target noise         |                   0 |        2 |     10 | Weighted — Random Forest             |    0.1773  |   0.10966 |   0.26464 |     0.06665 |
+| target noise         |                   0 |        2 |     10 | Weighted — Gradient Boosting         |    0.16151 |   0.10231 |   0.21784 |     0.06582 |
+| target noise         |                   0 |        2 |     10 | IRLS — Ridge                         |    0.14524 |   0.08756 |   0.16618 |     0.05628 |
+| target noise         |                   0 |        2 |     11 | No handling — Ridge                  |    0.19712 |   0.09209 |   0.17067 |     0.05445 |
+| target noise         |                   0 |        2 |     11 | Hard removal — Ridge                 |    0.21486 |   0.09026 |   0.16024 |     0.05548 |
+| target noise         |                   0 |        2 |     11 | Winsorizing — Ridge                  |    0.18634 |   0.09189 |   0.16799 |     0.05592 |
+| target noise         |                   0 |        2 |     11 | Robust loss — HuberRegressor         |    0.22583 |   0.10561 |   0.24602 |     0.05582 |
+| target noise         |                   0 |        2 |     11 | Weighted — Ridge (linear)            |    0.21327 |   0.0908  |   0.16756 |     0.05401 |
+| target noise         |                   0 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.21117 |   0.09201 |   0.18663 |     0.05618 |
+| target noise         |                   0 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21306 |   0.09107 |   0.18233 |     0.05326 |
+| target noise         |                   0 |        2 |     11 | Weighted — Random Forest             |    0.15247 |   0.09514 |   0.20301 |     0.05934 |
+| target noise         |                   0 |        2 |     11 | Weighted — Gradient Boosting         |    0.14712 |   0.09447 |   0.21242 |     0.06303 |
+| target noise         |                   0 |        2 |     11 | IRLS — Ridge                         |    0.21363 |   0.08969 |   0.16705 |     0.0566  |
+| target noise         |                   0 |        2 |     12 | No handling — Ridge                  |    0.126   |   0.08984 |   0.17499 |     0.0715  |
+| target noise         |                   0 |        2 |     12 | Hard removal — Ridge                 |    0.11429 |   0.07934 |   0.15933 |     0.06078 |
+| target noise         |                   0 |        2 |     12 | Winsorizing — Ridge                  |    0.12723 |   0.09098 |   0.17765 |     0.07729 |
+| target noise         |                   0 |        2 |     12 | Robust loss — HuberRegressor         |    0.1528  |   0.09457 |   0.1791  |     0.06191 |
+| target noise         |                   0 |        2 |     12 | Weighted — Ridge (linear)            |    0.11213 |   0.07995 |   0.16096 |     0.06526 |
+| target noise         |                   0 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11536 |   0.08236 |   0.16553 |     0.06514 |
+| target noise         |                   0 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11555 |   0.08159 |   0.15849 |     0.06324 |
+| target noise         |                   0 |        2 |     12 | Weighted — Random Forest             |    0.15277 |   0.10352 |   0.24452 |     0.0701  |
+| target noise         |                   0 |        2 |     12 | Weighted — Gradient Boosting         |    0.14111 |   0.09847 |   0.19374 |     0.07086 |
+| target noise         |                   0 |        2 |     12 | IRLS — Ridge                         |    0.11592 |   0.07987 |   0.16189 |     0.05914 |
+| target noise         |                   0 |        2 |     13 | No handling — Ridge                  |    0.12253 |   0.0894  |   0.20027 |     0.06463 |
+| target noise         |                   0 |        2 |     13 | Hard removal — Ridge                 |    0.10734 |   0.07969 |   0.17021 |     0.06284 |
+| target noise         |                   0 |        2 |     13 | Winsorizing — Ridge                  |    0.12652 |   0.09244 |   0.20638 |     0.06783 |
+| target noise         |                   0 |        2 |     13 | Robust loss — HuberRegressor         |    0.1212  |   0.08609 |   0.17353 |     0.06357 |
+| target noise         |                   0 |        2 |     13 | Weighted — Ridge (linear)            |    0.11107 |   0.07978 |   0.166   |     0.05974 |
+| target noise         |                   0 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11808 |   0.08398 |   0.1782  |     0.06145 |
+| target noise         |                   0 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.11694 |   0.08185 |   0.17622 |     0.06107 |
+| target noise         |                   0 |        2 |     13 | Weighted — Random Forest             |    0.13941 |   0.09938 |   0.22732 |     0.0704  |
+| target noise         |                   0 |        2 |     13 | Weighted — Gradient Boosting         |    0.13052 |   0.0926  |   0.19466 |     0.06778 |
+| target noise         |                   0 |        2 |     13 | IRLS — Ridge                         |    0.1057  |   0.07841 |   0.15811 |     0.06029 |
+| target noise         |                   0 |        2 |     14 | No handling — Ridge                  |    0.12505 |   0.09055 |   0.17824 |     0.07257 |
+| target noise         |                   0 |        2 |     14 | Hard removal — Ridge                 |    0.11847 |   0.07856 |   0.15471 |     0.05376 |
+| target noise         |                   0 |        2 |     14 | Winsorizing — Ridge                  |    0.12469 |   0.08849 |   0.17503 |     0.0726  |
+| target noise         |                   0 |        2 |     14 | Robust loss — HuberRegressor         |    0.13057 |   0.08737 |   0.16543 |     0.06366 |
+| target noise         |                   0 |        2 |     14 | Weighted — Ridge (linear)            |    0.11757 |   0.08031 |   0.16845 |     0.06165 |
+| target noise         |                   0 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.1199  |   0.08201 |   0.17153 |     0.06387 |
+| target noise         |                   0 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.1197  |   0.08066 |   0.16753 |     0.06088 |
+| target noise         |                   0 |        2 |     14 | Weighted — Random Forest             |    0.15748 |   0.10365 |   0.23501 |     0.07056 |
+| target noise         |                   0 |        2 |     14 | Weighted — Gradient Boosting         |    0.136   |   0.09347 |   0.19338 |     0.06867 |
+| target noise         |                   0 |        2 |     14 | IRLS — Ridge                         |    0.11886 |   0.07849 |   0.15559 |     0.05934 |
+| target noise         |                   0 |        2 |     15 | No handling — Ridge                  |    0.16585 |   0.10204 |   0.19992 |     0.06874 |
+| target noise         |                   0 |        2 |     15 | Hard removal — Ridge                 |    0.17351 |   0.09444 |   0.18271 |     0.05921 |
+| target noise         |                   0 |        2 |     15 | Winsorizing — Ridge                  |    0.1658  |   0.10333 |   0.20609 |     0.07126 |
+| target noise         |                   0 |        2 |     15 | Robust loss — HuberRegressor         |    0.17863 |   0.09971 |   0.22437 |     0.06101 |
+| target noise         |                   0 |        2 |     15 | Weighted — Ridge (linear)            |    0.16901 |   0.09306 |   0.20283 |     0.05667 |
+| target noise         |                   0 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16864 |   0.09445 |   0.19323 |     0.06166 |
+| target noise         |                   0 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16983 |   0.09305 |   0.19926 |     0.06162 |
+| target noise         |                   0 |        2 |     15 | Weighted — Random Forest             |    0.16509 |   0.10187 |   0.23979 |     0.06271 |
+| target noise         |                   0 |        2 |     15 | Weighted — Gradient Boosting         |    0.15946 |   0.10062 |   0.20925 |     0.06089 |
+| target noise         |                   0 |        2 |     15 | IRLS — Ridge                         |    0.17232 |   0.09243 |   0.19371 |     0.05808 |
+| target noise         |                   2 |        1 |      1 | No handling — Ridge                  |    0.19564 |   0.09833 |   0.18138 |     0.06899 |
+| target noise         |                   2 |        1 |      1 | Hard removal — Ridge                 |    0.21531 |   0.09346 |   0.1642  |     0.06371 |
+| target noise         |                   2 |        1 |      1 | Winsorizing — Ridge                  |    0.18672 |   0.09703 |   0.18986 |     0.0632  |
+| target noise         |                   2 |        1 |      1 | Robust loss — HuberRegressor         |    0.21909 |   0.10704 |   0.20904 |     0.06685 |
+| target noise         |                   2 |        1 |      1 | Weighted — Ridge (linear)            |    0.21962 |   0.09632 |   0.17411 |     0.05569 |
+| target noise         |                   2 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.21901 |   0.09681 |   0.17898 |     0.05924 |
+| target noise         |                   2 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.22035 |   0.09688 |   0.18458 |     0.05968 |
+| target noise         |                   2 |        1 |      1 | Weighted — Random Forest             |    0.16946 |   0.106   |   0.23896 |     0.05925 |
+| target noise         |                   2 |        1 |      1 | Weighted — Gradient Boosting         |    0.1646  |   0.09856 |   0.21526 |     0.05633 |
+| target noise         |                   2 |        1 |      1 | IRLS — Ridge                         |    0.21702 |   0.0935  |   0.16551 |     0.05728 |
+| target noise         |                   2 |        1 |      2 | No handling — Ridge                  |    0.12162 |   0.09095 |   0.18028 |     0.07784 |
+| target noise         |                   2 |        1 |      2 | Hard removal — Ridge                 |    0.118   |   0.08272 |   0.16888 |     0.05965 |
+| target noise         |                   2 |        1 |      2 | Winsorizing — Ridge                  |    0.12166 |   0.09033 |   0.18171 |     0.07657 |
+| target noise         |                   2 |        1 |      2 | Robust loss — HuberRegressor         |    0.12761 |   0.08869 |   0.18145 |     0.06303 |
+| target noise         |                   2 |        1 |      2 | Weighted — Ridge (linear)            |    0.12077 |   0.08302 |   0.17148 |     0.06038 |
+| target noise         |                   2 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.11961 |   0.08336 |   0.18543 |     0.0638  |
+| target noise         |                   2 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12131 |   0.08206 |   0.17519 |     0.05758 |
+| target noise         |                   2 |        1 |      2 | Weighted — Random Forest             |    0.14836 |   0.10012 |   0.24441 |     0.07133 |
+| target noise         |                   2 |        1 |      2 | Weighted — Gradient Boosting         |    0.13221 |   0.09428 |   0.19531 |     0.07215 |
+| target noise         |                   2 |        1 |      2 | IRLS — Ridge                         |    0.12017 |   0.08284 |   0.16134 |     0.06333 |
+| target noise         |                   2 |        1 |      3 | No handling — Ridge                  |    0.15981 |   0.10456 |   0.20323 |     0.0816  |
+| target noise         |                   2 |        1 |      3 | Hard removal — Ridge                 |    0.16385 |   0.0886  |   0.16843 |     0.05962 |
+| target noise         |                   2 |        1 |      3 | Winsorizing — Ridge                  |    0.15925 |   0.10608 |   0.19752 |     0.08279 |
+| target noise         |                   2 |        1 |      3 | Robust loss — HuberRegressor         |    0.17578 |   0.09863 |   0.20995 |     0.05982 |
+| target noise         |                   2 |        1 |      3 | Weighted — Ridge (linear)            |    0.16369 |   0.09489 |   0.18254 |     0.06426 |
+| target noise         |                   2 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16492 |   0.09672 |   0.19573 |     0.06696 |
+| target noise         |                   2 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16616 |   0.09495 |   0.19911 |     0.06038 |
+| target noise         |                   2 |        1 |      3 | Weighted — Random Forest             |    0.16764 |   0.1106  |   0.25329 |     0.07231 |
+| target noise         |                   2 |        1 |      3 | Weighted — Gradient Boosting         |    0.16441 |   0.105   |   0.22217 |     0.06651 |
+| target noise         |                   2 |        1 |      3 | IRLS — Ridge                         |    0.16514 |   0.0902  |   0.18075 |     0.05679 |
+| target noise         |                   2 |        1 |      4 | No handling — Ridge                  |    0.12598 |   0.08913 |   0.19671 |     0.06558 |
+| target noise         |                   2 |        1 |      4 | Hard removal — Ridge                 |    0.10673 |   0.07127 |   0.15253 |     0.05105 |
+| target noise         |                   2 |        1 |      4 | Winsorizing — Ridge                  |    0.12806 |   0.09006 |   0.20931 |     0.06632 |
+| target noise         |                   2 |        1 |      4 | Robust loss — HuberRegressor         |    0.11361 |   0.07657 |   0.16679 |     0.05131 |
+| target noise         |                   2 |        1 |      4 | Weighted — Ridge (linear)            |    0.1095  |   0.07699 |   0.16723 |     0.0575  |
+| target noise         |                   2 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11574 |   0.08124 |   0.17923 |     0.05952 |
+| target noise         |                   2 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11457 |   0.07992 |   0.18724 |     0.05917 |
+| target noise         |                   2 |        1 |      4 | Weighted — Random Forest             |    0.14941 |   0.09642 |   0.21851 |     0.05867 |
+| target noise         |                   2 |        1 |      4 | Weighted — Gradient Boosting         |    0.12572 |   0.08656 |   0.17249 |     0.06583 |
+| target noise         |                   2 |        1 |      4 | IRLS — Ridge                         |    0.10675 |   0.07156 |   0.15905 |     0.04958 |
+| target noise         |                   2 |        1 |      5 | No handling — Ridge                  |    0.1256  |   0.09214 |   0.20874 |     0.07014 |
+| target noise         |                   2 |        1 |      5 | Hard removal — Ridge                 |    0.11048 |   0.07954 |   0.16657 |     0.0545  |
+| target noise         |                   2 |        1 |      5 | Winsorizing — Ridge                  |    0.12475 |   0.0942  |   0.20313 |     0.07392 |
+| target noise         |                   2 |        1 |      5 | Robust loss — HuberRegressor         |    0.13699 |   0.09015 |   0.19774 |     0.05416 |
+| target noise         |                   2 |        1 |      5 | Weighted — Ridge (linear)            |    0.10977 |   0.08017 |   0.15552 |     0.05685 |
+| target noise         |                   2 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11198 |   0.08242 |   0.16013 |     0.06051 |
+| target noise         |                   2 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.10926 |   0.08024 |   0.15973 |     0.05722 |
+| target noise         |                   2 |        1 |      5 | Weighted — Random Forest             |    0.13445 |   0.09124 |   0.19203 |     0.06655 |
+| target noise         |                   2 |        1 |      5 | Weighted — Gradient Boosting         |    0.1293  |   0.09352 |   0.21135 |     0.07452 |
+| target noise         |                   2 |        1 |      5 | IRLS — Ridge                         |    0.10803 |   0.07774 |   0.1604  |     0.05276 |
+| target noise         |                   2 |        1 |      6 | No handling — Ridge                  |    0.11547 |   0.08897 |   0.18072 |     0.07043 |
+| target noise         |                   2 |        1 |      6 | Hard removal — Ridge                 |    0.09966 |   0.07433 |   0.14469 |     0.05894 |
+| target noise         |                   2 |        1 |      6 | Winsorizing — Ridge                  |    0.11428 |   0.08782 |   0.17039 |     0.07502 |
+| target noise         |                   2 |        1 |      6 | Robust loss — HuberRegressor         |    0.12985 |   0.08867 |   0.17743 |     0.06039 |
+| target noise         |                   2 |        1 |      6 | Weighted — Ridge (linear)            |    0.10503 |   0.0789  |   0.1618  |     0.06401 |
+| target noise         |                   2 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.10695 |   0.08206 |   0.17026 |     0.0644  |
+| target noise         |                   2 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10586 |   0.07923 |   0.16959 |     0.05743 |
+| target noise         |                   2 |        1 |      6 | Weighted — Random Forest             |    0.14198 |   0.09545 |   0.23696 |     0.05728 |
+| target noise         |                   2 |        1 |      6 | Weighted — Gradient Boosting         |    0.13455 |   0.09557 |   0.20428 |     0.064   |
+| target noise         |                   2 |        1 |      6 | IRLS — Ridge                         |    0.09968 |   0.07444 |   0.14684 |     0.0576  |
+| target noise         |                   2 |        1 |      7 | No handling — Ridge                  |    0.15458 |   0.09768 |   0.20261 |     0.06707 |
+| target noise         |                   2 |        1 |      7 | Hard removal — Ridge                 |    0.15712 |   0.08627 |   0.18253 |     0.05404 |
+| target noise         |                   2 |        1 |      7 | Winsorizing — Ridge                  |    0.15439 |   0.09815 |   0.2041  |     0.07085 |
+| target noise         |                   2 |        1 |      7 | Robust loss — HuberRegressor         |    0.15735 |   0.09645 |   0.20641 |     0.06051 |
+| target noise         |                   2 |        1 |      7 | Weighted — Ridge (linear)            |    0.1575  |   0.09128 |   0.189   |     0.06203 |
+| target noise         |                   2 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15887 |   0.09408 |   0.19351 |     0.06431 |
+| target noise         |                   2 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.16119 |   0.0927  |   0.20031 |     0.06415 |
+| target noise         |                   2 |        1 |      7 | Weighted — Random Forest             |    0.1597  |   0.1104  |   0.23886 |     0.07924 |
+| target noise         |                   2 |        1 |      7 | Weighted — Gradient Boosting         |    0.146   |   0.09792 |   0.20646 |     0.06904 |
+| target noise         |                   2 |        1 |      7 | IRLS — Ridge                         |    0.1558  |   0.08654 |   0.18387 |     0.05897 |
+| target noise         |                   2 |        1 |      8 | No handling — Ridge                  |    0.19226 |   0.09497 |   0.17892 |     0.06183 |
+| target noise         |                   2 |        1 |      8 | Hard removal — Ridge                 |    0.21609 |   0.09241 |   0.16297 |     0.05768 |
+| target noise         |                   2 |        1 |      8 | Winsorizing — Ridge                  |    0.18354 |   0.09147 |   0.1746  |     0.05603 |
+| target noise         |                   2 |        1 |      8 | Robust loss — HuberRegressor         |    0.2079  |   0.0973  |   0.17178 |     0.0599  |
+| target noise         |                   2 |        1 |      8 | Weighted — Ridge (linear)            |    0.21473 |   0.09186 |   0.16275 |     0.05689 |
+| target noise         |                   2 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.21278 |   0.09097 |   0.16321 |     0.05843 |
+| target noise         |                   2 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21626 |   0.09088 |   0.16257 |     0.05695 |
+| target noise         |                   2 |        1 |      8 | Weighted — Random Forest             |    0.16008 |   0.10536 |   0.20724 |     0.07307 |
+| target noise         |                   2 |        1 |      8 | Weighted — Gradient Boosting         |    0.15708 |   0.09561 |   0.18613 |     0.06288 |
+| target noise         |                   2 |        1 |      8 | IRLS — Ridge                         |    0.21841 |   0.09118 |   0.16254 |     0.05759 |
+| target noise         |                   2 |        1 |      9 | No handling — Ridge                  |    0.13019 |   0.09446 |   0.20271 |     0.07669 |
+| target noise         |                   2 |        1 |      9 | Hard removal — Ridge                 |    0.11197 |   0.08051 |   0.17072 |     0.06131 |
+| target noise         |                   2 |        1 |      9 | Winsorizing — Ridge                  |    0.1288  |   0.0937  |   0.19693 |     0.07015 |
+| target noise         |                   2 |        1 |      9 | Robust loss — HuberRegressor         |    0.12631 |   0.0839  |   0.18269 |     0.05362 |
+| target noise         |                   2 |        1 |      9 | Weighted — Ridge (linear)            |    0.11647 |   0.08328 |   0.18313 |     0.06189 |
+| target noise         |                   2 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.11869 |   0.08523 |   0.18651 |     0.06585 |
+| target noise         |                   2 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.11781 |   0.08389 |   0.18183 |     0.06044 |
+| target noise         |                   2 |        1 |      9 | Weighted — Random Forest             |    0.13495 |   0.09199 |   0.21155 |     0.06489 |
+| target noise         |                   2 |        1 |      9 | Weighted — Gradient Boosting         |    0.12096 |   0.08886 |   0.19661 |     0.06976 |
+| target noise         |                   2 |        1 |      9 | IRLS — Ridge                         |    0.10908 |   0.07688 |   0.17216 |     0.05412 |
+| target noise         |                   2 |        1 |     10 | No handling — Ridge                  |    0.15252 |   0.10233 |   0.18353 |     0.07313 |
+| target noise         |                   2 |        1 |     10 | Hard removal — Ridge                 |    0.14332 |   0.08702 |   0.16206 |     0.05518 |
+| target noise         |                   2 |        1 |     10 | Winsorizing — Ridge                  |    0.15517 |   0.10384 |   0.19272 |     0.07693 |
+| target noise         |                   2 |        1 |     10 | Robust loss — HuberRegressor         |    0.14838 |   0.09398 |   0.19487 |     0.06063 |
+| target noise         |                   2 |        1 |     10 | Weighted — Ridge (linear)            |    0.14561 |   0.09066 |   0.17923 |     0.05653 |
+| target noise         |                   2 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.14793 |   0.09153 |   0.18589 |     0.05666 |
+| target noise         |                   2 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.14782 |   0.0911  |   0.18544 |     0.05799 |
+| target noise         |                   2 |        1 |     10 | Weighted — Random Forest             |    0.17563 |   0.11035 |   0.26343 |     0.0689  |
+| target noise         |                   2 |        1 |     10 | Weighted — Gradient Boosting         |    0.16491 |   0.10582 |   0.21401 |     0.07146 |
+| target noise         |                   2 |        1 |     10 | IRLS — Ridge                         |    0.14633 |   0.08742 |   0.16786 |     0.05133 |
+| target noise         |                   2 |        1 |     11 | No handling — Ridge                  |    0.20087 |   0.09517 |   0.17947 |     0.06331 |
+| target noise         |                   2 |        1 |     11 | Hard removal — Ridge                 |    0.21386 |   0.09152 |   0.17063 |     0.05748 |
+| target noise         |                   2 |        1 |     11 | Winsorizing — Ridge                  |    0.18819 |   0.09431 |   0.1773  |     0.06307 |
+| target noise         |                   2 |        1 |     11 | Robust loss — HuberRegressor         |    0.23124 |   0.10831 |   0.24186 |     0.05509 |
+| target noise         |                   2 |        1 |     11 | Weighted — Ridge (linear)            |    0.21502 |   0.09076 |   0.16062 |     0.05821 |
+| target noise         |                   2 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.21282 |   0.0917  |   0.16757 |     0.05999 |
+| target noise         |                   2 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.21508 |   0.09094 |   0.162   |     0.0558  |
+| target noise         |                   2 |        1 |     11 | Weighted — Random Forest             |    0.15211 |   0.09765 |   0.21663 |     0.06347 |
+| target noise         |                   2 |        1 |     11 | Weighted — Gradient Boosting         |    0.14592 |   0.09437 |   0.21101 |     0.0629  |
+| target noise         |                   2 |        1 |     11 | IRLS — Ridge                         |    0.21282 |   0.08936 |   0.16331 |     0.05463 |
+| target noise         |                   2 |        1 |     12 | No handling — Ridge                  |    0.12818 |   0.09331 |   0.18522 |     0.07587 |
+| target noise         |                   2 |        1 |     12 | Hard removal — Ridge                 |    0.11531 |   0.07959 |   0.16159 |     0.06251 |
+| target noise         |                   2 |        1 |     12 | Winsorizing — Ridge                  |    0.12935 |   0.09474 |   0.1845  |     0.07613 |
+| target noise         |                   2 |        1 |     12 | Robust loss — HuberRegressor         |    0.15609 |   0.09547 |   0.17382 |     0.06247 |
+| target noise         |                   2 |        1 |     12 | Weighted — Ridge (linear)            |    0.1142  |   0.08201 |   0.15334 |     0.0661  |
+| target noise         |                   2 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11645 |   0.08373 |   0.17417 |     0.06746 |
+| target noise         |                   2 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.11699 |   0.08272 |   0.16653 |     0.06538 |
+| target noise         |                   2 |        1 |     12 | Weighted — Random Forest             |    0.1518  |   0.10298 |   0.25228 |     0.07028 |
+| target noise         |                   2 |        1 |     12 | Weighted — Gradient Boosting         |    0.14163 |   0.09905 |   0.19422 |     0.07633 |
+| target noise         |                   2 |        1 |     12 | IRLS — Ridge                         |    0.11611 |   0.08005 |   0.15912 |     0.05881 |
+| target noise         |                   2 |        1 |     13 | No handling — Ridge                  |    0.12484 |   0.09122 |   0.20031 |     0.06661 |
+| target noise         |                   2 |        1 |     13 | Hard removal — Ridge                 |    0.10762 |   0.0797  |   0.1714  |     0.0652  |
+| target noise         |                   2 |        1 |     13 | Winsorizing — Ridge                  |    0.12788 |   0.09357 |   0.21236 |     0.07079 |
+| target noise         |                   2 |        1 |     13 | Robust loss — HuberRegressor         |    0.11903 |   0.08532 |   0.18193 |     0.05964 |
+| target noise         |                   2 |        1 |     13 | Weighted — Ridge (linear)            |    0.11231 |   0.08093 |   0.1731  |     0.0613  |
+| target noise         |                   2 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.11877 |   0.08477 |   0.18165 |     0.06587 |
+| target noise         |                   2 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11866 |   0.08341 |   0.18031 |     0.06165 |
+| target noise         |                   2 |        1 |     13 | Weighted — Random Forest             |    0.13824 |   0.09763 |   0.23272 |     0.07003 |
+| target noise         |                   2 |        1 |     13 | Weighted — Gradient Boosting         |    0.12815 |   0.09085 |   0.18917 |     0.06793 |
+| target noise         |                   2 |        1 |     13 | IRLS — Ridge                         |    0.10629 |   0.079   |   0.15709 |     0.06229 |
+| target noise         |                   2 |        1 |     14 | No handling — Ridge                  |    0.12851 |   0.09467 |   0.18573 |     0.081   |
+| target noise         |                   2 |        1 |     14 | Hard removal — Ridge                 |    0.11898 |   0.07881 |   0.15353 |     0.05888 |
+| target noise         |                   2 |        1 |     14 | Winsorizing — Ridge                  |    0.12959 |   0.09429 |   0.19482 |     0.07689 |
+| target noise         |                   2 |        1 |     14 | Robust loss — HuberRegressor         |    0.12912 |   0.08619 |   0.16148 |     0.06836 |
+| target noise         |                   2 |        1 |     14 | Weighted — Ridge (linear)            |    0.11974 |   0.08187 |   0.16131 |     0.05956 |
+| target noise         |                   2 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.122   |   0.08344 |   0.17582 |     0.06308 |
+| target noise         |                   2 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12252 |   0.08293 |   0.16586 |     0.05858 |
+| target noise         |                   2 |        1 |     14 | Weighted — Random Forest             |    0.15991 |   0.10634 |   0.2353  |     0.07241 |
+| target noise         |                   2 |        1 |     14 | Weighted — Gradient Boosting         |    0.13777 |   0.09659 |   0.19911 |     0.07255 |
+| target noise         |                   2 |        1 |     14 | IRLS — Ridge                         |    0.1195  |   0.07841 |   0.15271 |     0.05889 |
+| target noise         |                   2 |        1 |     15 | No handling — Ridge                  |    0.16847 |   0.10331 |   0.20541 |     0.06563 |
+| target noise         |                   2 |        1 |     15 | Hard removal — Ridge                 |    0.17516 |   0.09421 |   0.19276 |     0.05758 |
+| target noise         |                   2 |        1 |     15 | Winsorizing — Ridge                  |    0.16784 |   0.10436 |   0.21207 |     0.06844 |
+| target noise         |                   2 |        1 |     15 | Robust loss — HuberRegressor         |    0.18011 |   0.09997 |   0.20711 |     0.05964 |
+| target noise         |                   2 |        1 |     15 | Weighted — Ridge (linear)            |    0.17052 |   0.09244 |   0.2064  |     0.05491 |
+| target noise         |                   2 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16969 |   0.09389 |   0.20779 |     0.05688 |
+| target noise         |                   2 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.17179 |   0.09255 |   0.20444 |     0.05705 |
+| target noise         |                   2 |        1 |     15 | Weighted — Random Forest             |    0.16501 |   0.10271 |   0.25811 |     0.06272 |
+| target noise         |                   2 |        1 |     15 | Weighted — Gradient Boosting         |    0.15872 |   0.09952 |   0.20109 |     0.06339 |
+| target noise         |                   2 |        1 |     15 | IRLS — Ridge                         |    0.17263 |   0.09236 |   0.19336 |     0.05787 |
+| target noise         |                   2 |        2 |      1 | No handling — Ridge                  |    0.19456 |   0.09839 |   0.17618 |     0.07065 |
+| target noise         |                   2 |        2 |      1 | Hard removal — Ridge                 |    0.21455 |   0.09431 |   0.172   |     0.05806 |
+| target noise         |                   2 |        2 |      1 | Winsorizing — Ridge                  |    0.18455 |   0.09778 |   0.17973 |     0.06848 |
+| target noise         |                   2 |        2 |      1 | Robust loss — HuberRegressor         |    0.21521 |   0.10364 |   0.20543 |     0.0636  |
+| target noise         |                   2 |        2 |      1 | Weighted — Ridge (linear)            |    0.21556 |   0.09607 |   0.17431 |     0.0606  |
+| target noise         |                   2 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.21447 |   0.09636 |   0.18695 |     0.06332 |
+| target noise         |                   2 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.21594 |   0.09662 |   0.18301 |     0.06321 |
+| target noise         |                   2 |        2 |      1 | Weighted — Random Forest             |    0.16819 |   0.10649 |   0.24757 |     0.06658 |
+| target noise         |                   2 |        2 |      1 | Weighted — Gradient Boosting         |    0.15804 |   0.0967  |   0.22074 |     0.05805 |
+| target noise         |                   2 |        2 |      1 | IRLS — Ridge                         |    0.21609 |   0.09406 |   0.16614 |     0.05918 |
+| target noise         |                   2 |        2 |      2 | No handling — Ridge                  |    0.13225 |   0.09875 |   0.18872 |     0.08003 |
+| target noise         |                   2 |        2 |      2 | Hard removal — Ridge                 |    0.12326 |   0.08687 |   0.17327 |     0.06476 |
+| target noise         |                   2 |        2 |      2 | Winsorizing — Ridge                  |    0.13317 |   0.09924 |   0.18431 |     0.08018 |
+| target noise         |                   2 |        2 |      2 | Robust loss — HuberRegressor         |    0.12849 |   0.08779 |   0.19379 |     0.06403 |
+| target noise         |                   2 |        2 |      2 | Weighted — Ridge (linear)            |    0.1235  |   0.08713 |   0.17324 |     0.0692  |
+| target noise         |                   2 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.12331 |   0.0866  |   0.1822  |     0.06643 |
+| target noise         |                   2 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12399 |   0.08507 |   0.18555 |     0.06381 |
+| target noise         |                   2 |        2 |      2 | Weighted — Random Forest             |    0.15079 |   0.10084 |   0.24783 |     0.06567 |
+| target noise         |                   2 |        2 |      2 | Weighted — Gradient Boosting         |    0.1358  |   0.09685 |   0.20444 |     0.06751 |
+| target noise         |                   2 |        2 |      2 | IRLS — Ridge                         |    0.12291 |   0.0856  |   0.17067 |     0.06309 |
+| target noise         |                   2 |        2 |      3 | No handling — Ridge                  |    0.16082 |   0.10414 |   0.20918 |     0.07185 |
+| target noise         |                   2 |        2 |      3 | Hard removal — Ridge                 |    0.16589 |   0.08972 |   0.17259 |     0.05936 |
+| target noise         |                   2 |        2 |      3 | Winsorizing — Ridge                  |    0.16092 |   0.10542 |   0.21021 |     0.0727  |
+| target noise         |                   2 |        2 |      3 | Robust loss — HuberRegressor         |    0.17375 |   0.0984  |   0.19045 |     0.05784 |
+| target noise         |                   2 |        2 |      3 | Weighted — Ridge (linear)            |    0.16409 |   0.09611 |   0.18358 |     0.06636 |
+| target noise         |                   2 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16499 |   0.0968  |   0.19112 |     0.06707 |
+| target noise         |                   2 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.1667  |   0.09625 |   0.19407 |     0.06562 |
+| target noise         |                   2 |        2 |      3 | Weighted — Random Forest             |    0.16617 |   0.10982 |   0.26085 |     0.07206 |
+| target noise         |                   2 |        2 |      3 | Weighted — Gradient Boosting         |    0.16134 |   0.1042  |   0.23263 |     0.06307 |
+| target noise         |                   2 |        2 |      3 | IRLS — Ridge                         |    0.16503 |   0.09039 |   0.17395 |     0.0585  |
+| target noise         |                   2 |        2 |      4 | No handling — Ridge                  |    0.13426 |   0.09552 |   0.20738 |     0.0674  |
+| target noise         |                   2 |        2 |      4 | Hard removal — Ridge                 |    0.10886 |   0.0738  |   0.15195 |     0.0544  |
+| target noise         |                   2 |        2 |      4 | Winsorizing — Ridge                  |    0.13476 |   0.09466 |   0.19516 |     0.06915 |
+| target noise         |                   2 |        2 |      4 | Robust loss — HuberRegressor         |    0.11507 |   0.07808 |   0.17138 |     0.05677 |
+| target noise         |                   2 |        2 |      4 | Weighted — Ridge (linear)            |    0.11395 |   0.07963 |   0.16959 |     0.05492 |
+| target noise         |                   2 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11831 |   0.08211 |   0.18028 |     0.057   |
+| target noise         |                   2 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11721 |   0.08055 |   0.17902 |     0.05811 |
+| target noise         |                   2 |        2 |      4 | Weighted — Random Forest             |    0.14674 |   0.09638 |   0.24421 |     0.06388 |
+| target noise         |                   2 |        2 |      4 | Weighted — Gradient Boosting         |    0.12433 |   0.08579 |   0.17119 |     0.06334 |
+| target noise         |                   2 |        2 |      4 | IRLS — Ridge                         |    0.10776 |   0.0726  |   0.14991 |     0.05108 |
+| target noise         |                   2 |        2 |      5 | No handling — Ridge                  |    0.12767 |   0.09615 |   0.20464 |     0.07263 |
+| target noise         |                   2 |        2 |      5 | Hard removal — Ridge                 |    0.10661 |   0.0772  |   0.15878 |     0.05145 |
+| target noise         |                   2 |        2 |      5 | Winsorizing — Ridge                  |    0.12534 |   0.09556 |   0.19472 |     0.07437 |
+| target noise         |                   2 |        2 |      5 | Robust loss — HuberRegressor         |    0.12799 |   0.08819 |   0.18604 |     0.05754 |
+| target noise         |                   2 |        2 |      5 | Weighted — Ridge (linear)            |    0.11121 |   0.08281 |   0.17239 |     0.0631  |
+| target noise         |                   2 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11405 |   0.08493 |   0.16782 |     0.06378 |
+| target noise         |                   2 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11045 |   0.08185 |   0.16661 |     0.06132 |
+| target noise         |                   2 |        2 |      5 | Weighted — Random Forest             |    0.13567 |   0.09332 |   0.20601 |     0.06186 |
+| target noise         |                   2 |        2 |      5 | Weighted — Gradient Boosting         |    0.12869 |   0.09363 |   0.2179  |     0.06578 |
+| target noise         |                   2 |        2 |      5 | IRLS — Ridge                         |    0.10684 |   0.07763 |   0.16375 |     0.05278 |
+| target noise         |                   2 |        2 |      6 | No handling — Ridge                  |    0.11658 |   0.08987 |   0.18412 |     0.07256 |
+| target noise         |                   2 |        2 |      6 | Hard removal — Ridge                 |    0.10207 |   0.07581 |   0.14809 |     0.06129 |
+| target noise         |                   2 |        2 |      6 | Winsorizing — Ridge                  |    0.1172  |   0.09023 |   0.18097 |     0.07539 |
+| target noise         |                   2 |        2 |      6 | Robust loss — HuberRegressor         |    0.12771 |   0.08866 |   0.18181 |     0.06057 |
+| target noise         |                   2 |        2 |      6 | Weighted — Ridge (linear)            |    0.10448 |   0.0792  |   0.16029 |     0.05945 |
+| target noise         |                   2 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.10732 |   0.08184 |   0.17314 |     0.06489 |
+| target noise         |                   2 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10448 |   0.07861 |   0.16931 |     0.0596  |
+| target noise         |                   2 |        2 |      6 | Weighted — Random Forest             |    0.14365 |   0.09673 |   0.23475 |     0.06299 |
+| target noise         |                   2 |        2 |      6 | Weighted — Gradient Boosting         |    0.1286  |   0.09213 |   0.2057  |     0.06307 |
+| target noise         |                   2 |        2 |      6 | IRLS — Ridge                         |    0.10056 |   0.07512 |   0.15313 |     0.06056 |
+| target noise         |                   2 |        2 |      7 | No handling — Ridge                  |    0.17314 |   0.1081  |   0.22562 |     0.07537 |
+| target noise         |                   2 |        2 |      7 | Hard removal — Ridge                 |    0.15552 |   0.08625 |   0.18746 |     0.05446 |
+| target noise         |                   2 |        2 |      7 | Winsorizing — Ridge                  |    0.173   |   0.1073  |   0.21587 |     0.07563 |
+| target noise         |                   2 |        2 |      7 | Robust loss — HuberRegressor         |    0.15609 |   0.0972  |   0.2065  |     0.06166 |
+| target noise         |                   2 |        2 |      7 | Weighted — Ridge (linear)            |    0.16478 |   0.09515 |   0.20039 |     0.06529 |
+| target noise         |                   2 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.16798 |   0.09815 |   0.20426 |     0.06378 |
+| target noise         |                   2 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16873 |   0.09601 |   0.20542 |     0.0601  |
+| target noise         |                   2 |        2 |      7 | Weighted — Random Forest             |    0.16122 |   0.11366 |   0.26262 |     0.07565 |
+| target noise         |                   2 |        2 |      7 | Weighted — Gradient Boosting         |    0.14862 |   0.09981 |   0.21367 |     0.07259 |
+| target noise         |                   2 |        2 |      7 | IRLS — Ridge                         |    0.15612 |   0.08792 |   0.18226 |     0.05821 |
+| target noise         |                   2 |        2 |      8 | No handling — Ridge                  |    0.19305 |   0.09404 |   0.18822 |     0.06294 |
+| target noise         |                   2 |        2 |      8 | Hard removal — Ridge                 |    0.217   |   0.09324 |   0.17115 |     0.05634 |
+| target noise         |                   2 |        2 |      8 | Winsorizing — Ridge                  |    0.1847  |   0.09242 |   0.18369 |     0.06201 |
+| target noise         |                   2 |        2 |      8 | Robust loss — HuberRegressor         |    0.2059  |   0.09574 |   0.15848 |     0.05845 |
+| target noise         |                   2 |        2 |      8 | Weighted — Ridge (linear)            |    0.21652 |   0.09322 |   0.16748 |     0.05502 |
+| target noise         |                   2 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.21333 |   0.09283 |   0.16732 |     0.0615  |
+| target noise         |                   2 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.2164  |   0.09206 |   0.16713 |     0.05772 |
+| target noise         |                   2 |        2 |      8 | Weighted — Random Forest             |    0.15917 |   0.10285 |   0.20663 |     0.06806 |
+| target noise         |                   2 |        2 |      8 | Weighted — Gradient Boosting         |    0.15883 |   0.09837 |   0.19422 |     0.06897 |
+| target noise         |                   2 |        2 |      8 | IRLS — Ridge                         |    0.21869 |   0.09081 |   0.16426 |     0.05351 |
+| target noise         |                   2 |        2 |      9 | No handling — Ridge                  |    0.13376 |   0.10149 |   0.20951 |     0.08486 |
+| target noise         |                   2 |        2 |      9 | Hard removal — Ridge                 |    0.11146 |   0.07991 |   0.1667  |     0.05921 |
+| target noise         |                   2 |        2 |      9 | Winsorizing — Ridge                  |    0.13281 |   0.10165 |   0.20315 |     0.08488 |
+| target noise         |                   2 |        2 |      9 | Robust loss — HuberRegressor         |    0.13409 |   0.08597 |   0.18265 |     0.05917 |
+| target noise         |                   2 |        2 |      9 | Weighted — Ridge (linear)            |    0.11917 |   0.08644 |   0.18168 |     0.06573 |
+| target noise         |                   2 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12058 |   0.08727 |   0.19105 |     0.0661  |
+| target noise         |                   2 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11911 |   0.08476 |   0.18487 |     0.06538 |
+| target noise         |                   2 |        2 |      9 | Weighted — Random Forest             |    0.13541 |   0.09192 |   0.20507 |     0.0645  |
+| target noise         |                   2 |        2 |      9 | Weighted — Gradient Boosting         |    0.12277 |   0.08867 |   0.19854 |     0.06406 |
+| target noise         |                   2 |        2 |      9 | IRLS — Ridge                         |    0.10972 |   0.07876 |   0.17233 |     0.05907 |
+| target noise         |                   2 |        2 |     10 | No handling — Ridge                  |    0.14709 |   0.09472 |   0.17522 |     0.06515 |
+| target noise         |                   2 |        2 |     10 | Hard removal — Ridge                 |    0.14178 |   0.08719 |   0.16372 |     0.05778 |
+| target noise         |                   2 |        2 |     10 | Winsorizing — Ridge                  |    0.15032 |   0.09702 |   0.17735 |     0.07573 |
+| target noise         |                   2 |        2 |     10 | Robust loss — HuberRegressor         |    0.15244 |   0.0976  |   0.21432 |     0.06574 |
+| target noise         |                   2 |        2 |     10 | Weighted — Ridge (linear)            |    0.14279 |   0.08708 |   0.16851 |     0.05931 |
+| target noise         |                   2 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.14564 |   0.08909 |   0.18397 |     0.05632 |
+| target noise         |                   2 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14551 |   0.08856 |   0.18516 |     0.05617 |
+| target noise         |                   2 |        2 |     10 | Weighted — Random Forest             |    0.17517 |   0.10915 |   0.27402 |     0.06694 |
+| target noise         |                   2 |        2 |     10 | Weighted — Gradient Boosting         |    0.16206 |   0.1018  |   0.22862 |     0.06583 |
+| target noise         |                   2 |        2 |     10 | IRLS — Ridge                         |    0.14535 |   0.0871  |   0.15979 |     0.05505 |
+| target noise         |                   2 |        2 |     11 | No handling — Ridge                  |    0.19781 |   0.09323 |   0.17401 |     0.05934 |
+| target noise         |                   2 |        2 |     11 | Hard removal — Ridge                 |    0.21107 |   0.0885  |   0.15931 |     0.05275 |
+| target noise         |                   2 |        2 |     11 | Winsorizing — Ridge                  |    0.18653 |   0.09383 |   0.17614 |     0.06217 |
+| target noise         |                   2 |        2 |     11 | Robust loss — HuberRegressor         |    0.22278 |   0.10444 |   0.24394 |     0.05652 |
+| target noise         |                   2 |        2 |     11 | Weighted — Ridge (linear)            |    0.21091 |   0.08988 |   0.17536 |     0.05377 |
+| target noise         |                   2 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.20875 |   0.09143 |   0.19417 |     0.05555 |
+| target noise         |                   2 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21022 |   0.08983 |   0.19188 |     0.05195 |
+| target noise         |                   2 |        2 |     11 | Weighted — Random Forest             |    0.15273 |   0.09664 |   0.2116  |     0.06251 |
+| target noise         |                   2 |        2 |     11 | Weighted — Gradient Boosting         |    0.1442  |   0.09238 |   0.20474 |     0.06482 |
+| target noise         |                   2 |        2 |     11 | IRLS — Ridge                         |    0.21168 |   0.08925 |   0.16085 |     0.05889 |
+| target noise         |                   2 |        2 |     12 | No handling — Ridge                  |    0.13152 |   0.09416 |   0.18083 |     0.07234 |
+| target noise         |                   2 |        2 |     12 | Hard removal — Ridge                 |    0.11491 |   0.07971 |   0.16055 |     0.06013 |
+| target noise         |                   2 |        2 |     12 | Winsorizing — Ridge                  |    0.13313 |   0.0956  |   0.18666 |     0.07177 |
+| target noise         |                   2 |        2 |     12 | Robust loss — HuberRegressor         |    0.15723 |   0.09591 |   0.17205 |     0.06221 |
+| target noise         |                   2 |        2 |     12 | Weighted — Ridge (linear)            |    0.11323 |   0.08032 |   0.15888 |     0.06423 |
+| target noise         |                   2 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.1164  |   0.0825  |   0.16021 |     0.06697 |
+| target noise         |                   2 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11584 |   0.08124 |   0.15789 |     0.06123 |
+| target noise         |                   2 |        2 |     12 | Weighted — Random Forest             |    0.15446 |   0.10556 |   0.25435 |     0.06955 |
+| target noise         |                   2 |        2 |     12 | Weighted — Gradient Boosting         |    0.14559 |   0.1008  |   0.20284 |     0.07479 |
+| target noise         |                   2 |        2 |     12 | IRLS — Ridge                         |    0.11646 |   0.0801  |   0.16093 |     0.06013 |
+| target noise         |                   2 |        2 |     13 | No handling — Ridge                  |    0.12804 |   0.09409 |   0.21011 |     0.07045 |
+| target noise         |                   2 |        2 |     13 | Hard removal — Ridge                 |    0.10876 |   0.08134 |   0.17005 |     0.06559 |
+| target noise         |                   2 |        2 |     13 | Winsorizing — Ridge                  |    0.13197 |   0.09761 |   0.21982 |     0.06932 |
+| target noise         |                   2 |        2 |     13 | Robust loss — HuberRegressor         |    0.12222 |   0.08792 |   0.18634 |     0.0648  |
+| target noise         |                   2 |        2 |     13 | Weighted — Ridge (linear)            |    0.11346 |   0.08198 |   0.17497 |     0.06288 |
+| target noise         |                   2 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11938 |   0.08559 |   0.18764 |     0.06627 |
+| target noise         |                   2 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.11864 |   0.08372 |   0.17999 |     0.06001 |
+| target noise         |                   2 |        2 |     13 | Weighted — Random Forest             |    0.14203 |   0.10234 |   0.23005 |     0.07368 |
+| target noise         |                   2 |        2 |     13 | Weighted — Gradient Boosting         |    0.12851 |   0.09113 |   0.19074 |     0.06469 |
+| target noise         |                   2 |        2 |     13 | IRLS — Ridge                         |    0.10654 |   0.07903 |   0.16251 |     0.06082 |
+| target noise         |                   2 |        2 |     14 | No handling — Ridge                  |    0.13418 |   0.09955 |   0.20035 |     0.0745  |
+| target noise         |                   2 |        2 |     14 | Hard removal — Ridge                 |    0.11768 |   0.07761 |   0.16073 |     0.05714 |
+| target noise         |                   2 |        2 |     14 | Winsorizing — Ridge                  |    0.13302 |   0.09792 |   0.19944 |     0.07467 |
+| target noise         |                   2 |        2 |     14 | Robust loss — HuberRegressor         |    0.13014 |   0.08825 |   0.16763 |     0.06556 |
+| target noise         |                   2 |        2 |     14 | Weighted — Ridge (linear)            |    0.12027 |   0.08326 |   0.16978 |     0.06117 |
+| target noise         |                   2 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.12157 |   0.08373 |   0.17729 |     0.06186 |
+| target noise         |                   2 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12069 |   0.08139 |   0.16787 |     0.05874 |
+| target noise         |                   2 |        2 |     14 | Weighted — Random Forest             |    0.15428 |   0.10351 |   0.22431 |     0.06856 |
+| target noise         |                   2 |        2 |     14 | Weighted — Gradient Boosting         |    0.13889 |   0.09603 |   0.19844 |     0.06977 |
+| target noise         |                   2 |        2 |     14 | IRLS — Ridge                         |    0.11849 |   0.07864 |   0.15711 |     0.05568 |
+| target noise         |                   2 |        2 |     15 | No handling — Ridge                  |    0.16693 |   0.10471 |   0.19838 |     0.07237 |
+| target noise         |                   2 |        2 |     15 | Hard removal — Ridge                 |    0.17398 |   0.09523 |   0.1993  |     0.06026 |
+| target noise         |                   2 |        2 |     15 | Winsorizing — Ridge                  |    0.16489 |   0.10364 |   0.2019  |     0.06849 |
+| target noise         |                   2 |        2 |     15 | Robust loss — HuberRegressor         |    0.17766 |   0.09801 |   0.21174 |     0.0584  |
+| target noise         |                   2 |        2 |     15 | Weighted — Ridge (linear)            |    0.16997 |   0.09411 |   0.20332 |     0.0598  |
+| target noise         |                   2 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16948 |   0.0949  |   0.20507 |     0.06171 |
+| target noise         |                   2 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.17104 |   0.09393 |   0.20849 |     0.05778 |
+| target noise         |                   2 |        2 |     15 | Weighted — Random Forest             |    0.16817 |   0.10347 |   0.23017 |     0.06543 |
+| target noise         |                   2 |        2 |     15 | Weighted — Gradient Boosting         |    0.16005 |   0.09885 |   0.21115 |     0.06235 |
+| target noise         |                   2 |        2 |     15 | IRLS — Ridge                         |    0.17214 |   0.09226 |   0.1952  |     0.05912 |
+| target noise         |                   5 |        1 |      1 | No handling — Ridge                  |    0.19618 |   0.10221 |   0.206   |     0.06665 |
+| target noise         |                   5 |        1 |      1 | Hard removal — Ridge                 |    0.21108 |   0.09492 |   0.17339 |     0.06248 |
+| target noise         |                   5 |        1 |      1 | Winsorizing — Ridge                  |    0.18744 |   0.10291 |   0.2094  |     0.06701 |
+| target noise         |                   5 |        1 |      1 | Robust loss — HuberRegressor         |    0.22009 |   0.10837 |   0.22295 |     0.06361 |
+| target noise         |                   5 |        1 |      1 | Weighted — Ridge (linear)            |    0.21477 |   0.10013 |   0.18957 |     0.06262 |
+| target noise         |                   5 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.21419 |   0.09944 |   0.18387 |     0.06193 |
+| target noise         |                   5 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.21814 |   0.10034 |   0.18893 |     0.06426 |
+| target noise         |                   5 |        1 |      1 | Weighted — Random Forest             |    0.173   |   0.10924 |   0.25011 |     0.07056 |
+| target noise         |                   5 |        1 |      1 | Weighted — Gradient Boosting         |    0.16332 |   0.10247 |   0.24749 |     0.06142 |
+| target noise         |                   5 |        1 |      1 | IRLS — Ridge                         |    0.21125 |   0.09495 |   0.17097 |     0.05785 |
+| target noise         |                   5 |        1 |      2 | No handling — Ridge                  |    0.13462 |   0.10176 |   0.20625 |     0.07955 |
+| target noise         |                   5 |        1 |      2 | Hard removal — Ridge                 |    0.12166 |   0.08425 |   0.17308 |     0.06172 |
+| target noise         |                   5 |        1 |      2 | Winsorizing — Ridge                  |    0.13263 |   0.1013  |   0.19761 |     0.08872 |
+| target noise         |                   5 |        1 |      2 | Robust loss — HuberRegressor         |    0.14354 |   0.09508 |   0.19273 |     0.07039 |
+| target noise         |                   5 |        1 |      2 | Weighted — Ridge (linear)            |    0.12552 |   0.08915 |   0.17788 |     0.06694 |
+| target noise         |                   5 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.12289 |   0.08696 |   0.17778 |     0.06854 |
+| target noise         |                   5 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12385 |   0.08601 |   0.18192 |     0.06517 |
+| target noise         |                   5 |        1 |      2 | Weighted — Random Forest             |    0.15759 |   0.10474 |   0.2559  |     0.0646  |
+| target noise         |                   5 |        1 |      2 | Weighted — Gradient Boosting         |    0.1365  |   0.09734 |   0.20824 |     0.0712  |
+| target noise         |                   5 |        1 |      2 | IRLS — Ridge                         |    0.12191 |   0.08493 |   0.16884 |     0.06016 |
+| target noise         |                   5 |        1 |      3 | No handling — Ridge                  |    0.1578  |   0.10636 |   0.20723 |     0.08082 |
+| target noise         |                   5 |        1 |      3 | Hard removal — Ridge                 |    0.16361 |   0.09021 |   0.16724 |     0.06632 |
+| target noise         |                   5 |        1 |      3 | Winsorizing — Ridge                  |    0.15822 |   0.10685 |   0.2114  |     0.08095 |
+| target noise         |                   5 |        1 |      3 | Robust loss — HuberRegressor         |    0.17939 |   0.10398 |   0.20903 |     0.0639  |
+| target noise         |                   5 |        1 |      3 | Weighted — Ridge (linear)            |    0.15998 |   0.09456 |   0.19051 |     0.06504 |
+| target noise         |                   5 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.1617  |   0.09554 |   0.19417 |     0.0616  |
+| target noise         |                   5 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16274 |   0.09498 |   0.19273 |     0.0662  |
+| target noise         |                   5 |        1 |      3 | Weighted — Random Forest             |    0.16651 |   0.10941 |   0.2461  |     0.06736 |
+| target noise         |                   5 |        1 |      3 | Weighted — Gradient Boosting         |    0.16357 |   0.10301 |   0.22874 |     0.06636 |
+| target noise         |                   5 |        1 |      3 | IRLS — Ridge                         |    0.16349 |   0.09026 |   0.17751 |     0.06038 |
+| target noise         |                   5 |        1 |      4 | No handling — Ridge                  |    0.13811 |   0.09904 |   0.21034 |     0.07613 |
+| target noise         |                   5 |        1 |      4 | Hard removal — Ridge                 |    0.10997 |   0.07408 |   0.17416 |     0.0536  |
+| target noise         |                   5 |        1 |      4 | Winsorizing — Ridge                  |    0.13636 |   0.09661 |   0.20082 |     0.06988 |
+| target noise         |                   5 |        1 |      4 | Robust loss — HuberRegressor         |    0.11603 |   0.07928 |   0.16701 |     0.05665 |
+| target noise         |                   5 |        1 |      4 | Weighted — Ridge (linear)            |    0.11884 |   0.08351 |   0.17384 |     0.05886 |
+| target noise         |                   5 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11952 |   0.08362 |   0.18463 |     0.05673 |
+| target noise         |                   5 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11843 |   0.08243 |   0.18697 |     0.05567 |
+| target noise         |                   5 |        1 |      4 | Weighted — Random Forest             |    0.15067 |   0.09934 |   0.22363 |     0.06483 |
+| target noise         |                   5 |        1 |      4 | Weighted — Gradient Boosting         |    0.13197 |   0.08933 |   0.17992 |     0.06416 |
+| target noise         |                   5 |        1 |      4 | IRLS — Ridge                         |    0.10792 |   0.07354 |   0.16018 |     0.05279 |
+| target noise         |                   5 |        1 |      5 | No handling — Ridge                  |    0.13615 |   0.10323 |   0.20412 |     0.08719 |
+| target noise         |                   5 |        1 |      5 | Hard removal — Ridge                 |    0.1106  |   0.08034 |   0.16607 |     0.05899 |
+| target noise         |                   5 |        1 |      5 | Winsorizing — Ridge                  |    0.13668 |   0.10462 |   0.19892 |     0.08765 |
+| target noise         |                   5 |        1 |      5 | Robust loss — HuberRegressor         |    0.13679 |   0.09319 |   0.19643 |     0.06145 |
+| target noise         |                   5 |        1 |      5 | Weighted — Ridge (linear)            |    0.11696 |   0.08585 |   0.17196 |     0.06728 |
+| target noise         |                   5 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11683 |   0.08652 |   0.17235 |     0.06813 |
+| target noise         |                   5 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.11459 |   0.08412 |   0.16974 |     0.06873 |
+| target noise         |                   5 |        1 |      5 | Weighted — Random Forest             |    0.13882 |   0.09437 |   0.20124 |     0.06375 |
+| target noise         |                   5 |        1 |      5 | Weighted — Gradient Boosting         |    0.12778 |   0.09236 |   0.20203 |     0.06611 |
+| target noise         |                   5 |        1 |      5 | IRLS — Ridge                         |    0.11013 |   0.07877 |   0.16443 |     0.05408 |
+| target noise         |                   5 |        1 |      6 | No handling — Ridge                  |    0.12092 |   0.09143 |   0.18908 |     0.07109 |
+| target noise         |                   5 |        1 |      6 | Hard removal — Ridge                 |    0.10766 |   0.08201 |   0.15672 |     0.06606 |
+| target noise         |                   5 |        1 |      6 | Winsorizing — Ridge                  |    0.12043 |   0.09094 |   0.18834 |     0.07298 |
+| target noise         |                   5 |        1 |      6 | Robust loss — HuberRegressor         |    0.13869 |   0.09539 |   0.20565 |     0.0638  |
+| target noise         |                   5 |        1 |      6 | Weighted — Ridge (linear)            |    0.11064 |   0.07957 |   0.1661  |     0.05912 |
+| target noise         |                   5 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.11125 |   0.08111 |   0.17509 |     0.06199 |
+| target noise         |                   5 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.1098  |   0.07778 |   0.16999 |     0.05473 |
+| target noise         |                   5 |        1 |      6 | Weighted — Random Forest             |    0.13873 |   0.09589 |   0.22766 |     0.06567 |
+| target noise         |                   5 |        1 |      6 | Weighted — Gradient Boosting         |    0.14468 |   0.10283 |   0.24443 |     0.07118 |
+| target noise         |                   5 |        1 |      6 | IRLS — Ridge                         |    0.10353 |   0.07736 |   0.15656 |     0.06219 |
+| target noise         |                   5 |        1 |      7 | No handling — Ridge                  |    0.15674 |   0.1031  |   0.20245 |     0.07188 |
+| target noise         |                   5 |        1 |      7 | Hard removal — Ridge                 |    0.15668 |   0.08816 |   0.17633 |     0.06022 |
+| target noise         |                   5 |        1 |      7 | Winsorizing — Ridge                  |    0.15586 |   0.10199 |   0.21593 |     0.07597 |
+| target noise         |                   5 |        1 |      7 | Robust loss — HuberRegressor         |    0.15453 |   0.09329 |   0.19175 |     0.0586  |
+| target noise         |                   5 |        1 |      7 | Weighted — Ridge (linear)            |    0.159   |   0.0936  |   0.19223 |     0.06149 |
+| target noise         |                   5 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.16081 |   0.09523 |   0.19665 |     0.0597  |
+| target noise         |                   5 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.16179 |   0.09323 |   0.19492 |     0.06041 |
+| target noise         |                   5 |        1 |      7 | Weighted — Random Forest             |    0.16166 |   0.11082 |   0.23737 |     0.07781 |
+| target noise         |                   5 |        1 |      7 | Weighted — Gradient Boosting         |    0.14866 |   0.10178 |   0.21989 |     0.0731  |
+| target noise         |                   5 |        1 |      7 | IRLS — Ridge                         |    0.15506 |   0.08667 |   0.18187 |     0.05767 |
+| target noise         |                   5 |        1 |      8 | No handling — Ridge                  |    0.19109 |   0.10267 |   0.19128 |     0.07948 |
+| target noise         |                   5 |        1 |      8 | Hard removal — Ridge                 |    0.21211 |   0.09322 |   0.17498 |     0.06019 |
+| target noise         |                   5 |        1 |      8 | Winsorizing — Ridge                  |    0.1822  |   0.09811 |   0.18096 |     0.07147 |
+| target noise         |                   5 |        1 |      8 | Robust loss — HuberRegressor         |    0.20762 |   0.09855 |   0.17399 |     0.06334 |
+| target noise         |                   5 |        1 |      8 | Weighted — Ridge (linear)            |    0.21207 |   0.09527 |   0.17198 |     0.06419 |
+| target noise         |                   5 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.2104  |   0.09399 |   0.16944 |     0.06459 |
+| target noise         |                   5 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21382 |   0.09279 |   0.16404 |     0.0603  |
+| target noise         |                   5 |        1 |      8 | Weighted — Random Forest             |    0.15704 |   0.10137 |   0.2095  |     0.07135 |
+| target noise         |                   5 |        1 |      8 | Weighted — Gradient Boosting         |    0.14963 |   0.09502 |   0.18478 |     0.06246 |
+| target noise         |                   5 |        1 |      8 | IRLS — Ridge                         |    0.21587 |   0.09075 |   0.16357 |     0.05423 |
+| target noise         |                   5 |        1 |      9 | No handling — Ridge                  |    0.13456 |   0.10263 |   0.19956 |     0.09203 |
+| target noise         |                   5 |        1 |      9 | Hard removal — Ridge                 |    0.11279 |   0.08088 |   0.16994 |     0.05615 |
+| target noise         |                   5 |        1 |      9 | Winsorizing — Ridge                  |    0.13228 |   0.10097 |   0.20126 |     0.08754 |
+| target noise         |                   5 |        1 |      9 | Robust loss — HuberRegressor         |    0.12746 |   0.09022 |   0.19231 |     0.06203 |
+| target noise         |                   5 |        1 |      9 | Weighted — Ridge (linear)            |    0.12166 |   0.09006 |   0.18747 |     0.07198 |
+| target noise         |                   5 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.12179 |   0.0891  |   0.1943  |     0.07268 |
+| target noise         |                   5 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.12211 |   0.08883 |   0.19515 |     0.07001 |
+| target noise         |                   5 |        1 |      9 | Weighted — Random Forest             |    0.13484 |   0.09203 |   0.20712 |     0.06522 |
+| target noise         |                   5 |        1 |      9 | Weighted — Gradient Boosting         |    0.1262  |   0.09378 |   0.20039 |     0.06974 |
+| target noise         |                   5 |        1 |      9 | IRLS — Ridge                         |    0.10954 |   0.07919 |   0.17487 |     0.05639 |
+| target noise         |                   5 |        1 |     10 | No handling — Ridge                  |    0.149   |   0.09998 |   0.20561 |     0.06821 |
+| target noise         |                   5 |        1 |     10 | Hard removal — Ridge                 |    0.1429  |   0.08837 |   0.1667  |     0.05971 |
+| target noise         |                   5 |        1 |     10 | Winsorizing — Ridge                  |    0.15037 |   0.10134 |   0.20772 |     0.07056 |
+| target noise         |                   5 |        1 |     10 | Robust loss — HuberRegressor         |    0.15114 |   0.09885 |   0.19934 |     0.06606 |
+| target noise         |                   5 |        1 |     10 | Weighted — Ridge (linear)            |    0.1446  |   0.09171 |   0.18829 |     0.06104 |
+| target noise         |                   5 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.14688 |   0.09098 |   0.1885  |     0.056   |
+| target noise         |                   5 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.1467  |   0.09164 |   0.19103 |     0.05742 |
+| target noise         |                   5 |        1 |     10 | Weighted — Random Forest             |    0.17969 |   0.10903 |   0.2631  |     0.06083 |
+| target noise         |                   5 |        1 |     10 | Weighted — Gradient Boosting         |    0.16526 |   0.10264 |   0.2264  |     0.06472 |
+| target noise         |                   5 |        1 |     10 | IRLS — Ridge                         |    0.14478 |   0.08852 |   0.17507 |     0.05705 |
+| target noise         |                   5 |        1 |     11 | No handling — Ridge                  |    0.1904  |   0.10271 |   0.19654 |     0.06797 |
+| target noise         |                   5 |        1 |     11 | Hard removal — Ridge                 |    0.21339 |   0.09102 |   0.15752 |     0.0562  |
+| target noise         |                   5 |        1 |     11 | Winsorizing — Ridge                  |    0.1822  |   0.0999  |   0.19796 |     0.06807 |
+| target noise         |                   5 |        1 |     11 | Robust loss — HuberRegressor         |    0.22414 |   0.10809 |   0.24129 |     0.05695 |
+| target noise         |                   5 |        1 |     11 | Weighted — Ridge (linear)            |    0.20087 |   0.09322 |   0.17671 |     0.06099 |
+| target noise         |                   5 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.20189 |   0.09339 |   0.17658 |     0.06044 |
+| target noise         |                   5 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.20231 |   0.09157 |   0.16623 |     0.05712 |
+| target noise         |                   5 |        1 |     11 | Weighted — Random Forest             |    0.15535 |   0.09888 |   0.20948 |     0.06507 |
+| target noise         |                   5 |        1 |     11 | Weighted — Gradient Boosting         |    0.14731 |   0.09567 |   0.2127  |     0.07072 |
+| target noise         |                   5 |        1 |     11 | IRLS — Ridge                         |    0.21123 |   0.09145 |   0.16898 |     0.05652 |
+| target noise         |                   5 |        1 |     12 | No handling — Ridge                  |    0.12901 |   0.09461 |   0.20461 |     0.07936 |
+| target noise         |                   5 |        1 |     12 | Hard removal — Ridge                 |    0.11429 |   0.08075 |   0.16905 |     0.05871 |
+| target noise         |                   5 |        1 |     12 | Winsorizing — Ridge                  |    0.12868 |   0.09445 |   0.19784 |     0.07704 |
+| target noise         |                   5 |        1 |     12 | Robust loss — HuberRegressor         |    0.16428 |   0.10056 |   0.18687 |     0.06236 |
+| target noise         |                   5 |        1 |     12 | Weighted — Ridge (linear)            |    0.11135 |   0.08054 |   0.15081 |     0.06024 |
+| target noise         |                   5 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11201 |   0.08037 |   0.16185 |     0.06117 |
+| target noise         |                   5 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.1119  |   0.07951 |   0.1573  |     0.06062 |
+| target noise         |                   5 |        1 |     12 | Weighted — Random Forest             |    0.15293 |   0.10247 |   0.25169 |     0.07153 |
+| target noise         |                   5 |        1 |     12 | Weighted — Gradient Boosting         |    0.13876 |   0.09658 |   0.20633 |     0.06803 |
+| target noise         |                   5 |        1 |     12 | IRLS — Ridge                         |    0.11376 |   0.07967 |   0.15929 |     0.05903 |
+| target noise         |                   5 |        1 |     13 | No handling — Ridge                  |    0.13345 |   0.0981  |   0.20774 |     0.07127 |
+| target noise         |                   5 |        1 |     13 | Hard removal — Ridge                 |    0.11019 |   0.08022 |   0.1652  |     0.06448 |
+| target noise         |                   5 |        1 |     13 | Winsorizing — Ridge                  |    0.13703 |   0.10057 |   0.21075 |     0.07338 |
+| target noise         |                   5 |        1 |     13 | Robust loss — HuberRegressor         |    0.12805 |   0.08973 |   0.17806 |     0.0611  |
+| target noise         |                   5 |        1 |     13 | Weighted — Ridge (linear)            |    0.11811 |   0.08635 |   0.16704 |     0.06416 |
+| target noise         |                   5 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12272 |   0.08866 |   0.1815  |     0.06548 |
+| target noise         |                   5 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.12171 |   0.08715 |   0.17296 |     0.06412 |
+| target noise         |                   5 |        1 |     13 | Weighted — Random Forest             |    0.14084 |   0.09993 |   0.23225 |     0.07085 |
+| target noise         |                   5 |        1 |     13 | Weighted — Gradient Boosting         |    0.12906 |   0.0928  |   0.21057 |     0.06673 |
+| target noise         |                   5 |        1 |     13 | IRLS — Ridge                         |    0.10801 |   0.07969 |   0.15393 |     0.06148 |
+| target noise         |                   5 |        1 |     14 | No handling — Ridge                  |    0.13142 |   0.0925  |   0.17109 |     0.07538 |
+| target noise         |                   5 |        1 |     14 | Hard removal — Ridge                 |    0.12003 |   0.08071 |   0.15269 |     0.06033 |
+| target noise         |                   5 |        1 |     14 | Winsorizing — Ridge                  |    0.13096 |   0.09095 |   0.16939 |     0.07024 |
+| target noise         |                   5 |        1 |     14 | Robust loss — HuberRegressor         |    0.13759 |   0.09151 |   0.18136 |     0.06538 |
+| target noise         |                   5 |        1 |     14 | Weighted — Ridge (linear)            |    0.11995 |   0.08012 |   0.14988 |     0.06057 |
+| target noise         |                   5 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.12094 |   0.08183 |   0.15949 |     0.06084 |
+| target noise         |                   5 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12092 |   0.08025 |   0.15336 |     0.05987 |
+| target noise         |                   5 |        1 |     14 | Weighted — Random Forest             |    0.15806 |   0.10552 |   0.24481 |     0.07388 |
+| target noise         |                   5 |        1 |     14 | Weighted — Gradient Boosting         |    0.14115 |   0.09793 |   0.20119 |     0.07026 |
+| target noise         |                   5 |        1 |     14 | IRLS — Ridge                         |    0.12056 |   0.07876 |   0.15141 |     0.05918 |
+| target noise         |                   5 |        1 |     15 | No handling — Ridge                  |    0.17605 |   0.11357 |   0.2566  |     0.08028 |
+| target noise         |                   5 |        1 |     15 | Hard removal — Ridge                 |    0.17532 |   0.09622 |   0.19323 |     0.05963 |
+| target noise         |                   5 |        1 |     15 | Winsorizing — Ridge                  |    0.17362 |   0.11196 |   0.23571 |     0.07457 |
+| target noise         |                   5 |        1 |     15 | Robust loss — HuberRegressor         |    0.18456 |   0.10522 |   0.23445 |     0.06456 |
+| target noise         |                   5 |        1 |     15 | Weighted — Ridge (linear)            |    0.17205 |   0.09871 |   0.20398 |     0.06223 |
+| target noise         |                   5 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16936 |   0.09665 |   0.1964  |     0.06164 |
+| target noise         |                   5 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.17153 |   0.09719 |   0.2017  |     0.06553 |
+| target noise         |                   5 |        1 |     15 | Weighted — Random Forest             |    0.16483 |   0.10347 |   0.23955 |     0.0664  |
+| target noise         |                   5 |        1 |     15 | Weighted — Gradient Boosting         |    0.15504 |   0.10007 |   0.23386 |     0.05836 |
+| target noise         |                   5 |        1 |     15 | IRLS — Ridge                         |    0.17309 |   0.09391 |   0.19053 |     0.05576 |
+| target noise         |                   5 |        2 |      1 | No handling — Ridge                  |    0.1939  |   0.09965 |   0.18592 |     0.07241 |
+| target noise         |                   5 |        2 |      1 | Hard removal — Ridge                 |    0.21614 |   0.09508 |   0.17377 |     0.06516 |
+| target noise         |                   5 |        2 |      1 | Winsorizing — Ridge                  |    0.1844  |   0.09974 |   0.18868 |     0.07129 |
+| target noise         |                   5 |        2 |      1 | Robust loss — HuberRegressor         |    0.21339 |   0.10666 |   0.20422 |     0.06915 |
+| target noise         |                   5 |        2 |      1 | Weighted — Ridge (linear)            |    0.21385 |   0.0963  |   0.17878 |     0.06667 |
+| target noise         |                   5 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.21298 |   0.0961  |   0.1831  |     0.05826 |
+| target noise         |                   5 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.21642 |   0.09713 |   0.18747 |     0.05944 |
+| target noise         |                   5 |        2 |      1 | Weighted — Random Forest             |    0.16832 |   0.1068  |   0.23119 |     0.06477 |
+| target noise         |                   5 |        2 |      1 | Weighted — Gradient Boosting         |    0.15639 |   0.0996  |   0.23787 |     0.05929 |
+| target noise         |                   5 |        2 |      1 | IRLS — Ridge                         |    0.21362 |   0.09444 |   0.16599 |     0.05794 |
+| target noise         |                   5 |        2 |      2 | No handling — Ridge                  |    0.12447 |   0.09183 |   0.18373 |     0.07352 |
+| target noise         |                   5 |        2 |      2 | Hard removal — Ridge                 |    0.12054 |   0.08198 |   0.16255 |     0.05796 |
+| target noise         |                   5 |        2 |      2 | Winsorizing — Ridge                  |    0.12506 |   0.09198 |   0.1773  |     0.07261 |
+| target noise         |                   5 |        2 |      2 | Robust loss — HuberRegressor         |    0.13188 |   0.09199 |   0.19501 |     0.06246 |
+| target noise         |                   5 |        2 |      2 | Weighted — Ridge (linear)            |    0.12052 |   0.08324 |   0.16889 |     0.06218 |
+| target noise         |                   5 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.1205  |   0.0836  |   0.17279 |     0.06287 |
+| target noise         |                   5 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12278 |   0.08302 |   0.17728 |     0.05992 |
+| target noise         |                   5 |        2 |      2 | Weighted — Random Forest             |    0.14926 |   0.09978 |   0.22454 |     0.07134 |
+| target noise         |                   5 |        2 |      2 | Weighted — Gradient Boosting         |    0.13745 |   0.09512 |   0.18944 |     0.06783 |
+| target noise         |                   5 |        2 |      2 | IRLS — Ridge                         |    0.12139 |   0.08345 |   0.16109 |     0.06268 |
+| target noise         |                   5 |        2 |      3 | No handling — Ridge                  |    0.16515 |   0.10773 |   0.23267 |     0.06806 |
+| target noise         |                   5 |        2 |      3 | Hard removal — Ridge                 |    0.16457 |   0.0909  |   0.17901 |     0.06223 |
+| target noise         |                   5 |        2 |      3 | Winsorizing — Ridge                  |    0.16519 |   0.10866 |   0.21976 |     0.07177 |
+| target noise         |                   5 |        2 |      3 | Robust loss — HuberRegressor         |    0.18258 |   0.10127 |   0.22903 |     0.05778 |
+| target noise         |                   5 |        2 |      3 | Weighted — Ridge (linear)            |    0.16667 |   0.09761 |   0.21161 |     0.0586  |
+| target noise         |                   5 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16616 |   0.09738 |   0.21719 |     0.06717 |
+| target noise         |                   5 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16807 |   0.09684 |   0.21523 |     0.05842 |
+| target noise         |                   5 |        2 |      3 | Weighted — Random Forest             |    0.16999 |   0.11166 |   0.24638 |     0.0703  |
+| target noise         |                   5 |        2 |      3 | Weighted — Gradient Boosting         |    0.16725 |   0.1095  |   0.23562 |     0.07014 |
+| target noise         |                   5 |        2 |      3 | IRLS — Ridge                         |    0.16494 |   0.09064 |   0.1864  |     0.05734 |
+| target noise         |                   5 |        2 |      4 | No handling — Ridge                  |    0.13184 |   0.09335 |   0.1987  |     0.06937 |
+| target noise         |                   5 |        2 |      4 | Hard removal — Ridge                 |    0.11025 |   0.07156 |   0.15345 |     0.05075 |
+| target noise         |                   5 |        2 |      4 | Winsorizing — Ridge                  |    0.13545 |   0.09422 |   0.1938  |     0.06929 |
+| target noise         |                   5 |        2 |      4 | Robust loss — HuberRegressor         |    0.11202 |   0.07546 |   0.15425 |     0.04986 |
+| target noise         |                   5 |        2 |      4 | Weighted — Ridge (linear)            |    0.11344 |   0.08056 |   0.16663 |     0.06004 |
+| target noise         |                   5 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.117   |   0.08355 |   0.16492 |     0.05992 |
+| target noise         |                   5 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11635 |   0.0825  |   0.16505 |     0.06026 |
+| target noise         |                   5 |        2 |      4 | Weighted — Random Forest             |    0.1503  |   0.09893 |   0.22186 |     0.06002 |
+| target noise         |                   5 |        2 |      4 | Weighted — Gradient Boosting         |    0.13302 |   0.09141 |   0.19151 |     0.06541 |
+| target noise         |                   5 |        2 |      4 | IRLS — Ridge                         |    0.10967 |   0.07158 |   0.15571 |     0.04731 |
+| target noise         |                   5 |        2 |      5 | No handling — Ridge                  |    0.14768 |   0.10741 |   0.23593 |     0.07346 |
+| target noise         |                   5 |        2 |      5 | Hard removal — Ridge                 |    0.11509 |   0.08127 |   0.17275 |     0.05806 |
+| target noise         |                   5 |        2 |      5 | Winsorizing — Ridge                  |    0.14597 |   0.10746 |   0.23107 |     0.07677 |
+| target noise         |                   5 |        2 |      5 | Robust loss — HuberRegressor         |    0.13833 |   0.09252 |   0.192   |     0.06105 |
+| target noise         |                   5 |        2 |      5 | Weighted — Ridge (linear)            |    0.11979 |   0.08682 |   0.17779 |     0.06226 |
+| target noise         |                   5 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11911 |   0.08799 |   0.17603 |     0.06499 |
+| target noise         |                   5 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11585 |   0.08544 |   0.1718  |     0.06204 |
+| target noise         |                   5 |        2 |      5 | Weighted — Random Forest             |    0.13551 |   0.0921  |   0.20509 |     0.06697 |
+| target noise         |                   5 |        2 |      5 | Weighted — Gradient Boosting         |    0.13358 |   0.09941 |   0.22136 |     0.06951 |
+| target noise         |                   5 |        2 |      5 | IRLS — Ridge                         |    0.11157 |   0.07933 |   0.15668 |     0.0551  |
+| target noise         |                   5 |        2 |      6 | No handling — Ridge                  |    0.11744 |   0.09131 |   0.1962  |     0.07732 |
+| target noise         |                   5 |        2 |      6 | Hard removal — Ridge                 |    0.10356 |   0.07798 |   0.15961 |     0.06247 |
+| target noise         |                   5 |        2 |      6 | Winsorizing — Ridge                  |    0.11831 |   0.0903  |   0.18981 |     0.07453 |
+| target noise         |                   5 |        2 |      6 | Robust loss — HuberRegressor         |    0.13952 |   0.09346 |   0.17713 |     0.06397 |
+| target noise         |                   5 |        2 |      6 | Weighted — Ridge (linear)            |    0.10367 |   0.07898 |   0.15568 |     0.064   |
+| target noise         |                   5 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.10704 |   0.08215 |   0.16501 |     0.06532 |
+| target noise         |                   5 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10464 |   0.07879 |   0.16008 |     0.05871 |
+| target noise         |                   5 |        2 |      6 | Weighted — Random Forest             |    0.14053 |   0.09667 |   0.233   |     0.06522 |
+| target noise         |                   5 |        2 |      6 | Weighted — Gradient Boosting         |    0.13344 |   0.09389 |   0.21174 |     0.06501 |
+| target noise         |                   5 |        2 |      6 | IRLS — Ridge                         |    0.10067 |   0.07539 |   0.15308 |     0.06003 |
+| target noise         |                   5 |        2 |      7 | No handling — Ridge                  |    0.16585 |   0.10871 |   0.21118 |     0.08003 |
+| target noise         |                   5 |        2 |      7 | Hard removal — Ridge                 |    0.16021 |   0.0908  |   0.18768 |     0.06447 |
+| target noise         |                   5 |        2 |      7 | Winsorizing — Ridge                  |    0.15998 |   0.10514 |   0.19556 |     0.07802 |
+| target noise         |                   5 |        2 |      7 | Robust loss — HuberRegressor         |    0.15864 |   0.09403 |   0.19371 |     0.06127 |
+| target noise         |                   5 |        2 |      7 | Weighted — Ridge (linear)            |    0.16442 |   0.09472 |   0.19194 |     0.06187 |
+| target noise         |                   5 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.16449 |   0.09602 |   0.19585 |     0.06405 |
+| target noise         |                   5 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16739 |   0.09525 |   0.19471 |     0.06402 |
+| target noise         |                   5 |        2 |      7 | Weighted — Random Forest             |    0.15892 |   0.10882 |   0.22902 |     0.0763  |
+| target noise         |                   5 |        2 |      7 | Weighted — Gradient Boosting         |    0.14966 |   0.09787 |   0.21544 |     0.06638 |
+| target noise         |                   5 |        2 |      7 | IRLS — Ridge                         |    0.15765 |   0.08809 |   0.18462 |     0.06043 |
+| target noise         |                   5 |        2 |      8 | No handling — Ridge                  |    0.18744 |   0.09533 |   0.17864 |     0.06172 |
+| target noise         |                   5 |        2 |      8 | Hard removal — Ridge                 |    0.21089 |   0.09033 |   0.17552 |     0.05222 |
+| target noise         |                   5 |        2 |      8 | Winsorizing — Ridge                  |    0.18027 |   0.09086 |   0.18109 |     0.05802 |
+| target noise         |                   5 |        2 |      8 | Robust loss — HuberRegressor         |    0.20024 |   0.0954  |   0.16971 |     0.05755 |
+| target noise         |                   5 |        2 |      8 | Weighted — Ridge (linear)            |    0.20997 |   0.09187 |   0.16781 |     0.056   |
+| target noise         |                   5 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.20836 |   0.09184 |   0.16292 |     0.05807 |
+| target noise         |                   5 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.21092 |   0.09095 |   0.17481 |     0.05377 |
+| target noise         |                   5 |        2 |      8 | Weighted — Random Forest             |    0.15708 |   0.10275 |   0.20213 |     0.07255 |
+| target noise         |                   5 |        2 |      8 | Weighted — Gradient Boosting         |    0.15263 |   0.09398 |   0.17852 |     0.06329 |
+| target noise         |                   5 |        2 |      8 | IRLS — Ridge                         |    0.21137 |   0.08944 |   0.16198 |     0.05392 |
+| target noise         |                   5 |        2 |      9 | No handling — Ridge                  |    0.13076 |   0.09803 |   0.2026  |     0.07748 |
+| target noise         |                   5 |        2 |      9 | Hard removal — Ridge                 |    0.11237 |   0.07959 |   0.16881 |     0.0572  |
+| target noise         |                   5 |        2 |      9 | Winsorizing — Ridge                  |    0.13033 |   0.09855 |   0.20771 |     0.07788 |
+| target noise         |                   5 |        2 |      9 | Robust loss — HuberRegressor         |    0.12535 |   0.08796 |   0.1889  |     0.06499 |
+| target noise         |                   5 |        2 |      9 | Weighted — Ridge (linear)            |    0.11731 |   0.08445 |   0.18607 |     0.06273 |
+| target noise         |                   5 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.11992 |   0.0865  |   0.19077 |     0.06377 |
+| target noise         |                   5 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11858 |   0.08414 |   0.18608 |     0.05979 |
+| target noise         |                   5 |        2 |      9 | Weighted — Random Forest             |    0.13559 |   0.09457 |   0.20913 |     0.06785 |
+| target noise         |                   5 |        2 |      9 | Weighted — Gradient Boosting         |    0.12443 |   0.0897  |   0.19379 |     0.06406 |
+| target noise         |                   5 |        2 |      9 | IRLS — Ridge                         |    0.10998 |   0.07842 |   0.16701 |     0.05732 |
+| target noise         |                   5 |        2 |     10 | No handling — Ridge                  |    0.16462 |   0.11145 |   0.19869 |     0.08038 |
+| target noise         |                   5 |        2 |     10 | Hard removal — Ridge                 |    0.14808 |   0.08953 |   0.17189 |     0.05473 |
+| target noise         |                   5 |        2 |     10 | Winsorizing — Ridge                  |    0.1646  |   0.11161 |   0.20062 |     0.08518 |
+| target noise         |                   5 |        2 |     10 | Robust loss — HuberRegressor         |    0.15575 |   0.09975 |   0.2015  |     0.06414 |
+| target noise         |                   5 |        2 |     10 | Weighted — Ridge (linear)            |    0.15251 |   0.09706 |   0.17624 |     0.0679  |
+| target noise         |                   5 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.15283 |   0.09584 |   0.18591 |     0.06098 |
+| target noise         |                   5 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.15357 |   0.09651 |   0.18839 |     0.06683 |
+| target noise         |                   5 |        2 |     10 | Weighted — Random Forest             |    0.18207 |   0.11436 |   0.26121 |     0.07119 |
+| target noise         |                   5 |        2 |     10 | Weighted — Gradient Boosting         |    0.16922 |   0.1064  |   0.22077 |     0.06515 |
+| target noise         |                   5 |        2 |     10 | IRLS — Ridge                         |    0.14855 |   0.08901 |   0.16628 |     0.05707 |
+| target noise         |                   5 |        2 |     11 | No handling — Ridge                  |    0.21229 |   0.10297 |   0.19114 |     0.06932 |
+| target noise         |                   5 |        2 |     11 | Hard removal — Ridge                 |    0.2182  |   0.09187 |   0.17444 |     0.05312 |
+| target noise         |                   5 |        2 |     11 | Winsorizing — Ridge                  |    0.20203 |   0.1031  |   0.18683 |     0.07004 |
+| target noise         |                   5 |        2 |     11 | Robust loss — HuberRegressor         |    0.23174 |   0.11283 |   0.23807 |     0.06647 |
+| target noise         |                   5 |        2 |     11 | Weighted — Ridge (linear)            |    0.22012 |   0.09478 |   0.18176 |     0.0595  |
+| target noise         |                   5 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.21708 |   0.09356 |   0.18165 |     0.05898 |
+| target noise         |                   5 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21844 |   0.09271 |   0.17767 |     0.05807 |
+| target noise         |                   5 |        2 |     11 | Weighted — Random Forest             |    0.15391 |   0.09724 |   0.21709 |     0.06415 |
+| target noise         |                   5 |        2 |     11 | Weighted — Gradient Boosting         |    0.15136 |   0.09637 |   0.20881 |     0.06103 |
+| target noise         |                   5 |        2 |     11 | IRLS — Ridge                         |    0.21702 |   0.09085 |   0.17343 |     0.05518 |
+| target noise         |                   5 |        2 |     12 | No handling — Ridge                  |    0.13759 |   0.09835 |   0.21693 |     0.07059 |
+| target noise         |                   5 |        2 |     12 | Hard removal — Ridge                 |    0.11647 |   0.08154 |   0.15985 |     0.06142 |
+| target noise         |                   5 |        2 |     12 | Winsorizing — Ridge                  |    0.13673 |   0.09855 |   0.21817 |     0.07379 |
+| target noise         |                   5 |        2 |     12 | Robust loss — HuberRegressor         |    0.15658 |   0.09542 |   0.1725  |     0.06153 |
+| target noise         |                   5 |        2 |     12 | Weighted — Ridge (linear)            |    0.11595 |   0.08342 |   0.1703  |     0.06211 |
+| target noise         |                   5 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11826 |   0.08435 |   0.17661 |     0.06544 |
+| target noise         |                   5 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11789 |   0.08322 |   0.17276 |     0.06147 |
+| target noise         |                   5 |        2 |     12 | Weighted — Random Forest             |    0.15109 |   0.10223 |   0.24392 |     0.06696 |
+| target noise         |                   5 |        2 |     12 | Weighted — Gradient Boosting         |    0.13504 |   0.09517 |   0.18987 |     0.07152 |
+| target noise         |                   5 |        2 |     12 | IRLS — Ridge                         |    0.11516 |   0.08118 |   0.16195 |     0.06226 |
+| target noise         |                   5 |        2 |     13 | No handling — Ridge                  |    0.12959 |   0.09819 |   0.19279 |     0.08201 |
+| target noise         |                   5 |        2 |     13 | Hard removal — Ridge                 |    0.10789 |   0.07808 |   0.16769 |     0.05868 |
+| target noise         |                   5 |        2 |     13 | Winsorizing — Ridge                  |    0.13147 |   0.09853 |   0.19172 |     0.08201 |
+| target noise         |                   5 |        2 |     13 | Robust loss — HuberRegressor         |    0.12669 |   0.087   |   0.18155 |     0.06293 |
+| target noise         |                   5 |        2 |     13 | Weighted — Ridge (linear)            |    0.11406 |   0.08359 |   0.17523 |     0.06486 |
+| target noise         |                   5 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11922 |   0.08526 |   0.17788 |     0.06443 |
+| target noise         |                   5 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.1182  |   0.0841  |   0.17703 |     0.06678 |
+| target noise         |                   5 |        2 |     13 | Weighted — Random Forest             |    0.13717 |   0.09886 |   0.22618 |     0.0727  |
+| target noise         |                   5 |        2 |     13 | Weighted — Gradient Boosting         |    0.1309  |   0.09283 |   0.18379 |     0.06715 |
+| target noise         |                   5 |        2 |     13 | IRLS — Ridge                         |    0.10521 |   0.07765 |   0.15395 |     0.06056 |
+| target noise         |                   5 |        2 |     14 | No handling — Ridge                  |    0.12793 |   0.09136 |   0.18864 |     0.07495 |
+| target noise         |                   5 |        2 |     14 | Hard removal — Ridge                 |    0.11602 |   0.07962 |   0.16139 |     0.0577  |
+| target noise         |                   5 |        2 |     14 | Winsorizing — Ridge                  |    0.12698 |   0.08923 |   0.19168 |     0.06866 |
+| target noise         |                   5 |        2 |     14 | Robust loss — HuberRegressor         |    0.13275 |   0.08908 |   0.17803 |     0.06553 |
+| target noise         |                   5 |        2 |     14 | Weighted — Ridge (linear)            |    0.11842 |   0.07886 |   0.15799 |     0.05674 |
+| target noise         |                   5 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.11958 |   0.08064 |   0.16593 |     0.05947 |
+| target noise         |                   5 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12002 |   0.0793  |   0.16419 |     0.05618 |
+| target noise         |                   5 |        2 |     14 | Weighted — Random Forest             |    0.1579  |   0.10574 |   0.22006 |     0.07371 |
+| target noise         |                   5 |        2 |     14 | Weighted — Gradient Boosting         |    0.13711 |   0.09755 |   0.20615 |     0.07367 |
+| target noise         |                   5 |        2 |     14 | IRLS — Ridge                         |    0.11587 |   0.07724 |   0.15858 |     0.0552  |
+| target noise         |                   5 |        2 |     15 | No handling — Ridge                  |    0.17483 |   0.11009 |   0.20992 |     0.08131 |
+| target noise         |                   5 |        2 |     15 | Hard removal — Ridge                 |    0.17594 |   0.09905 |   0.19372 |     0.06323 |
+| target noise         |                   5 |        2 |     15 | Winsorizing — Ridge                  |    0.17339 |   0.11007 |   0.20213 |     0.07975 |
+| target noise         |                   5 |        2 |     15 | Robust loss — HuberRegressor         |    0.18213 |   0.10036 |   0.21197 |     0.06099 |
+| target noise         |                   5 |        2 |     15 | Weighted — Ridge (linear)            |    0.17303 |   0.09718 |   0.19572 |     0.06313 |
+| target noise         |                   5 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.17192 |   0.09798 |   0.20397 |     0.06328 |
+| target noise         |                   5 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.17247 |   0.09639 |   0.19396 |     0.05989 |
+| target noise         |                   5 |        2 |     15 | Weighted — Random Forest             |    0.16756 |   0.1016  |   0.24447 |     0.05777 |
+| target noise         |                   5 |        2 |     15 | Weighted — Gradient Boosting         |    0.16313 |   0.10395 |   0.20513 |     0.06925 |
+| target noise         |                   5 |        2 |     15 | IRLS — Ridge                         |    0.17446 |   0.09398 |   0.19449 |     0.05658 |
+| target noise         |                  10 |        1 |      1 | No handling — Ridge                  |    0.22697 |   0.1161  |   0.20954 |     0.08323 |
+| target noise         |                  10 |        1 |      1 | Hard removal — Ridge                 |    0.22673 |   0.10067 |   0.18401 |     0.06684 |
+| target noise         |                  10 |        1 |      1 | Winsorizing — Ridge                  |    0.21471 |   0.11298 |   0.21089 |     0.08326 |
+| target noise         |                  10 |        1 |      1 | Robust loss — HuberRegressor         |    0.24771 |   0.12132 |   0.24089 |     0.07211 |
+| target noise         |                  10 |        1 |      1 | Weighted — Ridge (linear)            |    0.23217 |   0.10634 |   0.19028 |     0.07354 |
+| target noise         |                  10 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.22621 |   0.10233 |   0.18114 |     0.06667 |
+| target noise         |                  10 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.22808 |   0.10483 |   0.18647 |     0.07202 |
+| target noise         |                  10 |        1 |      1 | Weighted — Random Forest             |    0.17098 |   0.10545 |   0.22972 |     0.06565 |
+| target noise         |                  10 |        1 |      1 | Weighted — Gradient Boosting         |    0.17195 |   0.10106 |   0.23865 |     0.06349 |
+| target noise         |                  10 |        1 |      1 | IRLS — Ridge                         |    0.22614 |   0.09853 |   0.17966 |     0.0619  |
+| target noise         |                  10 |        1 |      2 | No handling — Ridge                  |    0.16373 |   0.1103  |   0.23219 |     0.08328 |
+| target noise         |                  10 |        1 |      2 | Hard removal — Ridge                 |    0.1587  |   0.09695 |   0.19791 |     0.07022 |
+| target noise         |                  10 |        1 |      2 | Winsorizing — Ridge                  |    0.16237 |   0.10873 |   0.22258 |     0.08231 |
+| target noise         |                  10 |        1 |      2 | Robust loss — HuberRegressor         |    0.15234 |   0.09806 |   0.21077 |     0.06492 |
+| target noise         |                  10 |        1 |      2 | Weighted — Ridge (linear)            |    0.14391 |   0.09265 |   0.19112 |     0.05975 |
+| target noise         |                  10 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.13773 |   0.09103 |   0.18146 |     0.06038 |
+| target noise         |                  10 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.13993 |   0.08974 |   0.18628 |     0.06009 |
+| target noise         |                  10 |        1 |      2 | Weighted — Random Forest             |    0.15187 |   0.10416 |   0.23614 |     0.07061 |
+| target noise         |                  10 |        1 |      2 | Weighted — Gradient Boosting         |    0.1379  |   0.09688 |   0.21624 |     0.06947 |
+| target noise         |                  10 |        1 |      2 | IRLS — Ridge                         |    0.15028 |   0.09069 |   0.17759 |     0.06619 |
+| target noise         |                  10 |        1 |      3 | No handling — Ridge                  |    0.16898 |   0.11077 |   0.23523 |     0.07894 |
+| target noise         |                  10 |        1 |      3 | Hard removal — Ridge                 |    0.17245 |   0.09651 |   0.18855 |     0.06647 |
+| target noise         |                  10 |        1 |      3 | Winsorizing — Ridge                  |    0.17014 |   0.11142 |   0.23287 |     0.07659 |
+| target noise         |                  10 |        1 |      3 | Robust loss — HuberRegressor         |    0.1717  |   0.10146 |   0.21867 |     0.06436 |
+| target noise         |                  10 |        1 |      3 | Weighted — Ridge (linear)            |    0.16603 |   0.09725 |   0.18845 |     0.0682  |
+| target noise         |                  10 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16628 |   0.09701 |   0.19304 |     0.06494 |
+| target noise         |                  10 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16538 |   0.09614 |   0.1923  |     0.06399 |
+| target noise         |                  10 |        1 |      3 | Weighted — Random Forest             |    0.16787 |   0.11392 |   0.24468 |     0.0782  |
+| target noise         |                  10 |        1 |      3 | Weighted — Gradient Boosting         |    0.16404 |   0.1049  |   0.22261 |     0.06897 |
+| target noise         |                  10 |        1 |      3 | IRLS — Ridge                         |    0.16607 |   0.09077 |   0.17507 |     0.05905 |
+| target noise         |                  10 |        1 |      4 | No handling — Ridge                  |    0.13486 |   0.09877 |   0.20772 |     0.07893 |
+| target noise         |                  10 |        1 |      4 | Hard removal — Ridge                 |    0.11355 |   0.07794 |   0.17726 |     0.05864 |
+| target noise         |                  10 |        1 |      4 | Winsorizing — Ridge                  |    0.14014 |   0.10173 |   0.21912 |     0.08205 |
+| target noise         |                  10 |        1 |      4 | Robust loss — HuberRegressor         |    0.15164 |   0.09051 |   0.16875 |     0.05669 |
+| target noise         |                  10 |        1 |      4 | Weighted — Ridge (linear)            |    0.12182 |   0.08666 |   0.18732 |     0.06666 |
+| target noise         |                  10 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.12049 |   0.08465 |   0.17629 |     0.06282 |
+| target noise         |                  10 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.12145 |   0.08531 |   0.17614 |     0.06414 |
+| target noise         |                  10 |        1 |      4 | Weighted — Random Forest             |    0.1517  |   0.10312 |   0.23259 |     0.06615 |
+| target noise         |                  10 |        1 |      4 | Weighted — Gradient Boosting         |    0.13247 |   0.09632 |   0.19676 |     0.07078 |
+| target noise         |                  10 |        1 |      4 | IRLS — Ridge                         |    0.10912 |   0.07339 |   0.15783 |     0.05274 |
+| target noise         |                  10 |        1 |      5 | No handling — Ridge                  |    0.14384 |   0.10817 |   0.23233 |     0.08567 |
+| target noise         |                  10 |        1 |      5 | Hard removal — Ridge                 |    0.11849 |   0.0854  |   0.18993 |     0.06401 |
+| target noise         |                  10 |        1 |      5 | Winsorizing — Ridge                  |    0.14229 |   0.10747 |   0.22909 |     0.08856 |
+| target noise         |                  10 |        1 |      5 | Robust loss — HuberRegressor         |    0.14828 |   0.10393 |   0.22333 |     0.07101 |
+| target noise         |                  10 |        1 |      5 | Weighted — Ridge (linear)            |    0.11919 |   0.08845 |   0.19354 |     0.07092 |
+| target noise         |                  10 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11793 |   0.08794 |   0.17448 |     0.07291 |
+| target noise         |                  10 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.11455 |   0.08538 |   0.17857 |     0.06452 |
+| target noise         |                  10 |        1 |      5 | Weighted — Random Forest             |    0.13882 |   0.09729 |   0.20398 |     0.06768 |
+| target noise         |                  10 |        1 |      5 | Weighted — Gradient Boosting         |    0.13644 |   0.09721 |   0.20682 |     0.06881 |
+| target noise         |                  10 |        1 |      5 | IRLS — Ridge                         |    0.10943 |   0.07885 |   0.173   |     0.05775 |
+| target noise         |                  10 |        1 |      6 | No handling — Ridge                  |    0.13835 |   0.10683 |   0.2184  |     0.08879 |
+| target noise         |                  10 |        1 |      6 | Hard removal — Ridge                 |    0.10423 |   0.07992 |   0.15155 |     0.06455 |
+| target noise         |                  10 |        1 |      6 | Winsorizing — Ridge                  |    0.13376 |   0.10522 |   0.21677 |     0.08127 |
+| target noise         |                  10 |        1 |      6 | Robust loss — HuberRegressor         |    0.15732 |   0.09931 |   0.21546 |     0.06273 |
+| target noise         |                  10 |        1 |      6 | Weighted — Ridge (linear)            |    0.1146  |   0.08499 |   0.1769  |     0.06007 |
+| target noise         |                  10 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.11116 |   0.08227 |   0.179   |     0.05859 |
+| target noise         |                  10 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.11054 |   0.081   |   0.17487 |     0.05903 |
+| target noise         |                  10 |        1 |      6 | Weighted — Random Forest             |    0.14424 |   0.1     |   0.23991 |     0.06294 |
+| target noise         |                  10 |        1 |      6 | Weighted — Gradient Boosting         |    0.13919 |   0.09884 |   0.24155 |     0.06645 |
+| target noise         |                  10 |        1 |      6 | IRLS — Ridge                         |    0.10134 |   0.07618 |   0.14733 |     0.05995 |
+| target noise         |                  10 |        1 |      7 | No handling — Ridge                  |    0.17688 |   0.11355 |   0.23086 |     0.08133 |
+| target noise         |                  10 |        1 |      7 | Hard removal — Ridge                 |    0.17037 |   0.09587 |   0.21675 |     0.06509 |
+| target noise         |                  10 |        1 |      7 | Winsorizing — Ridge                  |    0.17297 |   0.11048 |   0.2301  |     0.08123 |
+| target noise         |                  10 |        1 |      7 | Robust loss — HuberRegressor         |    0.18673 |   0.10911 |   0.22584 |     0.0706  |
+| target noise         |                  10 |        1 |      7 | Weighted — Ridge (linear)            |    0.16825 |   0.1017  |   0.19537 |     0.07642 |
+| target noise         |                  10 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.16672 |   0.10033 |   0.20398 |     0.06813 |
+| target noise         |                  10 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.16816 |   0.10049 |   0.20117 |     0.07458 |
+| target noise         |                  10 |        1 |      7 | Weighted — Random Forest             |    0.16276 |   0.11296 |   0.2537  |     0.07886 |
+| target noise         |                  10 |        1 |      7 | Weighted — Gradient Boosting         |    0.15787 |   0.10553 |   0.25205 |     0.0713  |
+| target noise         |                  10 |        1 |      7 | IRLS — Ridge                         |    0.15893 |   0.0893  |   0.1918  |     0.06035 |
+| target noise         |                  10 |        1 |      8 | No handling — Ridge                  |    0.19179 |   0.10811 |   0.21537 |     0.0763  |
+| target noise         |                  10 |        1 |      8 | Hard removal — Ridge                 |    0.20211 |   0.09561 |   0.18291 |     0.06458 |
+| target noise         |                  10 |        1 |      8 | Winsorizing — Ridge                  |    0.18515 |   0.10547 |   0.19941 |     0.07679 |
+| target noise         |                  10 |        1 |      8 | Robust loss — HuberRegressor         |    0.19681 |   0.0993  |   0.189   |     0.06118 |
+| target noise         |                  10 |        1 |      8 | Weighted — Ridge (linear)            |    0.21108 |   0.10097 |   0.18819 |     0.07552 |
+| target noise         |                  10 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.2095  |   0.09716 |   0.17241 |     0.06623 |
+| target noise         |                  10 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21076 |   0.0995  |   0.1796  |     0.06764 |
+| target noise         |                  10 |        1 |      8 | Weighted — Random Forest             |    0.15745 |   0.10251 |   0.20334 |     0.06977 |
+| target noise         |                  10 |        1 |      8 | Weighted — Gradient Boosting         |    0.15534 |   0.09855 |   0.19631 |     0.06604 |
+| target noise         |                  10 |        1 |      8 | IRLS — Ridge                         |    0.20984 |   0.09196 |   0.15643 |     0.05998 |
+| target noise         |                  10 |        1 |      9 | No handling — Ridge                  |    0.13245 |   0.0991  |   0.2089  |     0.08201 |
+| target noise         |                  10 |        1 |      9 | Hard removal — Ridge                 |    0.11252 |   0.08074 |   0.18113 |     0.06181 |
+| target noise         |                  10 |        1 |      9 | Winsorizing — Ridge                  |    0.13062 |   0.0968  |   0.20204 |     0.08018 |
+| target noise         |                  10 |        1 |      9 | Robust loss — HuberRegressor         |    0.13052 |   0.08946 |   0.19281 |     0.06223 |
+| target noise         |                  10 |        1 |      9 | Weighted — Ridge (linear)            |    0.11621 |   0.0842  |   0.17252 |     0.06354 |
+| target noise         |                  10 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.11657 |   0.08408 |   0.17393 |     0.06516 |
+| target noise         |                  10 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.11631 |   0.083   |   0.18005 |     0.05857 |
+| target noise         |                  10 |        1 |      9 | Weighted — Random Forest             |    0.13469 |   0.09218 |   0.20732 |     0.06709 |
+| target noise         |                  10 |        1 |      9 | Weighted — Gradient Boosting         |    0.1295  |   0.09306 |   0.20547 |     0.0632  |
+| target noise         |                  10 |        1 |      9 | IRLS — Ridge                         |    0.10884 |   0.07684 |   0.17595 |     0.0582  |
+| target noise         |                  10 |        1 |     10 | No handling — Ridge                  |    0.17523 |   0.11839 |   0.24604 |     0.08787 |
+| target noise         |                  10 |        1 |     10 | Hard removal — Ridge                 |    0.15132 |   0.09259 |   0.19085 |     0.05962 |
+| target noise         |                  10 |        1 |     10 | Winsorizing — Ridge                  |    0.17642 |   0.12011 |   0.23393 |     0.09177 |
+| target noise         |                  10 |        1 |     10 | Robust loss — HuberRegressor         |    0.16403 |   0.10433 |   0.22408 |     0.06856 |
+| target noise         |                  10 |        1 |     10 | Weighted — Ridge (linear)            |    0.16035 |   0.10136 |   0.20568 |     0.06704 |
+| target noise         |                  10 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.15965 |   0.09926 |   0.20443 |     0.06464 |
+| target noise         |                  10 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.15821 |   0.0987  |   0.20154 |     0.06633 |
+| target noise         |                  10 |        1 |     10 | Weighted — Random Forest             |    0.18778 |   0.11526 |   0.27564 |     0.06898 |
+| target noise         |                  10 |        1 |     10 | Weighted — Gradient Boosting         |    0.17467 |   0.11075 |   0.24734 |     0.06532 |
+| target noise         |                  10 |        1 |     10 | IRLS — Ridge                         |    0.14926 |   0.08977 |   0.18431 |     0.05772 |
+| target noise         |                  10 |        1 |     11 | No handling — Ridge                  |    0.1863  |   0.11481 |   0.21983 |     0.08408 |
+| target noise         |                  10 |        1 |     11 | Hard removal — Ridge                 |    0.20666 |   0.0958  |   0.18637 |     0.06197 |
+| target noise         |                  10 |        1 |     11 | Winsorizing — Ridge                  |    0.18046 |   0.11262 |   0.21112 |     0.08836 |
+| target noise         |                  10 |        1 |     11 | Robust loss — HuberRegressor         |    0.20852 |   0.11182 |   0.2275  |     0.06435 |
+| target noise         |                  10 |        1 |     11 | Weighted — Ridge (linear)            |    0.20577 |   0.10231 |   0.18903 |     0.07318 |
+| target noise         |                  10 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.20468 |   0.09992 |   0.19741 |     0.06805 |
+| target noise         |                  10 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.2084  |   0.1001  |   0.19092 |     0.06914 |
+| target noise         |                  10 |        1 |     11 | Weighted — Random Forest             |    0.14917 |   0.09877 |   0.20016 |     0.06612 |
+| target noise         |                  10 |        1 |     11 | Weighted — Gradient Boosting         |    0.14684 |   0.09966 |   0.22466 |     0.07484 |
+| target noise         |                  10 |        1 |     11 | IRLS — Ridge                         |    0.20569 |   0.09163 |   0.17561 |     0.05857 |
+| target noise         |                  10 |        1 |     12 | No handling — Ridge                  |    0.14008 |   0.10251 |   0.21877 |     0.0787  |
+| target noise         |                  10 |        1 |     12 | Hard removal — Ridge                 |    0.11508 |   0.08155 |   0.16528 |     0.06012 |
+| target noise         |                  10 |        1 |     12 | Winsorizing — Ridge                  |    0.13845 |   0.10103 |   0.20382 |     0.07468 |
+| target noise         |                  10 |        1 |     12 | Robust loss — HuberRegressor         |    0.17757 |   0.10351 |   0.19571 |     0.06447 |
+| target noise         |                  10 |        1 |     12 | Weighted — Ridge (linear)            |    0.11916 |   0.08452 |   0.17047 |     0.06084 |
+| target noise         |                  10 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11851 |   0.08385 |   0.17059 |     0.06259 |
+| target noise         |                  10 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.12057 |   0.08496 |   0.16155 |     0.06134 |
+| target noise         |                  10 |        1 |     12 | Weighted — Random Forest             |    0.14869 |   0.10225 |   0.22355 |     0.07025 |
+| target noise         |                  10 |        1 |     12 | Weighted — Gradient Boosting         |    0.14958 |   0.10223 |   0.20261 |     0.07277 |
+| target noise         |                  10 |        1 |     12 | IRLS — Ridge                         |    0.11873 |   0.0811  |   0.16382 |     0.05673 |
+| target noise         |                  10 |        1 |     13 | No handling — Ridge                  |    0.1438  |   0.1111  |   0.2436  |     0.09198 |
+| target noise         |                  10 |        1 |     13 | Hard removal — Ridge                 |    0.1106  |   0.08342 |   0.17101 |     0.06438 |
+| target noise         |                  10 |        1 |     13 | Winsorizing — Ridge                  |    0.14479 |   0.11158 |   0.23381 |     0.09207 |
+| target noise         |                  10 |        1 |     13 | Robust loss — HuberRegressor         |    0.12639 |   0.09339 |   0.19522 |     0.07191 |
+| target noise         |                  10 |        1 |     13 | Weighted — Ridge (linear)            |    0.12181 |   0.09317 |   0.19868 |     0.07343 |
+| target noise         |                  10 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12284 |   0.09156 |   0.18873 |     0.07147 |
+| target noise         |                  10 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.12269 |   0.09142 |   0.19669 |     0.06948 |
+| target noise         |                  10 |        1 |     13 | Weighted — Random Forest             |    0.14257 |   0.10237 |   0.24835 |     0.06871 |
+| target noise         |                  10 |        1 |     13 | Weighted — Gradient Boosting         |    0.13386 |   0.09611 |   0.21207 |     0.07031 |
+| target noise         |                  10 |        1 |     13 | IRLS — Ridge                         |    0.10776 |   0.08138 |   0.16599 |     0.06531 |
+| target noise         |                  10 |        1 |     14 | No handling — Ridge                  |    0.14828 |   0.10476 |   0.22462 |     0.08209 |
+| target noise         |                  10 |        1 |     14 | Hard removal — Ridge                 |    0.12764 |   0.0857  |   0.16892 |     0.06593 |
+| target noise         |                  10 |        1 |     14 | Winsorizing — Ridge                  |    0.14597 |   0.10104 |   0.22163 |     0.07681 |
+| target noise         |                  10 |        1 |     14 | Robust loss — HuberRegressor         |    0.14538 |   0.09346 |   0.17576 |     0.06592 |
+| target noise         |                  10 |        1 |     14 | Weighted — Ridge (linear)            |    0.12945 |   0.08425 |   0.16142 |     0.06298 |
+| target noise         |                  10 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.12636 |   0.08385 |   0.15384 |     0.06449 |
+| target noise         |                  10 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12684 |   0.08293 |   0.1496  |     0.06023 |
+| target noise         |                  10 |        1 |     14 | Weighted — Random Forest             |    0.15899 |   0.10606 |   0.24544 |     0.07031 |
+| target noise         |                  10 |        1 |     14 | Weighted — Gradient Boosting         |    0.14455 |   0.09965 |   0.20108 |     0.0781  |
+| target noise         |                  10 |        1 |     14 | IRLS — Ridge                         |    0.12361 |   0.07932 |   0.159   |     0.05713 |
+| target noise         |                  10 |        1 |     15 | No handling — Ridge                  |    0.18916 |   0.1232  |   0.25223 |     0.08895 |
+| target noise         |                  10 |        1 |     15 | Hard removal — Ridge                 |    0.18689 |   0.10869 |   0.22406 |     0.07103 |
+| target noise         |                  10 |        1 |     15 | Winsorizing — Ridge                  |    0.18957 |   0.12334 |   0.25562 |     0.08942 |
+| target noise         |                  10 |        1 |     15 | Robust loss — HuberRegressor         |    0.22699 |   0.12467 |   0.28461 |     0.06566 |
+| target noise         |                  10 |        1 |     15 | Weighted — Ridge (linear)            |    0.18127 |   0.10447 |   0.21057 |     0.06952 |
+| target noise         |                  10 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.17489 |   0.09985 |   0.20717 |     0.06662 |
+| target noise         |                  10 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.17886 |   0.10062 |   0.21453 |     0.06747 |
+| target noise         |                  10 |        1 |     15 | Weighted — Random Forest             |    0.16612 |   0.10551 |   0.23808 |     0.06587 |
+| target noise         |                  10 |        1 |     15 | Weighted — Gradient Boosting         |    0.16578 |   0.1051  |   0.22427 |     0.07175 |
+| target noise         |                  10 |        1 |     15 | IRLS — Ridge                         |    0.1776  |   0.09824 |   0.20237 |     0.06122 |
+| target noise         |                  10 |        2 |      1 | No handling — Ridge                  |    0.20475 |   0.10319 |   0.20853 |     0.0647  |
+| target noise         |                  10 |        2 |      1 | Hard removal — Ridge                 |    0.2204  |   0.0952  |   0.17544 |     0.0593  |
+| target noise         |                  10 |        2 |      1 | Winsorizing — Ridge                  |    0.19579 |   0.10292 |   0.20894 |     0.06469 |
+| target noise         |                  10 |        2 |      1 | Robust loss — HuberRegressor         |    0.22798 |   0.11213 |   0.21345 |     0.06548 |
+| target noise         |                  10 |        2 |      1 | Weighted — Ridge (linear)            |    0.21591 |   0.09637 |   0.19255 |     0.0602  |
+| target noise         |                  10 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.21447 |   0.09583 |   0.18576 |     0.06012 |
+| target noise         |                  10 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.21873 |   0.09629 |   0.19468 |     0.05845 |
+| target noise         |                  10 |        2 |      1 | Weighted — Random Forest             |    0.17084 |   0.11126 |   0.23731 |     0.06821 |
+| target noise         |                  10 |        2 |      1 | Weighted — Gradient Boosting         |    0.15857 |   0.09987 |   0.21589 |     0.06243 |
+| target noise         |                  10 |        2 |      1 | IRLS — Ridge                         |    0.21735 |   0.09263 |   0.16494 |     0.0582  |
+| target noise         |                  10 |        2 |      2 | No handling — Ridge                  |    0.14785 |   0.10994 |   0.22116 |     0.08286 |
+| target noise         |                  10 |        2 |      2 | Hard removal — Ridge                 |    0.13657 |   0.09505 |   0.19177 |     0.07044 |
+| target noise         |                  10 |        2 |      2 | Winsorizing — Ridge                  |    0.14623 |   0.10887 |   0.22397 |     0.08503 |
+| target noise         |                  10 |        2 |      2 | Robust loss — HuberRegressor         |    0.15125 |   0.10431 |   0.2215  |     0.07242 |
+| target noise         |                  10 |        2 |      2 | Weighted — Ridge (linear)            |    0.13931 |   0.09687 |   0.2062  |     0.07177 |
+| target noise         |                  10 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.13455 |   0.09366 |   0.20212 |     0.06957 |
+| target noise         |                  10 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.13835 |   0.09275 |   0.20735 |     0.06473 |
+| target noise         |                  10 |        2 |      2 | Weighted — Random Forest             |    0.15563 |   0.10889 |   0.22813 |     0.07438 |
+| target noise         |                  10 |        2 |      2 | Weighted — Gradient Boosting         |    0.14233 |   0.10295 |   0.20597 |     0.07882 |
+| target noise         |                  10 |        2 |      2 | IRLS — Ridge                         |    0.13007 |   0.08966 |   0.17752 |     0.06645 |
+| target noise         |                  10 |        2 |      3 | No handling — Ridge                  |    0.17762 |   0.11939 |   0.24772 |     0.09052 |
+| target noise         |                  10 |        2 |      3 | Hard removal — Ridge                 |    0.16785 |   0.09467 |   0.18244 |     0.06332 |
+| target noise         |                  10 |        2 |      3 | Winsorizing — Ridge                  |    0.17539 |   0.118   |   0.24229 |     0.0872  |
+| target noise         |                  10 |        2 |      3 | Robust loss — HuberRegressor         |    0.18135 |   0.10722 |   0.21301 |     0.06872 |
+| target noise         |                  10 |        2 |      3 | Weighted — Ridge (linear)            |    0.16705 |   0.1016  |   0.18216 |     0.07488 |
+| target noise         |                  10 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.1658  |   0.10106 |   0.20533 |     0.06847 |
+| target noise         |                  10 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16727 |   0.10037 |   0.20108 |     0.06857 |
+| target noise         |                  10 |        2 |      3 | Weighted — Random Forest             |    0.16825 |   0.11198 |   0.24888 |     0.06904 |
+| target noise         |                  10 |        2 |      3 | Weighted — Gradient Boosting         |    0.16594 |   0.10707 |   0.21272 |     0.07329 |
+| target noise         |                  10 |        2 |      3 | IRLS — Ridge                         |    0.16636 |   0.09308 |   0.17321 |     0.06269 |
+| target noise         |                  10 |        2 |      4 | No handling — Ridge                  |    0.13709 |   0.10333 |   0.20571 |     0.08466 |
+| target noise         |                  10 |        2 |      4 | Hard removal — Ridge                 |    0.1122  |   0.07788 |   0.16472 |     0.05723 |
+| target noise         |                  10 |        2 |      4 | Winsorizing — Ridge                  |    0.1377  |   0.10279 |   0.20656 |     0.08358 |
+| target noise         |                  10 |        2 |      4 | Robust loss — HuberRegressor         |    0.11844 |   0.08309 |   0.16779 |     0.06291 |
+| target noise         |                  10 |        2 |      4 | Weighted — Ridge (linear)            |    0.11333 |   0.08246 |   0.17475 |     0.05892 |
+| target noise         |                  10 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11514 |   0.08176 |   0.17233 |     0.06136 |
+| target noise         |                  10 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11699 |   0.082   |   0.16949 |     0.06373 |
+| target noise         |                  10 |        2 |      4 | Weighted — Random Forest             |    0.15252 |   0.10203 |   0.24279 |     0.06389 |
+| target noise         |                  10 |        2 |      4 | Weighted — Gradient Boosting         |    0.12745 |   0.08908 |   0.18059 |     0.06722 |
+| target noise         |                  10 |        2 |      4 | IRLS — Ridge                         |    0.10605 |   0.07316 |   0.15469 |     0.05504 |
+| target noise         |                  10 |        2 |      5 | No handling — Ridge                  |    0.13981 |   0.10632 |   0.21981 |     0.08518 |
+| target noise         |                  10 |        2 |      5 | Hard removal — Ridge                 |    0.11627 |   0.08893 |   0.17313 |     0.0726  |
+| target noise         |                  10 |        2 |      5 | Winsorizing — Ridge                  |    0.13538 |   0.10407 |   0.20896 |     0.08056 |
+| target noise         |                  10 |        2 |      5 | Robust loss — HuberRegressor         |    0.14075 |   0.09724 |   0.21139 |     0.06908 |
+| target noise         |                  10 |        2 |      5 | Weighted — Ridge (linear)            |    0.11461 |   0.08782 |   0.17614 |     0.07221 |
+| target noise         |                  10 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11453 |   0.0869  |   0.17721 |     0.07151 |
+| target noise         |                  10 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11169 |   0.08506 |   0.17586 |     0.07094 |
+| target noise         |                  10 |        2 |      5 | Weighted — Random Forest             |    0.13316 |   0.09087 |   0.19967 |     0.06404 |
+| target noise         |                  10 |        2 |      5 | Weighted — Gradient Boosting         |    0.12706 |   0.09344 |   0.18748 |     0.07491 |
+| target noise         |                  10 |        2 |      5 | IRLS — Ridge                         |    0.10872 |   0.08062 |   0.15984 |     0.06323 |
+| target noise         |                  10 |        2 |      6 | No handling — Ridge                  |    0.12525 |   0.09493 |   0.19021 |     0.08045 |
+| target noise         |                  10 |        2 |      6 | Hard removal — Ridge                 |    0.10029 |   0.07508 |   0.16291 |     0.06028 |
+| target noise         |                  10 |        2 |      6 | Winsorizing — Ridge                  |    0.12664 |   0.09615 |   0.20108 |     0.07907 |
+| target noise         |                  10 |        2 |      6 | Robust loss — HuberRegressor         |    0.13604 |   0.09019 |   0.17103 |     0.06328 |
+| target noise         |                  10 |        2 |      6 | Weighted — Ridge (linear)            |    0.10582 |   0.07884 |   0.15726 |     0.06335 |
+| target noise         |                  10 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.10924 |   0.08168 |   0.177   |     0.06497 |
+| target noise         |                  10 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10599 |   0.07777 |   0.16277 |     0.06138 |
+| target noise         |                  10 |        2 |      6 | Weighted — Random Forest             |    0.14839 |   0.10051 |   0.24054 |     0.06687 |
+| target noise         |                  10 |        2 |      6 | Weighted — Gradient Boosting         |    0.1416  |   0.09948 |   0.23848 |     0.06336 |
+| target noise         |                  10 |        2 |      6 | IRLS — Ridge                         |    0.0982  |   0.07291 |   0.14556 |     0.05703 |
+| target noise         |                  10 |        2 |      7 | No handling — Ridge                  |    0.16475 |   0.10864 |   0.20178 |     0.07324 |
+| target noise         |                  10 |        2 |      7 | Hard removal — Ridge                 |    0.15831 |   0.09397 |   0.19278 |     0.06696 |
+| target noise         |                  10 |        2 |      7 | Winsorizing — Ridge                  |    0.16338 |   0.10809 |   0.21572 |     0.07398 |
+| target noise         |                  10 |        2 |      7 | Robust loss — HuberRegressor         |    0.19822 |   0.10939 |   0.21508 |     0.06588 |
+| target noise         |                  10 |        2 |      7 | Weighted — Ridge (linear)            |    0.15855 |   0.09396 |   0.18621 |     0.06722 |
+| target noise         |                  10 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.15886 |   0.09479 |   0.20347 |     0.0644  |
+| target noise         |                  10 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16129 |   0.09341 |   0.1905  |     0.05978 |
+| target noise         |                  10 |        2 |      7 | Weighted — Random Forest             |    0.15722 |   0.10682 |   0.23812 |     0.07048 |
+| target noise         |                  10 |        2 |      7 | Weighted — Gradient Boosting         |    0.15403 |   0.10245 |   0.20739 |     0.07326 |
+| target noise         |                  10 |        2 |      7 | IRLS — Ridge                         |    0.15435 |   0.08784 |   0.17667 |     0.05755 |
+| target noise         |                  10 |        2 |      8 | No handling — Ridge                  |    0.21539 |   0.11196 |   0.21132 |     0.08096 |
+| target noise         |                  10 |        2 |      8 | Hard removal — Ridge                 |    0.21193 |   0.09604 |   0.17702 |     0.06417 |
+| target noise         |                  10 |        2 |      8 | Winsorizing — Ridge                  |    0.20553 |   0.10792 |   0.20109 |     0.07592 |
+| target noise         |                  10 |        2 |      8 | Robust loss — HuberRegressor         |    0.21326 |   0.10352 |   0.19476 |     0.06328 |
+| target noise         |                  10 |        2 |      8 | Weighted — Ridge (linear)            |    0.22488 |   0.10058 |   0.18329 |     0.06877 |
+| target noise         |                  10 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.21697 |   0.0951  |   0.18168 |     0.06391 |
+| target noise         |                  10 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.22108 |   0.09596 |   0.17952 |     0.06053 |
+| target noise         |                  10 |        2 |      8 | Weighted — Random Forest             |    0.15688 |   0.1033  |   0.20885 |     0.06628 |
+| target noise         |                  10 |        2 |      8 | Weighted — Gradient Boosting         |    0.15302 |   0.09833 |   0.20422 |     0.06457 |
+| target noise         |                  10 |        2 |      8 | IRLS — Ridge                         |    0.22077 |   0.09447 |   0.16825 |     0.05565 |
+| target noise         |                  10 |        2 |      9 | No handling — Ridge                  |    0.14313 |   0.10832 |   0.22959 |     0.08651 |
+| target noise         |                  10 |        2 |      9 | Hard removal — Ridge                 |    0.1244  |   0.09158 |   0.20608 |     0.07378 |
+| target noise         |                  10 |        2 |      9 | Winsorizing — Ridge                  |    0.14106 |   0.10724 |   0.21855 |     0.08481 |
+| target noise         |                  10 |        2 |      9 | Robust loss — HuberRegressor         |    0.15737 |   0.09858 |   0.20364 |     0.06217 |
+| target noise         |                  10 |        2 |      9 | Weighted — Ridge (linear)            |    0.12556 |   0.09167 |   0.19201 |     0.07011 |
+| target noise         |                  10 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12473 |   0.09094 |   0.19811 |     0.06854 |
+| target noise         |                  10 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.12504 |   0.09001 |   0.19318 |     0.06572 |
+| target noise         |                  10 |        2 |      9 | Weighted — Random Forest             |    0.13537 |   0.09177 |   0.20822 |     0.05743 |
+| target noise         |                  10 |        2 |      9 | Weighted — Gradient Boosting         |    0.12725 |   0.09007 |   0.18773 |     0.06565 |
+| target noise         |                  10 |        2 |      9 | IRLS — Ridge                         |    0.11366 |   0.08118 |   0.18927 |     0.06128 |
+| target noise         |                  10 |        2 |     10 | No handling — Ridge                  |    0.15266 |   0.1087  |   0.21791 |     0.08336 |
+| target noise         |                  10 |        2 |     10 | Hard removal — Ridge                 |    0.14529 |   0.08889 |   0.16336 |     0.05712 |
+| target noise         |                  10 |        2 |     10 | Winsorizing — Ridge                  |    0.15621 |   0.11134 |   0.21606 |     0.08284 |
+| target noise         |                  10 |        2 |     10 | Robust loss — HuberRegressor         |    0.14623 |   0.09991 |   0.22265 |     0.07021 |
+| target noise         |                  10 |        2 |     10 | Weighted — Ridge (linear)            |    0.1439  |   0.09543 |   0.19937 |     0.06739 |
+| target noise         |                  10 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.14596 |   0.09419 |   0.20035 |     0.0663  |
+| target noise         |                  10 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14553 |   0.09433 |   0.19214 |     0.06464 |
+| target noise         |                  10 |        2 |     10 | Weighted — Random Forest             |    0.17843 |   0.11561 |   0.26179 |     0.07441 |
+| target noise         |                  10 |        2 |     10 | Weighted — Gradient Boosting         |    0.16023 |   0.10462 |   0.23398 |     0.06404 |
+| target noise         |                  10 |        2 |     10 | IRLS — Ridge                         |    0.14423 |   0.0887  |   0.16714 |     0.05872 |
+| target noise         |                  10 |        2 |     11 | No handling — Ridge                  |    0.20886 |   0.10982 |   0.21759 |     0.07414 |
+| target noise         |                  10 |        2 |     11 | Hard removal — Ridge                 |    0.22098 |   0.0956  |   0.17561 |     0.0598  |
+| target noise         |                  10 |        2 |     11 | Winsorizing — Ridge                  |    0.19507 |   0.10494 |   0.20867 |     0.07036 |
+| target noise         |                  10 |        2 |     11 | Robust loss — HuberRegressor         |    0.24746 |   0.11465 |   0.25696 |     0.059   |
+| target noise         |                  10 |        2 |     11 | Weighted — Ridge (linear)            |    0.21706 |   0.09641 |   0.18062 |     0.06211 |
+| target noise         |                  10 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.21468 |   0.09509 |   0.17074 |     0.05836 |
+| target noise         |                  10 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21738 |   0.09494 |   0.17686 |     0.06191 |
+| target noise         |                  10 |        2 |     11 | Weighted — Random Forest             |    0.15013 |   0.09643 |   0.18347 |     0.0627  |
+| target noise         |                  10 |        2 |     11 | Weighted — Gradient Boosting         |    0.15775 |   0.10038 |   0.20696 |     0.07164 |
+| target noise         |                  10 |        2 |     11 | IRLS — Ridge                         |    0.21862 |   0.09117 |   0.17587 |     0.05119 |
+| target noise         |                  10 |        2 |     12 | No handling — Ridge                  |    0.14709 |   0.11316 |   0.22546 |     0.09821 |
+| target noise         |                  10 |        2 |     12 | Hard removal — Ridge                 |    0.11339 |   0.08224 |   0.17106 |     0.0633  |
+| target noise         |                  10 |        2 |     12 | Winsorizing — Ridge                  |    0.14626 |   0.11365 |   0.22384 |     0.09652 |
+| target noise         |                  10 |        2 |     12 | Robust loss — HuberRegressor         |    0.21836 |   0.12356 |   0.25962 |     0.07054 |
+| target noise         |                  10 |        2 |     12 | Weighted — Ridge (linear)            |    0.11827 |   0.08839 |   0.17652 |     0.0719  |
+| target noise         |                  10 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11686 |   0.08674 |   0.17463 |     0.06636 |
+| target noise         |                  10 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11892 |   0.0873  |   0.18328 |     0.06878 |
+| target noise         |                  10 |        2 |     12 | Weighted — Random Forest             |    0.15433 |   0.10946 |   0.25507 |     0.08052 |
+| target noise         |                  10 |        2 |     12 | Weighted — Gradient Boosting         |    0.14613 |   0.10738 |   0.2473  |     0.08795 |
+| target noise         |                  10 |        2 |     12 | IRLS — Ridge                         |    0.11277 |   0.07985 |   0.15821 |     0.06319 |
+| target noise         |                  10 |        2 |     13 | No handling — Ridge                  |    0.13322 |   0.10184 |   0.22616 |     0.08101 |
+| target noise         |                  10 |        2 |     13 | Hard removal — Ridge                 |    0.10857 |   0.07987 |   0.18565 |     0.0591  |
+| target noise         |                  10 |        2 |     13 | Winsorizing — Ridge                  |    0.13212 |   0.10044 |   0.21623 |     0.07923 |
+| target noise         |                  10 |        2 |     13 | Robust loss — HuberRegressor         |    0.13901 |   0.09375 |   0.22275 |     0.05902 |
+| target noise         |                  10 |        2 |     13 | Weighted — Ridge (linear)            |    0.11661 |   0.08733 |   0.18592 |     0.07181 |
+| target noise         |                  10 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11984 |   0.08746 |   0.18866 |     0.06591 |
+| target noise         |                  10 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.12069 |   0.08784 |   0.18356 |     0.07089 |
+| target noise         |                  10 |        2 |     13 | Weighted — Random Forest             |    0.13746 |   0.09815 |   0.23757 |     0.06924 |
+| target noise         |                  10 |        2 |     13 | Weighted — Gradient Boosting         |    0.12862 |   0.09236 |   0.19523 |     0.06407 |
+| target noise         |                  10 |        2 |     13 | IRLS — Ridge                         |    0.10441 |   0.07692 |   0.17257 |     0.05704 |
+| target noise         |                  10 |        2 |     14 | No handling — Ridge                  |    0.13908 |   0.10057 |   0.20607 |     0.08335 |
+| target noise         |                  10 |        2 |     14 | Hard removal — Ridge                 |    0.12179 |   0.08562 |   0.16583 |     0.06805 |
+| target noise         |                  10 |        2 |     14 | Winsorizing — Ridge                  |    0.1358  |   0.09776 |   0.20494 |     0.0749  |
+| target noise         |                  10 |        2 |     14 | Robust loss — HuberRegressor         |    0.14574 |   0.09567 |   0.18799 |     0.06702 |
+| target noise         |                  10 |        2 |     14 | Weighted — Ridge (linear)            |    0.12453 |   0.08657 |   0.16358 |     0.06695 |
+| target noise         |                  10 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.12159 |   0.08408 |   0.16955 |     0.0659  |
+| target noise         |                  10 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12286 |   0.08415 |   0.17258 |     0.06304 |
+| target noise         |                  10 |        2 |     14 | Weighted — Random Forest             |    0.1545  |   0.10512 |   0.23692 |     0.06792 |
+| target noise         |                  10 |        2 |     14 | Weighted — Gradient Boosting         |    0.14626 |   0.09894 |   0.23388 |     0.06442 |
+| target noise         |                  10 |        2 |     14 | IRLS — Ridge                         |    0.12135 |   0.08115 |   0.15677 |     0.05887 |
+| target noise         |                  10 |        2 |     15 | No handling — Ridge                  |    0.1785  |   0.11395 |   0.23495 |     0.07402 |
+| target noise         |                  10 |        2 |     15 | Hard removal — Ridge                 |    0.18257 |   0.10104 |   0.22019 |     0.06107 |
+| target noise         |                  10 |        2 |     15 | Winsorizing — Ridge                  |    0.17637 |   0.1137  |   0.2264  |     0.07753 |
+| target noise         |                  10 |        2 |     15 | Robust loss — HuberRegressor         |    0.16779 |   0.10014 |   0.21198 |     0.06193 |
+| target noise         |                  10 |        2 |     15 | Weighted — Ridge (linear)            |    0.17663 |   0.09784 |   0.21197 |     0.05813 |
+| target noise         |                  10 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.17524 |   0.0985  |   0.21337 |     0.06376 |
+| target noise         |                  10 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.17548 |   0.09723 |   0.21657 |     0.0568  |
+| target noise         |                  10 |        2 |     15 | Weighted — Random Forest             |    0.16521 |   0.10242 |   0.23039 |     0.06457 |
+| target noise         |                  10 |        2 |     15 | Weighted — Gradient Boosting         |    0.16147 |   0.10196 |   0.2163  |     0.06742 |
+| target noise         |                  10 |        2 |     15 | IRLS — Ridge                         |    0.17389 |   0.09311 |   0.19546 |     0.05945 |
+| target noise         |                  20 |        1 |      1 | No handling — Ridge                  |    0.19791 |   0.12631 |   0.2412  |     0.0888  |
+| target noise         |                  20 |        1 |      1 | Hard removal — Ridge                 |    0.21683 |   0.11916 |   0.22551 |     0.08331 |
+| target noise         |                  20 |        1 |      1 | Winsorizing — Ridge                  |    0.19542 |   0.12366 |   0.22806 |     0.09265 |
+| target noise         |                  20 |        1 |      1 | Robust loss — HuberRegressor         |    0.26588 |   0.1401  |   0.29406 |     0.07297 |
+| target noise         |                  20 |        1 |      1 | Weighted — Ridge (linear)            |    0.20812 |   0.10842 |   0.19739 |     0.07636 |
+| target noise         |                  20 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.20427 |   0.10236 |   0.19049 |     0.07188 |
+| target noise         |                  20 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.20805 |   0.1046  |   0.19014 |     0.07571 |
+| target noise         |                  20 |        1 |      1 | Weighted — Random Forest             |    0.16285 |   0.10839 |   0.23129 |     0.06918 |
+| target noise         |                  20 |        1 |      1 | Weighted — Gradient Boosting         |    0.16093 |   0.1029  |   0.21874 |     0.0656  |
+| target noise         |                  20 |        1 |      1 | IRLS — Ridge                         |    0.21042 |   0.09951 |   0.18155 |     0.0632  |
+| target noise         |                  20 |        1 |      2 | No handling — Ridge                  |    0.15088 |   0.1154  |   0.23589 |     0.09731 |
+| target noise         |                  20 |        1 |      2 | Hard removal — Ridge                 |    0.13944 |   0.09867 |   0.20853 |     0.07576 |
+| target noise         |                  20 |        1 |      2 | Winsorizing — Ridge                  |    0.14767 |   0.11135 |   0.22319 |     0.09064 |
+| target noise         |                  20 |        1 |      2 | Robust loss — HuberRegressor         |    0.19176 |   0.11424 |   0.25555 |     0.06648 |
+| target noise         |                  20 |        1 |      2 | Weighted — Ridge (linear)            |    0.12797 |   0.09307 |   0.18275 |     0.07383 |
+| target noise         |                  20 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.12374 |   0.08933 |   0.17292 |     0.07093 |
+| target noise         |                  20 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12599 |   0.09047 |   0.17418 |     0.07086 |
+| target noise         |                  20 |        1 |      2 | Weighted — Random Forest             |    0.15597 |   0.10711 |   0.25279 |     0.07322 |
+| target noise         |                  20 |        1 |      2 | Weighted — Gradient Boosting         |    0.14236 |   0.10256 |   0.19847 |     0.07849 |
+| target noise         |                  20 |        1 |      2 | IRLS — Ridge                         |    0.12031 |   0.0836  |   0.17291 |     0.06256 |
+| target noise         |                  20 |        1 |      3 | No handling — Ridge                  |    0.19831 |   0.13617 |   0.26831 |     0.10384 |
+| target noise         |                  20 |        1 |      3 | Hard removal — Ridge                 |    0.18002 |   0.11708 |   0.229   |     0.09124 |
+| target noise         |                  20 |        1 |      3 | Winsorizing — Ridge                  |    0.19512 |   0.13558 |   0.26353 |     0.10517 |
+| target noise         |                  20 |        1 |      3 | Robust loss — HuberRegressor         |    0.21779 |   0.13473 |   0.27778 |     0.09034 |
+| target noise         |                  20 |        1 |      3 | Weighted — Ridge (linear)            |    0.17913 |   0.11146 |   0.19758 |     0.08533 |
+| target noise         |                  20 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.17391 |   0.10637 |   0.20704 |     0.07533 |
+| target noise         |                  20 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.17389 |   0.10656 |   0.20733 |     0.07687 |
+| target noise         |                  20 |        1 |      3 | Weighted — Random Forest             |    0.16987 |   0.11774 |   0.22942 |     0.08341 |
+| target noise         |                  20 |        1 |      3 | Weighted — Gradient Boosting         |    0.17264 |   0.11467 |   0.23568 |     0.08382 |
+| target noise         |                  20 |        1 |      3 | IRLS — Ridge                         |    0.16925 |   0.09827 |   0.19    |     0.07024 |
+| target noise         |                  20 |        1 |      4 | No handling — Ridge                  |    0.1532  |   0.11583 |   0.24233 |     0.08901 |
+| target noise         |                  20 |        1 |      4 | Hard removal — Ridge                 |    0.12969 |   0.09734 |   0.19721 |     0.07751 |
+| target noise         |                  20 |        1 |      4 | Winsorizing — Ridge                  |    0.15121 |   0.11415 |   0.23544 |     0.08771 |
+| target noise         |                  20 |        1 |      4 | Robust loss — HuberRegressor         |    0.18099 |   0.11128 |   0.22693 |     0.07556 |
+| target noise         |                  20 |        1 |      4 | Weighted — Ridge (linear)            |    0.11959 |   0.08814 |   0.18869 |     0.06833 |
+| target noise         |                  20 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11856 |   0.08669 |   0.18235 |     0.06457 |
+| target noise         |                  20 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11866 |   0.08611 |   0.18686 |     0.06603 |
+| target noise         |                  20 |        1 |      4 | Weighted — Random Forest             |    0.15309 |   0.10062 |   0.21342 |     0.06964 |
+| target noise         |                  20 |        1 |      4 | Weighted — Gradient Boosting         |    0.1313  |   0.08855 |   0.19747 |     0.06358 |
+| target noise         |                  20 |        1 |      4 | IRLS — Ridge                         |    0.11257 |   0.07814 |   0.17322 |     0.05867 |
+| target noise         |                  20 |        1 |      5 | No handling — Ridge                  |    0.18275 |   0.13464 |   0.30869 |     0.10465 |
+| target noise         |                  20 |        1 |      5 | Hard removal — Ridge                 |    0.16628 |   0.11725 |   0.27211 |     0.08763 |
+| target noise         |                  20 |        1 |      5 | Winsorizing — Ridge                  |    0.18136 |   0.13439 |   0.29139 |     0.1054  |
+| target noise         |                  20 |        1 |      5 | Robust loss — HuberRegressor         |    0.17475 |   0.1197  |   0.26666 |     0.07798 |
+| target noise         |                  20 |        1 |      5 | Weighted — Ridge (linear)            |    0.14146 |   0.1005  |   0.21783 |     0.0713  |
+| target noise         |                  20 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.13517 |   0.09752 |   0.22058 |     0.06974 |
+| target noise         |                  20 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.13259 |   0.09431 |   0.22152 |     0.06318 |
+| target noise         |                  20 |        1 |      5 | Weighted — Random Forest             |    0.14902 |   0.10221 |   0.23479 |     0.07001 |
+| target noise         |                  20 |        1 |      5 | Weighted — Gradient Boosting         |    0.15253 |   0.10644 |   0.24923 |     0.07469 |
+| target noise         |                  20 |        1 |      5 | IRLS — Ridge                         |    0.12491 |   0.08814 |   0.2059  |     0.06397 |
+| target noise         |                  20 |        1 |      6 | No handling — Ridge                  |    0.1561  |   0.12178 |   0.23794 |     0.1032  |
+| target noise         |                  20 |        1 |      6 | Hard removal — Ridge                 |    0.14206 |   0.11093 |   0.23499 |     0.08585 |
+| target noise         |                  20 |        1 |      6 | Winsorizing — Ridge                  |    0.15363 |   0.12123 |   0.23588 |     0.10117 |
+| target noise         |                  20 |        1 |      6 | Robust loss — HuberRegressor         |    0.184   |   0.12656 |   0.25928 |     0.09177 |
+| target noise         |                  20 |        1 |      6 | Weighted — Ridge (linear)            |    0.12336 |   0.09596 |   0.19027 |     0.08066 |
+| target noise         |                  20 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.11586 |   0.08856 |   0.18213 |     0.07143 |
+| target noise         |                  20 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.11718 |   0.08921 |   0.18775 |     0.07274 |
+| target noise         |                  20 |        1 |      6 | Weighted — Random Forest             |    0.1451  |   0.10556 |   0.22897 |     0.07927 |
+| target noise         |                  20 |        1 |      6 | Weighted — Gradient Boosting         |    0.13236 |   0.09434 |   0.20683 |     0.07141 |
+| target noise         |                  20 |        1 |      6 | IRLS — Ridge                         |    0.10855 |   0.08084 |   0.16971 |     0.05989 |
+| target noise         |                  20 |        1 |      7 | No handling — Ridge                  |    0.19332 |   0.12999 |   0.24549 |     0.09447 |
+| target noise         |                  20 |        1 |      7 | Hard removal — Ridge                 |    0.18753 |   0.11683 |   0.2343  |     0.08737 |
+| target noise         |                  20 |        1 |      7 | Winsorizing — Ridge                  |    0.19034 |   0.12811 |   0.24531 |     0.10013 |
+| target noise         |                  20 |        1 |      7 | Robust loss — HuberRegressor         |    0.17391 |   0.11247 |   0.22327 |     0.07705 |
+| target noise         |                  20 |        1 |      7 | Weighted — Ridge (linear)            |    0.18176 |   0.10963 |   0.20929 |     0.07544 |
+| target noise         |                  20 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.17708 |   0.10561 |   0.20429 |     0.07274 |
+| target noise         |                  20 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.17904 |   0.10718 |   0.20774 |     0.0788  |
+| target noise         |                  20 |        1 |      7 | Weighted — Random Forest             |    0.16783 |   0.11681 |   0.27303 |     0.08524 |
+| target noise         |                  20 |        1 |      7 | Weighted — Gradient Boosting         |    0.16962 |   0.11643 |   0.26756 |     0.07932 |
+| target noise         |                  20 |        1 |      7 | IRLS — Ridge                         |    0.16628 |   0.09265 |   0.19968 |     0.06464 |
+| target noise         |                  20 |        1 |      8 | No handling — Ridge                  |    0.20981 |   0.11574 |   0.22491 |     0.08407 |
+| target noise         |                  20 |        1 |      8 | Hard removal — Ridge                 |    0.2302  |   0.11165 |   0.22145 |     0.07237 |
+| target noise         |                  20 |        1 |      8 | Winsorizing — Ridge                  |    0.20436 |   0.11367 |   0.20976 |     0.08263 |
+| target noise         |                  20 |        1 |      8 | Robust loss — HuberRegressor         |    0.22851 |   0.11529 |   0.21023 |     0.07489 |
+| target noise         |                  20 |        1 |      8 | Weighted — Ridge (linear)            |    0.21644 |   0.09913 |   0.18017 |     0.06374 |
+| target noise         |                  20 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.21455 |   0.09588 |   0.17193 |     0.06653 |
+| target noise         |                  20 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21759 |   0.09784 |   0.17819 |     0.06205 |
+| target noise         |                  20 |        1 |      8 | Weighted — Random Forest             |    0.16157 |   0.10307 |   0.2104  |     0.06962 |
+| target noise         |                  20 |        1 |      8 | Weighted — Gradient Boosting         |    0.16112 |   0.10109 |   0.2207  |     0.06764 |
+| target noise         |                  20 |        1 |      8 | IRLS — Ridge                         |    0.22065 |   0.0931  |   0.16161 |     0.05768 |
+| target noise         |                  20 |        1 |      9 | No handling — Ridge                  |    0.1656  |   0.12914 |   0.26054 |     0.10721 |
+| target noise         |                  20 |        1 |      9 | Hard removal — Ridge                 |    0.15023 |   0.11325 |   0.24347 |     0.08503 |
+| target noise         |                  20 |        1 |      9 | Winsorizing — Ridge                  |    0.16693 |   0.1298  |   0.26927 |     0.0999  |
+| target noise         |                  20 |        1 |      9 | Robust loss — HuberRegressor         |    0.16335 |   0.1124  |   0.25474 |     0.0758  |
+| target noise         |                  20 |        1 |      9 | Weighted — Ridge (linear)            |    0.13737 |   0.10213 |   0.22157 |     0.07815 |
+| target noise         |                  20 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.13156 |   0.09769 |   0.2207  |     0.07481 |
+| target noise         |                  20 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.13071 |   0.09664 |   0.21666 |     0.07456 |
+| target noise         |                  20 |        1 |      9 | Weighted — Random Forest             |    0.14113 |   0.0976  |   0.22481 |     0.06604 |
+| target noise         |                  20 |        1 |      9 | Weighted — Gradient Boosting         |    0.13141 |   0.09456 |   0.20234 |     0.06962 |
+| target noise         |                  20 |        1 |      9 | IRLS — Ridge                         |    0.11652 |   0.08423 |   0.18853 |     0.06246 |
+| target noise         |                  20 |        1 |     10 | No handling — Ridge                  |    0.18742 |   0.13396 |   0.28508 |     0.10376 |
+| target noise         |                  20 |        1 |     10 | Hard removal — Ridge                 |    0.16618 |   0.11425 |   0.24408 |     0.08348 |
+| target noise         |                  20 |        1 |     10 | Winsorizing — Ridge                  |    0.18329 |   0.13122 |   0.25795 |     0.10241 |
+| target noise         |                  20 |        1 |     10 | Robust loss — HuberRegressor         |    0.22095 |   0.13682 |   0.34367 |     0.07204 |
+| target noise         |                  20 |        1 |     10 | Weighted — Ridge (linear)            |    0.15643 |   0.10568 |   0.20957 |     0.07873 |
+| target noise         |                  20 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.15484 |   0.1024  |   0.20711 |     0.07564 |
+| target noise         |                  20 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.1526  |   0.10069 |   0.20949 |     0.0731  |
+| target noise         |                  20 |        1 |     10 | Weighted — Random Forest             |    0.17643 |   0.11524 |   0.24947 |     0.07114 |
+| target noise         |                  20 |        1 |     10 | Weighted — Gradient Boosting         |    0.173   |   0.1123  |   0.2649  |     0.06872 |
+| target noise         |                  20 |        1 |     10 | IRLS — Ridge                         |    0.14703 |   0.09614 |   0.17609 |     0.06535 |
+| target noise         |                  20 |        1 |     11 | No handling — Ridge                  |    0.22077 |   0.12696 |   0.25957 |     0.09301 |
+| target noise         |                  20 |        1 |     11 | Hard removal — Ridge                 |    0.22807 |   0.12306 |   0.22904 |     0.09076 |
+| target noise         |                  20 |        1 |     11 | Winsorizing — Ridge                  |    0.2136  |   0.12353 |   0.24755 |     0.09189 |
+| target noise         |                  20 |        1 |     11 | Robust loss — HuberRegressor         |    0.24448 |   0.1376  |   0.3103  |     0.08001 |
+| target noise         |                  20 |        1 |     11 | Weighted — Ridge (linear)            |    0.22672 |   0.10738 |   0.19506 |     0.06666 |
+| target noise         |                  20 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.22148 |   0.10189 |   0.1868  |     0.06757 |
+| target noise         |                  20 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.2268  |   0.10307 |   0.19718 |     0.06036 |
+| target noise         |                  20 |        1 |     11 | Weighted — Random Forest             |    0.16287 |   0.1068  |   0.23718 |     0.06933 |
+| target noise         |                  20 |        1 |     11 | Weighted — Gradient Boosting         |    0.16253 |   0.10833 |   0.23798 |     0.07506 |
+| target noise         |                  20 |        1 |     11 | IRLS — Ridge                         |    0.21169 |   0.09785 |   0.17689 |     0.06301 |
+| target noise         |                  20 |        1 |     12 | No handling — Ridge                  |    0.17025 |   0.12329 |   0.25942 |     0.0925  |
+| target noise         |                  20 |        1 |     12 | Hard removal — Ridge                 |    0.16463 |   0.10984 |   0.22067 |     0.08514 |
+| target noise         |                  20 |        1 |     12 | Winsorizing — Ridge                  |    0.17392 |   0.12563 |   0.25347 |     0.09447 |
+| target noise         |                  20 |        1 |     12 | Robust loss — HuberRegressor         |    0.23857 |   0.13708 |   0.27547 |     0.07852 |
+| target noise         |                  20 |        1 |     12 | Weighted — Ridge (linear)            |    0.14358 |   0.09876 |   0.20119 |     0.0728  |
+| target noise         |                  20 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.13625 |   0.09338 |   0.19021 |     0.06677 |
+| target noise         |                  20 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.1445  |   0.09742 |   0.18783 |     0.07352 |
+| target noise         |                  20 |        1 |     12 | Weighted — Random Forest             |    0.154   |   0.10523 |   0.23309 |     0.0703  |
+| target noise         |                  20 |        1 |     12 | Weighted — Gradient Boosting         |    0.14984 |   0.10562 |   0.22549 |     0.07727 |
+| target noise         |                  20 |        1 |     12 | IRLS — Ridge                         |    0.13009 |   0.08503 |   0.1708  |     0.05923 |
+| target noise         |                  20 |        1 |     13 | No handling — Ridge                  |    0.15739 |   0.12198 |   0.24014 |     0.09797 |
+| target noise         |                  20 |        1 |     13 | Hard removal — Ridge                 |    0.13586 |   0.10094 |   0.21648 |     0.07866 |
+| target noise         |                  20 |        1 |     13 | Winsorizing — Ridge                  |    0.15531 |   0.11816 |   0.24596 |     0.0865  |
+| target noise         |                  20 |        1 |     13 | Robust loss — HuberRegressor         |    0.15772 |   0.10722 |   0.25765 |     0.07007 |
+| target noise         |                  20 |        1 |     13 | Weighted — Ridge (linear)            |    0.12893 |   0.09404 |   0.19844 |     0.06828 |
+| target noise         |                  20 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12827 |   0.09126 |   0.18991 |     0.06941 |
+| target noise         |                  20 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.13111 |   0.09181 |   0.1892  |     0.0663  |
+| target noise         |                  20 |        1 |     13 | Weighted — Random Forest             |    0.14497 |   0.10365 |   0.23227 |     0.07515 |
+| target noise         |                  20 |        1 |     13 | Weighted — Gradient Boosting         |    0.14046 |   0.10113 |   0.21765 |     0.0742  |
+| target noise         |                  20 |        1 |     13 | IRLS — Ridge                         |    0.11373 |   0.0858  |   0.17774 |     0.06506 |
+| target noise         |                  20 |        1 |     14 | No handling — Ridge                  |    0.15827 |   0.12409 |   0.24215 |     0.10217 |
+| target noise         |                  20 |        1 |     14 | Hard removal — Ridge                 |    0.14237 |   0.10201 |   0.21115 |     0.07983 |
+| target noise         |                  20 |        1 |     14 | Winsorizing — Ridge                  |    0.15513 |   0.12052 |   0.23703 |     0.10262 |
+| target noise         |                  20 |        1 |     14 | Robust loss — HuberRegressor         |    0.14685 |   0.10198 |   0.20907 |     0.07745 |
+| target noise         |                  20 |        1 |     14 | Weighted — Ridge (linear)            |    0.12967 |   0.09574 |   0.17336 |     0.07743 |
+| target noise         |                  20 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.12421 |   0.09048 |   0.16023 |     0.07585 |
+| target noise         |                  20 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12666 |   0.09124 |   0.16513 |     0.07453 |
+| target noise         |                  20 |        1 |     14 | Weighted — Random Forest             |    0.16088 |   0.10977 |   0.24717 |     0.0758  |
+| target noise         |                  20 |        1 |     14 | Weighted — Gradient Boosting         |    0.15471 |   0.10673 |   0.22204 |     0.08328 |
+| target noise         |                  20 |        1 |     14 | IRLS — Ridge                         |    0.12257 |   0.08292 |   0.16806 |     0.06115 |
+| target noise         |                  20 |        1 |     15 | No handling — Ridge                  |    0.18885 |   0.1317  |   0.29368 |     0.09733 |
+| target noise         |                  20 |        1 |     15 | Hard removal — Ridge                 |    0.18824 |   0.11817 |   0.24103 |     0.07916 |
+| target noise         |                  20 |        1 |     15 | Winsorizing — Ridge                  |    0.18966 |   0.13156 |   0.2784  |     0.09797 |
+| target noise         |                  20 |        1 |     15 | Robust loss — HuberRegressor         |    0.20426 |   0.13248 |   0.28677 |     0.08186 |
+| target noise         |                  20 |        1 |     15 | Weighted — Ridge (linear)            |    0.17401 |   0.10602 |   0.22133 |     0.07064 |
+| target noise         |                  20 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.17165 |   0.10143 |   0.21505 |     0.0697  |
+| target noise         |                  20 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.17578 |   0.10354 |   0.21341 |     0.06523 |
+| target noise         |                  20 |        1 |     15 | Weighted — Random Forest             |    0.16762 |   0.10843 |   0.23284 |     0.07077 |
+| target noise         |                  20 |        1 |     15 | Weighted — Gradient Boosting         |    0.16052 |   0.10486 |   0.20546 |     0.07697 |
+| target noise         |                  20 |        1 |     15 | IRLS — Ridge                         |    0.17128 |   0.09696 |   0.19148 |     0.0618  |
+| target noise         |                  20 |        2 |      1 | No handling — Ridge                  |    0.24101 |   0.13493 |   0.27133 |     0.09473 |
+| target noise         |                  20 |        2 |      1 | Hard removal — Ridge                 |    0.22157 |   0.11708 |   0.22568 |     0.0727  |
+| target noise         |                  20 |        2 |      1 | Winsorizing — Ridge                  |    0.22785 |   0.13239 |   0.27099 |     0.09363 |
+| target noise         |                  20 |        2 |      1 | Robust loss — HuberRegressor         |    0.247   |   0.14112 |   0.28457 |     0.07611 |
+| target noise         |                  20 |        2 |      1 | Weighted — Ridge (linear)            |    0.23734 |   0.11926 |   0.21971 |     0.08241 |
+| target noise         |                  20 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.23206 |   0.11244 |   0.19913 |     0.07649 |
+| target noise         |                  20 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.23371 |   0.11556 |   0.20636 |     0.07875 |
+| target noise         |                  20 |        2 |      1 | Weighted — Random Forest             |    0.17677 |   0.11227 |   0.2487  |     0.06951 |
+| target noise         |                  20 |        2 |      1 | Weighted — Gradient Boosting         |    0.17352 |   0.11122 |   0.25816 |     0.0701  |
+| target noise         |                  20 |        2 |      1 | IRLS — Ridge                         |    0.22386 |   0.10631 |   0.19514 |     0.06587 |
+| target noise         |                  20 |        2 |      2 | No handling — Ridge                  |    0.1627  |   0.12785 |   0.25864 |     0.10084 |
+| target noise         |                  20 |        2 |      2 | Hard removal — Ridge                 |    0.15105 |   0.10808 |   0.22198 |     0.08064 |
+| target noise         |                  20 |        2 |      2 | Winsorizing — Ridge                  |    0.15791 |   0.12249 |   0.236   |     0.09154 |
+| target noise         |                  20 |        2 |      2 | Robust loss — HuberRegressor         |    0.18673 |   0.11841 |   0.24696 |     0.08255 |
+| target noise         |                  20 |        2 |      2 | Weighted — Ridge (linear)            |    0.13759 |   0.10007 |   0.20293 |     0.07973 |
+| target noise         |                  20 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.1282  |   0.09178 |   0.18682 |     0.06376 |
+| target noise         |                  20 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.1326  |   0.0941  |   0.18806 |     0.07231 |
+| target noise         |                  20 |        2 |      2 | Weighted — Random Forest             |    0.15014 |   0.09894 |   0.22787 |     0.06857 |
+| target noise         |                  20 |        2 |      2 | Weighted — Gradient Boosting         |    0.13355 |   0.09481 |   0.20027 |     0.0708  |
+| target noise         |                  20 |        2 |      2 | IRLS — Ridge                         |    0.12489 |   0.08883 |   0.17446 |     0.06645 |
+| target noise         |                  20 |        2 |      3 | No handling — Ridge                  |    0.17796 |   0.11374 |   0.2514  |     0.0762  |
+| target noise         |                  20 |        2 |      3 | Hard removal — Ridge                 |    0.17875 |   0.1059  |   0.20747 |     0.0756  |
+| target noise         |                  20 |        2 |      3 | Winsorizing — Ridge                  |    0.17683 |   0.11271 |   0.25401 |     0.07591 |
+| target noise         |                  20 |        2 |      3 | Robust loss — HuberRegressor         |    0.19332 |   0.1166  |   0.2848  |     0.06337 |
+| target noise         |                  20 |        2 |      3 | Weighted — Ridge (linear)            |    0.17105 |   0.10178 |   0.2067  |     0.06538 |
+| target noise         |                  20 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16741 |   0.10062 |   0.1931  |     0.06671 |
+| target noise         |                  20 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.17155 |   0.10253 |   0.20151 |     0.06435 |
+| target noise         |                  20 |        2 |      3 | Weighted — Random Forest             |    0.17413 |   0.12069 |   0.28937 |     0.08038 |
+| target noise         |                  20 |        2 |      3 | Weighted — Gradient Boosting         |    0.1751  |   0.11906 |   0.26336 |     0.08283 |
+| target noise         |                  20 |        2 |      3 | IRLS — Ridge                         |    0.16268 |   0.0914  |   0.19344 |     0.05756 |
+| target noise         |                  20 |        2 |      4 | No handling — Ridge                  |    0.15683 |   0.11634 |   0.25157 |     0.08732 |
+| target noise         |                  20 |        2 |      4 | Hard removal — Ridge                 |    0.13343 |   0.09798 |   0.21636 |     0.07976 |
+| target noise         |                  20 |        2 |      4 | Winsorizing — Ridge                  |    0.15717 |   0.11675 |   0.2611  |     0.0883  |
+| target noise         |                  20 |        2 |      4 | Robust loss — HuberRegressor         |    0.12756 |   0.09015 |   0.1867  |     0.0684  |
+| target noise         |                  20 |        2 |      4 | Weighted — Ridge (linear)            |    0.13467 |   0.0978  |   0.20815 |     0.07312 |
+| target noise         |                  20 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.12909 |   0.09237 |   0.20858 |     0.06603 |
+| target noise         |                  20 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.1354  |   0.09693 |   0.21827 |     0.06708 |
+| target noise         |                  20 |        2 |      4 | Weighted — Random Forest             |    0.16053 |   0.10914 |   0.22891 |     0.07291 |
+| target noise         |                  20 |        2 |      4 | Weighted — Gradient Boosting         |    0.1495  |   0.10418 |   0.22922 |     0.074   |
+| target noise         |                  20 |        2 |      4 | IRLS — Ridge                         |    0.11547 |   0.07699 |   0.17711 |     0.05095 |
+| target noise         |                  20 |        2 |      5 | No handling — Ridge                  |    0.17687 |   0.13394 |   0.27024 |     0.10442 |
+| target noise         |                  20 |        2 |      5 | Hard removal — Ridge                 |    0.14584 |   0.11102 |   0.23626 |     0.09587 |
+| target noise         |                  20 |        2 |      5 | Winsorizing — Ridge                  |    0.16949 |   0.12928 |   0.25595 |     0.10619 |
+| target noise         |                  20 |        2 |      5 | Robust loss — HuberRegressor         |    0.18496 |   0.12294 |   0.27724 |     0.07861 |
+| target noise         |                  20 |        2 |      5 | Weighted — Ridge (linear)            |    0.13812 |   0.10429 |   0.22635 |     0.08466 |
+| target noise         |                  20 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.12615 |   0.09473 |   0.20493 |     0.0738  |
+| target noise         |                  20 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.13159 |   0.09969 |   0.21687 |     0.08201 |
+| target noise         |                  20 |        2 |      5 | Weighted — Random Forest             |    0.13953 |   0.09961 |   0.22378 |     0.06761 |
+| target noise         |                  20 |        2 |      5 | Weighted — Gradient Boosting         |    0.15371 |   0.11247 |   0.24808 |     0.0847  |
+| target noise         |                  20 |        2 |      5 | IRLS — Ridge                         |    0.11869 |   0.08611 |   0.19525 |     0.05891 |
+| target noise         |                  20 |        2 |      6 | No handling — Ridge                  |    0.15158 |   0.11555 |   0.21338 |     0.10099 |
+| target noise         |                  20 |        2 |      6 | Hard removal — Ridge                 |    0.13111 |   0.09959 |   0.20794 |     0.07544 |
+| target noise         |                  20 |        2 |      6 | Winsorizing — Ridge                  |    0.15245 |   0.11666 |   0.22004 |     0.09976 |
+| target noise         |                  20 |        2 |      6 | Robust loss — HuberRegressor         |    0.15586 |   0.11002 |   0.23669 |     0.07838 |
+| target noise         |                  20 |        2 |      6 | Weighted — Ridge (linear)            |    0.12223 |   0.09126 |   0.18369 |     0.07255 |
+| target noise         |                  20 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.11787 |   0.08849 |   0.17665 |     0.06904 |
+| target noise         |                  20 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.11887 |   0.08887 |   0.18415 |     0.06924 |
+| target noise         |                  20 |        2 |      6 | Weighted — Random Forest             |    0.15097 |   0.10527 |   0.23779 |     0.06799 |
+| target noise         |                  20 |        2 |      6 | Weighted — Gradient Boosting         |    0.13885 |   0.09885 |   0.22365 |     0.0674  |
+| target noise         |                  20 |        2 |      6 | IRLS — Ridge                         |    0.11082 |   0.0832  |   0.17697 |     0.0707  |
+| target noise         |                  20 |        2 |      7 | No handling — Ridge                  |    0.18052 |   0.12618 |   0.26756 |     0.0978  |
+| target noise         |                  20 |        2 |      7 | Hard removal — Ridge                 |    0.18081 |   0.1204  |   0.24821 |     0.08882 |
+| target noise         |                  20 |        2 |      7 | Winsorizing — Ridge                  |    0.17976 |   0.12575 |   0.26639 |     0.09542 |
+| target noise         |                  20 |        2 |      7 | Robust loss — HuberRegressor         |    0.17994 |   0.11907 |   0.26196 |     0.07779 |
+| target noise         |                  20 |        2 |      7 | Weighted — Ridge (linear)            |    0.17088 |   0.1051  |   0.21951 |     0.07246 |
+| target noise         |                  20 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.17024 |   0.10309 |   0.20512 |     0.06866 |
+| target noise         |                  20 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.17403 |   0.10466 |   0.21857 |     0.07248 |
+| target noise         |                  20 |        2 |      7 | Weighted — Random Forest             |    0.16229 |   0.11469 |   0.26096 |     0.08287 |
+| target noise         |                  20 |        2 |      7 | Weighted — Gradient Boosting         |    0.16212 |   0.11568 |   0.26017 |     0.08281 |
+| target noise         |                  20 |        2 |      7 | IRLS — Ridge                         |    0.15875 |   0.09179 |   0.19156 |     0.05559 |
+| target noise         |                  20 |        2 |      8 | No handling — Ridge                  |    0.19329 |   0.11415 |   0.23157 |     0.08096 |
+| target noise         |                  20 |        2 |      8 | Hard removal — Ridge                 |    0.221   |   0.10988 |   0.20862 |     0.07681 |
+| target noise         |                  20 |        2 |      8 | Winsorizing — Ridge                  |    0.1858  |   0.11208 |   0.24089 |     0.07848 |
+| target noise         |                  20 |        2 |      8 | Robust loss — HuberRegressor         |    0.21856 |   0.12074 |   0.2465  |     0.07606 |
+| target noise         |                  20 |        2 |      8 | Weighted — Ridge (linear)            |    0.19778 |   0.09835 |   0.19703 |     0.06392 |
+| target noise         |                  20 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.19643 |   0.09441 |   0.18493 |     0.06326 |
+| target noise         |                  20 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.19835 |   0.09666 |   0.18835 |     0.0646  |
+| target noise         |                  20 |        2 |      8 | Weighted — Random Forest             |    0.16101 |   0.10732 |   0.21141 |     0.07391 |
+| target noise         |                  20 |        2 |      8 | Weighted — Gradient Boosting         |    0.16189 |   0.10317 |   0.21954 |     0.06134 |
+| target noise         |                  20 |        2 |      8 | IRLS — Ridge                         |    0.21049 |   0.09354 |   0.17767 |     0.06385 |
+| target noise         |                  20 |        2 |      9 | No handling — Ridge                  |    0.17041 |   0.12869 |   0.28018 |     0.10928 |
+| target noise         |                  20 |        2 |      9 | Hard removal — Ridge                 |    0.15885 |   0.11969 |   0.25509 |     0.09195 |
+| target noise         |                  20 |        2 |      9 | Winsorizing — Ridge                  |    0.16634 |   0.12595 |   0.27507 |     0.10356 |
+| target noise         |                  20 |        2 |      9 | Robust loss — HuberRegressor         |    0.16692 |   0.11537 |   0.27401 |     0.07818 |
+| target noise         |                  20 |        2 |      9 | Weighted — Ridge (linear)            |    0.13621 |   0.09952 |   0.22512 |     0.07274 |
+| target noise         |                  20 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12854 |   0.0937  |   0.20772 |     0.07004 |
+| target noise         |                  20 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.13036 |   0.09457 |   0.20202 |     0.07103 |
+| target noise         |                  20 |        2 |      9 | Weighted — Random Forest             |    0.13498 |   0.09287 |   0.20627 |     0.06872 |
+| target noise         |                  20 |        2 |      9 | Weighted — Gradient Boosting         |    0.13287 |   0.09828 |   0.20716 |     0.07635 |
+| target noise         |                  20 |        2 |      9 | IRLS — Ridge                         |    0.11821 |   0.08257 |   0.18069 |     0.05837 |
+| target noise         |                  20 |        2 |     10 | No handling — Ridge                  |    0.18098 |   0.12893 |   0.27017 |     0.09742 |
+| target noise         |                  20 |        2 |     10 | Hard removal — Ridge                 |    0.16689 |   0.11535 |   0.23184 |     0.08362 |
+| target noise         |                  20 |        2 |     10 | Winsorizing — Ridge                  |    0.18135 |   0.12768 |   0.26625 |     0.09882 |
+| target noise         |                  20 |        2 |     10 | Robust loss — HuberRegressor         |    0.21443 |   0.13538 |   0.34969 |     0.07646 |
+| target noise         |                  20 |        2 |     10 | Weighted — Ridge (linear)            |    0.16664 |   0.10857 |   0.22113 |     0.07314 |
+| target noise         |                  20 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.16029 |   0.10329 |   0.21211 |     0.06814 |
+| target noise         |                  20 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.16488 |   0.10576 |   0.21103 |     0.06934 |
+| target noise         |                  20 |        2 |     10 | Weighted — Random Forest             |    0.17622 |   0.11208 |   0.2468  |     0.06981 |
+| target noise         |                  20 |        2 |     10 | Weighted — Gradient Boosting         |    0.17106 |   0.11206 |   0.23727 |     0.07675 |
+| target noise         |                  20 |        2 |     10 | IRLS — Ridge                         |    0.15449 |   0.09608 |   0.18122 |     0.06503 |
+| target noise         |                  20 |        2 |     11 | No handling — Ridge                  |    0.25331 |   0.14039 |   0.28707 |     0.09924 |
+| target noise         |                  20 |        2 |     11 | Hard removal — Ridge                 |    0.23787 |   0.12077 |   0.24463 |     0.08286 |
+| target noise         |                  20 |        2 |     11 | Winsorizing — Ridge                  |    0.24523 |   0.13729 |   0.27744 |     0.09821 |
+| target noise         |                  20 |        2 |     11 | Robust loss — HuberRegressor         |    0.33193 |   0.14308 |   0.3095  |     0.06813 |
+| target noise         |                  20 |        2 |     11 | Weighted — Ridge (linear)            |    0.24033 |   0.11618 |   0.20942 |     0.08577 |
+| target noise         |                  20 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.23183 |   0.10905 |   0.18912 |     0.07589 |
+| target noise         |                  20 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.23867 |   0.11201 |   0.19387 |     0.07893 |
+| target noise         |                  20 |        2 |     11 | Weighted — Random Forest             |    0.1658  |   0.1127  |   0.25463 |     0.08224 |
+| target noise         |                  20 |        2 |     11 | Weighted — Gradient Boosting         |    0.16304 |   0.10852 |   0.21713 |     0.07541 |
+| target noise         |                  20 |        2 |     11 | IRLS — Ridge                         |    0.22277 |   0.09966 |   0.17583 |     0.06935 |
+| target noise         |                  20 |        2 |     12 | No handling — Ridge                  |    0.15476 |   0.11543 |   0.21841 |     0.10138 |
+| target noise         |                  20 |        2 |     12 | Hard removal — Ridge                 |    0.14068 |   0.10538 |   0.21279 |     0.08055 |
+| target noise         |                  20 |        2 |     12 | Winsorizing — Ridge                  |    0.15357 |   0.11365 |   0.22133 |     0.10044 |
+| target noise         |                  20 |        2 |     12 | Robust loss — HuberRegressor         |    0.1986  |   0.10937 |   0.2016  |     0.06626 |
+| target noise         |                  20 |        2 |     12 | Weighted — Ridge (linear)            |    0.12708 |   0.09358 |   0.17874 |     0.07276 |
+| target noise         |                  20 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.12359 |   0.09015 |   0.1593  |     0.07511 |
+| target noise         |                  20 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.12768 |   0.09367 |   0.17117 |     0.07739 |
+| target noise         |                  20 |        2 |     12 | Weighted — Random Forest             |    0.15272 |   0.10449 |   0.23742 |     0.06765 |
+| target noise         |                  20 |        2 |     12 | Weighted — Gradient Boosting         |    0.14835 |   0.10361 |   0.22724 |     0.0801  |
+| target noise         |                  20 |        2 |     12 | IRLS — Ridge                         |    0.12158 |   0.08749 |   0.16796 |     0.07115 |
+| target noise         |                  20 |        2 |     13 | No handling — Ridge                  |    0.15799 |   0.11338 |   0.24488 |     0.07986 |
+| target noise         |                  20 |        2 |     13 | Hard removal — Ridge                 |    0.13247 |   0.09763 |   0.21541 |     0.07159 |
+| target noise         |                  20 |        2 |     13 | Winsorizing — Ridge                  |    0.1579  |   0.11388 |   0.2455  |     0.0788  |
+| target noise         |                  20 |        2 |     13 | Robust loss — HuberRegressor         |    0.14575 |   0.10167 |   0.2203  |     0.06908 |
+| target noise         |                  20 |        2 |     13 | Weighted — Ridge (linear)            |    0.13541 |   0.09177 |   0.2061  |     0.0639  |
+| target noise         |                  20 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.13323 |   0.08996 |   0.2029  |     0.063   |
+| target noise         |                  20 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.13576 |   0.0903  |   0.19554 |     0.06327 |
+| target noise         |                  20 |        2 |     13 | Weighted — Random Forest             |    0.14362 |   0.10475 |   0.21982 |     0.08003 |
+| target noise         |                  20 |        2 |     13 | Weighted — Gradient Boosting         |    0.13798 |   0.10082 |   0.23249 |     0.0755  |
+| target noise         |                  20 |        2 |     13 | IRLS — Ridge                         |    0.11664 |   0.08156 |   0.16602 |     0.06286 |
+| target noise         |                  20 |        2 |     14 | No handling — Ridge                  |    0.15583 |   0.11782 |   0.2202  |     0.09917 |
+| target noise         |                  20 |        2 |     14 | Hard removal — Ridge                 |    0.13628 |   0.09892 |   0.19347 |     0.0765  |
+| target noise         |                  20 |        2 |     14 | Winsorizing — Ridge                  |    0.15266 |   0.11468 |   0.20862 |     0.10022 |
+| target noise         |                  20 |        2 |     14 | Robust loss — HuberRegressor         |    0.15699 |   0.10546 |   0.19985 |     0.08104 |
+| target noise         |                  20 |        2 |     14 | Weighted — Ridge (linear)            |    0.12966 |   0.09176 |   0.17649 |     0.0705  |
+| target noise         |                  20 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.12798 |   0.08945 |   0.17855 |     0.07063 |
+| target noise         |                  20 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12713 |   0.0886  |   0.17948 |     0.06624 |
+| target noise         |                  20 |        2 |     14 | Weighted — Random Forest             |    0.15911 |   0.10598 |   0.23415 |     0.07089 |
+| target noise         |                  20 |        2 |     14 | Weighted — Gradient Boosting         |    0.14567 |   0.09793 |   0.21166 |     0.06506 |
+| target noise         |                  20 |        2 |     14 | IRLS — Ridge                         |    0.12271 |   0.08389 |   0.17531 |     0.06657 |
+| target noise         |                  20 |        2 |     15 | No handling — Ridge                  |    0.18677 |   0.12135 |   0.22931 |     0.0958  |
+| target noise         |                  20 |        2 |     15 | Hard removal — Ridge                 |    0.18362 |   0.10862 |   0.21623 |     0.07165 |
+| target noise         |                  20 |        2 |     15 | Winsorizing — Ridge                  |    0.18603 |   0.12057 |   0.23482 |     0.08872 |
+| target noise         |                  20 |        2 |     15 | Robust loss — HuberRegressor         |    0.18806 |   0.11063 |   0.2165  |     0.07262 |
+| target noise         |                  20 |        2 |     15 | Weighted — Ridge (linear)            |    0.1863  |   0.11135 |   0.22919 |     0.07884 |
+| target noise         |                  20 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.18237 |   0.10605 |   0.21024 |     0.07243 |
+| target noise         |                  20 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.18665 |   0.10877 |   0.20692 |     0.0735  |
+| target noise         |                  20 |        2 |     15 | Weighted — Random Forest             |    0.16578 |   0.1039  |   0.24354 |     0.06815 |
+| target noise         |                  20 |        2 |     15 | Weighted — Gradient Boosting         |    0.17041 |   0.10931 |   0.23377 |     0.06793 |
+| target noise         |                  20 |        2 |     15 | IRLS — Ridge                         |    0.17581 |   0.0961  |   0.19809 |     0.06534 |
+| leverage points      |                   0 |        1 |      1 | No handling — Ridge                  |    0.19195 |   0.09253 |   0.17024 |     0.0609  |
+| leverage points      |                   0 |        1 |      1 | Hard removal — Ridge                 |    0.21574 |   0.09395 |   0.16993 |     0.0614  |
+| leverage points      |                   0 |        1 |      1 | Winsorizing — Ridge                  |    0.1816  |   0.09163 |   0.17325 |     0.05564 |
+| leverage points      |                   0 |        1 |      1 | Robust loss — HuberRegressor         |    0.2174  |   0.10363 |   0.20098 |     0.06084 |
+| leverage points      |                   0 |        1 |      1 | Weighted — Ridge (linear)            |    0.21549 |   0.09371 |   0.17291 |     0.05866 |
+| leverage points      |                   0 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.21491 |   0.09537 |   0.18685 |     0.05889 |
+| leverage points      |                   0 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.217   |   0.09535 |   0.18282 |     0.05599 |
+| leverage points      |                   0 |        1 |      1 | Weighted — Random Forest             |    0.17004 |   0.10735 |   0.24028 |     0.06803 |
+| leverage points      |                   0 |        1 |      1 | Weighted — Gradient Boosting         |    0.16003 |   0.09782 |   0.23499 |     0.05753 |
+| leverage points      |                   0 |        1 |      1 | IRLS — Ridge                         |    0.21545 |   0.09336 |   0.16557 |     0.05972 |
+| leverage points      |                   0 |        1 |      2 | No handling — Ridge                  |    0.12091 |   0.08962 |   0.17231 |     0.07169 |
+| leverage points      |                   0 |        1 |      2 | Hard removal — Ridge                 |    0.11976 |   0.08276 |   0.16665 |     0.0569  |
+| leverage points      |                   0 |        1 |      2 | Winsorizing — Ridge                  |    0.1218  |   0.09029 |   0.1773  |     0.06846 |
+| leverage points      |                   0 |        1 |      2 | Robust loss — HuberRegressor         |    0.12852 |   0.08847 |   0.18925 |     0.06325 |
+| leverage points      |                   0 |        1 |      2 | Weighted — Ridge (linear)            |    0.11931 |   0.0831  |   0.16407 |     0.06208 |
+| leverage points      |                   0 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.11992 |   0.08389 |   0.17479 |     0.06272 |
+| leverage points      |                   0 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12117 |   0.08234 |   0.17422 |     0.05711 |
+| leverage points      |                   0 |        1 |      2 | Weighted — Random Forest             |    0.14848 |   0.09915 |   0.24945 |     0.06921 |
+| leverage points      |                   0 |        1 |      2 | Weighted — Gradient Boosting         |    0.13226 |   0.09483 |   0.19738 |     0.0759  |
+| leverage points      |                   0 |        1 |      2 | IRLS — Ridge                         |    0.12082 |   0.08335 |   0.16422 |     0.06335 |
+| leverage points      |                   0 |        1 |      3 | No handling — Ridge                  |    0.15529 |   0.09764 |   0.19479 |     0.06832 |
+| leverage points      |                   0 |        1 |      3 | Hard removal — Ridge                 |    0.16615 |   0.08903 |   0.17762 |     0.0621  |
+| leverage points      |                   0 |        1 |      3 | Winsorizing — Ridge                  |    0.15631 |   0.09971 |   0.18633 |     0.07296 |
+| leverage points      |                   0 |        1 |      3 | Robust loss — HuberRegressor         |    0.17083 |   0.09345 |   0.20752 |     0.05395 |
+| leverage points      |                   0 |        1 |      3 | Weighted — Ridge (linear)            |    0.16244 |   0.09148 |   0.1751  |     0.05986 |
+| leverage points      |                   0 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16413 |   0.094   |   0.20138 |     0.05899 |
+| leverage points      |                   0 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16544 |   0.09256 |   0.20534 |     0.05811 |
+| leverage points      |                   0 |        1 |      3 | Weighted — Random Forest             |    0.16714 |   0.11017 |   0.26392 |     0.0679  |
+| leverage points      |                   0 |        1 |      3 | Weighted — Gradient Boosting         |    0.1625  |   0.10472 |   0.22883 |     0.06156 |
+| leverage points      |                   0 |        1 |      3 | IRLS — Ridge                         |    0.1648  |   0.0892  |   0.17984 |     0.05839 |
+| leverage points      |                   0 |        1 |      4 | No handling — Ridge                  |    0.12307 |   0.08609 |   0.19985 |     0.05871 |
+| leverage points      |                   0 |        1 |      4 | Hard removal — Ridge                 |    0.10698 |   0.07162 |   0.15119 |     0.04815 |
+| leverage points      |                   0 |        1 |      4 | Winsorizing — Ridge                  |    0.12697 |   0.08848 |   0.18922 |     0.06316 |
+| leverage points      |                   0 |        1 |      4 | Robust loss — HuberRegressor         |    0.11262 |   0.07568 |   0.16393 |     0.0518  |
+| leverage points      |                   0 |        1 |      4 | Weighted — Ridge (linear)            |    0.10808 |   0.07477 |   0.17305 |     0.05597 |
+| leverage points      |                   0 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11479 |   0.07999 |   0.17104 |     0.05977 |
+| leverage points      |                   0 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11364 |   0.07808 |   0.17235 |     0.05785 |
+| leverage points      |                   0 |        1 |      4 | Weighted — Random Forest             |    0.14859 |   0.09752 |   0.23696 |     0.06239 |
+| leverage points      |                   0 |        1 |      4 | Weighted — Gradient Boosting         |    0.12446 |   0.08668 |   0.1783  |     0.06487 |
+| leverage points      |                   0 |        1 |      4 | IRLS — Ridge                         |    0.1069  |   0.07163 |   0.15116 |     0.04864 |
+| leverage points      |                   0 |        1 |      5 | No handling — Ridge                  |    0.12642 |   0.0927  |   0.19049 |     0.06955 |
+| leverage points      |                   0 |        1 |      5 | Hard removal — Ridge                 |    0.10946 |   0.07869 |   0.16029 |     0.05422 |
+| leverage points      |                   0 |        1 |      5 | Winsorizing — Ridge                  |    0.12571 |   0.09404 |   0.19058 |     0.0722  |
+| leverage points      |                   0 |        1 |      5 | Robust loss — HuberRegressor         |    0.13241 |   0.08886 |   0.18901 |     0.05694 |
+| leverage points      |                   0 |        1 |      5 | Weighted — Ridge (linear)            |    0.11028 |   0.08096 |   0.15378 |     0.05644 |
+| leverage points      |                   0 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11314 |   0.08365 |   0.15882 |     0.0639  |
+| leverage points      |                   0 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.10972 |   0.08065 |   0.16056 |     0.05997 |
+| leverage points      |                   0 |        1 |      5 | Weighted — Random Forest             |    0.13442 |   0.09266 |   0.20704 |     0.06269 |
+| leverage points      |                   0 |        1 |      5 | Weighted — Gradient Boosting         |    0.12985 |   0.09509 |   0.21682 |     0.07028 |
+| leverage points      |                   0 |        1 |      5 | IRLS — Ridge                         |    0.10872 |   0.07792 |   0.16408 |     0.05191 |
+| leverage points      |                   0 |        1 |      6 | No handling — Ridge                  |    0.10975 |   0.08469 |   0.16417 |     0.06659 |
+| leverage points      |                   0 |        1 |      6 | Hard removal — Ridge                 |    0.10126 |   0.07621 |   0.15191 |     0.06243 |
+| leverage points      |                   0 |        1 |      6 | Winsorizing — Ridge                  |    0.11083 |   0.0856  |   0.16767 |     0.06637 |
+| leverage points      |                   0 |        1 |      6 | Robust loss — HuberRegressor         |    0.12833 |   0.08923 |   0.18022 |     0.06252 |
+| leverage points      |                   0 |        1 |      6 | Weighted — Ridge (linear)            |    0.10176 |   0.07667 |   0.16264 |     0.0572  |
+| leverage points      |                   0 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.10545 |   0.08026 |   0.17006 |     0.06228 |
+| leverage points      |                   0 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10339 |   0.0774  |   0.17367 |     0.05662 |
+| leverage points      |                   0 |        1 |      6 | Weighted — Random Forest             |    0.14549 |   0.09668 |   0.23512 |     0.06435 |
+| leverage points      |                   0 |        1 |      6 | Weighted — Gradient Boosting         |    0.12829 |   0.09092 |   0.19821 |     0.06459 |
+| leverage points      |                   0 |        1 |      6 | IRLS — Ridge                         |    0.1005  |   0.07477 |   0.14659 |     0.05929 |
+| leverage points      |                   0 |        1 |      7 | No handling — Ridge                  |    0.15154 |   0.09442 |   0.19985 |     0.06502 |
+| leverage points      |                   0 |        1 |      7 | Hard removal — Ridge                 |    0.16048 |   0.08752 |   0.18177 |     0.05397 |
+| leverage points      |                   0 |        1 |      7 | Winsorizing — Ridge                  |    0.15139 |   0.09499 |   0.19796 |     0.06371 |
+| leverage points      |                   0 |        1 |      7 | Robust loss — HuberRegressor         |    0.15247 |   0.09245 |   0.19618 |     0.05786 |
+| leverage points      |                   0 |        1 |      7 | Weighted — Ridge (linear)            |    0.15637 |   0.08962 |   0.18791 |     0.06067 |
+| leverage points      |                   0 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15943 |   0.09353 |   0.19443 |     0.06267 |
+| leverage points      |                   0 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.16108 |   0.09157 |   0.19408 |     0.06335 |
+| leverage points      |                   0 |        1 |      7 | Weighted — Random Forest             |    0.15599 |   0.1068  |   0.2397  |     0.07401 |
+| leverage points      |                   0 |        1 |      7 | Weighted — Gradient Boosting         |    0.14637 |   0.09656 |   0.22192 |     0.07031 |
+| leverage points      |                   0 |        1 |      7 | IRLS — Ridge                         |    0.15599 |   0.08668 |   0.18121 |     0.05695 |
+| leverage points      |                   0 |        1 |      8 | No handling — Ridge                  |    0.1903  |   0.09105 |   0.17576 |     0.05664 |
+| leverage points      |                   0 |        1 |      8 | Hard removal — Ridge                 |    0.21616 |   0.09136 |   0.17404 |     0.05637 |
+| leverage points      |                   0 |        1 |      8 | Winsorizing — Ridge                  |    0.18155 |   0.08888 |   0.16983 |     0.05728 |
+| leverage points      |                   0 |        1 |      8 | Robust loss — HuberRegressor         |    0.20683 |   0.09607 |   0.16485 |     0.05737 |
+| leverage points      |                   0 |        1 |      8 | Weighted — Ridge (linear)            |    0.21356 |   0.09049 |   0.1609  |     0.05661 |
+| leverage points      |                   0 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.21113 |   0.09052 |   0.17015 |     0.05842 |
+| leverage points      |                   0 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21434 |   0.09    |   0.16586 |     0.05472 |
+| leverage points      |                   0 |        1 |      8 | Weighted — Random Forest             |    0.161   |   0.10541 |   0.21527 |     0.07109 |
+| leverage points      |                   0 |        1 |      8 | Weighted — Gradient Boosting         |    0.15729 |   0.09517 |   0.18808 |     0.06686 |
+| leverage points      |                   0 |        1 |      8 | IRLS — Ridge                         |    0.2185  |   0.09057 |   0.16431 |     0.05266 |
+| leverage points      |                   0 |        1 |      9 | No handling — Ridge                  |    0.12583 |   0.0945  |   0.19158 |     0.07699 |
+| leverage points      |                   0 |        1 |      9 | Hard removal — Ridge                 |    0.10758 |   0.07715 |   0.17048 |     0.05485 |
+| leverage points      |                   0 |        1 |      9 | Winsorizing — Ridge                  |    0.12519 |   0.09399 |   0.19106 |     0.07625 |
+| leverage points      |                   0 |        1 |      9 | Robust loss — HuberRegressor         |    0.12507 |   0.08216 |   0.18085 |     0.05743 |
+| leverage points      |                   0 |        1 |      9 | Weighted — Ridge (linear)            |    0.11485 |   0.08247 |   0.17801 |     0.0616  |
+| leverage points      |                   0 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.11809 |   0.0851  |   0.18922 |     0.06569 |
+| leverage points      |                   0 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.11657 |   0.08275 |   0.18013 |     0.06281 |
+| leverage points      |                   0 |        1 |      9 | Weighted — Random Forest             |    0.13378 |   0.09036 |   0.19632 |     0.06052 |
+| leverage points      |                   0 |        1 |      9 | Weighted — Gradient Boosting         |    0.12379 |   0.08905 |   0.19016 |     0.06516 |
+| leverage points      |                   0 |        1 |      9 | IRLS — Ridge                         |    0.1085  |   0.07718 |   0.1738  |     0.05416 |
+| leverage points      |                   0 |        1 |     10 | No handling — Ridge                  |    0.1462  |   0.09716 |   0.18327 |     0.07192 |
+| leverage points      |                   0 |        1 |     10 | Hard removal — Ridge                 |    0.14327 |   0.08741 |   0.16576 |     0.05543 |
+| leverage points      |                   0 |        1 |     10 | Winsorizing — Ridge                  |    0.1502  |   0.10019 |   0.18792 |     0.07508 |
+| leverage points      |                   0 |        1 |     10 | Robust loss — HuberRegressor         |    0.14633 |   0.09429 |   0.1915  |     0.06287 |
+| leverage points      |                   0 |        1 |     10 | Weighted — Ridge (linear)            |    0.14245 |   0.0885  |   0.1836  |     0.05619 |
+| leverage points      |                   0 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.14573 |   0.09012 |   0.18492 |     0.05618 |
+| leverage points      |                   0 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.14507 |   0.08922 |   0.18806 |     0.05793 |
+| leverage points      |                   0 |        1 |     10 | Weighted — Random Forest             |    0.1773  |   0.10966 |   0.26464 |     0.06665 |
+| leverage points      |                   0 |        1 |     10 | Weighted — Gradient Boosting         |    0.16151 |   0.10231 |   0.21784 |     0.06582 |
+| leverage points      |                   0 |        1 |     10 | IRLS — Ridge                         |    0.14524 |   0.08756 |   0.16618 |     0.05628 |
+| leverage points      |                   0 |        1 |     11 | No handling — Ridge                  |    0.19712 |   0.09209 |   0.17067 |     0.05445 |
+| leverage points      |                   0 |        1 |     11 | Hard removal — Ridge                 |    0.21486 |   0.09026 |   0.16024 |     0.05548 |
+| leverage points      |                   0 |        1 |     11 | Winsorizing — Ridge                  |    0.18634 |   0.09189 |   0.16799 |     0.05592 |
+| leverage points      |                   0 |        1 |     11 | Robust loss — HuberRegressor         |    0.22583 |   0.10561 |   0.24602 |     0.05582 |
+| leverage points      |                   0 |        1 |     11 | Weighted — Ridge (linear)            |    0.21327 |   0.0908  |   0.16756 |     0.05401 |
+| leverage points      |                   0 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.21117 |   0.09201 |   0.18663 |     0.05618 |
+| leverage points      |                   0 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.21306 |   0.09107 |   0.18233 |     0.05326 |
+| leverage points      |                   0 |        1 |     11 | Weighted — Random Forest             |    0.15247 |   0.09514 |   0.20301 |     0.05934 |
+| leverage points      |                   0 |        1 |     11 | Weighted — Gradient Boosting         |    0.14712 |   0.09447 |   0.21242 |     0.06303 |
+| leverage points      |                   0 |        1 |     11 | IRLS — Ridge                         |    0.21363 |   0.08969 |   0.16705 |     0.0566  |
+| leverage points      |                   0 |        1 |     12 | No handling — Ridge                  |    0.126   |   0.08984 |   0.17499 |     0.0715  |
+| leverage points      |                   0 |        1 |     12 | Hard removal — Ridge                 |    0.11429 |   0.07934 |   0.15933 |     0.06078 |
+| leverage points      |                   0 |        1 |     12 | Winsorizing — Ridge                  |    0.12723 |   0.09098 |   0.17765 |     0.07729 |
+| leverage points      |                   0 |        1 |     12 | Robust loss — HuberRegressor         |    0.1528  |   0.09457 |   0.1791  |     0.06191 |
+| leverage points      |                   0 |        1 |     12 | Weighted — Ridge (linear)            |    0.11213 |   0.07995 |   0.16096 |     0.06526 |
+| leverage points      |                   0 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11536 |   0.08236 |   0.16553 |     0.06514 |
+| leverage points      |                   0 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.11555 |   0.08159 |   0.15849 |     0.06324 |
+| leverage points      |                   0 |        1 |     12 | Weighted — Random Forest             |    0.15277 |   0.10352 |   0.24452 |     0.0701  |
+| leverage points      |                   0 |        1 |     12 | Weighted — Gradient Boosting         |    0.14111 |   0.09847 |   0.19374 |     0.07086 |
+| leverage points      |                   0 |        1 |     12 | IRLS — Ridge                         |    0.11592 |   0.07987 |   0.16189 |     0.05914 |
+| leverage points      |                   0 |        1 |     13 | No handling — Ridge                  |    0.12253 |   0.0894  |   0.20027 |     0.06463 |
+| leverage points      |                   0 |        1 |     13 | Hard removal — Ridge                 |    0.10734 |   0.07969 |   0.17021 |     0.06284 |
+| leverage points      |                   0 |        1 |     13 | Winsorizing — Ridge                  |    0.12652 |   0.09244 |   0.20638 |     0.06783 |
+| leverage points      |                   0 |        1 |     13 | Robust loss — HuberRegressor         |    0.1212  |   0.08609 |   0.17353 |     0.06357 |
+| leverage points      |                   0 |        1 |     13 | Weighted — Ridge (linear)            |    0.11107 |   0.07978 |   0.166   |     0.05974 |
+| leverage points      |                   0 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.11808 |   0.08398 |   0.1782  |     0.06145 |
+| leverage points      |                   0 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11694 |   0.08185 |   0.17622 |     0.06107 |
+| leverage points      |                   0 |        1 |     13 | Weighted — Random Forest             |    0.13941 |   0.09938 |   0.22732 |     0.0704  |
+| leverage points      |                   0 |        1 |     13 | Weighted — Gradient Boosting         |    0.13052 |   0.0926  |   0.19466 |     0.06778 |
+| leverage points      |                   0 |        1 |     13 | IRLS — Ridge                         |    0.1057  |   0.07841 |   0.15811 |     0.06029 |
+| leverage points      |                   0 |        1 |     14 | No handling — Ridge                  |    0.12505 |   0.09055 |   0.17824 |     0.07257 |
+| leverage points      |                   0 |        1 |     14 | Hard removal — Ridge                 |    0.11847 |   0.07856 |   0.15471 |     0.05376 |
+| leverage points      |                   0 |        1 |     14 | Winsorizing — Ridge                  |    0.12469 |   0.08849 |   0.17503 |     0.0726  |
+| leverage points      |                   0 |        1 |     14 | Robust loss — HuberRegressor         |    0.13057 |   0.08737 |   0.16543 |     0.06366 |
+| leverage points      |                   0 |        1 |     14 | Weighted — Ridge (linear)            |    0.11757 |   0.08031 |   0.16845 |     0.06165 |
+| leverage points      |                   0 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.1199  |   0.08201 |   0.17153 |     0.06387 |
+| leverage points      |                   0 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.1197  |   0.08066 |   0.16753 |     0.06088 |
+| leverage points      |                   0 |        1 |     14 | Weighted — Random Forest             |    0.15748 |   0.10365 |   0.23501 |     0.07056 |
+| leverage points      |                   0 |        1 |     14 | Weighted — Gradient Boosting         |    0.136   |   0.09347 |   0.19338 |     0.06867 |
+| leverage points      |                   0 |        1 |     14 | IRLS — Ridge                         |    0.11886 |   0.07849 |   0.15559 |     0.05934 |
+| leverage points      |                   0 |        1 |     15 | No handling — Ridge                  |    0.16585 |   0.10204 |   0.19992 |     0.06874 |
+| leverage points      |                   0 |        1 |     15 | Hard removal — Ridge                 |    0.17351 |   0.09444 |   0.18271 |     0.05921 |
+| leverage points      |                   0 |        1 |     15 | Winsorizing — Ridge                  |    0.1658  |   0.10333 |   0.20609 |     0.07126 |
+| leverage points      |                   0 |        1 |     15 | Robust loss — HuberRegressor         |    0.17863 |   0.09971 |   0.22437 |     0.06101 |
+| leverage points      |                   0 |        1 |     15 | Weighted — Ridge (linear)            |    0.16901 |   0.09306 |   0.20283 |     0.05667 |
+| leverage points      |                   0 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16864 |   0.09445 |   0.19323 |     0.06166 |
+| leverage points      |                   0 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16983 |   0.09305 |   0.19926 |     0.06162 |
+| leverage points      |                   0 |        1 |     15 | Weighted — Random Forest             |    0.16509 |   0.10187 |   0.23979 |     0.06271 |
+| leverage points      |                   0 |        1 |     15 | Weighted — Gradient Boosting         |    0.15946 |   0.10062 |   0.20925 |     0.06089 |
+| leverage points      |                   0 |        1 |     15 | IRLS — Ridge                         |    0.17232 |   0.09243 |   0.19371 |     0.05808 |
+| leverage points      |                   0 |        2 |      1 | No handling — Ridge                  |    0.19195 |   0.09253 |   0.17024 |     0.0609  |
+| leverage points      |                   0 |        2 |      1 | Hard removal — Ridge                 |    0.21574 |   0.09395 |   0.16993 |     0.0614  |
+| leverage points      |                   0 |        2 |      1 | Winsorizing — Ridge                  |    0.1816  |   0.09163 |   0.17325 |     0.05564 |
+| leverage points      |                   0 |        2 |      1 | Robust loss — HuberRegressor         |    0.2174  |   0.10363 |   0.20098 |     0.06084 |
+| leverage points      |                   0 |        2 |      1 | Weighted — Ridge (linear)            |    0.21549 |   0.09371 |   0.17291 |     0.05866 |
+| leverage points      |                   0 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.21491 |   0.09537 |   0.18685 |     0.05889 |
+| leverage points      |                   0 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.217   |   0.09535 |   0.18282 |     0.05599 |
+| leverage points      |                   0 |        2 |      1 | Weighted — Random Forest             |    0.17004 |   0.10735 |   0.24028 |     0.06803 |
+| leverage points      |                   0 |        2 |      1 | Weighted — Gradient Boosting         |    0.16003 |   0.09782 |   0.23499 |     0.05753 |
+| leverage points      |                   0 |        2 |      1 | IRLS — Ridge                         |    0.21545 |   0.09336 |   0.16557 |     0.05972 |
+| leverage points      |                   0 |        2 |      2 | No handling — Ridge                  |    0.12091 |   0.08962 |   0.17231 |     0.07169 |
+| leverage points      |                   0 |        2 |      2 | Hard removal — Ridge                 |    0.11976 |   0.08276 |   0.16665 |     0.0569  |
+| leverage points      |                   0 |        2 |      2 | Winsorizing — Ridge                  |    0.1218  |   0.09029 |   0.1773  |     0.06846 |
+| leverage points      |                   0 |        2 |      2 | Robust loss — HuberRegressor         |    0.12852 |   0.08847 |   0.18925 |     0.06325 |
+| leverage points      |                   0 |        2 |      2 | Weighted — Ridge (linear)            |    0.11931 |   0.0831  |   0.16407 |     0.06208 |
+| leverage points      |                   0 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.11992 |   0.08389 |   0.17479 |     0.06272 |
+| leverage points      |                   0 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12117 |   0.08234 |   0.17422 |     0.05711 |
+| leverage points      |                   0 |        2 |      2 | Weighted — Random Forest             |    0.14848 |   0.09915 |   0.24945 |     0.06921 |
+| leverage points      |                   0 |        2 |      2 | Weighted — Gradient Boosting         |    0.13226 |   0.09483 |   0.19738 |     0.0759  |
+| leverage points      |                   0 |        2 |      2 | IRLS — Ridge                         |    0.12082 |   0.08335 |   0.16422 |     0.06335 |
+| leverage points      |                   0 |        2 |      3 | No handling — Ridge                  |    0.15529 |   0.09764 |   0.19479 |     0.06832 |
+| leverage points      |                   0 |        2 |      3 | Hard removal — Ridge                 |    0.16615 |   0.08903 |   0.17762 |     0.0621  |
+| leverage points      |                   0 |        2 |      3 | Winsorizing — Ridge                  |    0.15631 |   0.09971 |   0.18633 |     0.07296 |
+| leverage points      |                   0 |        2 |      3 | Robust loss — HuberRegressor         |    0.17083 |   0.09345 |   0.20752 |     0.05395 |
+| leverage points      |                   0 |        2 |      3 | Weighted — Ridge (linear)            |    0.16244 |   0.09148 |   0.1751  |     0.05986 |
+| leverage points      |                   0 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16413 |   0.094   |   0.20138 |     0.05899 |
+| leverage points      |                   0 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16544 |   0.09256 |   0.20534 |     0.05811 |
+| leverage points      |                   0 |        2 |      3 | Weighted — Random Forest             |    0.16714 |   0.11017 |   0.26392 |     0.0679  |
+| leverage points      |                   0 |        2 |      3 | Weighted — Gradient Boosting         |    0.1625  |   0.10472 |   0.22883 |     0.06156 |
+| leverage points      |                   0 |        2 |      3 | IRLS — Ridge                         |    0.1648  |   0.0892  |   0.17984 |     0.05839 |
+| leverage points      |                   0 |        2 |      4 | No handling — Ridge                  |    0.12307 |   0.08609 |   0.19985 |     0.05871 |
+| leverage points      |                   0 |        2 |      4 | Hard removal — Ridge                 |    0.10698 |   0.07162 |   0.15119 |     0.04815 |
+| leverage points      |                   0 |        2 |      4 | Winsorizing — Ridge                  |    0.12697 |   0.08848 |   0.18922 |     0.06316 |
+| leverage points      |                   0 |        2 |      4 | Robust loss — HuberRegressor         |    0.11262 |   0.07568 |   0.16393 |     0.0518  |
+| leverage points      |                   0 |        2 |      4 | Weighted — Ridge (linear)            |    0.10808 |   0.07477 |   0.17305 |     0.05597 |
+| leverage points      |                   0 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11479 |   0.07999 |   0.17104 |     0.05977 |
+| leverage points      |                   0 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11364 |   0.07808 |   0.17235 |     0.05785 |
+| leverage points      |                   0 |        2 |      4 | Weighted — Random Forest             |    0.14859 |   0.09752 |   0.23696 |     0.06239 |
+| leverage points      |                   0 |        2 |      4 | Weighted — Gradient Boosting         |    0.12446 |   0.08668 |   0.1783  |     0.06487 |
+| leverage points      |                   0 |        2 |      4 | IRLS — Ridge                         |    0.1069  |   0.07163 |   0.15116 |     0.04864 |
+| leverage points      |                   0 |        2 |      5 | No handling — Ridge                  |    0.12642 |   0.0927  |   0.19049 |     0.06955 |
+| leverage points      |                   0 |        2 |      5 | Hard removal — Ridge                 |    0.10946 |   0.07869 |   0.16029 |     0.05422 |
+| leverage points      |                   0 |        2 |      5 | Winsorizing — Ridge                  |    0.12571 |   0.09404 |   0.19058 |     0.0722  |
+| leverage points      |                   0 |        2 |      5 | Robust loss — HuberRegressor         |    0.13241 |   0.08886 |   0.18901 |     0.05694 |
+| leverage points      |                   0 |        2 |      5 | Weighted — Ridge (linear)            |    0.11028 |   0.08096 |   0.15378 |     0.05644 |
+| leverage points      |                   0 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11314 |   0.08365 |   0.15882 |     0.0639  |
+| leverage points      |                   0 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.10972 |   0.08065 |   0.16056 |     0.05997 |
+| leverage points      |                   0 |        2 |      5 | Weighted — Random Forest             |    0.13442 |   0.09266 |   0.20704 |     0.06269 |
+| leverage points      |                   0 |        2 |      5 | Weighted — Gradient Boosting         |    0.12985 |   0.09509 |   0.21682 |     0.07028 |
+| leverage points      |                   0 |        2 |      5 | IRLS — Ridge                         |    0.10872 |   0.07792 |   0.16408 |     0.05191 |
+| leverage points      |                   0 |        2 |      6 | No handling — Ridge                  |    0.10975 |   0.08469 |   0.16417 |     0.06659 |
+| leverage points      |                   0 |        2 |      6 | Hard removal — Ridge                 |    0.10126 |   0.07621 |   0.15191 |     0.06243 |
+| leverage points      |                   0 |        2 |      6 | Winsorizing — Ridge                  |    0.11083 |   0.0856  |   0.16767 |     0.06637 |
+| leverage points      |                   0 |        2 |      6 | Robust loss — HuberRegressor         |    0.12833 |   0.08923 |   0.18022 |     0.06252 |
+| leverage points      |                   0 |        2 |      6 | Weighted — Ridge (linear)            |    0.10176 |   0.07667 |   0.16264 |     0.0572  |
+| leverage points      |                   0 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.10545 |   0.08026 |   0.17006 |     0.06228 |
+| leverage points      |                   0 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10339 |   0.0774  |   0.17367 |     0.05662 |
+| leverage points      |                   0 |        2 |      6 | Weighted — Random Forest             |    0.14549 |   0.09668 |   0.23512 |     0.06435 |
+| leverage points      |                   0 |        2 |      6 | Weighted — Gradient Boosting         |    0.12829 |   0.09092 |   0.19821 |     0.06459 |
+| leverage points      |                   0 |        2 |      6 | IRLS — Ridge                         |    0.1005  |   0.07477 |   0.14659 |     0.05929 |
+| leverage points      |                   0 |        2 |      7 | No handling — Ridge                  |    0.15154 |   0.09442 |   0.19985 |     0.06502 |
+| leverage points      |                   0 |        2 |      7 | Hard removal — Ridge                 |    0.16048 |   0.08752 |   0.18177 |     0.05397 |
+| leverage points      |                   0 |        2 |      7 | Winsorizing — Ridge                  |    0.15139 |   0.09499 |   0.19796 |     0.06371 |
+| leverage points      |                   0 |        2 |      7 | Robust loss — HuberRegressor         |    0.15247 |   0.09245 |   0.19618 |     0.05786 |
+| leverage points      |                   0 |        2 |      7 | Weighted — Ridge (linear)            |    0.15637 |   0.08962 |   0.18791 |     0.06067 |
+| leverage points      |                   0 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.15943 |   0.09353 |   0.19443 |     0.06267 |
+| leverage points      |                   0 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16108 |   0.09157 |   0.19408 |     0.06335 |
+| leverage points      |                   0 |        2 |      7 | Weighted — Random Forest             |    0.15599 |   0.1068  |   0.2397  |     0.07401 |
+| leverage points      |                   0 |        2 |      7 | Weighted — Gradient Boosting         |    0.14637 |   0.09656 |   0.22192 |     0.07031 |
+| leverage points      |                   0 |        2 |      7 | IRLS — Ridge                         |    0.15599 |   0.08668 |   0.18121 |     0.05695 |
+| leverage points      |                   0 |        2 |      8 | No handling — Ridge                  |    0.1903  |   0.09105 |   0.17576 |     0.05664 |
+| leverage points      |                   0 |        2 |      8 | Hard removal — Ridge                 |    0.21616 |   0.09136 |   0.17404 |     0.05637 |
+| leverage points      |                   0 |        2 |      8 | Winsorizing — Ridge                  |    0.18155 |   0.08888 |   0.16983 |     0.05728 |
+| leverage points      |                   0 |        2 |      8 | Robust loss — HuberRegressor         |    0.20683 |   0.09607 |   0.16485 |     0.05737 |
+| leverage points      |                   0 |        2 |      8 | Weighted — Ridge (linear)            |    0.21356 |   0.09049 |   0.1609  |     0.05661 |
+| leverage points      |                   0 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.21113 |   0.09052 |   0.17015 |     0.05842 |
+| leverage points      |                   0 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.21434 |   0.09    |   0.16586 |     0.05472 |
+| leverage points      |                   0 |        2 |      8 | Weighted — Random Forest             |    0.161   |   0.10541 |   0.21527 |     0.07109 |
+| leverage points      |                   0 |        2 |      8 | Weighted — Gradient Boosting         |    0.15729 |   0.09517 |   0.18808 |     0.06686 |
+| leverage points      |                   0 |        2 |      8 | IRLS — Ridge                         |    0.2185  |   0.09057 |   0.16431 |     0.05266 |
+| leverage points      |                   0 |        2 |      9 | No handling — Ridge                  |    0.12583 |   0.0945  |   0.19158 |     0.07699 |
+| leverage points      |                   0 |        2 |      9 | Hard removal — Ridge                 |    0.10758 |   0.07715 |   0.17048 |     0.05485 |
+| leverage points      |                   0 |        2 |      9 | Winsorizing — Ridge                  |    0.12519 |   0.09399 |   0.19106 |     0.07625 |
+| leverage points      |                   0 |        2 |      9 | Robust loss — HuberRegressor         |    0.12507 |   0.08216 |   0.18085 |     0.05743 |
+| leverage points      |                   0 |        2 |      9 | Weighted — Ridge (linear)            |    0.11485 |   0.08247 |   0.17801 |     0.0616  |
+| leverage points      |                   0 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.11809 |   0.0851  |   0.18922 |     0.06569 |
+| leverage points      |                   0 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11657 |   0.08275 |   0.18013 |     0.06281 |
+| leverage points      |                   0 |        2 |      9 | Weighted — Random Forest             |    0.13378 |   0.09036 |   0.19632 |     0.06052 |
+| leverage points      |                   0 |        2 |      9 | Weighted — Gradient Boosting         |    0.12379 |   0.08905 |   0.19016 |     0.06516 |
+| leverage points      |                   0 |        2 |      9 | IRLS — Ridge                         |    0.1085  |   0.07718 |   0.1738  |     0.05416 |
+| leverage points      |                   0 |        2 |     10 | No handling — Ridge                  |    0.1462  |   0.09716 |   0.18327 |     0.07192 |
+| leverage points      |                   0 |        2 |     10 | Hard removal — Ridge                 |    0.14327 |   0.08741 |   0.16576 |     0.05543 |
+| leverage points      |                   0 |        2 |     10 | Winsorizing — Ridge                  |    0.1502  |   0.10019 |   0.18792 |     0.07508 |
+| leverage points      |                   0 |        2 |     10 | Robust loss — HuberRegressor         |    0.14633 |   0.09429 |   0.1915  |     0.06287 |
+| leverage points      |                   0 |        2 |     10 | Weighted — Ridge (linear)            |    0.14245 |   0.0885  |   0.1836  |     0.05619 |
+| leverage points      |                   0 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.14573 |   0.09012 |   0.18492 |     0.05618 |
+| leverage points      |                   0 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14507 |   0.08922 |   0.18806 |     0.05793 |
+| leverage points      |                   0 |        2 |     10 | Weighted — Random Forest             |    0.1773  |   0.10966 |   0.26464 |     0.06665 |
+| leverage points      |                   0 |        2 |     10 | Weighted — Gradient Boosting         |    0.16151 |   0.10231 |   0.21784 |     0.06582 |
+| leverage points      |                   0 |        2 |     10 | IRLS — Ridge                         |    0.14524 |   0.08756 |   0.16618 |     0.05628 |
+| leverage points      |                   0 |        2 |     11 | No handling — Ridge                  |    0.19712 |   0.09209 |   0.17067 |     0.05445 |
+| leverage points      |                   0 |        2 |     11 | Hard removal — Ridge                 |    0.21486 |   0.09026 |   0.16024 |     0.05548 |
+| leverage points      |                   0 |        2 |     11 | Winsorizing — Ridge                  |    0.18634 |   0.09189 |   0.16799 |     0.05592 |
+| leverage points      |                   0 |        2 |     11 | Robust loss — HuberRegressor         |    0.22583 |   0.10561 |   0.24602 |     0.05582 |
+| leverage points      |                   0 |        2 |     11 | Weighted — Ridge (linear)            |    0.21327 |   0.0908  |   0.16756 |     0.05401 |
+| leverage points      |                   0 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.21117 |   0.09201 |   0.18663 |     0.05618 |
+| leverage points      |                   0 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21306 |   0.09107 |   0.18233 |     0.05326 |
+| leverage points      |                   0 |        2 |     11 | Weighted — Random Forest             |    0.15247 |   0.09514 |   0.20301 |     0.05934 |
+| leverage points      |                   0 |        2 |     11 | Weighted — Gradient Boosting         |    0.14712 |   0.09447 |   0.21242 |     0.06303 |
+| leverage points      |                   0 |        2 |     11 | IRLS — Ridge                         |    0.21363 |   0.08969 |   0.16705 |     0.0566  |
+| leverage points      |                   0 |        2 |     12 | No handling — Ridge                  |    0.126   |   0.08984 |   0.17499 |     0.0715  |
+| leverage points      |                   0 |        2 |     12 | Hard removal — Ridge                 |    0.11429 |   0.07934 |   0.15933 |     0.06078 |
+| leverage points      |                   0 |        2 |     12 | Winsorizing — Ridge                  |    0.12723 |   0.09098 |   0.17765 |     0.07729 |
+| leverage points      |                   0 |        2 |     12 | Robust loss — HuberRegressor         |    0.1528  |   0.09457 |   0.1791  |     0.06191 |
+| leverage points      |                   0 |        2 |     12 | Weighted — Ridge (linear)            |    0.11213 |   0.07995 |   0.16096 |     0.06526 |
+| leverage points      |                   0 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11536 |   0.08236 |   0.16553 |     0.06514 |
+| leverage points      |                   0 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11555 |   0.08159 |   0.15849 |     0.06324 |
+| leverage points      |                   0 |        2 |     12 | Weighted — Random Forest             |    0.15277 |   0.10352 |   0.24452 |     0.0701  |
+| leverage points      |                   0 |        2 |     12 | Weighted — Gradient Boosting         |    0.14111 |   0.09847 |   0.19374 |     0.07086 |
+| leverage points      |                   0 |        2 |     12 | IRLS — Ridge                         |    0.11592 |   0.07987 |   0.16189 |     0.05914 |
+| leverage points      |                   0 |        2 |     13 | No handling — Ridge                  |    0.12253 |   0.0894  |   0.20027 |     0.06463 |
+| leverage points      |                   0 |        2 |     13 | Hard removal — Ridge                 |    0.10734 |   0.07969 |   0.17021 |     0.06284 |
+| leverage points      |                   0 |        2 |     13 | Winsorizing — Ridge                  |    0.12652 |   0.09244 |   0.20638 |     0.06783 |
+| leverage points      |                   0 |        2 |     13 | Robust loss — HuberRegressor         |    0.1212  |   0.08609 |   0.17353 |     0.06357 |
+| leverage points      |                   0 |        2 |     13 | Weighted — Ridge (linear)            |    0.11107 |   0.07978 |   0.166   |     0.05974 |
+| leverage points      |                   0 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11808 |   0.08398 |   0.1782  |     0.06145 |
+| leverage points      |                   0 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.11694 |   0.08185 |   0.17622 |     0.06107 |
+| leverage points      |                   0 |        2 |     13 | Weighted — Random Forest             |    0.13941 |   0.09938 |   0.22732 |     0.0704  |
+| leverage points      |                   0 |        2 |     13 | Weighted — Gradient Boosting         |    0.13052 |   0.0926  |   0.19466 |     0.06778 |
+| leverage points      |                   0 |        2 |     13 | IRLS — Ridge                         |    0.1057  |   0.07841 |   0.15811 |     0.06029 |
+| leverage points      |                   0 |        2 |     14 | No handling — Ridge                  |    0.12505 |   0.09055 |   0.17824 |     0.07257 |
+| leverage points      |                   0 |        2 |     14 | Hard removal — Ridge                 |    0.11847 |   0.07856 |   0.15471 |     0.05376 |
+| leverage points      |                   0 |        2 |     14 | Winsorizing — Ridge                  |    0.12469 |   0.08849 |   0.17503 |     0.0726  |
+| leverage points      |                   0 |        2 |     14 | Robust loss — HuberRegressor         |    0.13057 |   0.08737 |   0.16543 |     0.06366 |
+| leverage points      |                   0 |        2 |     14 | Weighted — Ridge (linear)            |    0.11757 |   0.08031 |   0.16845 |     0.06165 |
+| leverage points      |                   0 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.1199  |   0.08201 |   0.17153 |     0.06387 |
+| leverage points      |                   0 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.1197  |   0.08066 |   0.16753 |     0.06088 |
+| leverage points      |                   0 |        2 |     14 | Weighted — Random Forest             |    0.15748 |   0.10365 |   0.23501 |     0.07056 |
+| leverage points      |                   0 |        2 |     14 | Weighted — Gradient Boosting         |    0.136   |   0.09347 |   0.19338 |     0.06867 |
+| leverage points      |                   0 |        2 |     14 | IRLS — Ridge                         |    0.11886 |   0.07849 |   0.15559 |     0.05934 |
+| leverage points      |                   0 |        2 |     15 | No handling — Ridge                  |    0.16585 |   0.10204 |   0.19992 |     0.06874 |
+| leverage points      |                   0 |        2 |     15 | Hard removal — Ridge                 |    0.17351 |   0.09444 |   0.18271 |     0.05921 |
+| leverage points      |                   0 |        2 |     15 | Winsorizing — Ridge                  |    0.1658  |   0.10333 |   0.20609 |     0.07126 |
+| leverage points      |                   0 |        2 |     15 | Robust loss — HuberRegressor         |    0.17863 |   0.09971 |   0.22437 |     0.06101 |
+| leverage points      |                   0 |        2 |     15 | Weighted — Ridge (linear)            |    0.16901 |   0.09306 |   0.20283 |     0.05667 |
+| leverage points      |                   0 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16864 |   0.09445 |   0.19323 |     0.06166 |
+| leverage points      |                   0 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16983 |   0.09305 |   0.19926 |     0.06162 |
+| leverage points      |                   0 |        2 |     15 | Weighted — Random Forest             |    0.16509 |   0.10187 |   0.23979 |     0.06271 |
+| leverage points      |                   0 |        2 |     15 | Weighted — Gradient Boosting         |    0.15946 |   0.10062 |   0.20925 |     0.06089 |
+| leverage points      |                   0 |        2 |     15 | IRLS — Ridge                         |    0.17232 |   0.09243 |   0.19371 |     0.05808 |
+| leverage points      |                   2 |        1 |      1 | No handling — Ridge                  |    0.20215 |   0.09399 |   0.17469 |     0.05927 |
+| leverage points      |                   2 |        1 |      1 | Hard removal — Ridge                 |    0.22327 |   0.09585 |   0.16584 |     0.05684 |
+| leverage points      |                   2 |        1 |      1 | Winsorizing — Ridge                  |    0.18646 |   0.09331 |   0.17966 |     0.06042 |
+| leverage points      |                   2 |        1 |      1 | Robust loss — HuberRegressor         |    0.2201  |   0.10735 |   0.21326 |     0.06482 |
+| leverage points      |                   2 |        1 |      1 | Weighted — Ridge (linear)            |    0.22111 |   0.09541 |   0.18543 |     0.05867 |
+| leverage points      |                   2 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.21932 |   0.0971  |   0.19301 |     0.058   |
+| leverage points      |                   2 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.22218 |   0.09703 |   0.19249 |     0.05777 |
+| leverage points      |                   2 |        1 |      1 | Weighted — Random Forest             |    0.16762 |   0.10493 |   0.24185 |     0.06295 |
+| leverage points      |                   2 |        1 |      1 | Weighted — Gradient Boosting         |    0.15995 |   0.09735 |   0.23874 |     0.05463 |
+| leverage points      |                   2 |        1 |      1 | IRLS — Ridge                         |    0.22255 |   0.09586 |   0.17459 |     0.05947 |
+| leverage points      |                   2 |        1 |      2 | No handling — Ridge                  |    0.12042 |   0.08876 |   0.1743  |     0.07238 |
+| leverage points      |                   2 |        1 |      2 | Hard removal — Ridge                 |    0.11759 |   0.08277 |   0.16219 |     0.05579 |
+| leverage points      |                   2 |        1 |      2 | Winsorizing — Ridge                  |    0.1225  |   0.08982 |   0.16895 |     0.07189 |
+| leverage points      |                   2 |        1 |      2 | Robust loss — HuberRegressor         |    0.12678 |   0.08706 |   0.17266 |     0.0603  |
+| leverage points      |                   2 |        1 |      2 | Weighted — Ridge (linear)            |    0.11773 |   0.08275 |   0.15812 |     0.06075 |
+| leverage points      |                   2 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.11937 |   0.08446 |   0.16977 |     0.06293 |
+| leverage points      |                   2 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12086 |   0.08286 |   0.17221 |     0.05892 |
+| leverage points      |                   2 |        1 |      2 | Weighted — Random Forest             |    0.1504  |   0.10024 |   0.2496  |     0.06714 |
+| leverage points      |                   2 |        1 |      2 | Weighted — Gradient Boosting         |    0.13348 |   0.09539 |   0.19227 |     0.07178 |
+| leverage points      |                   2 |        1 |      2 | IRLS — Ridge                         |    0.11813 |   0.08251 |   0.15758 |     0.06107 |
+| leverage points      |                   2 |        1 |      3 | No handling — Ridge                  |    0.15518 |   0.09658 |   0.20347 |     0.06727 |
+| leverage points      |                   2 |        1 |      3 | Hard removal — Ridge                 |    0.16476 |   0.09058 |   0.18885 |     0.05643 |
+| leverage points      |                   2 |        1 |      3 | Winsorizing — Ridge                  |    0.1561  |   0.09837 |   0.19235 |     0.06986 |
+| leverage points      |                   2 |        1 |      3 | Robust loss — HuberRegressor         |    0.17769 |   0.09628 |   0.2038  |     0.05282 |
+| leverage points      |                   2 |        1 |      3 | Weighted — Ridge (linear)            |    0.16203 |   0.09168 |   0.17834 |     0.05988 |
+| leverage points      |                   2 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16354 |   0.09446 |   0.19812 |     0.05807 |
+| leverage points      |                   2 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16538 |   0.09254 |   0.19569 |     0.0574  |
+| leverage points      |                   2 |        1 |      3 | Weighted — Random Forest             |    0.16686 |   0.11005 |   0.2612  |     0.06751 |
+| leverage points      |                   2 |        1 |      3 | Weighted — Gradient Boosting         |    0.16219 |   0.10398 |   0.23121 |     0.06794 |
+| leverage points      |                   2 |        1 |      3 | IRLS — Ridge                         |    0.16347 |   0.08894 |   0.16899 |     0.05742 |
+| leverage points      |                   2 |        1 |      4 | No handling — Ridge                  |    0.12665 |   0.08856 |   0.18605 |     0.06383 |
+| leverage points      |                   2 |        1 |      4 | Hard removal — Ridge                 |    0.11252 |   0.07462 |   0.16568 |     0.05212 |
+| leverage points      |                   2 |        1 |      4 | Winsorizing — Ridge                  |    0.13047 |   0.09026 |   0.17802 |     0.06441 |
+| leverage points      |                   2 |        1 |      4 | Robust loss — HuberRegressor         |    0.11811 |   0.07893 |   0.15832 |     0.05401 |
+| leverage points      |                   2 |        1 |      4 | Weighted — Ridge (linear)            |    0.10984 |   0.07503 |   0.16496 |     0.05094 |
+| leverage points      |                   2 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11664 |   0.07976 |   0.16563 |     0.05506 |
+| leverage points      |                   2 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11429 |   0.07793 |   0.16979 |     0.05655 |
+| leverage points      |                   2 |        1 |      4 | Weighted — Random Forest             |    0.1515  |   0.09794 |   0.2349  |     0.05857 |
+| leverage points      |                   2 |        1 |      4 | Weighted — Gradient Boosting         |    0.12861 |   0.08883 |   0.18547 |     0.06322 |
+| leverage points      |                   2 |        1 |      4 | IRLS — Ridge                         |    0.10921 |   0.07316 |   0.15956 |     0.04945 |
+| leverage points      |                   2 |        1 |      5 | No handling — Ridge                  |    0.1275  |   0.09492 |   0.20109 |     0.07811 |
+| leverage points      |                   2 |        1 |      5 | Hard removal — Ridge                 |    0.11266 |   0.08265 |   0.15759 |     0.06558 |
+| leverage points      |                   2 |        1 |      5 | Winsorizing — Ridge                  |    0.12625 |   0.09494 |   0.19249 |     0.08089 |
+| leverage points      |                   2 |        1 |      5 | Robust loss — HuberRegressor         |    0.14352 |   0.09401 |   0.21315 |     0.06343 |
+| leverage points      |                   2 |        1 |      5 | Weighted — Ridge (linear)            |    0.11191 |   0.08262 |   0.16112 |     0.06152 |
+| leverage points      |                   2 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11474 |   0.0846  |   0.17646 |     0.06262 |
+| leverage points      |                   2 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.11175 |   0.08209 |   0.17121 |     0.05678 |
+| leverage points      |                   2 |        1 |      5 | Weighted — Random Forest             |    0.13626 |   0.09419 |   0.21021 |     0.06893 |
+| leverage points      |                   2 |        1 |      5 | Weighted — Gradient Boosting         |    0.12746 |   0.09276 |   0.21109 |     0.06729 |
+| leverage points      |                   2 |        1 |      5 | IRLS — Ridge                         |    0.10897 |   0.07818 |   0.16187 |     0.0586  |
+| leverage points      |                   2 |        1 |      6 | No handling — Ridge                  |    0.11443 |   0.08795 |   0.16966 |     0.07253 |
+| leverage points      |                   2 |        1 |      6 | Hard removal — Ridge                 |    0.10381 |   0.07907 |   0.16248 |     0.06518 |
+| leverage points      |                   2 |        1 |      6 | Winsorizing — Ridge                  |    0.1162  |   0.08873 |   0.17384 |     0.07536 |
+| leverage points      |                   2 |        1 |      6 | Robust loss — HuberRegressor         |    0.12842 |   0.09019 |   0.17748 |     0.06342 |
+| leverage points      |                   2 |        1 |      6 | Weighted — Ridge (linear)            |    0.10298 |   0.07858 |   0.15701 |     0.0608  |
+| leverage points      |                   2 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.10833 |   0.08344 |   0.16886 |     0.06961 |
+| leverage points      |                   2 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10579 |   0.08017 |   0.16899 |     0.06506 |
+| leverage points      |                   2 |        1 |      6 | Weighted — Random Forest             |    0.14267 |   0.09584 |   0.22831 |     0.06325 |
+| leverage points      |                   2 |        1 |      6 | Weighted — Gradient Boosting         |    0.13111 |   0.09409 |   0.20227 |     0.06443 |
+| leverage points      |                   2 |        1 |      6 | IRLS — Ridge                         |    0.10343 |   0.07723 |   0.14774 |     0.06496 |
+| leverage points      |                   2 |        1 |      7 | No handling — Ridge                  |    0.15452 |   0.09757 |   0.20372 |     0.06865 |
+| leverage points      |                   2 |        1 |      7 | Hard removal — Ridge                 |    0.16156 |   0.08913 |   0.18589 |     0.05724 |
+| leverage points      |                   2 |        1 |      7 | Winsorizing — Ridge                  |    0.15519 |   0.09886 |   0.20082 |     0.06837 |
+| leverage points      |                   2 |        1 |      7 | Robust loss — HuberRegressor         |    0.15826 |   0.09518 |   0.19191 |     0.06302 |
+| leverage points      |                   2 |        1 |      7 | Weighted — Ridge (linear)            |    0.15809 |   0.09144 |   0.19504 |     0.05942 |
+| leverage points      |                   2 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.16164 |   0.09543 |   0.20342 |     0.06135 |
+| leverage points      |                   2 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.16291 |   0.09321 |   0.2013  |     0.06103 |
+| leverage points      |                   2 |        1 |      7 | Weighted — Random Forest             |    0.15884 |   0.10882 |   0.25059 |     0.07523 |
+| leverage points      |                   2 |        1 |      7 | Weighted — Gradient Boosting         |    0.14993 |   0.09718 |   0.21851 |     0.06533 |
+| leverage points      |                   2 |        1 |      7 | IRLS — Ridge                         |    0.15701 |   0.08863 |   0.18802 |     0.05729 |
+| leverage points      |                   2 |        1 |      8 | No handling — Ridge                  |    0.1839  |   0.09224 |   0.18268 |     0.06028 |
+| leverage points      |                   2 |        1 |      8 | Hard removal — Ridge                 |    0.19919 |   0.09395 |   0.17214 |     0.06239 |
+| leverage points      |                   2 |        1 |      8 | Winsorizing — Ridge                  |    0.176   |   0.09144 |   0.17878 |     0.05906 |
+| leverage points      |                   2 |        1 |      8 | Robust loss — HuberRegressor         |    0.19782 |   0.09732 |   0.18195 |     0.05971 |
+| leverage points      |                   2 |        1 |      8 | Weighted — Ridge (linear)            |    0.20571 |   0.09038 |   0.16465 |     0.05724 |
+| leverage points      |                   2 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.2045  |   0.09083 |   0.16095 |     0.06032 |
+| leverage points      |                   2 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.20983 |   0.09007 |   0.15824 |     0.05823 |
+| leverage points      |                   2 |        1 |      8 | Weighted — Random Forest             |    0.16068 |   0.10347 |   0.21004 |     0.06821 |
+| leverage points      |                   2 |        1 |      8 | Weighted — Gradient Boosting         |    0.15635 |   0.09581 |   0.19342 |     0.065   |
+| leverage points      |                   2 |        1 |      8 | IRLS — Ridge                         |    0.20655 |   0.09097 |   0.15956 |     0.05869 |
+| leverage points      |                   2 |        1 |      9 | No handling — Ridge                  |    0.12906 |   0.09612 |   0.19783 |     0.07685 |
+| leverage points      |                   2 |        1 |      9 | Hard removal — Ridge                 |    0.11283 |   0.08035 |   0.18329 |     0.0547  |
+| leverage points      |                   2 |        1 |      9 | Winsorizing — Ridge                  |    0.12867 |   0.09635 |   0.20453 |     0.08044 |
+| leverage points      |                   2 |        1 |      9 | Robust loss — HuberRegressor         |    0.12623 |   0.0866  |   0.1741  |     0.06232 |
+| leverage points      |                   2 |        1 |      9 | Weighted — Ridge (linear)            |    0.11891 |   0.08388 |   0.18564 |     0.06441 |
+| leverage points      |                   2 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.12128 |   0.08635 |   0.18853 |     0.0661  |
+| leverage points      |                   2 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.11935 |   0.08343 |   0.18806 |     0.0604  |
+| leverage points      |                   2 |        1 |      9 | Weighted — Random Forest             |    0.13389 |   0.0921  |   0.19937 |     0.06459 |
+| leverage points      |                   2 |        1 |      9 | Weighted — Gradient Boosting         |    0.12266 |   0.08798 |   0.19684 |     0.06279 |
+| leverage points      |                   2 |        1 |      9 | IRLS — Ridge                         |    0.11115 |   0.07867 |   0.17739 |     0.05543 |
+| leverage points      |                   2 |        1 |     10 | No handling — Ridge                  |    0.14744 |   0.10014 |   0.19157 |     0.07371 |
+| leverage points      |                   2 |        1 |     10 | Hard removal — Ridge                 |    0.14561 |   0.09419 |   0.17864 |     0.06463 |
+| leverage points      |                   2 |        1 |     10 | Winsorizing — Ridge                  |    0.15167 |   0.10251 |   0.19194 |     0.07471 |
+| leverage points      |                   2 |        1 |     10 | Robust loss — HuberRegressor         |    0.14833 |   0.09692 |   0.19568 |     0.06876 |
+| leverage points      |                   2 |        1 |     10 | Weighted — Ridge (linear)            |    0.14508 |   0.09202 |   0.18678 |     0.05806 |
+| leverage points      |                   2 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.14854 |   0.09295 |   0.20413 |     0.05949 |
+| leverage points      |                   2 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.148   |   0.09252 |   0.20363 |     0.05869 |
+| leverage points      |                   2 |        1 |     10 | Weighted — Random Forest             |    0.17811 |   0.11046 |   0.26689 |     0.06924 |
+| leverage points      |                   2 |        1 |     10 | Weighted — Gradient Boosting         |    0.16408 |   0.10396 |   0.22551 |     0.0613  |
+| leverage points      |                   2 |        1 |     10 | IRLS — Ridge                         |    0.14754 |   0.09199 |   0.17793 |     0.05815 |
+| leverage points      |                   2 |        1 |     11 | No handling — Ridge                  |    0.19414 |   0.09529 |   0.17781 |     0.05821 |
+| leverage points      |                   2 |        1 |     11 | Hard removal — Ridge                 |    0.2097  |   0.09266 |   0.18149 |     0.0548  |
+| leverage points      |                   2 |        1 |     11 | Winsorizing — Ridge                  |    0.18636 |   0.09559 |   0.17207 |     0.06033 |
+| leverage points      |                   2 |        1 |     11 | Robust loss — HuberRegressor         |    0.22351 |   0.10837 |   0.22139 |     0.05557 |
+| leverage points      |                   2 |        1 |     11 | Weighted — Ridge (linear)            |    0.20879 |   0.092   |   0.16989 |     0.05636 |
+| leverage points      |                   2 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.20786 |   0.09345 |   0.18635 |     0.05724 |
+| leverage points      |                   2 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.21088 |   0.09166 |   0.17581 |     0.05511 |
+| leverage points      |                   2 |        1 |     11 | Weighted — Random Forest             |    0.15185 |   0.09542 |   0.22513 |     0.06005 |
+| leverage points      |                   2 |        1 |     11 | Weighted — Gradient Boosting         |    0.14832 |   0.09646 |   0.21722 |     0.06454 |
+| leverage points      |                   2 |        1 |     11 | IRLS — Ridge                         |    0.20798 |   0.09192 |   0.16841 |     0.05484 |
+| leverage points      |                   2 |        1 |     12 | No handling — Ridge                  |    0.12587 |   0.08929 |   0.18606 |     0.06759 |
+| leverage points      |                   2 |        1 |     12 | Hard removal — Ridge                 |    0.11422 |   0.07965 |   0.16407 |     0.05887 |
+| leverage points      |                   2 |        1 |     12 | Winsorizing — Ridge                  |    0.12681 |   0.09062 |   0.19101 |     0.07183 |
+| leverage points      |                   2 |        1 |     12 | Robust loss — HuberRegressor         |    0.15159 |   0.09472 |   0.18153 |     0.06254 |
+| leverage points      |                   2 |        1 |     12 | Weighted — Ridge (linear)            |    0.11045 |   0.07984 |   0.15564 |     0.06723 |
+| leverage points      |                   2 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11476 |   0.08258 |   0.15915 |     0.06341 |
+| leverage points      |                   2 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.11341 |   0.08132 |   0.15343 |     0.06434 |
+| leverage points      |                   2 |        1 |     12 | Weighted — Random Forest             |    0.15254 |   0.10216 |   0.24447 |     0.06603 |
+| leverage points      |                   2 |        1 |     12 | Weighted — Gradient Boosting         |    0.14183 |   0.09791 |   0.19953 |     0.07499 |
+| leverage points      |                   2 |        1 |     12 | IRLS — Ridge                         |    0.115   |   0.08019 |   0.16016 |     0.05661 |
+| leverage points      |                   2 |        1 |     13 | No handling — Ridge                  |    0.1231  |   0.08974 |   0.19819 |     0.06489 |
+| leverage points      |                   2 |        1 |     13 | Hard removal — Ridge                 |    0.10982 |   0.08175 |   0.16745 |     0.06335 |
+| leverage points      |                   2 |        1 |     13 | Winsorizing — Ridge                  |    0.12725 |   0.09322 |   0.2051  |     0.07118 |
+| leverage points      |                   2 |        1 |     13 | Robust loss — HuberRegressor         |    0.13336 |   0.08972 |   0.18815 |     0.06385 |
+| leverage points      |                   2 |        1 |     13 | Weighted — Ridge (linear)            |    0.11008 |   0.07961 |   0.16505 |     0.05848 |
+| leverage points      |                   2 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.11692 |   0.08396 |   0.18052 |     0.06212 |
+| leverage points      |                   2 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11462 |   0.08155 |   0.17283 |     0.05854 |
+| leverage points      |                   2 |        1 |     13 | Weighted — Random Forest             |    0.1416  |   0.10058 |   0.23557 |     0.06968 |
+| leverage points      |                   2 |        1 |     13 | Weighted — Gradient Boosting         |    0.12914 |   0.09168 |   0.18734 |     0.06996 |
+| leverage points      |                   2 |        1 |     13 | IRLS — Ridge                         |    0.10611 |   0.07766 |   0.15532 |     0.06101 |
+| leverage points      |                   2 |        1 |     14 | No handling — Ridge                  |    0.12549 |   0.09088 |   0.17999 |     0.07362 |
+| leverage points      |                   2 |        1 |     14 | Hard removal — Ridge                 |    0.11703 |   0.07885 |   0.15832 |     0.05422 |
+| leverage points      |                   2 |        1 |     14 | Winsorizing — Ridge                  |    0.12615 |   0.09022 |   0.17967 |     0.07468 |
+| leverage points      |                   2 |        1 |     14 | Robust loss — HuberRegressor         |    0.13285 |   0.08837 |   0.16647 |     0.06231 |
+| leverage points      |                   2 |        1 |     14 | Weighted — Ridge (linear)            |    0.11667 |   0.08036 |   0.1645  |     0.05853 |
+| leverage points      |                   2 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.11998 |   0.08275 |   0.17173 |     0.06303 |
+| leverage points      |                   2 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.11936 |   0.08078 |   0.16614 |     0.06107 |
+| leverage points      |                   2 |        1 |     14 | Weighted — Random Forest             |    0.15722 |   0.10434 |   0.23836 |     0.07337 |
+| leverage points      |                   2 |        1 |     14 | Weighted — Gradient Boosting         |    0.13732 |   0.09481 |   0.19297 |     0.06887 |
+| leverage points      |                   2 |        1 |     14 | IRLS — Ridge                         |    0.11723 |   0.07833 |   0.15779 |     0.05969 |
+| leverage points      |                   2 |        1 |     15 | No handling — Ridge                  |    0.16337 |   0.10435 |   0.2052  |     0.07565 |
+| leverage points      |                   2 |        1 |     15 | Hard removal — Ridge                 |    0.16803 |   0.09736 |   0.18023 |     0.06552 |
+| leverage points      |                   2 |        1 |     15 | Winsorizing — Ridge                  |    0.16364 |   0.10396 |   0.19636 |     0.07756 |
+| leverage points      |                   2 |        1 |     15 | Robust loss — HuberRegressor         |    0.17374 |   0.10164 |   0.20109 |     0.06737 |
+| leverage points      |                   2 |        1 |     15 | Weighted — Ridge (linear)            |    0.16617 |   0.09499 |   0.19367 |     0.0659  |
+| leverage points      |                   2 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16713 |   0.09659 |   0.20381 |     0.06772 |
+| leverage points      |                   2 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16714 |   0.09405 |   0.19886 |     0.06613 |
+| leverage points      |                   2 |        1 |     15 | Weighted — Random Forest             |    0.16454 |   0.10153 |   0.26379 |     0.0631  |
+| leverage points      |                   2 |        1 |     15 | Weighted — Gradient Boosting         |    0.1592  |   0.09957 |   0.21267 |     0.06126 |
+| leverage points      |                   2 |        1 |     15 | IRLS — Ridge                         |    0.16921 |   0.09293 |   0.18281 |     0.05739 |
+| leverage points      |                   2 |        2 |      1 | No handling — Ridge                  |    0.19656 |   0.09556 |   0.17567 |     0.06522 |
+| leverage points      |                   2 |        2 |      1 | Hard removal — Ridge                 |    0.21529 |   0.09633 |   0.17584 |     0.05788 |
+| leverage points      |                   2 |        2 |      1 | Winsorizing — Ridge                  |    0.18795 |   0.09484 |   0.17358 |     0.0619  |
+| leverage points      |                   2 |        2 |      1 | Robust loss — HuberRegressor         |    0.22799 |   0.10594 |   0.20982 |     0.0607  |
+| leverage points      |                   2 |        2 |      1 | Weighted — Ridge (linear)            |    0.21277 |   0.09446 |   0.17634 |     0.0591  |
+| leverage points      |                   2 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.21362 |   0.09645 |   0.19459 |     0.05924 |
+| leverage points      |                   2 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.21541 |   0.09609 |   0.18935 |     0.05641 |
+| leverage points      |                   2 |        2 |      1 | Weighted — Random Forest             |    0.16995 |   0.10613 |   0.2395  |     0.06539 |
+| leverage points      |                   2 |        2 |      1 | Weighted — Gradient Boosting         |    0.15961 |   0.09702 |   0.23185 |     0.06036 |
+| leverage points      |                   2 |        2 |      1 | IRLS — Ridge                         |    0.21711 |   0.09477 |   0.17169 |     0.06239 |
+| leverage points      |                   2 |        2 |      2 | No handling — Ridge                  |    0.12571 |   0.09398 |   0.18232 |     0.08119 |
+| leverage points      |                   2 |        2 |      2 | Hard removal — Ridge                 |    0.11526 |   0.08134 |   0.16343 |     0.0617  |
+| leverage points      |                   2 |        2 |      2 | Winsorizing — Ridge                  |    0.12689 |   0.09503 |   0.18144 |     0.08022 |
+| leverage points      |                   2 |        2 |      2 | Robust loss — HuberRegressor         |    0.12743 |   0.08981 |   0.19142 |     0.06291 |
+| leverage points      |                   2 |        2 |      2 | Weighted — Ridge (linear)            |    0.1179  |   0.08316 |   0.1592  |     0.05945 |
+| leverage points      |                   2 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.11992 |   0.08425 |   0.16676 |     0.06372 |
+| leverage points      |                   2 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12042 |   0.08234 |   0.16829 |     0.06    |
+| leverage points      |                   2 |        2 |      2 | Weighted — Random Forest             |    0.14909 |   0.09979 |   0.2431  |     0.06968 |
+| leverage points      |                   2 |        2 |      2 | Weighted — Gradient Boosting         |    0.13617 |   0.09561 |   0.19571 |     0.07329 |
+| leverage points      |                   2 |        2 |      2 | IRLS — Ridge                         |    0.11625 |   0.08155 |   0.15855 |     0.05994 |
+| leverage points      |                   2 |        2 |      3 | No handling — Ridge                  |    0.15612 |   0.09795 |   0.19773 |     0.06851 |
+| leverage points      |                   2 |        2 |      3 | Hard removal — Ridge                 |    0.16441 |   0.09019 |   0.17824 |     0.05969 |
+| leverage points      |                   2 |        2 |      3 | Winsorizing — Ridge                  |    0.15743 |   0.09987 |   0.19414 |     0.06922 |
+| leverage points      |                   2 |        2 |      3 | Robust loss — HuberRegressor         |    0.17129 |   0.09662 |   0.19292 |     0.05832 |
+| leverage points      |                   2 |        2 |      3 | Weighted — Ridge (linear)            |    0.16169 |   0.09166 |   0.1788  |     0.0597  |
+| leverage points      |                   2 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16371 |   0.09415 |   0.19964 |     0.06085 |
+| leverage points      |                   2 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16445 |   0.09222 |   0.20108 |     0.05889 |
+| leverage points      |                   2 |        2 |      3 | Weighted — Random Forest             |    0.16833 |   0.11114 |   0.2639  |     0.0678  |
+| leverage points      |                   2 |        2 |      3 | Weighted — Gradient Boosting         |    0.16087 |   0.1032  |   0.22884 |     0.06493 |
+| leverage points      |                   2 |        2 |      3 | IRLS — Ridge                         |    0.16382 |   0.09001 |   0.1707  |     0.05658 |
+| leverage points      |                   2 |        2 |      4 | No handling — Ridge                  |    0.12509 |   0.08694 |   0.17888 |     0.06293 |
+| leverage points      |                   2 |        2 |      4 | Hard removal — Ridge                 |    0.10955 |   0.07537 |   0.16049 |     0.05634 |
+| leverage points      |                   2 |        2 |      4 | Winsorizing — Ridge                  |    0.12925 |   0.08997 |   0.18266 |     0.06617 |
+| leverage points      |                   2 |        2 |      4 | Robust loss — HuberRegressor         |    0.11024 |   0.07692 |   0.16069 |     0.05337 |
+| leverage points      |                   2 |        2 |      4 | Weighted — Ridge (linear)            |    0.10936 |   0.07697 |   0.16071 |     0.05356 |
+| leverage points      |                   2 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11717 |   0.08247 |   0.16926 |     0.0583  |
+| leverage points      |                   2 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11412 |   0.07943 |   0.16847 |     0.05727 |
+| leverage points      |                   2 |        2 |      4 | Weighted — Random Forest             |    0.14997 |   0.09613 |   0.24129 |     0.05803 |
+| leverage points      |                   2 |        2 |      4 | Weighted — Gradient Boosting         |    0.12505 |   0.08617 |   0.17159 |     0.0671  |
+| leverage points      |                   2 |        2 |      4 | IRLS — Ridge                         |    0.10751 |   0.07404 |   0.14923 |     0.05035 |
+| leverage points      |                   2 |        2 |      5 | No handling — Ridge                  |    0.12874 |   0.095   |   0.20124 |     0.07526 |
+| leverage points      |                   2 |        2 |      5 | Hard removal — Ridge                 |    0.11377 |   0.08535 |   0.17242 |     0.07048 |
+| leverage points      |                   2 |        2 |      5 | Winsorizing — Ridge                  |    0.12801 |   0.09502 |   0.19487 |     0.07781 |
+| leverage points      |                   2 |        2 |      5 | Robust loss — HuberRegressor         |    0.13884 |   0.09576 |   0.20449 |     0.06793 |
+| leverage points      |                   2 |        2 |      5 | Weighted — Ridge (linear)            |    0.11238 |   0.08359 |   0.161   |     0.0625  |
+| leverage points      |                   2 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11497 |   0.08578 |   0.17982 |     0.06421 |
+| leverage points      |                   2 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11221 |   0.08315 |   0.17513 |     0.06368 |
+| leverage points      |                   2 |        2 |      5 | Weighted — Random Forest             |    0.13594 |   0.09433 |   0.19762 |     0.06884 |
+| leverage points      |                   2 |        2 |      5 | Weighted — Gradient Boosting         |    0.12806 |   0.09402 |   0.19995 |     0.07005 |
+| leverage points      |                   2 |        2 |      5 | IRLS — Ridge                         |    0.11135 |   0.08144 |   0.16014 |     0.06283 |
+| leverage points      |                   2 |        2 |      6 | No handling — Ridge                  |    0.11507 |   0.08896 |   0.17062 |     0.0719  |
+| leverage points      |                   2 |        2 |      6 | Hard removal — Ridge                 |    0.10438 |   0.07768 |   0.16014 |     0.06374 |
+| leverage points      |                   2 |        2 |      6 | Winsorizing — Ridge                  |    0.11571 |   0.0893  |   0.17336 |     0.07703 |
+| leverage points      |                   2 |        2 |      6 | Robust loss — HuberRegressor         |    0.13397 |   0.09203 |   0.18973 |     0.06394 |
+| leverage points      |                   2 |        2 |      6 | Weighted — Ridge (linear)            |    0.10627 |   0.07999 |   0.1579  |     0.06556 |
+| leverage points      |                   2 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.1095  |   0.08374 |   0.16754 |     0.06821 |
+| leverage points      |                   2 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10596 |   0.07956 |   0.16861 |     0.06092 |
+| leverage points      |                   2 |        2 |      6 | Weighted — Random Forest             |    0.14451 |   0.09655 |   0.23964 |     0.06202 |
+| leverage points      |                   2 |        2 |      6 | Weighted — Gradient Boosting         |    0.1305  |   0.09327 |   0.20293 |     0.06151 |
+| leverage points      |                   2 |        2 |      6 | IRLS — Ridge                         |    0.10337 |   0.07723 |   0.15267 |     0.06146 |
+| leverage points      |                   2 |        2 |      7 | No handling — Ridge                  |    0.14997 |   0.09544 |   0.20784 |     0.06958 |
+| leverage points      |                   2 |        2 |      7 | Hard removal — Ridge                 |    0.15541 |   0.08676 |   0.17895 |     0.0606  |
+| leverage points      |                   2 |        2 |      7 | Winsorizing — Ridge                  |    0.15035 |   0.09645 |   0.20577 |     0.06964 |
+| leverage points      |                   2 |        2 |      7 | Robust loss — HuberRegressor         |    0.1507  |   0.0952  |   0.19708 |     0.06139 |
+| leverage points      |                   2 |        2 |      7 | Weighted — Ridge (linear)            |    0.15501 |   0.09058 |   0.18795 |     0.0631  |
+| leverage points      |                   2 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.15841 |   0.09521 |   0.19437 |     0.06927 |
+| leverage points      |                   2 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16021 |   0.0931  |   0.19042 |     0.06763 |
+| leverage points      |                   2 |        2 |      7 | Weighted — Random Forest             |    0.15873 |   0.11009 |   0.25347 |     0.07976 |
+| leverage points      |                   2 |        2 |      7 | Weighted — Gradient Boosting         |    0.15062 |   0.09945 |   0.21952 |     0.06928 |
+| leverage points      |                   2 |        2 |      7 | IRLS — Ridge                         |    0.1543  |   0.08744 |   0.18615 |     0.05707 |
+| leverage points      |                   2 |        2 |      8 | No handling — Ridge                  |    0.19667 |   0.0919  |   0.17107 |     0.05391 |
+| leverage points      |                   2 |        2 |      8 | Hard removal — Ridge                 |    0.21684 |   0.09175 |   0.17211 |     0.05512 |
+| leverage points      |                   2 |        2 |      8 | Winsorizing — Ridge                  |    0.18715 |   0.08945 |   0.16762 |     0.05668 |
+| leverage points      |                   2 |        2 |      8 | Robust loss — HuberRegressor         |    0.19858 |   0.09432 |   0.18028 |     0.05444 |
+| leverage points      |                   2 |        2 |      8 | Weighted — Ridge (linear)            |    0.21829 |   0.09164 |   0.16885 |     0.05304 |
+| leverage points      |                   2 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.21678 |   0.0924  |   0.16433 |     0.05435 |
+| leverage points      |                   2 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.21909 |   0.09147 |   0.17138 |     0.05287 |
+| leverage points      |                   2 |        2 |      8 | Weighted — Random Forest             |    0.16203 |   0.10538 |   0.20087 |     0.06969 |
+| leverage points      |                   2 |        2 |      8 | Weighted — Gradient Boosting         |    0.15646 |   0.09586 |   0.19009 |     0.0664  |
+| leverage points      |                   2 |        2 |      8 | IRLS — Ridge                         |    0.21979 |   0.09029 |   0.16782 |     0.05159 |
+| leverage points      |                   2 |        2 |      9 | No handling — Ridge                  |    0.12673 |   0.09536 |   0.19578 |     0.07828 |
+| leverage points      |                   2 |        2 |      9 | Hard removal — Ridge                 |    0.10909 |   0.07918 |   0.1644  |     0.06167 |
+| leverage points      |                   2 |        2 |      9 | Winsorizing — Ridge                  |    0.12629 |   0.09504 |   0.18753 |     0.07546 |
+| leverage points      |                   2 |        2 |      9 | Robust loss — HuberRegressor         |    0.1283  |   0.08685 |   0.19217 |     0.05731 |
+| leverage points      |                   2 |        2 |      9 | Weighted — Ridge (linear)            |    0.11742 |   0.08475 |   0.17881 |     0.06602 |
+| leverage points      |                   2 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.11985 |   0.0866  |   0.18764 |     0.06837 |
+| leverage points      |                   2 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11885 |   0.08451 |   0.1833  |     0.06353 |
+| leverage points      |                   2 |        2 |      9 | Weighted — Random Forest             |    0.13459 |   0.09216 |   0.20996 |     0.06241 |
+| leverage points      |                   2 |        2 |      9 | Weighted — Gradient Boosting         |    0.12226 |   0.09002 |   0.19995 |     0.06558 |
+| leverage points      |                   2 |        2 |      9 | IRLS — Ridge                         |    0.10954 |   0.0787  |   0.17258 |     0.05767 |
+| leverage points      |                   2 |        2 |     10 | No handling — Ridge                  |    0.14587 |   0.09711 |   0.17753 |     0.07536 |
+| leverage points      |                   2 |        2 |     10 | Hard removal — Ridge                 |    0.14302 |   0.08802 |   0.16769 |     0.05509 |
+| leverage points      |                   2 |        2 |     10 | Winsorizing — Ridge                  |    0.14977 |   0.09956 |   0.18286 |     0.07271 |
+| leverage points      |                   2 |        2 |     10 | Robust loss — HuberRegressor         |    0.14627 |   0.09525 |   0.20929 |     0.0635  |
+| leverage points      |                   2 |        2 |     10 | Weighted — Ridge (linear)            |    0.14313 |   0.08907 |   0.19637 |     0.0549  |
+| leverage points      |                   2 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.14698 |   0.09074 |   0.19041 |     0.0548  |
+| leverage points      |                   2 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14595 |   0.08985 |   0.19162 |     0.05685 |
+| leverage points      |                   2 |        2 |     10 | Weighted — Random Forest             |    0.17737 |   0.11049 |   0.26932 |     0.06544 |
+| leverage points      |                   2 |        2 |     10 | Weighted — Gradient Boosting         |    0.16282 |   0.10327 |   0.22026 |     0.0676  |
+| leverage points      |                   2 |        2 |     10 | IRLS — Ridge                         |    0.14532 |   0.08784 |   0.16686 |     0.05268 |
+| leverage points      |                   2 |        2 |     11 | No handling — Ridge                  |    0.20164 |   0.09613 |   0.18203 |     0.05849 |
+| leverage points      |                   2 |        2 |     11 | Hard removal — Ridge                 |    0.21378 |   0.09301 |   0.17654 |     0.05668 |
+| leverage points      |                   2 |        2 |     11 | Winsorizing — Ridge                  |    0.19192 |   0.09569 |   0.184   |     0.06268 |
+| leverage points      |                   2 |        2 |     11 | Robust loss — HuberRegressor         |    0.21511 |   0.10656 |   0.21478 |     0.06083 |
+| leverage points      |                   2 |        2 |     11 | Weighted — Ridge (linear)            |    0.21323 |   0.09235 |   0.17363 |     0.05662 |
+| leverage points      |                   2 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.21234 |   0.09343 |   0.17528 |     0.06169 |
+| leverage points      |                   2 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21469 |   0.09176 |   0.17356 |     0.0583  |
+| leverage points      |                   2 |        2 |     11 | Weighted — Random Forest             |    0.15252 |   0.09808 |   0.21681 |     0.0656  |
+| leverage points      |                   2 |        2 |     11 | Weighted — Gradient Boosting         |    0.14846 |   0.0945  |   0.21839 |     0.06383 |
+| leverage points      |                   2 |        2 |     11 | IRLS — Ridge                         |    0.21114 |   0.09015 |   0.16249 |     0.05691 |
+| leverage points      |                   2 |        2 |     12 | No handling — Ridge                  |    0.12965 |   0.09396 |   0.18022 |     0.07263 |
+| leverage points      |                   2 |        2 |     12 | Hard removal — Ridge                 |    0.11648 |   0.08456 |   0.1642  |     0.06733 |
+| leverage points      |                   2 |        2 |     12 | Winsorizing — Ridge                  |    0.13098 |   0.09535 |   0.1911  |     0.07648 |
+| leverage points      |                   2 |        2 |     12 | Robust loss — HuberRegressor         |    0.16276 |   0.10214 |   0.19238 |     0.0714  |
+| leverage points      |                   2 |        2 |     12 | Weighted — Ridge (linear)            |    0.1119  |   0.08174 |   0.1529  |     0.07015 |
+| leverage points      |                   2 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11571 |   0.08363 |   0.16726 |     0.06631 |
+| leverage points      |                   2 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11386 |   0.08205 |   0.15828 |     0.06529 |
+| leverage points      |                   2 |        2 |     12 | Weighted — Random Forest             |    0.15243 |   0.10242 |   0.25334 |     0.06728 |
+| leverage points      |                   2 |        2 |     12 | Weighted — Gradient Boosting         |    0.14017 |   0.09845 |   0.18781 |     0.07346 |
+| leverage points      |                   2 |        2 |     12 | IRLS — Ridge                         |    0.11527 |   0.08169 |   0.15537 |     0.06204 |
+| leverage points      |                   2 |        2 |     13 | No handling — Ridge                  |    0.12363 |   0.09187 |   0.1969  |     0.07018 |
+| leverage points      |                   2 |        2 |     13 | Hard removal — Ridge                 |    0.10704 |   0.07976 |   0.16807 |     0.06208 |
+| leverage points      |                   2 |        2 |     13 | Winsorizing — Ridge                  |    0.12743 |   0.0943  |   0.20158 |     0.07115 |
+| leverage points      |                   2 |        2 |     13 | Robust loss — HuberRegressor         |    0.12221 |   0.08765 |   0.19435 |     0.06598 |
+| leverage points      |                   2 |        2 |     13 | Weighted — Ridge (linear)            |    0.11161 |   0.0805  |   0.16537 |     0.06148 |
+| leverage points      |                   2 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11933 |   0.08531 |   0.18976 |     0.06331 |
+| leverage points      |                   2 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.11742 |   0.08197 |   0.17388 |     0.058   |
+| leverage points      |                   2 |        2 |     13 | Weighted — Random Forest             |    0.13844 |   0.09812 |   0.2204  |     0.06963 |
+| leverage points      |                   2 |        2 |     13 | Weighted — Gradient Boosting         |    0.12753 |   0.09114 |   0.19171 |     0.06853 |
+| leverage points      |                   2 |        2 |     13 | IRLS — Ridge                         |    0.10572 |   0.07848 |   0.15728 |     0.05954 |
+| leverage points      |                   2 |        2 |     14 | No handling — Ridge                  |    0.12708 |   0.09048 |   0.18634 |     0.06664 |
+| leverage points      |                   2 |        2 |     14 | Hard removal — Ridge                 |    0.11968 |   0.08094 |   0.16253 |     0.05739 |
+| leverage points      |                   2 |        2 |     14 | Winsorizing — Ridge                  |    0.12697 |   0.08913 |   0.19274 |     0.06909 |
+| leverage points      |                   2 |        2 |     14 | Robust loss — HuberRegressor         |    0.13085 |   0.08944 |   0.17893 |     0.06593 |
+| leverage points      |                   2 |        2 |     14 | Weighted — Ridge (linear)            |    0.11872 |   0.08069 |   0.16764 |     0.05893 |
+| leverage points      |                   2 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.1211  |   0.08241 |   0.17185 |     0.05945 |
+| leverage points      |                   2 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12101 |   0.08112 |   0.17436 |     0.05644 |
+| leverage points      |                   2 |        2 |     14 | Weighted — Random Forest             |    0.1551  |   0.1025  |   0.23479 |     0.06863 |
+| leverage points      |                   2 |        2 |     14 | Weighted — Gradient Boosting         |    0.1394  |   0.09526 |   0.19595 |     0.0686  |
+| leverage points      |                   2 |        2 |     14 | IRLS — Ridge                         |    0.12052 |   0.08015 |   0.16038 |     0.05507 |
+| leverage points      |                   2 |        2 |     15 | No handling — Ridge                  |    0.16077 |   0.10031 |   0.19767 |     0.06858 |
+| leverage points      |                   2 |        2 |     15 | Hard removal — Ridge                 |    0.16591 |   0.09393 |   0.1846  |     0.05813 |
+| leverage points      |                   2 |        2 |     15 | Winsorizing — Ridge                  |    0.16154 |   0.10077 |   0.20224 |     0.06835 |
+| leverage points      |                   2 |        2 |     15 | Robust loss — HuberRegressor         |    0.17275 |   0.09723 |   0.2175  |     0.05738 |
+| leverage points      |                   2 |        2 |     15 | Weighted — Ridge (linear)            |    0.16485 |   0.09378 |   0.20428 |     0.0604  |
+| leverage points      |                   2 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16573 |   0.09563 |   0.19848 |     0.06094 |
+| leverage points      |                   2 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16659 |   0.09393 |   0.2018  |     0.06269 |
+| leverage points      |                   2 |        2 |     15 | Weighted — Random Forest             |    0.16577 |   0.10319 |   0.25903 |     0.0648  |
+| leverage points      |                   2 |        2 |     15 | Weighted — Gradient Boosting         |    0.15891 |   0.09953 |   0.20773 |     0.06117 |
+| leverage points      |                   2 |        2 |     15 | IRLS — Ridge                         |    0.16787 |   0.091   |   0.17274 |     0.05677 |
+| leverage points      |                   5 |        1 |      1 | No handling — Ridge                  |    0.18765 |   0.0998  |   0.19808 |     0.06658 |
+| leverage points      |                   5 |        1 |      1 | Hard removal — Ridge                 |    0.2116  |   0.09631 |   0.17731 |     0.06122 |
+| leverage points      |                   5 |        1 |      1 | Winsorizing — Ridge                  |    0.17881 |   0.09918 |   0.19802 |     0.06619 |
+| leverage points      |                   5 |        1 |      1 | Robust loss — HuberRegressor         |    0.21994 |   0.10867 |   0.20767 |     0.06721 |
+| leverage points      |                   5 |        1 |      1 | Weighted — Ridge (linear)            |    0.20679 |   0.09453 |   0.1843  |     0.05851 |
+| leverage points      |                   5 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.20653 |   0.09665 |   0.19585 |     0.05886 |
+| leverage points      |                   5 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.21016 |   0.09598 |   0.18627 |     0.05856 |
+| leverage points      |                   5 |        1 |      1 | Weighted — Random Forest             |    0.16982 |   0.10628 |   0.24267 |     0.06378 |
+| leverage points      |                   5 |        1 |      1 | Weighted — Gradient Boosting         |    0.16001 |   0.0998  |   0.23498 |     0.0605  |
+| leverage points      |                   5 |        1 |      1 | IRLS — Ridge                         |    0.21251 |   0.0955  |   0.18115 |     0.06089 |
+| leverage points      |                   5 |        1 |      2 | No handling — Ridge                  |    0.12512 |   0.09277 |   0.18009 |     0.0751  |
+| leverage points      |                   5 |        1 |      2 | Hard removal — Ridge                 |    0.11955 |   0.08426 |   0.16959 |     0.06671 |
+| leverage points      |                   5 |        1 |      2 | Winsorizing — Ridge                  |    0.12714 |   0.09398 |   0.18069 |     0.07807 |
+| leverage points      |                   5 |        1 |      2 | Robust loss — HuberRegressor         |    0.13447 |   0.09422 |   0.20361 |     0.06525 |
+| leverage points      |                   5 |        1 |      2 | Weighted — Ridge (linear)            |    0.11719 |   0.08297 |   0.16535 |     0.06632 |
+| leverage points      |                   5 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.11849 |   0.08393 |   0.17352 |     0.06332 |
+| leverage points      |                   5 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.11899 |   0.08247 |   0.17982 |     0.05949 |
+| leverage points      |                   5 |        1 |      2 | Weighted — Random Forest             |    0.15022 |   0.10065 |   0.2518  |     0.06673 |
+| leverage points      |                   5 |        1 |      2 | Weighted — Gradient Boosting         |    0.13173 |   0.09393 |   0.19633 |     0.06945 |
+| leverage points      |                   5 |        1 |      2 | IRLS — Ridge                         |    0.11917 |   0.08363 |   0.16332 |     0.06343 |
+| leverage points      |                   5 |        1 |      3 | No handling — Ridge                  |    0.15356 |   0.09528 |   0.1967  |     0.06529 |
+| leverage points      |                   5 |        1 |      3 | Hard removal — Ridge                 |    0.16029 |   0.09008 |   0.17111 |     0.06024 |
+| leverage points      |                   5 |        1 |      3 | Winsorizing — Ridge                  |    0.15638 |   0.09831 |   0.19161 |     0.06649 |
+| leverage points      |                   5 |        1 |      3 | Robust loss — HuberRegressor         |    0.16907 |   0.09536 |   0.22077 |     0.05559 |
+| leverage points      |                   5 |        1 |      3 | Weighted — Ridge (linear)            |    0.16063 |   0.09033 |   0.18466 |     0.05997 |
+| leverage points      |                   5 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16324 |   0.09394 |   0.20914 |     0.05899 |
+| leverage points      |                   5 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16417 |   0.09173 |   0.20359 |     0.05288 |
+| leverage points      |                   5 |        1 |      3 | Weighted — Random Forest             |    0.16838 |   0.11093 |   0.25425 |     0.06874 |
+| leverage points      |                   5 |        1 |      3 | Weighted — Gradient Boosting         |    0.16457 |   0.10499 |   0.22582 |     0.067   |
+| leverage points      |                   5 |        1 |      3 | IRLS — Ridge                         |    0.16271 |   0.08822 |   0.16924 |     0.05769 |
+| leverage points      |                   5 |        1 |      4 | No handling — Ridge                  |    0.12391 |   0.08638 |   0.18826 |     0.06306 |
+| leverage points      |                   5 |        1 |      4 | Hard removal — Ridge                 |    0.11217 |   0.07613 |   0.16356 |     0.05251 |
+| leverage points      |                   5 |        1 |      4 | Winsorizing — Ridge                  |    0.12845 |   0.0896  |   0.18331 |     0.07161 |
+| leverage points      |                   5 |        1 |      4 | Robust loss — HuberRegressor         |    0.116   |   0.07909 |   0.16079 |     0.05672 |
+| leverage points      |                   5 |        1 |      4 | Weighted — Ridge (linear)            |    0.11051 |   0.0764  |   0.15929 |     0.05041 |
+| leverage points      |                   5 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11751 |   0.0816  |   0.16661 |     0.05735 |
+| leverage points      |                   5 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11366 |   0.07841 |   0.16181 |     0.05494 |
+| leverage points      |                   5 |        1 |      4 | Weighted — Random Forest             |    0.14957 |   0.09648 |   0.24226 |     0.06047 |
+| leverage points      |                   5 |        1 |      4 | Weighted — Gradient Boosting         |    0.12702 |   0.08642 |   0.16743 |     0.06461 |
+| leverage points      |                   5 |        1 |      4 | IRLS — Ridge                         |    0.10954 |   0.07416 |   0.15854 |     0.04954 |
+| leverage points      |                   5 |        1 |      5 | No handling — Ridge                  |    0.1199  |   0.08858 |   0.17657 |     0.06803 |
+| leverage points      |                   5 |        1 |      5 | Hard removal — Ridge                 |    0.108   |   0.07709 |   0.15869 |     0.05611 |
+| leverage points      |                   5 |        1 |      5 | Winsorizing — Ridge                  |    0.1185  |   0.08877 |   0.16835 |     0.07156 |
+| leverage points      |                   5 |        1 |      5 | Robust loss — HuberRegressor         |    0.13045 |   0.08846 |   0.20361 |     0.05458 |
+| leverage points      |                   5 |        1 |      5 | Weighted — Ridge (linear)            |    0.10883 |   0.07938 |   0.15931 |     0.06167 |
+| leverage points      |                   5 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11165 |   0.08238 |   0.16892 |     0.06194 |
+| leverage points      |                   5 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.10838 |   0.07955 |   0.16395 |     0.05823 |
+| leverage points      |                   5 |        1 |      5 | Weighted — Random Forest             |    0.13501 |   0.09384 |   0.20745 |     0.06428 |
+| leverage points      |                   5 |        1 |      5 | Weighted — Gradient Boosting         |    0.13214 |   0.09593 |   0.22735 |     0.07129 |
+| leverage points      |                   5 |        1 |      5 | IRLS — Ridge                         |    0.10613 |   0.07596 |   0.16356 |     0.05575 |
+| leverage points      |                   5 |        1 |      6 | No handling — Ridge                  |    0.11249 |   0.08756 |   0.18041 |     0.07209 |
+| leverage points      |                   5 |        1 |      6 | Hard removal — Ridge                 |    0.10308 |   0.07858 |   0.15624 |     0.06802 |
+| leverage points      |                   5 |        1 |      6 | Winsorizing — Ridge                  |    0.11444 |   0.08892 |   0.17925 |     0.07689 |
+| leverage points      |                   5 |        1 |      6 | Robust loss — HuberRegressor         |    0.13493 |   0.09206 |   0.19096 |     0.06421 |
+| leverage points      |                   5 |        1 |      6 | Weighted — Ridge (linear)            |    0.10306 |   0.078   |   0.15723 |     0.06318 |
+| leverage points      |                   5 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.10753 |   0.0821  |   0.16773 |     0.06807 |
+| leverage points      |                   5 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10392 |   0.07821 |   0.1619  |     0.05837 |
+| leverage points      |                   5 |        1 |      6 | Weighted — Random Forest             |    0.14304 |   0.09627 |   0.24408 |     0.06042 |
+| leverage points      |                   5 |        1 |      6 | Weighted — Gradient Boosting         |    0.13203 |   0.09387 |   0.20173 |     0.06371 |
+| leverage points      |                   5 |        1 |      6 | IRLS — Ridge                         |    0.10251 |   0.07743 |   0.15308 |     0.06378 |
+| leverage points      |                   5 |        1 |      7 | No handling — Ridge                  |    0.15044 |   0.09616 |   0.20951 |     0.06512 |
+| leverage points      |                   5 |        1 |      7 | Hard removal — Ridge                 |    0.15076 |   0.08667 |   0.17405 |     0.06363 |
+| leverage points      |                   5 |        1 |      7 | Winsorizing — Ridge                  |    0.14997 |   0.0962  |   0.21365 |     0.06512 |
+| leverage points      |                   5 |        1 |      7 | Robust loss — HuberRegressor         |    0.15503 |   0.0956  |   0.20694 |     0.06065 |
+| leverage points      |                   5 |        1 |      7 | Weighted — Ridge (linear)            |    0.15312 |   0.09047 |   0.1915  |     0.06165 |
+| leverage points      |                   5 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15553 |   0.09431 |   0.19224 |     0.05995 |
+| leverage points      |                   5 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.15602 |   0.09214 |   0.19052 |     0.06013 |
+| leverage points      |                   5 |        1 |      7 | Weighted — Random Forest             |    0.15718 |   0.10758 |   0.24637 |     0.07246 |
+| leverage points      |                   5 |        1 |      7 | Weighted — Gradient Boosting         |    0.14877 |   0.09825 |   0.20825 |     0.07081 |
+| leverage points      |                   5 |        1 |      7 | IRLS — Ridge                         |    0.15088 |   0.08682 |   0.18659 |     0.06183 |
+| leverage points      |                   5 |        1 |      8 | No handling — Ridge                  |    0.19333 |   0.09547 |   0.19196 |     0.05698 |
+| leverage points      |                   5 |        1 |      8 | Hard removal — Ridge                 |    0.20854 |   0.09397 |   0.19237 |     0.05992 |
+| leverage points      |                   5 |        1 |      8 | Winsorizing — Ridge                  |    0.18411 |   0.0919  |   0.17912 |     0.05779 |
+| leverage points      |                   5 |        1 |      8 | Robust loss — HuberRegressor         |    0.21151 |   0.10282 |   0.2045  |     0.0578  |
+| leverage points      |                   5 |        1 |      8 | Weighted — Ridge (linear)            |    0.20851 |   0.09178 |   0.17629 |     0.05962 |
+| leverage points      |                   5 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.20729 |   0.09316 |   0.17271 |     0.05949 |
+| leverage points      |                   5 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.20982 |   0.09088 |   0.17455 |     0.05674 |
+| leverage points      |                   5 |        1 |      8 | Weighted — Random Forest             |    0.16127 |   0.10485 |   0.20911 |     0.06579 |
+| leverage points      |                   5 |        1 |      8 | Weighted — Gradient Boosting         |    0.15663 |   0.09562 |   0.19094 |     0.06608 |
+| leverage points      |                   5 |        1 |      8 | IRLS — Ridge                         |    0.20943 |   0.09221 |   0.17299 |     0.0583  |
+| leverage points      |                   5 |        1 |      9 | No handling — Ridge                  |    0.13386 |   0.09853 |   0.20718 |     0.08001 |
+| leverage points      |                   5 |        1 |      9 | Hard removal — Ridge                 |    0.11618 |   0.08533 |   0.17592 |     0.06483 |
+| leverage points      |                   5 |        1 |      9 | Winsorizing — Ridge                  |    0.13339 |   0.09954 |   0.21006 |     0.08259 |
+| leverage points      |                   5 |        1 |      9 | Robust loss — HuberRegressor         |    0.13797 |   0.09497 |   0.20566 |     0.07252 |
+| leverage points      |                   5 |        1 |      9 | Weighted — Ridge (linear)            |    0.11966 |   0.08552 |   0.17962 |     0.0727  |
+| leverage points      |                   5 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.12218 |   0.08796 |   0.18713 |     0.06946 |
+| leverage points      |                   5 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.12032 |   0.08497 |   0.18989 |     0.06281 |
+| leverage points      |                   5 |        1 |      9 | Weighted — Random Forest             |    0.13399 |   0.092   |   0.2081  |     0.06401 |
+| leverage points      |                   5 |        1 |      9 | Weighted — Gradient Boosting         |    0.12359 |   0.08822 |   0.18711 |     0.05957 |
+| leverage points      |                   5 |        1 |      9 | IRLS — Ridge                         |    0.11465 |   0.08241 |   0.16427 |     0.0616  |
+| leverage points      |                   5 |        1 |     10 | No handling — Ridge                  |    0.14974 |   0.09832 |   0.18706 |     0.06958 |
+| leverage points      |                   5 |        1 |     10 | Hard removal — Ridge                 |    0.14682 |   0.09448 |   0.17621 |     0.06709 |
+| leverage points      |                   5 |        1 |     10 | Winsorizing — Ridge                  |    0.15402 |   0.10153 |   0.19443 |     0.07343 |
+| leverage points      |                   5 |        1 |     10 | Robust loss — HuberRegressor         |    0.15415 |   0.10101 |   0.21543 |     0.06349 |
+| leverage points      |                   5 |        1 |     10 | Weighted — Ridge (linear)            |    0.14496 |   0.09084 |   0.19864 |     0.05827 |
+| leverage points      |                   5 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.14937 |   0.09279 |   0.21494 |     0.05934 |
+| leverage points      |                   5 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.1475  |   0.09138 |   0.21188 |     0.0568  |
+| leverage points      |                   5 |        1 |     10 | Weighted — Random Forest             |    0.17735 |   0.11066 |   0.26036 |     0.06568 |
+| leverage points      |                   5 |        1 |     10 | Weighted — Gradient Boosting         |    0.16341 |   0.10299 |   0.21296 |     0.06761 |
+| leverage points      |                   5 |        1 |     10 | IRLS — Ridge                         |    0.14802 |   0.09233 |   0.18127 |     0.06175 |
+| leverage points      |                   5 |        1 |     11 | No handling — Ridge                  |    0.18442 |   0.09699 |   0.19371 |     0.06313 |
+| leverage points      |                   5 |        1 |     11 | Hard removal — Ridge                 |    0.19009 |   0.09594 |   0.19505 |     0.05912 |
+| leverage points      |                   5 |        1 |     11 | Winsorizing — Ridge                  |    0.17812 |   0.09721 |   0.20221 |     0.06263 |
+| leverage points      |                   5 |        1 |     11 | Robust loss — HuberRegressor         |    0.21329 |   0.11236 |   0.25587 |     0.06492 |
+| leverage points      |                   5 |        1 |     11 | Weighted — Ridge (linear)            |    0.20556 |   0.09349 |   0.17881 |     0.05569 |
+| leverage points      |                   5 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.20485 |   0.09437 |   0.17987 |     0.06087 |
+| leverage points      |                   5 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.20919 |   0.09177 |   0.17905 |     0.05535 |
+| leverage points      |                   5 |        1 |     11 | Weighted — Random Forest             |    0.15536 |   0.09748 |   0.22332 |     0.05817 |
+| leverage points      |                   5 |        1 |     11 | Weighted — Gradient Boosting         |    0.14646 |   0.09434 |   0.21201 |     0.06293 |
+| leverage points      |                   5 |        1 |     11 | IRLS — Ridge                         |    0.19822 |   0.09339 |   0.17803 |     0.05797 |
+| leverage points      |                   5 |        1 |     12 | No handling — Ridge                  |    0.13476 |   0.09702 |   0.19571 |     0.0802  |
+| leverage points      |                   5 |        1 |     12 | Hard removal — Ridge                 |    0.12264 |   0.08773 |   0.17253 |     0.06898 |
+| leverage points      |                   5 |        1 |     12 | Winsorizing — Ridge                  |    0.13578 |   0.09794 |   0.19783 |     0.07381 |
+| leverage points      |                   5 |        1 |     12 | Robust loss — HuberRegressor         |    0.16755 |   0.10311 |   0.19577 |     0.06953 |
+| leverage points      |                   5 |        1 |     12 | Weighted — Ridge (linear)            |    0.11732 |   0.08526 |   0.16456 |     0.06765 |
+| leverage points      |                   5 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.12119 |   0.08822 |   0.17298 |     0.07041 |
+| leverage points      |                   5 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.11915 |   0.08588 |   0.15934 |     0.069   |
+| leverage points      |                   5 |        1 |     12 | Weighted — Random Forest             |    0.15258 |   0.10303 |   0.24826 |     0.06779 |
+| leverage points      |                   5 |        1 |     12 | Weighted — Gradient Boosting         |    0.13925 |   0.09761 |   0.19329 |     0.07322 |
+| leverage points      |                   5 |        1 |     12 | IRLS — Ridge                         |    0.11908 |   0.08391 |   0.16394 |     0.07049 |
+| leverage points      |                   5 |        1 |     13 | No handling — Ridge                  |    0.12419 |   0.09226 |   0.20037 |     0.06969 |
+| leverage points      |                   5 |        1 |     13 | Hard removal — Ridge                 |    0.11313 |   0.0847  |   0.17561 |     0.06634 |
+| leverage points      |                   5 |        1 |     13 | Winsorizing — Ridge                  |    0.12808 |   0.09559 |   0.20819 |     0.07613 |
+| leverage points      |                   5 |        1 |     13 | Robust loss — HuberRegressor         |    0.13173 |   0.09196 |   0.19972 |     0.06397 |
+| leverage points      |                   5 |        1 |     13 | Weighted — Ridge (linear)            |    0.11445 |   0.08315 |   0.17419 |     0.0626  |
+| leverage points      |                   5 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12069 |   0.08747 |   0.17747 |     0.06663 |
+| leverage points      |                   5 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11893 |   0.08466 |   0.17467 |     0.06394 |
+| leverage points      |                   5 |        1 |     13 | Weighted — Random Forest             |    0.14105 |   0.10058 |   0.2342  |     0.06702 |
+| leverage points      |                   5 |        1 |     13 | Weighted — Gradient Boosting         |    0.13014 |   0.09249 |   0.20166 |     0.06931 |
+| leverage points      |                   5 |        1 |     13 | IRLS — Ridge                         |    0.10958 |   0.08091 |   0.16879 |     0.06759 |
+| leverage points      |                   5 |        1 |     14 | No handling — Ridge                  |    0.12589 |   0.09107 |   0.18717 |     0.0701  |
+| leverage points      |                   5 |        1 |     14 | Hard removal — Ridge                 |    0.11827 |   0.08174 |   0.15892 |     0.06421 |
+| leverage points      |                   5 |        1 |     14 | Winsorizing — Ridge                  |    0.12709 |   0.09028 |   0.19023 |     0.07394 |
+| leverage points      |                   5 |        1 |     14 | Robust loss — HuberRegressor         |    0.13188 |   0.091   |   0.1738  |     0.06423 |
+| leverage points      |                   5 |        1 |     14 | Weighted — Ridge (linear)            |    0.11899 |   0.08082 |   0.17333 |     0.06099 |
+| leverage points      |                   5 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.1224  |   0.08327 |   0.18035 |     0.05962 |
+| leverage points      |                   5 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12211 |   0.08131 |   0.17535 |     0.05786 |
+| leverage points      |                   5 |        1 |     14 | Weighted — Random Forest             |    0.15511 |   0.10358 |   0.23266 |     0.0724  |
+| leverage points      |                   5 |        1 |     14 | Weighted — Gradient Boosting         |    0.13694 |   0.09337 |   0.19289 |     0.07068 |
+| leverage points      |                   5 |        1 |     14 | IRLS — Ridge                         |    0.11929 |   0.07995 |   0.15143 |     0.0613  |
+| leverage points      |                   5 |        1 |     15 | No handling — Ridge                  |    0.15897 |   0.09911 |   0.20135 |     0.06828 |
+| leverage points      |                   5 |        1 |     15 | Hard removal — Ridge                 |    0.16825 |   0.09312 |   0.18571 |     0.0632  |
+| leverage points      |                   5 |        1 |     15 | Winsorizing — Ridge                  |    0.16167 |   0.10145 |   0.19014 |     0.07686 |
+| leverage points      |                   5 |        1 |     15 | Robust loss — HuberRegressor         |    0.17259 |   0.10068 |   0.2252  |     0.06252 |
+| leverage points      |                   5 |        1 |     15 | Weighted — Ridge (linear)            |    0.16413 |   0.09217 |   0.17843 |     0.05932 |
+| leverage points      |                   5 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16467 |   0.09334 |   0.19388 |     0.05872 |
+| leverage points      |                   5 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16484 |   0.0914  |   0.19087 |     0.05867 |
+| leverage points      |                   5 |        1 |     15 | Weighted — Random Forest             |    0.16616 |   0.1028  |   0.26067 |     0.06453 |
+| leverage points      |                   5 |        1 |     15 | Weighted — Gradient Boosting         |    0.15704 |   0.09814 |   0.19738 |     0.0626  |
+| leverage points      |                   5 |        1 |     15 | IRLS — Ridge                         |    0.16863 |   0.09188 |   0.16908 |     0.06382 |
+| leverage points      |                   5 |        2 |      1 | No handling — Ridge                  |    0.18796 |   0.09957 |   0.19032 |     0.07075 |
+| leverage points      |                   5 |        2 |      1 | Hard removal — Ridge                 |    0.19932 |   0.09666 |   0.18486 |     0.06463 |
+| leverage points      |                   5 |        2 |      1 | Winsorizing — Ridge                  |    0.18001 |   0.09993 |   0.19336 |     0.06881 |
+| leverage points      |                   5 |        2 |      1 | Robust loss — HuberRegressor         |    0.20095 |   0.1081  |   0.2113  |     0.06647 |
+| leverage points      |                   5 |        2 |      1 | Weighted — Ridge (linear)            |    0.20963 |   0.0963  |   0.18549 |     0.06181 |
+| leverage points      |                   5 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.20951 |   0.09805 |   0.19637 |     0.06149 |
+| leverage points      |                   5 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.21374 |   0.09668 |   0.19128 |     0.06015 |
+| leverage points      |                   5 |        2 |      1 | Weighted — Random Forest             |    0.16936 |   0.10653 |   0.23702 |     0.06329 |
+| leverage points      |                   5 |        2 |      1 | Weighted — Gradient Boosting         |    0.15904 |   0.09755 |   0.2209  |     0.05837 |
+| leverage points      |                   5 |        2 |      1 | IRLS — Ridge                         |    0.2057  |   0.09758 |   0.18148 |     0.06702 |
+| leverage points      |                   5 |        2 |      2 | No handling — Ridge                  |    0.12285 |   0.08952 |   0.18842 |     0.06945 |
+| leverage points      |                   5 |        2 |      2 | Hard removal — Ridge                 |    0.12121 |   0.08602 |   0.17885 |     0.06644 |
+| leverage points      |                   5 |        2 |      2 | Winsorizing — Ridge                  |    0.12552 |   0.09221 |   0.19415 |     0.07176 |
+| leverage points      |                   5 |        2 |      2 | Robust loss — HuberRegressor         |    0.13183 |   0.0939  |   0.19602 |     0.06927 |
+| leverage points      |                   5 |        2 |      2 | Weighted — Ridge (linear)            |    0.11371 |   0.08056 |   0.16513 |     0.06254 |
+| leverage points      |                   5 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.11547 |   0.08116 |   0.16023 |     0.06034 |
+| leverage points      |                   5 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.11515 |   0.07993 |   0.16984 |     0.0577  |
+| leverage points      |                   5 |        2 |      2 | Weighted — Random Forest             |    0.1493  |   0.10015 |   0.22987 |     0.06818 |
+| leverage points      |                   5 |        2 |      2 | Weighted — Gradient Boosting         |    0.13505 |   0.09478 |   0.20228 |     0.06781 |
+| leverage points      |                   5 |        2 |      2 | IRLS — Ridge                         |    0.1188  |   0.0837  |   0.16989 |     0.06574 |
+| leverage points      |                   5 |        2 |      3 | No handling — Ridge                  |    0.15507 |   0.09928 |   0.2075  |     0.07001 |
+| leverage points      |                   5 |        2 |      3 | Hard removal — Ridge                 |    0.15828 |   0.09367 |   0.1736  |     0.06646 |
+| leverage points      |                   5 |        2 |      3 | Winsorizing — Ridge                  |    0.15804 |   0.10147 |   0.21595 |     0.07699 |
+| leverage points      |                   5 |        2 |      3 | Robust loss — HuberRegressor         |    0.16042 |   0.09423 |   0.21529 |     0.05577 |
+| leverage points      |                   5 |        2 |      3 | Weighted — Ridge (linear)            |    0.16044 |   0.0948  |   0.18557 |     0.06291 |
+| leverage points      |                   5 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16492 |   0.098   |   0.20341 |     0.06526 |
+| leverage points      |                   5 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16449 |   0.09527 |   0.20231 |     0.05997 |
+| leverage points      |                   5 |        2 |      3 | Weighted — Random Forest             |    0.16626 |   0.10941 |   0.24641 |     0.06763 |
+| leverage points      |                   5 |        2 |      3 | Weighted — Gradient Boosting         |    0.16198 |   0.10428 |   0.22994 |     0.06547 |
+| leverage points      |                   5 |        2 |      3 | IRLS — Ridge                         |    0.16107 |   0.0928  |   0.18126 |     0.06032 |
+| leverage points      |                   5 |        2 |      4 | No handling — Ridge                  |    0.12657 |   0.08888 |   0.20138 |     0.0648  |
+| leverage points      |                   5 |        2 |      4 | Hard removal — Ridge                 |    0.11464 |   0.08085 |   0.16035 |     0.06163 |
+| leverage points      |                   5 |        2 |      4 | Winsorizing — Ridge                  |    0.13028 |   0.09159 |   0.19602 |     0.06759 |
+| leverage points      |                   5 |        2 |      4 | Robust loss — HuberRegressor         |    0.11316 |   0.0802  |   0.17223 |     0.05691 |
+| leverage points      |                   5 |        2 |      4 | Weighted — Ridge (linear)            |    0.11177 |   0.07917 |   0.17673 |     0.057   |
+| leverage points      |                   5 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11758 |   0.08345 |   0.17528 |     0.05859 |
+| leverage points      |                   5 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11407 |   0.08003 |   0.16937 |     0.05928 |
+| leverage points      |                   5 |        2 |      4 | Weighted — Random Forest             |    0.14934 |   0.09727 |   0.22187 |     0.06114 |
+| leverage points      |                   5 |        2 |      4 | Weighted — Gradient Boosting         |    0.1308  |   0.08775 |   0.166   |     0.06232 |
+| leverage points      |                   5 |        2 |      4 | IRLS — Ridge                         |    0.10995 |   0.07729 |   0.15737 |     0.05276 |
+| leverage points      |                   5 |        2 |      5 | No handling — Ridge                  |    0.1283  |   0.09625 |   0.20184 |     0.07656 |
+| leverage points      |                   5 |        2 |      5 | Hard removal — Ridge                 |    0.11597 |   0.08623 |   0.17745 |     0.06699 |
+| leverage points      |                   5 |        2 |      5 | Winsorizing — Ridge                  |    0.12793 |   0.0968  |   0.20243 |     0.07721 |
+| leverage points      |                   5 |        2 |      5 | Robust loss — HuberRegressor         |    0.13925 |   0.09735 |   0.21458 |     0.06408 |
+| leverage points      |                   5 |        2 |      5 | Weighted — Ridge (linear)            |    0.11529 |   0.08563 |   0.17522 |     0.06049 |
+| leverage points      |                   5 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.1174  |   0.08779 |   0.18914 |     0.06734 |
+| leverage points      |                   5 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11375 |   0.08433 |   0.18088 |     0.06538 |
+| leverage points      |                   5 |        2 |      5 | Weighted — Random Forest             |    0.13441 |   0.09333 |   0.19659 |     0.06829 |
+| leverage points      |                   5 |        2 |      5 | Weighted — Gradient Boosting         |    0.12829 |   0.09395 |   0.20659 |     0.06787 |
+| leverage points      |                   5 |        2 |      5 | IRLS — Ridge                         |    0.11416 |   0.08443 |   0.17346 |     0.06131 |
+| leverage points      |                   5 |        2 |      6 | No handling — Ridge                  |    0.11612 |   0.08841 |   0.1774  |     0.07168 |
+| leverage points      |                   5 |        2 |      6 | Hard removal — Ridge                 |    0.10292 |   0.07842 |   0.15439 |     0.06454 |
+| leverage points      |                   5 |        2 |      6 | Winsorizing — Ridge                  |    0.11934 |   0.09112 |   0.17764 |     0.07423 |
+| leverage points      |                   5 |        2 |      6 | Robust loss — HuberRegressor         |    0.13709 |   0.09508 |   0.19386 |     0.06693 |
+| leverage points      |                   5 |        2 |      6 | Weighted — Ridge (linear)            |    0.10129 |   0.07704 |   0.15138 |     0.05987 |
+| leverage points      |                   5 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.10661 |   0.08201 |   0.15652 |     0.06403 |
+| leverage points      |                   5 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10383 |   0.07802 |   0.15055 |     0.05703 |
+| leverage points      |                   5 |        2 |      6 | Weighted — Random Forest             |    0.14372 |   0.09636 |   0.23805 |     0.0576  |
+| leverage points      |                   5 |        2 |      6 | Weighted — Gradient Boosting         |    0.12986 |   0.09243 |   0.19307 |     0.06724 |
+| leverage points      |                   5 |        2 |      6 | IRLS — Ridge                         |    0.10043 |   0.07511 |   0.15525 |     0.0579  |
+| leverage points      |                   5 |        2 |      7 | No handling — Ridge                  |    0.15305 |   0.09776 |   0.20897 |     0.06966 |
+| leverage points      |                   5 |        2 |      7 | Hard removal — Ridge                 |    0.15506 |   0.08814 |   0.18831 |     0.06009 |
+| leverage points      |                   5 |        2 |      7 | Winsorizing — Ridge                  |    0.15352 |   0.09843 |   0.20815 |     0.06927 |
+| leverage points      |                   5 |        2 |      7 | Robust loss — HuberRegressor         |    0.15893 |   0.09701 |   0.20854 |     0.06655 |
+| leverage points      |                   5 |        2 |      7 | Weighted — Ridge (linear)            |    0.15477 |   0.08932 |   0.19463 |     0.06231 |
+| leverage points      |                   5 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.15788 |   0.09302 |   0.1927  |     0.06153 |
+| leverage points      |                   5 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.15887 |   0.09072 |   0.19214 |     0.05885 |
+| leverage points      |                   5 |        2 |      7 | Weighted — Random Forest             |    0.15642 |   0.10641 |   0.25553 |     0.06908 |
+| leverage points      |                   5 |        2 |      7 | Weighted — Gradient Boosting         |    0.14749 |   0.09619 |   0.21548 |     0.07089 |
+| leverage points      |                   5 |        2 |      7 | IRLS — Ridge                         |    0.15399 |   0.08672 |   0.1869  |     0.05754 |
+| leverage points      |                   5 |        2 |      8 | No handling — Ridge                  |    0.18504 |   0.09192 |   0.18291 |     0.05548 |
+| leverage points      |                   5 |        2 |      8 | Hard removal — Ridge                 |    0.19821 |   0.091   |   0.17048 |     0.0574  |
+| leverage points      |                   5 |        2 |      8 | Winsorizing — Ridge                  |    0.17804 |   0.09007 |   0.1706  |     0.05438 |
+| leverage points      |                   5 |        2 |      8 | Robust loss — HuberRegressor         |    0.19021 |   0.09643 |   0.19411 |     0.05513 |
+| leverage points      |                   5 |        2 |      8 | Weighted — Ridge (linear)            |    0.20043 |   0.08887 |   0.17167 |     0.0576  |
+| leverage points      |                   5 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.20124 |   0.0904  |   0.165   |     0.05963 |
+| leverage points      |                   5 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.20448 |   0.08865 |   0.1665  |     0.05395 |
+| leverage points      |                   5 |        2 |      8 | Weighted — Random Forest             |    0.16173 |   0.10504 |   0.21215 |     0.06818 |
+| leverage points      |                   5 |        2 |      8 | Weighted — Gradient Boosting         |    0.15045 |   0.09355 |   0.18802 |     0.06512 |
+| leverage points      |                   5 |        2 |      8 | IRLS — Ridge                         |    0.2012  |   0.08837 |   0.16341 |     0.05926 |
+| leverage points      |                   5 |        2 |      9 | No handling — Ridge                  |    0.12962 |   0.09622 |   0.20109 |     0.07943 |
+| leverage points      |                   5 |        2 |      9 | Hard removal — Ridge                 |    0.11205 |   0.08048 |   0.18483 |     0.05777 |
+| leverage points      |                   5 |        2 |      9 | Winsorizing — Ridge                  |    0.13015 |   0.09641 |   0.19883 |     0.07693 |
+| leverage points      |                   5 |        2 |      9 | Robust loss — HuberRegressor         |    0.12931 |   0.08835 |   0.19444 |     0.06561 |
+| leverage points      |                   5 |        2 |      9 | Weighted — Ridge (linear)            |    0.11679 |   0.08366 |   0.1779  |     0.06298 |
+| leverage points      |                   5 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12036 |   0.08594 |   0.19761 |     0.06187 |
+| leverage points      |                   5 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11799 |   0.08307 |   0.18711 |     0.05762 |
+| leverage points      |                   5 |        2 |      9 | Weighted — Random Forest             |    0.13353 |   0.09043 |   0.21114 |     0.06535 |
+| leverage points      |                   5 |        2 |      9 | Weighted — Gradient Boosting         |    0.12508 |   0.0911  |   0.19265 |     0.06429 |
+| leverage points      |                   5 |        2 |      9 | IRLS — Ridge                         |    0.11008 |   0.07813 |   0.17272 |     0.05841 |
+| leverage points      |                   5 |        2 |     10 | No handling — Ridge                  |    0.15035 |   0.09686 |   0.17892 |     0.06738 |
+| leverage points      |                   5 |        2 |     10 | Hard removal — Ridge                 |    0.14609 |   0.09103 |   0.16978 |     0.06391 |
+| leverage points      |                   5 |        2 |     10 | Winsorizing — Ridge                  |    0.15259 |   0.09843 |   0.18049 |     0.06935 |
+| leverage points      |                   5 |        2 |     10 | Robust loss — HuberRegressor         |    0.15412 |   0.10216 |   0.21012 |     0.06808 |
+| leverage points      |                   5 |        2 |     10 | Weighted — Ridge (linear)            |    0.14523 |   0.08929 |   0.1756  |     0.05513 |
+| leverage points      |                   5 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.14913 |   0.08993 |   0.18662 |     0.05745 |
+| leverage points      |                   5 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14852 |   0.08941 |   0.18656 |     0.0524  |
+| leverage points      |                   5 |        2 |     10 | Weighted — Random Forest             |    0.17917 |   0.11138 |   0.26217 |     0.06683 |
+| leverage points      |                   5 |        2 |     10 | Weighted — Gradient Boosting         |    0.16439 |   0.10276 |   0.21667 |     0.06833 |
+| leverage points      |                   5 |        2 |     10 | IRLS — Ridge                         |    0.14629 |   0.0873  |   0.1699  |     0.05585 |
+| leverage points      |                   5 |        2 |     11 | No handling — Ridge                  |    0.19625 |   0.09857 |   0.18349 |     0.05729 |
+| leverage points      |                   5 |        2 |     11 | Hard removal — Ridge                 |    0.20661 |   0.09462 |   0.16997 |     0.05578 |
+| leverage points      |                   5 |        2 |     11 | Winsorizing — Ridge                  |    0.18846 |   0.09835 |   0.18707 |     0.06002 |
+| leverage points      |                   5 |        2 |     11 | Robust loss — HuberRegressor         |    0.22819 |   0.10729 |   0.20979 |     0.06008 |
+| leverage points      |                   5 |        2 |     11 | Weighted — Ridge (linear)            |    0.20915 |   0.0946  |   0.17975 |     0.05722 |
+| leverage points      |                   5 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.20882 |   0.09603 |   0.18629 |     0.06167 |
+| leverage points      |                   5 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21074 |   0.09358 |   0.18168 |     0.05746 |
+| leverage points      |                   5 |        2 |     11 | Weighted — Random Forest             |    0.15311 |   0.09674 |   0.21353 |     0.06194 |
+| leverage points      |                   5 |        2 |     11 | Weighted — Gradient Boosting         |    0.14677 |   0.09426 |   0.2132  |     0.06363 |
+| leverage points      |                   5 |        2 |     11 | IRLS — Ridge                         |    0.20872 |   0.09116 |   0.1569  |     0.05636 |
+| leverage points      |                   5 |        2 |     12 | No handling — Ridge                  |    0.13143 |   0.09635 |   0.18887 |     0.07444 |
+| leverage points      |                   5 |        2 |     12 | Hard removal — Ridge                 |    0.12361 |   0.08633 |   0.17564 |     0.06146 |
+| leverage points      |                   5 |        2 |     12 | Winsorizing — Ridge                  |    0.13312 |   0.098   |   0.20075 |     0.07546 |
+| leverage points      |                   5 |        2 |     12 | Robust loss — HuberRegressor         |    0.16653 |   0.09939 |   0.1972  |     0.06211 |
+| leverage points      |                   5 |        2 |     12 | Weighted — Ridge (linear)            |    0.11566 |   0.08382 |   0.16203 |     0.06385 |
+| leverage points      |                   5 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11982 |   0.08692 |   0.1744  |     0.06156 |
+| leverage points      |                   5 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11789 |   0.08497 |   0.16532 |     0.06448 |
+| leverage points      |                   5 |        2 |     12 | Weighted — Random Forest             |    0.15406 |   0.10349 |   0.24348 |     0.06832 |
+| leverage points      |                   5 |        2 |     12 | Weighted — Gradient Boosting         |    0.13947 |   0.09784 |   0.19865 |     0.07417 |
+| leverage points      |                   5 |        2 |     12 | IRLS — Ridge                         |    0.11807 |   0.08231 |   0.16513 |     0.06127 |
+| leverage points      |                   5 |        2 |     13 | No handling — Ridge                  |    0.12898 |   0.09603 |   0.20763 |     0.07195 |
+| leverage points      |                   5 |        2 |     13 | Hard removal — Ridge                 |    0.11727 |   0.08847 |   0.19684 |     0.06808 |
+| leverage points      |                   5 |        2 |     13 | Winsorizing — Ridge                  |    0.13262 |   0.09844 |   0.21024 |     0.07451 |
+| leverage points      |                   5 |        2 |     13 | Robust loss — HuberRegressor         |    0.13715 |   0.09795 |   0.20683 |     0.07127 |
+| leverage points      |                   5 |        2 |     13 | Weighted — Ridge (linear)            |    0.1188  |   0.0869  |   0.18393 |     0.06384 |
+| leverage points      |                   5 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.12401 |   0.08999 |   0.19389 |     0.06643 |
+| leverage points      |                   5 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.12261 |   0.08745 |   0.1815  |     0.06703 |
+| leverage points      |                   5 |        2 |     13 | Weighted — Random Forest             |    0.14115 |   0.10117 |   0.23395 |     0.06892 |
+| leverage points      |                   5 |        2 |     13 | Weighted — Gradient Boosting         |    0.13064 |   0.09385 |   0.1832  |     0.07293 |
+| leverage points      |                   5 |        2 |     13 | IRLS — Ridge                         |    0.11496 |   0.08523 |   0.18304 |     0.06381 |
+| leverage points      |                   5 |        2 |     14 | No handling — Ridge                  |    0.12944 |   0.09431 |   0.19532 |     0.07004 |
+| leverage points      |                   5 |        2 |     14 | Hard removal — Ridge                 |    0.12012 |   0.08444 |   0.17016 |     0.06546 |
+| leverage points      |                   5 |        2 |     14 | Winsorizing — Ridge                  |    0.13101 |   0.09372 |   0.19983 |     0.06995 |
+| leverage points      |                   5 |        2 |     14 | Robust loss — HuberRegressor         |    0.1347  |   0.09635 |   0.19581 |     0.07163 |
+| leverage points      |                   5 |        2 |     14 | Weighted — Ridge (linear)            |    0.11884 |   0.08087 |   0.17025 |     0.06165 |
+| leverage points      |                   5 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.12206 |   0.08386 |   0.17531 |     0.06148 |
+| leverage points      |                   5 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12109 |   0.08098 |   0.1758  |     0.05548 |
+| leverage points      |                   5 |        2 |     14 | Weighted — Random Forest             |    0.15818 |   0.10411 |   0.24215 |     0.0697  |
+| leverage points      |                   5 |        2 |     14 | Weighted — Gradient Boosting         |    0.1393  |   0.09641 |   0.20188 |     0.0673  |
+| leverage points      |                   5 |        2 |     14 | IRLS — Ridge                         |    0.11998 |   0.08199 |   0.16727 |     0.0585  |
+| leverage points      |                   5 |        2 |     15 | No handling — Ridge                  |    0.16372 |   0.10511 |   0.22076 |     0.07146 |
+| leverage points      |                   5 |        2 |     15 | Hard removal — Ridge                 |    0.16865 |   0.09206 |   0.17095 |     0.05931 |
+| leverage points      |                   5 |        2 |     15 | Winsorizing — Ridge                  |    0.1644  |   0.10555 |   0.2148  |     0.07418 |
+| leverage points      |                   5 |        2 |     15 | Robust loss — HuberRegressor         |    0.17006 |   0.09898 |   0.20821 |     0.06287 |
+| leverage points      |                   5 |        2 |     15 | Weighted — Ridge (linear)            |    0.16692 |   0.09399 |   0.20497 |     0.05955 |
+| leverage points      |                   5 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16833 |   0.09591 |   0.21263 |     0.06172 |
+| leverage points      |                   5 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.1691  |   0.09394 |   0.21595 |     0.05747 |
+| leverage points      |                   5 |        2 |     15 | Weighted — Random Forest             |    0.16538 |   0.10404 |   0.25148 |     0.06638 |
+| leverage points      |                   5 |        2 |     15 | Weighted — Gradient Boosting         |    0.15988 |   0.09983 |   0.21085 |     0.05994 |
+| leverage points      |                   5 |        2 |     15 | IRLS — Ridge                         |    0.16878 |   0.09167 |   0.17705 |     0.05764 |
+| leverage points      |                  10 |        1 |      1 | No handling — Ridge                  |    0.19039 |   0.10136 |   0.20673 |     0.06366 |
+| leverage points      |                  10 |        1 |      1 | Hard removal — Ridge                 |    0.21089 |   0.09966 |   0.1892  |     0.06316 |
+| leverage points      |                  10 |        1 |      1 | Winsorizing — Ridge                  |    0.18331 |   0.1008  |   0.20152 |     0.06147 |
+| leverage points      |                  10 |        1 |      1 | Robust loss — HuberRegressor         |    0.2252  |   0.1163  |   0.24084 |     0.06837 |
+| leverage points      |                  10 |        1 |      1 | Weighted — Ridge (linear)            |    0.20635 |   0.09622 |   0.19074 |     0.05758 |
+| leverage points      |                  10 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.20925 |   0.09909 |   0.20161 |     0.05913 |
+| leverage points      |                  10 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.21146 |   0.09767 |   0.19075 |     0.05653 |
+| leverage points      |                  10 |        1 |      1 | Weighted — Random Forest             |    0.16764 |   0.10588 |   0.25315 |     0.06408 |
+| leverage points      |                  10 |        1 |      1 | Weighted — Gradient Boosting         |    0.15729 |   0.09754 |   0.23574 |     0.05733 |
+| leverage points      |                  10 |        1 |      1 | IRLS — Ridge                         |    0.20827 |   0.10002 |   0.19137 |     0.06643 |
+| leverage points      |                  10 |        1 |      2 | No handling — Ridge                  |    0.13081 |   0.09261 |   0.18289 |     0.07094 |
+| leverage points      |                  10 |        1 |      2 | Hard removal — Ridge                 |    0.12857 |   0.08713 |   0.16806 |     0.07024 |
+| leverage points      |                  10 |        1 |      2 | Winsorizing — Ridge                  |    0.13259 |   0.09423 |   0.18648 |     0.07484 |
+| leverage points      |                  10 |        1 |      2 | Robust loss — HuberRegressor         |    0.14024 |   0.09573 |   0.20201 |     0.0657  |
+| leverage points      |                  10 |        1 |      2 | Weighted — Ridge (linear)            |    0.12234 |   0.0837  |   0.16939 |     0.06094 |
+| leverage points      |                  10 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.12347 |   0.08488 |   0.17402 |     0.062   |
+| leverage points      |                  10 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12301 |   0.08285 |   0.17114 |     0.05953 |
+| leverage points      |                  10 |        1 |      2 | Weighted — Random Forest             |    0.14962 |   0.09987 |   0.25196 |     0.06748 |
+| leverage points      |                  10 |        1 |      2 | Weighted — Gradient Boosting         |    0.13087 |   0.09404 |   0.18362 |     0.0729  |
+| leverage points      |                  10 |        1 |      2 | IRLS — Ridge                         |    0.12472 |   0.08594 |   0.16511 |     0.06775 |
+| leverage points      |                  10 |        1 |      3 | No handling — Ridge                  |    0.15813 |   0.09916 |   0.19789 |     0.06676 |
+| leverage points      |                  10 |        1 |      3 | Hard removal — Ridge                 |    0.16308 |   0.09263 |   0.18953 |     0.05573 |
+| leverage points      |                  10 |        1 |      3 | Winsorizing — Ridge                  |    0.16107 |   0.10113 |   0.20204 |     0.06859 |
+| leverage points      |                  10 |        1 |      3 | Robust loss — HuberRegressor         |    0.16935 |   0.09708 |   0.21295 |     0.05819 |
+| leverage points      |                  10 |        1 |      3 | Weighted — Ridge (linear)            |    0.16435 |   0.09287 |   0.19621 |     0.06008 |
+| leverage points      |                  10 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16784 |   0.0967  |   0.21198 |     0.06511 |
+| leverage points      |                  10 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16731 |   0.09381 |   0.21823 |     0.05609 |
+| leverage points      |                  10 |        1 |      3 | Weighted — Random Forest             |    0.1681  |   0.11135 |   0.25864 |     0.07177 |
+| leverage points      |                  10 |        1 |      3 | Weighted — Gradient Boosting         |    0.16144 |   0.10437 |   0.22838 |     0.06843 |
+| leverage points      |                  10 |        1 |      3 | IRLS — Ridge                         |    0.16485 |   0.09078 |   0.18852 |     0.05394 |
+| leverage points      |                  10 |        1 |      4 | No handling — Ridge                  |    0.13706 |   0.09853 |   0.20978 |     0.0776  |
+| leverage points      |                  10 |        1 |      4 | Hard removal — Ridge                 |    0.12621 |   0.08936 |   0.19787 |     0.06685 |
+| leverage points      |                  10 |        1 |      4 | Winsorizing — Ridge                  |    0.14158 |   0.10136 |   0.20618 |     0.07843 |
+| leverage points      |                  10 |        1 |      4 | Robust loss — HuberRegressor         |    0.13281 |   0.09497 |   0.19404 |     0.07223 |
+| leverage points      |                  10 |        1 |      4 | Weighted — Ridge (linear)            |    0.11846 |   0.08227 |   0.17732 |     0.05669 |
+| leverage points      |                  10 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.12527 |   0.08634 |   0.18583 |     0.06145 |
+| leverage points      |                  10 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11906 |   0.08147 |   0.17971 |     0.05941 |
+| leverage points      |                  10 |        1 |      4 | Weighted — Random Forest             |    0.14933 |   0.09694 |   0.25383 |     0.05922 |
+| leverage points      |                  10 |        1 |      4 | Weighted — Gradient Boosting         |    0.12523 |   0.08704 |   0.18188 |     0.06809 |
+| leverage points      |                  10 |        1 |      4 | IRLS — Ridge                         |    0.11887 |   0.08266 |   0.17142 |     0.06419 |
+| leverage points      |                  10 |        1 |      5 | No handling — Ridge                  |    0.1293  |   0.09842 |   0.18681 |     0.08105 |
+| leverage points      |                  10 |        1 |      5 | Hard removal — Ridge                 |    0.12077 |   0.08993 |   0.19296 |     0.07181 |
+| leverage points      |                  10 |        1 |      5 | Winsorizing — Ridge                  |    0.12858 |   0.09834 |   0.19377 |     0.08122 |
+| leverage points      |                  10 |        1 |      5 | Robust loss — HuberRegressor         |    0.14023 |   0.09894 |   0.22013 |     0.06866 |
+| leverage points      |                  10 |        1 |      5 | Weighted — Ridge (linear)            |    0.11536 |   0.08608 |   0.17917 |     0.07042 |
+| leverage points      |                  10 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11711 |   0.08729 |   0.18271 |     0.07054 |
+| leverage points      |                  10 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.11358 |   0.08415 |   0.16943 |     0.06631 |
+| leverage points      |                  10 |        1 |      5 | Weighted — Random Forest             |    0.13593 |   0.09304 |   0.21175 |     0.06566 |
+| leverage points      |                  10 |        1 |      5 | Weighted — Gradient Boosting         |    0.13325 |   0.09437 |   0.21518 |     0.06694 |
+| leverage points      |                  10 |        1 |      5 | IRLS — Ridge                         |    0.11403 |   0.08417 |   0.17689 |     0.06418 |
+| leverage points      |                  10 |        1 |      6 | No handling — Ridge                  |    0.12219 |   0.09432 |   0.18457 |     0.08008 |
+| leverage points      |                  10 |        1 |      6 | Hard removal — Ridge                 |    0.11716 |   0.08855 |   0.17002 |     0.0742  |
+| leverage points      |                  10 |        1 |      6 | Winsorizing — Ridge                  |    0.12655 |   0.09656 |   0.20179 |     0.07985 |
+| leverage points      |                  10 |        1 |      6 | Robust loss — HuberRegressor         |    0.13886 |   0.0976  |   0.19979 |     0.07541 |
+| leverage points      |                  10 |        1 |      6 | Weighted — Ridge (linear)            |    0.10793 |   0.08176 |   0.16627 |     0.06619 |
+| leverage points      |                  10 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.11511 |   0.08714 |   0.18216 |     0.06969 |
+| leverage points      |                  10 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.11032 |   0.08202 |   0.17149 |     0.066   |
+| leverage points      |                  10 |        1 |      6 | Weighted — Random Forest             |    0.14438 |   0.09692 |   0.24172 |     0.06362 |
+| leverage points      |                  10 |        1 |      6 | Weighted — Gradient Boosting         |    0.13426 |   0.09524 |   0.21864 |     0.06577 |
+| leverage points      |                  10 |        1 |      6 | IRLS — Ridge                         |    0.10968 |   0.08087 |   0.16178 |     0.06655 |
+| leverage points      |                  10 |        1 |      7 | No handling — Ridge                  |    0.15005 |   0.10079 |   0.23282 |     0.07064 |
+| leverage points      |                  10 |        1 |      7 | Hard removal — Ridge                 |    0.15071 |   0.09491 |   0.19805 |     0.06098 |
+| leverage points      |                  10 |        1 |      7 | Winsorizing — Ridge                  |    0.1495  |   0.10163 |   0.23141 |     0.07194 |
+| leverage points      |                  10 |        1 |      7 | Robust loss — HuberRegressor         |    0.15277 |   0.10465 |   0.2244  |     0.07628 |
+| leverage points      |                  10 |        1 |      7 | Weighted — Ridge (linear)            |    0.15191 |   0.09221 |   0.20488 |     0.06298 |
+| leverage points      |                  10 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15546 |   0.09696 |   0.20768 |     0.06545 |
+| leverage points      |                  10 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.15468 |   0.09282 |   0.19705 |     0.05972 |
+| leverage points      |                  10 |        1 |      7 | Weighted — Random Forest             |    0.15966 |   0.10958 |   0.25127 |     0.07153 |
+| leverage points      |                  10 |        1 |      7 | Weighted — Gradient Boosting         |    0.15083 |   0.09885 |   0.2115  |     0.07246 |
+| leverage points      |                  10 |        1 |      7 | IRLS — Ridge                         |    0.15047 |   0.09082 |   0.20451 |     0.05618 |
+| leverage points      |                  10 |        1 |      8 | No handling — Ridge                  |    0.19972 |   0.09967 |   0.20145 |     0.06209 |
+| leverage points      |                  10 |        1 |      8 | Hard removal — Ridge                 |    0.21317 |   0.09742 |   0.17688 |     0.06168 |
+| leverage points      |                  10 |        1 |      8 | Winsorizing — Ridge                  |    0.1918  |   0.09719 |   0.19228 |     0.06141 |
+| leverage points      |                  10 |        1 |      8 | Robust loss — HuberRegressor         |    0.21475 |   0.10377 |   0.20296 |     0.05988 |
+| leverage points      |                  10 |        1 |      8 | Weighted — Ridge (linear)            |    0.20943 |   0.09215 |   0.16628 |     0.05917 |
+| leverage points      |                  10 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.20746 |   0.09346 |   0.16676 |     0.06235 |
+| leverage points      |                  10 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21195 |   0.09078 |   0.16341 |     0.05728 |
+| leverage points      |                  10 |        1 |      8 | Weighted — Random Forest             |    0.1616  |   0.10583 |   0.2114  |     0.06998 |
+| leverage points      |                  10 |        1 |      8 | Weighted — Gradient Boosting         |    0.15328 |   0.09596 |   0.18924 |     0.06423 |
+| leverage points      |                  10 |        1 |      8 | IRLS — Ridge                         |    0.21366 |   0.09303 |   0.17157 |     0.0605  |
+| leverage points      |                  10 |        1 |      9 | No handling — Ridge                  |    0.1338  |   0.09832 |   0.2036  |     0.07697 |
+| leverage points      |                  10 |        1 |      9 | Hard removal — Ridge                 |    0.11496 |   0.08393 |   0.17369 |     0.06745 |
+| leverage points      |                  10 |        1 |      9 | Winsorizing — Ridge                  |    0.1345  |   0.09915 |   0.2113  |     0.072   |
+| leverage points      |                  10 |        1 |      9 | Robust loss — HuberRegressor         |    0.13125 |   0.09112 |   0.19216 |     0.06723 |
+| leverage points      |                  10 |        1 |      9 | Weighted — Ridge (linear)            |    0.12042 |   0.08744 |   0.18985 |     0.06731 |
+| leverage points      |                  10 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.12244 |   0.08832 |   0.18848 |     0.06837 |
+| leverage points      |                  10 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.12027 |   0.08596 |   0.18177 |     0.06481 |
+| leverage points      |                  10 |        1 |      9 | Weighted — Random Forest             |    0.13511 |   0.09211 |   0.20867 |     0.06455 |
+| leverage points      |                  10 |        1 |      9 | Weighted — Gradient Boosting         |    0.12357 |   0.09039 |   0.19779 |     0.06734 |
+| leverage points      |                  10 |        1 |      9 | IRLS — Ridge                         |    0.11422 |   0.08291 |   0.17403 |     0.06336 |
+| leverage points      |                  10 |        1 |     10 | No handling — Ridge                  |    0.1514  |   0.1018  |   0.19466 |     0.07482 |
+| leverage points      |                  10 |        1 |     10 | Hard removal — Ridge                 |    0.14603 |   0.09365 |   0.18321 |     0.06472 |
+| leverage points      |                  10 |        1 |     10 | Winsorizing — Ridge                  |    0.15604 |   0.1051  |   0.2034  |     0.07662 |
+| leverage points      |                  10 |        1 |     10 | Robust loss — HuberRegressor         |    0.1497  |   0.0994  |   0.19879 |     0.06892 |
+| leverage points      |                  10 |        1 |     10 | Weighted — Ridge (linear)            |    0.1482  |   0.09421 |   0.18018 |     0.06396 |
+| leverage points      |                  10 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.15169 |   0.09561 |   0.19405 |     0.06425 |
+| leverage points      |                  10 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.15048 |   0.09396 |   0.20008 |     0.06068 |
+| leverage points      |                  10 |        1 |     10 | Weighted — Random Forest             |    0.17862 |   0.11019 |   0.2683  |     0.06317 |
+| leverage points      |                  10 |        1 |     10 | Weighted — Gradient Boosting         |    0.16535 |   0.10461 |   0.22426 |     0.06671 |
+| leverage points      |                  10 |        1 |     10 | IRLS — Ridge                         |    0.14744 |   0.0923  |   0.18041 |     0.06185 |
+| leverage points      |                  10 |        1 |     11 | No handling — Ridge                  |    0.18896 |   0.09791 |   0.18521 |     0.06529 |
+| leverage points      |                  10 |        1 |     11 | Hard removal — Ridge                 |    0.19012 |   0.0965  |   0.18156 |     0.06327 |
+| leverage points      |                  10 |        1 |     11 | Winsorizing — Ridge                  |    0.18213 |   0.09754 |   0.18906 |     0.06676 |
+| leverage points      |                  10 |        1 |     11 | Robust loss — HuberRegressor         |    0.23059 |   0.1119  |   0.23677 |     0.06086 |
+| leverage points      |                  10 |        1 |     11 | Weighted — Ridge (linear)            |    0.19722 |   0.09226 |   0.17527 |     0.05623 |
+| leverage points      |                  10 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.20156 |   0.09426 |   0.17983 |     0.06031 |
+| leverage points      |                  10 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.20399 |   0.09208 |   0.17229 |     0.0588  |
+| leverage points      |                  10 |        1 |     11 | Weighted — Random Forest             |    0.155   |   0.09704 |   0.21485 |     0.06285 |
+| leverage points      |                  10 |        1 |     11 | Weighted — Gradient Boosting         |    0.14809 |   0.09553 |   0.21606 |     0.06451 |
+| leverage points      |                  10 |        1 |     11 | IRLS — Ridge                         |    0.20416 |   0.09353 |   0.17569 |     0.05901 |
+| leverage points      |                  10 |        1 |     12 | No handling — Ridge                  |    0.13995 |   0.10037 |   0.2077  |     0.08022 |
+| leverage points      |                  10 |        1 |     12 | Hard removal — Ridge                 |    0.12555 |   0.09006 |   0.17511 |     0.0681  |
+| leverage points      |                  10 |        1 |     12 | Winsorizing — Ridge                  |    0.14188 |   0.10244 |   0.21444 |     0.08208 |
+| leverage points      |                  10 |        1 |     12 | Robust loss — HuberRegressor         |    0.17307 |   0.105   |   0.19902 |     0.06504 |
+| leverage points      |                  10 |        1 |     12 | Weighted — Ridge (linear)            |    0.11971 |   0.08698 |   0.16361 |     0.06963 |
+| leverage points      |                  10 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.12294 |   0.08874 |   0.18676 |     0.06742 |
+| leverage points      |                  10 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.11976 |   0.08648 |   0.1788  |     0.06929 |
+| leverage points      |                  10 |        1 |     12 | Weighted — Random Forest             |    0.15605 |   0.10526 |   0.25134 |     0.07041 |
+| leverage points      |                  10 |        1 |     12 | Weighted — Gradient Boosting         |    0.13779 |   0.0958  |   0.19569 |     0.06813 |
+| leverage points      |                  10 |        1 |     12 | IRLS — Ridge                         |    0.11983 |   0.08411 |   0.17074 |     0.06464 |
+| leverage points      |                  10 |        1 |     13 | No handling — Ridge                  |    0.12392 |   0.09199 |   0.19579 |     0.06866 |
+| leverage points      |                  10 |        1 |     13 | Hard removal — Ridge                 |    0.11567 |   0.08729 |   0.18493 |     0.07081 |
+| leverage points      |                  10 |        1 |     13 | Winsorizing — Ridge                  |    0.12769 |   0.09534 |   0.20156 |     0.07309 |
+| leverage points      |                  10 |        1 |     13 | Robust loss — HuberRegressor         |    0.13273 |   0.09531 |   0.21767 |     0.06623 |
+| leverage points      |                  10 |        1 |     13 | Weighted — Ridge (linear)            |    0.11548 |   0.08524 |   0.17296 |     0.06501 |
+| leverage points      |                  10 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12234 |   0.08908 |   0.19793 |     0.06707 |
+| leverage points      |                  10 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.12001 |   0.08688 |   0.1843  |     0.06612 |
+| leverage points      |                  10 |        1 |     13 | Weighted — Random Forest             |    0.14035 |   0.09972 |   0.22897 |     0.06794 |
+| leverage points      |                  10 |        1 |     13 | Weighted — Gradient Boosting         |    0.12758 |   0.09273 |   0.19825 |     0.06684 |
+| leverage points      |                  10 |        1 |     13 | IRLS — Ridge                         |    0.11306 |   0.08501 |   0.17247 |     0.06681 |
+| leverage points      |                  10 |        1 |     14 | No handling — Ridge                  |    0.13562 |   0.09771 |   0.21827 |     0.07039 |
+| leverage points      |                  10 |        1 |     14 | Hard removal — Ridge                 |    0.13037 |   0.08645 |   0.18611 |     0.05891 |
+| leverage points      |                  10 |        1 |     14 | Winsorizing — Ridge                  |    0.13558 |   0.09554 |   0.20854 |     0.06926 |
+| leverage points      |                  10 |        1 |     14 | Robust loss — HuberRegressor         |    0.16799 |   0.09962 |   0.19277 |     0.06399 |
+| leverage points      |                  10 |        1 |     14 | Weighted — Ridge (linear)            |    0.12372 |   0.08328 |   0.18047 |     0.05888 |
+| leverage points      |                  10 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.12687 |   0.08599 |   0.18472 |     0.05891 |
+| leverage points      |                  10 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12438 |   0.08249 |   0.18256 |     0.05501 |
+| leverage points      |                  10 |        1 |     14 | Weighted — Random Forest             |    0.15792 |   0.10531 |   0.25027 |     0.07092 |
+| leverage points      |                  10 |        1 |     14 | Weighted — Gradient Boosting         |    0.1389  |   0.09666 |   0.1993  |     0.07177 |
+| leverage points      |                  10 |        1 |     14 | IRLS — Ridge                         |    0.12901 |   0.08633 |   0.18697 |     0.05762 |
+| leverage points      |                  10 |        1 |     15 | No handling — Ridge                  |    0.16326 |   0.1048  |   0.21164 |     0.07158 |
+| leverage points      |                  10 |        1 |     15 | Hard removal — Ridge                 |    0.17028 |   0.10022 |   0.18738 |     0.06973 |
+| leverage points      |                  10 |        1 |     15 | Winsorizing — Ridge                  |    0.16516 |   0.10591 |   0.20373 |     0.07073 |
+| leverage points      |                  10 |        1 |     15 | Robust loss — HuberRegressor         |    0.17635 |   0.10674 |   0.21664 |     0.06694 |
+| leverage points      |                  10 |        1 |     15 | Weighted — Ridge (linear)            |    0.16458 |   0.09474 |   0.19011 |     0.06718 |
+| leverage points      |                  10 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16648 |   0.09639 |   0.20039 |     0.06285 |
+| leverage points      |                  10 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16483 |   0.09362 |   0.19816 |     0.06133 |
+| leverage points      |                  10 |        1 |     15 | Weighted — Random Forest             |    0.16608 |   0.10312 |   0.25433 |     0.06245 |
+| leverage points      |                  10 |        1 |     15 | Weighted — Gradient Boosting         |    0.16115 |   0.10018 |   0.20652 |     0.06125 |
+| leverage points      |                  10 |        1 |     15 | IRLS — Ridge                         |    0.16698 |   0.09422 |   0.17886 |     0.06106 |
+| leverage points      |                  10 |        2 |      1 | No handling — Ridge                  |    0.1812  |   0.10036 |   0.21344 |     0.06638 |
+| leverage points      |                  10 |        2 |      1 | Hard removal — Ridge                 |    0.19287 |   0.10147 |   0.18371 |     0.06762 |
+| leverage points      |                  10 |        2 |      1 | Winsorizing — Ridge                  |    0.17415 |   0.10018 |   0.20157 |     0.06514 |
+| leverage points      |                  10 |        2 |      1 | Robust loss — HuberRegressor         |    0.20747 |   0.11291 |   0.24121 |     0.07032 |
+| leverage points      |                  10 |        2 |      1 | Weighted — Ridge (linear)            |    0.19764 |   0.09589 |   0.19165 |     0.06031 |
+| leverage points      |                  10 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.20186 |   0.09794 |   0.19345 |     0.06143 |
+| leverage points      |                  10 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.20652 |   0.09725 |   0.19563 |     0.062   |
+| leverage points      |                  10 |        2 |      1 | Weighted — Random Forest             |    0.16885 |   0.10577 |   0.25288 |     0.06308 |
+| leverage points      |                  10 |        2 |      1 | Weighted — Gradient Boosting         |    0.16121 |   0.09912 |   0.22907 |     0.05907 |
+| leverage points      |                  10 |        2 |      1 | IRLS — Ridge                         |    0.20339 |   0.09867 |   0.17635 |     0.06788 |
+| leverage points      |                  10 |        2 |      2 | No handling — Ridge                  |    0.1355  |   0.09788 |   0.20642 |     0.0752  |
+| leverage points      |                  10 |        2 |      2 | Hard removal — Ridge                 |    0.12872 |   0.09153 |   0.1838  |     0.07229 |
+| leverage points      |                  10 |        2 |      2 | Winsorizing — Ridge                  |    0.13637 |   0.09887 |   0.20054 |     0.0751  |
+| leverage points      |                  10 |        2 |      2 | Robust loss — HuberRegressor         |    0.14334 |   0.0999  |   0.2028  |     0.07306 |
+| leverage points      |                  10 |        2 |      2 | Weighted — Ridge (linear)            |    0.124   |   0.08645 |   0.16909 |     0.06587 |
+| leverage points      |                  10 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.12586 |   0.08764 |   0.17429 |     0.06668 |
+| leverage points      |                  10 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12443 |   0.08543 |   0.18164 |     0.06314 |
+| leverage points      |                  10 |        2 |      2 | Weighted — Random Forest             |    0.15305 |   0.1019  |   0.25565 |     0.06732 |
+| leverage points      |                  10 |        2 |      2 | Weighted — Gradient Boosting         |    0.13512 |   0.09496 |   0.19037 |     0.06965 |
+| leverage points      |                  10 |        2 |      2 | IRLS — Ridge                         |    0.12541 |   0.0881  |   0.16524 |     0.06781 |
+| leverage points      |                  10 |        2 |      3 | No handling — Ridge                  |    0.15636 |   0.10237 |   0.20588 |     0.07494 |
+| leverage points      |                  10 |        2 |      3 | Hard removal — Ridge                 |    0.15994 |   0.09896 |   0.19234 |     0.06907 |
+| leverage points      |                  10 |        2 |      3 | Winsorizing — Ridge                  |    0.16005 |   0.10498 |   0.20838 |     0.07366 |
+| leverage points      |                  10 |        2 |      3 | Robust loss — HuberRegressor         |    0.16819 |   0.1011  |   0.21492 |     0.06027 |
+| leverage points      |                  10 |        2 |      3 | Weighted — Ridge (linear)            |    0.15871 |   0.09607 |   0.19477 |     0.06166 |
+| leverage points      |                  10 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16349 |   0.09991 |   0.21268 |     0.06608 |
+| leverage points      |                  10 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.1625  |   0.09623 |   0.21567 |     0.06031 |
+| leverage points      |                  10 |        2 |      3 | Weighted — Random Forest             |    0.16766 |   0.11084 |   0.2588  |     0.06954 |
+| leverage points      |                  10 |        2 |      3 | Weighted — Gradient Boosting         |    0.16103 |   0.10374 |   0.22833 |     0.068   |
+| leverage points      |                  10 |        2 |      3 | IRLS — Ridge                         |    0.1609  |   0.09472 |   0.18413 |     0.06426 |
+| leverage points      |                  10 |        2 |      4 | No handling — Ridge                  |    0.12941 |   0.09083 |   0.19728 |     0.06511 |
+| leverage points      |                  10 |        2 |      4 | Hard removal — Ridge                 |    0.11972 |   0.08314 |   0.17853 |     0.06058 |
+| leverage points      |                  10 |        2 |      4 | Winsorizing — Ridge                  |    0.13382 |   0.09424 |   0.19134 |     0.07094 |
+| leverage points      |                  10 |        2 |      4 | Robust loss — HuberRegressor         |    0.12452 |   0.08517 |   0.18136 |     0.06344 |
+| leverage points      |                  10 |        2 |      4 | Weighted — Ridge (linear)            |    0.11652 |   0.08115 |   0.16741 |     0.05651 |
+| leverage points      |                  10 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.12243 |   0.08481 |   0.18151 |     0.06117 |
+| leverage points      |                  10 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11797 |   0.08174 |   0.17085 |     0.05928 |
+| leverage points      |                  10 |        2 |      4 | Weighted — Random Forest             |    0.1508  |   0.09796 |   0.23368 |     0.06026 |
+| leverage points      |                  10 |        2 |      4 | Weighted — Gradient Boosting         |    0.12621 |   0.08723 |   0.17482 |     0.06964 |
+| leverage points      |                  10 |        2 |      4 | IRLS — Ridge                         |    0.11777 |   0.08124 |   0.17051 |     0.05634 |
+| leverage points      |                  10 |        2 |      5 | No handling — Ridge                  |    0.12798 |   0.09618 |   0.1897  |     0.07533 |
+| leverage points      |                  10 |        2 |      5 | Hard removal — Ridge                 |    0.11322 |   0.08538 |   0.18077 |     0.06244 |
+| leverage points      |                  10 |        2 |      5 | Winsorizing — Ridge                  |    0.1266  |   0.09561 |   0.1835  |     0.08066 |
+| leverage points      |                  10 |        2 |      5 | Robust loss — HuberRegressor         |    0.13398 |   0.09283 |   0.20509 |     0.0621  |
+| leverage points      |                  10 |        2 |      5 | Weighted — Ridge (linear)            |    0.11268 |   0.08439 |   0.16695 |     0.06395 |
+| leverage points      |                  10 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11478 |   0.08552 |   0.18292 |     0.06925 |
+| leverage points      |                  10 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11096 |   0.08244 |   0.17929 |     0.06449 |
+| leverage points      |                  10 |        2 |      5 | Weighted — Random Forest             |    0.1374  |   0.09405 |   0.20483 |     0.06612 |
+| leverage points      |                  10 |        2 |      5 | Weighted — Gradient Boosting         |    0.13023 |   0.09484 |   0.20594 |     0.07349 |
+| leverage points      |                  10 |        2 |      5 | IRLS — Ridge                         |    0.10865 |   0.08038 |   0.16949 |     0.05982 |
+| leverage points      |                  10 |        2 |      6 | No handling — Ridge                  |    0.11412 |   0.08807 |   0.1728  |     0.06973 |
+| leverage points      |                  10 |        2 |      6 | Hard removal — Ridge                 |    0.10704 |   0.08193 |   0.16046 |     0.06273 |
+| leverage points      |                  10 |        2 |      6 | Winsorizing — Ridge                  |    0.11528 |   0.08954 |   0.17073 |     0.07278 |
+| leverage points      |                  10 |        2 |      6 | Robust loss — HuberRegressor         |    0.13428 |   0.09595 |   0.19495 |     0.07124 |
+| leverage points      |                  10 |        2 |      6 | Weighted — Ridge (linear)            |    0.10464 |   0.07879 |   0.15589 |     0.06234 |
+| leverage points      |                  10 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.11235 |   0.08412 |   0.16611 |     0.06789 |
+| leverage points      |                  10 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10889 |   0.08087 |   0.17054 |     0.0632  |
+| leverage points      |                  10 |        2 |      6 | Weighted — Random Forest             |    0.14334 |   0.09625 |   0.23133 |     0.05945 |
+| leverage points      |                  10 |        2 |      6 | Weighted — Gradient Boosting         |    0.12785 |   0.08971 |   0.1931  |     0.0634  |
+| leverage points      |                  10 |        2 |      6 | IRLS — Ridge                         |    0.10492 |   0.07866 |   0.15583 |     0.06112 |
+| leverage points      |                  10 |        2 |      7 | No handling — Ridge                  |    0.15835 |   0.10451 |   0.25467 |     0.07066 |
+| leverage points      |                  10 |        2 |      7 | Hard removal — Ridge                 |    0.15872 |   0.09755 |   0.22401 |     0.06207 |
+| leverage points      |                  10 |        2 |      7 | Winsorizing — Ridge                  |    0.15859 |   0.10672 |   0.24594 |     0.07305 |
+| leverage points      |                  10 |        2 |      7 | Robust loss — HuberRegressor         |    0.16392 |   0.10963 |   0.21996 |     0.07507 |
+| leverage points      |                  10 |        2 |      7 | Weighted — Ridge (linear)            |    0.15636 |   0.09573 |   0.20768 |     0.06329 |
+| leverage points      |                  10 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.16043 |   0.1001  |   0.21084 |     0.06693 |
+| leverage points      |                  10 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.15889 |   0.09607 |   0.21186 |     0.06487 |
+| leverage points      |                  10 |        2 |      7 | Weighted — Random Forest             |    0.15549 |   0.10655 |   0.2484  |     0.07465 |
+| leverage points      |                  10 |        2 |      7 | Weighted — Gradient Boosting         |    0.15046 |   0.09938 |   0.216   |     0.06516 |
+| leverage points      |                  10 |        2 |      7 | IRLS — Ridge                         |    0.15562 |   0.0931  |   0.19147 |     0.0603  |
+| leverage points      |                  10 |        2 |      8 | No handling — Ridge                  |    0.18387 |   0.09617 |   0.19581 |     0.06539 |
+| leverage points      |                  10 |        2 |      8 | Hard removal — Ridge                 |    0.19739 |   0.09643 |   0.18102 |     0.06735 |
+| leverage points      |                  10 |        2 |      8 | Winsorizing — Ridge                  |    0.17787 |   0.09524 |   0.19004 |     0.06361 |
+| leverage points      |                  10 |        2 |      8 | Robust loss — HuberRegressor         |    0.20828 |   0.10562 |   0.21362 |     0.0625  |
+| leverage points      |                  10 |        2 |      8 | Weighted — Ridge (linear)            |    0.19725 |   0.09207 |   0.17156 |     0.06137 |
+| leverage points      |                  10 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.19796 |   0.09382 |   0.16824 |     0.06605 |
+| leverage points      |                  10 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.20216 |   0.09171 |   0.16964 |     0.06018 |
+| leverage points      |                  10 |        2 |      8 | Weighted — Random Forest             |    0.16099 |   0.10476 |   0.19454 |     0.0682  |
+| leverage points      |                  10 |        2 |      8 | Weighted — Gradient Boosting         |    0.15554 |   0.09862 |   0.20094 |     0.06679 |
+| leverage points      |                  10 |        2 |      8 | IRLS — Ridge                         |    0.20021 |   0.09368 |   0.17337 |     0.06496 |
+| leverage points      |                  10 |        2 |      9 | No handling — Ridge                  |    0.1321  |   0.09835 |   0.20603 |     0.07467 |
+| leverage points      |                  10 |        2 |      9 | Hard removal — Ridge                 |    0.11572 |   0.0832  |   0.17283 |     0.06326 |
+| leverage points      |                  10 |        2 |      9 | Winsorizing — Ridge                  |    0.13192 |   0.09896 |   0.20567 |     0.0783  |
+| leverage points      |                  10 |        2 |      9 | Robust loss — HuberRegressor         |    0.13606 |   0.09089 |   0.20992 |     0.06242 |
+| leverage points      |                  10 |        2 |      9 | Weighted — Ridge (linear)            |    0.11812 |   0.08473 |   0.18643 |     0.06545 |
+| leverage points      |                  10 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12081 |   0.0864  |   0.19805 |     0.0654  |
+| leverage points      |                  10 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11851 |   0.08369 |   0.19322 |     0.0613  |
+| leverage points      |                  10 |        2 |      9 | Weighted — Random Forest             |    0.13455 |   0.09155 |   0.20207 |     0.06021 |
+| leverage points      |                  10 |        2 |      9 | Weighted — Gradient Boosting         |    0.12377 |   0.08975 |   0.20366 |     0.06702 |
+| leverage points      |                  10 |        2 |      9 | IRLS — Ridge                         |    0.11125 |   0.08008 |   0.16118 |     0.06276 |
+| leverage points      |                  10 |        2 |     10 | No handling — Ridge                  |    0.1529  |   0.10297 |   0.2085  |     0.07528 |
+| leverage points      |                  10 |        2 |     10 | Hard removal — Ridge                 |    0.14765 |   0.09672 |   0.19058 |     0.06706 |
+| leverage points      |                  10 |        2 |     10 | Winsorizing — Ridge                  |    0.15628 |   0.10434 |   0.21019 |     0.07538 |
+| leverage points      |                  10 |        2 |     10 | Robust loss — HuberRegressor         |    0.14956 |   0.10035 |   0.20719 |     0.06822 |
+| leverage points      |                  10 |        2 |     10 | Weighted — Ridge (linear)            |    0.14896 |   0.09392 |   0.19185 |     0.06048 |
+| leverage points      |                  10 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.15422 |   0.09588 |   0.20661 |     0.06279 |
+| leverage points      |                  10 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.1519  |   0.09376 |   0.20789 |     0.06019 |
+| leverage points      |                  10 |        2 |     10 | Weighted — Random Forest             |    0.17943 |   0.11178 |   0.27676 |     0.0661  |
+| leverage points      |                  10 |        2 |     10 | Weighted — Gradient Boosting         |    0.16659 |   0.10284 |   0.22002 |     0.06399 |
+| leverage points      |                  10 |        2 |     10 | IRLS — Ridge                         |    0.14571 |   0.09136 |   0.19116 |     0.05961 |
+| leverage points      |                  10 |        2 |     11 | No handling — Ridge                  |    0.17887 |   0.09598 |   0.18634 |     0.06462 |
+| leverage points      |                  10 |        2 |     11 | Hard removal — Ridge                 |    0.19646 |   0.09356 |   0.17478 |     0.06621 |
+| leverage points      |                  10 |        2 |     11 | Winsorizing — Ridge                  |    0.17361 |   0.09643 |   0.19042 |     0.0673  |
+| leverage points      |                  10 |        2 |     11 | Robust loss — HuberRegressor         |    0.22594 |   0.1145  |   0.23526 |     0.05885 |
+| leverage points      |                  10 |        2 |     11 | Weighted — Ridge (linear)            |    0.19069 |   0.09261 |   0.16977 |     0.06167 |
+| leverage points      |                  10 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.19333 |   0.09454 |   0.18845 |     0.0614  |
+| leverage points      |                  10 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.19624 |   0.0922  |   0.17514 |     0.0592  |
+| leverage points      |                  10 |        2 |     11 | Weighted — Random Forest             |    0.15334 |   0.0971  |   0.21437 |     0.06379 |
+| leverage points      |                  10 |        2 |     11 | Weighted — Gradient Boosting         |    0.14721 |   0.09535 |   0.21428 |     0.06566 |
+| leverage points      |                  10 |        2 |     11 | IRLS — Ridge                         |    0.1892  |   0.09082 |   0.16841 |     0.06179 |
+| leverage points      |                  10 |        2 |     12 | No handling — Ridge                  |    0.1446  |   0.10539 |   0.20124 |     0.08792 |
+| leverage points      |                  10 |        2 |     12 | Hard removal — Ridge                 |    0.13426 |   0.0939  |   0.19216 |     0.06972 |
+| leverage points      |                  10 |        2 |     12 | Winsorizing — Ridge                  |    0.14601 |   0.10674 |   0.20265 |     0.08676 |
+| leverage points      |                  10 |        2 |     12 | Robust loss — HuberRegressor         |    0.18378 |   0.11284 |   0.2274  |     0.07459 |
+| leverage points      |                  10 |        2 |     12 | Weighted — Ridge (linear)            |    0.12447 |   0.08924 |   0.174   |     0.07129 |
+| leverage points      |                  10 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.12785 |   0.09144 |   0.18612 |     0.07308 |
+| leverage points      |                  10 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.12459 |   0.0891  |   0.17968 |     0.0708  |
+| leverage points      |                  10 |        2 |     12 | Weighted — Random Forest             |    0.15214 |   0.10165 |   0.24809 |     0.06813 |
+| leverage points      |                  10 |        2 |     12 | Weighted — Gradient Boosting         |    0.14334 |   0.0989  |   0.19476 |     0.07014 |
+| leverage points      |                  10 |        2 |     12 | IRLS — Ridge                         |    0.1248  |   0.08745 |   0.16942 |     0.06986 |
+| leverage points      |                  10 |        2 |     13 | No handling — Ridge                  |    0.12122 |   0.08996 |   0.18879 |     0.06837 |
+| leverage points      |                  10 |        2 |     13 | Hard removal — Ridge                 |    0.11408 |   0.0856  |   0.17424 |     0.06739 |
+| leverage points      |                  10 |        2 |     13 | Winsorizing — Ridge                  |    0.12474 |   0.09291 |   0.19119 |     0.07238 |
+| leverage points      |                  10 |        2 |     13 | Robust loss — HuberRegressor         |    0.13556 |   0.09483 |   0.21321 |     0.06609 |
+| leverage points      |                  10 |        2 |     13 | Weighted — Ridge (linear)            |    0.11451 |   0.08544 |   0.17431 |     0.06267 |
+| leverage points      |                  10 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11999 |   0.08905 |   0.18971 |     0.06936 |
+| leverage points      |                  10 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.11704 |   0.08622 |   0.18067 |     0.06394 |
+| leverage points      |                  10 |        2 |     13 | Weighted — Random Forest             |    0.14027 |   0.099   |   0.23376 |     0.06651 |
+| leverage points      |                  10 |        2 |     13 | Weighted — Gradient Boosting         |    0.13178 |   0.09444 |   0.19774 |     0.06985 |
+| leverage points      |                  10 |        2 |     13 | IRLS — Ridge                         |    0.11131 |   0.08329 |   0.16741 |     0.06283 |
+| leverage points      |                  10 |        2 |     14 | No handling — Ridge                  |    0.13032 |   0.09481 |   0.19298 |     0.07774 |
+| leverage points      |                  10 |        2 |     14 | Hard removal — Ridge                 |    0.12366 |   0.08512 |   0.17409 |     0.06359 |
+| leverage points      |                  10 |        2 |     14 | Winsorizing — Ridge                  |    0.13169 |   0.09436 |   0.19471 |     0.07389 |
+| leverage points      |                  10 |        2 |     14 | Robust loss — HuberRegressor         |    0.13245 |   0.0928  |   0.20186 |     0.07072 |
+| leverage points      |                  10 |        2 |     14 | Weighted — Ridge (linear)            |    0.12199 |   0.08246 |   0.16983 |     0.05875 |
+| leverage points      |                  10 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.12548 |   0.08565 |   0.18167 |     0.06294 |
+| leverage points      |                  10 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12342 |   0.08166 |   0.17252 |     0.0569  |
+| leverage points      |                  10 |        2 |     14 | Weighted — Random Forest             |    0.15611 |   0.10391 |   0.23923 |     0.0689  |
+| leverage points      |                  10 |        2 |     14 | Weighted — Gradient Boosting         |    0.13712 |   0.09434 |   0.19901 |     0.0741  |
+| leverage points      |                  10 |        2 |     14 | IRLS — Ridge                         |    0.122   |   0.0826  |   0.16731 |     0.05992 |
+| leverage points      |                  10 |        2 |     15 | No handling — Ridge                  |    0.15786 |   0.1018  |   0.19189 |     0.07329 |
+| leverage points      |                  10 |        2 |     15 | Hard removal — Ridge                 |    0.16523 |   0.09867 |   0.17974 |     0.0701  |
+| leverage points      |                  10 |        2 |     15 | Winsorizing — Ridge                  |    0.15942 |   0.10282 |   0.18947 |     0.07494 |
+| leverage points      |                  10 |        2 |     15 | Robust loss — HuberRegressor         |    0.16377 |   0.10064 |   0.20847 |     0.06943 |
+| leverage points      |                  10 |        2 |     15 | Weighted — Ridge (linear)            |    0.16218 |   0.09361 |   0.18617 |     0.06778 |
+| leverage points      |                  10 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16317 |   0.09477 |   0.19397 |     0.06117 |
+| leverage points      |                  10 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16221 |   0.09212 |   0.185   |     0.06133 |
+| leverage points      |                  10 |        2 |     15 | Weighted — Random Forest             |    0.16675 |   0.10406 |   0.26011 |     0.06484 |
+| leverage points      |                  10 |        2 |     15 | Weighted — Gradient Boosting         |    0.16065 |   0.09881 |   0.2023  |     0.06173 |
+| leverage points      |                  10 |        2 |     15 | IRLS — Ridge                         |    0.16411 |   0.09367 |   0.17531 |     0.06363 |
+| leverage points      |                  20 |        1 |      1 | No handling — Ridge                  |    0.18956 |   0.10955 |   0.21833 |     0.07503 |
+| leverage points      |                  20 |        1 |      1 | Hard removal — Ridge                 |    0.19665 |   0.10888 |   0.21363 |     0.07114 |
+| leverage points      |                  20 |        1 |      1 | Winsorizing — Ridge                  |    0.18375 |   0.10977 |   0.22844 |     0.07179 |
+| leverage points      |                  20 |        1 |      1 | Robust loss — HuberRegressor         |    0.20291 |   0.12341 |   0.25808 |     0.08152 |
+| leverage points      |                  20 |        1 |      1 | Weighted — Ridge (linear)            |    0.19602 |   0.105   |   0.19802 |     0.06623 |
+| leverage points      |                  20 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.20256 |   0.10765 |   0.21263 |     0.0707  |
+| leverage points      |                  20 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.20264 |   0.10347 |   0.19565 |     0.06958 |
+| leverage points      |                  20 |        1 |      1 | Weighted — Random Forest             |    0.16917 |   0.10591 |   0.23877 |     0.06311 |
+| leverage points      |                  20 |        1 |      1 | Weighted — Gradient Boosting         |    0.15953 |   0.09969 |   0.22311 |     0.05965 |
+| leverage points      |                  20 |        1 |      1 | IRLS — Ridge                         |    0.19751 |   0.10762 |   0.21444 |     0.06772 |
+| leverage points      |                  20 |        1 |      2 | No handling — Ridge                  |    0.14492 |   0.10452 |   0.21065 |     0.08477 |
+| leverage points      |                  20 |        1 |      2 | Hard removal — Ridge                 |    0.1368  |   0.09694 |   0.19441 |     0.07129 |
+| leverage points      |                  20 |        1 |      2 | Winsorizing — Ridge                  |    0.14697 |   0.10576 |   0.21759 |     0.08096 |
+| leverage points      |                  20 |        1 |      2 | Robust loss — HuberRegressor         |    0.15585 |   0.11206 |   0.22161 |     0.08064 |
+| leverage points      |                  20 |        1 |      2 | Weighted — Ridge (linear)            |    0.12743 |   0.08854 |   0.1873  |     0.0674  |
+| leverage points      |                  20 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.12867 |   0.08948 |   0.19356 |     0.06786 |
+| leverage points      |                  20 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12628 |   0.08582 |   0.18905 |     0.06071 |
+| leverage points      |                  20 |        1 |      2 | Weighted — Random Forest             |    0.15255 |   0.10234 |   0.2346  |     0.0719  |
+| leverage points      |                  20 |        1 |      2 | Weighted — Gradient Boosting         |    0.13308 |   0.09384 |   0.19299 |     0.06725 |
+| leverage points      |                  20 |        1 |      2 | IRLS — Ridge                         |    0.12862 |   0.09132 |   0.18398 |     0.07011 |
+| leverage points      |                  20 |        1 |      3 | No handling — Ridge                  |    0.16116 |   0.1057  |   0.20812 |     0.06683 |
+| leverage points      |                  20 |        1 |      3 | Hard removal — Ridge                 |    0.16173 |   0.10008 |   0.191   |     0.0697  |
+| leverage points      |                  20 |        1 |      3 | Winsorizing — Ridge                  |    0.16549 |   0.10749 |   0.21785 |     0.07187 |
+| leverage points      |                  20 |        1 |      3 | Robust loss — HuberRegressor         |    0.18644 |   0.11359 |   0.27527 |     0.0658  |
+| leverage points      |                  20 |        1 |      3 | Weighted — Ridge (linear)            |    0.16176 |   0.09781 |   0.19133 |     0.0641  |
+| leverage points      |                  20 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16584 |   0.10116 |   0.21242 |     0.06376 |
+| leverage points      |                  20 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16458 |   0.09705 |   0.2094  |     0.05833 |
+| leverage points      |                  20 |        1 |      3 | Weighted — Random Forest             |    0.1693  |   0.11093 |   0.26733 |     0.07156 |
+| leverage points      |                  20 |        1 |      3 | Weighted — Gradient Boosting         |    0.15986 |   0.10407 |   0.22554 |     0.06642 |
+| leverage points      |                  20 |        1 |      3 | IRLS — Ridge                         |    0.16408 |   0.09633 |   0.18542 |     0.06183 |
+| leverage points      |                  20 |        1 |      4 | No handling — Ridge                  |    0.14114 |   0.10049 |   0.20307 |     0.07781 |
+| leverage points      |                  20 |        1 |      4 | Hard removal — Ridge                 |    0.13088 |   0.09332 |   0.20623 |     0.07507 |
+| leverage points      |                  20 |        1 |      4 | Winsorizing — Ridge                  |    0.1458  |   0.10318 |   0.20376 |     0.08272 |
+| leverage points      |                  20 |        1 |      4 | Robust loss — HuberRegressor         |    0.13741 |   0.09818 |   0.20541 |     0.07376 |
+| leverage points      |                  20 |        1 |      4 | Weighted — Ridge (linear)            |    0.12496 |   0.08652 |   0.17719 |     0.0658  |
+| leverage points      |                  20 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.12975 |   0.08907 |   0.18489 |     0.06472 |
+| leverage points      |                  20 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.12089 |   0.0831  |   0.17293 |     0.05784 |
+| leverage points      |                  20 |        1 |      4 | Weighted — Random Forest             |    0.15119 |   0.09853 |   0.23911 |     0.06054 |
+| leverage points      |                  20 |        1 |      4 | Weighted — Gradient Boosting         |    0.12577 |   0.08678 |   0.17427 |     0.06471 |
+| leverage points      |                  20 |        1 |      4 | IRLS — Ridge                         |    0.12367 |   0.08792 |   0.18553 |     0.06556 |
+| leverage points      |                  20 |        1 |      5 | No handling — Ridge                  |    0.13226 |   0.10132 |   0.19034 |     0.08685 |
+| leverage points      |                  20 |        1 |      5 | Hard removal — Ridge                 |    0.12232 |   0.09482 |   0.1814  |     0.0766  |
+| leverage points      |                  20 |        1 |      5 | Winsorizing — Ridge                  |    0.13154 |   0.10064 |   0.19278 |     0.08583 |
+| leverage points      |                  20 |        1 |      5 | Robust loss — HuberRegressor         |    0.14577 |   0.10472 |   0.20912 |     0.08159 |
+| leverage points      |                  20 |        1 |      5 | Weighted — Ridge (linear)            |    0.11786 |   0.08927 |   0.18014 |     0.07485 |
+| leverage points      |                  20 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.12034 |   0.09014 |   0.18888 |     0.07066 |
+| leverage points      |                  20 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.11563 |   0.08632 |   0.18032 |     0.06908 |
+| leverage points      |                  20 |        1 |      5 | Weighted — Random Forest             |    0.13605 |   0.09404 |   0.21034 |     0.06905 |
+| leverage points      |                  20 |        1 |      5 | Weighted — Gradient Boosting         |    0.13279 |   0.09439 |   0.20533 |     0.06669 |
+| leverage points      |                  20 |        1 |      5 | IRLS — Ridge                         |    0.11646 |   0.08928 |   0.18199 |     0.07079 |
+| leverage points      |                  20 |        1 |      6 | No handling — Ridge                  |    0.12564 |   0.09779 |   0.19848 |     0.07939 |
+| leverage points      |                  20 |        1 |      6 | Hard removal — Ridge                 |    0.12336 |   0.09297 |   0.1893  |     0.07519 |
+| leverage points      |                  20 |        1 |      6 | Winsorizing — Ridge                  |    0.13008 |   0.09985 |   0.21169 |     0.08524 |
+| leverage points      |                  20 |        1 |      6 | Robust loss — HuberRegressor         |    0.15349 |   0.11263 |   0.23169 |     0.08801 |
+| leverage points      |                  20 |        1 |      6 | Weighted — Ridge (linear)            |    0.1101  |   0.0843  |   0.15693 |     0.06952 |
+| leverage points      |                  20 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.11685 |   0.08825 |   0.17564 |     0.06969 |
+| leverage points      |                  20 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.11034 |   0.08259 |   0.16234 |     0.06595 |
+| leverage points      |                  20 |        1 |      6 | Weighted — Random Forest             |    0.14367 |   0.09703 |   0.23841 |     0.06438 |
+| leverage points      |                  20 |        1 |      6 | Weighted — Gradient Boosting         |    0.13315 |   0.09282 |   0.20165 |     0.06611 |
+| leverage points      |                  20 |        1 |      6 | IRLS — Ridge                         |    0.11812 |   0.08904 |   0.16294 |     0.07359 |
+| leverage points      |                  20 |        1 |      7 | No handling — Ridge                  |    0.15967 |   0.10818 |   0.26114 |     0.07085 |
+| leverage points      |                  20 |        1 |      7 | Hard removal — Ridge                 |    0.15797 |   0.10383 |   0.24677 |     0.07563 |
+| leverage points      |                  20 |        1 |      7 | Winsorizing — Ridge                  |    0.158   |   0.10891 |   0.25018 |     0.07465 |
+| leverage points      |                  20 |        1 |      7 | Robust loss — HuberRegressor         |    0.16524 |   0.11584 |   0.24703 |     0.08346 |
+| leverage points      |                  20 |        1 |      7 | Weighted — Ridge (linear)            |    0.15623 |   0.09979 |   0.21262 |     0.06455 |
+| leverage points      |                  20 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15881 |   0.10206 |   0.22458 |     0.06877 |
+| leverage points      |                  20 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.1553  |   0.09677 |   0.21052 |     0.0657  |
+| leverage points      |                  20 |        1 |      7 | Weighted — Random Forest             |    0.15868 |   0.10961 |   0.23011 |     0.07323 |
+| leverage points      |                  20 |        1 |      7 | Weighted — Gradient Boosting         |    0.15141 |   0.09941 |   0.22332 |     0.0688  |
+| leverage points      |                  20 |        1 |      7 | IRLS — Ridge                         |    0.15472 |   0.09688 |   0.22354 |     0.06771 |
+| leverage points      |                  20 |        1 |      8 | No handling — Ridge                  |    0.1842  |   0.10144 |   0.18962 |     0.0701  |
+| leverage points      |                  20 |        1 |      8 | Hard removal — Ridge                 |    0.18972 |   0.10068 |   0.19415 |     0.06782 |
+| leverage points      |                  20 |        1 |      8 | Winsorizing — Ridge                  |    0.17851 |   0.0999  |   0.18873 |     0.07258 |
+| leverage points      |                  20 |        1 |      8 | Robust loss — HuberRegressor         |    0.207   |   0.1099  |   0.2136  |     0.07119 |
+| leverage points      |                  20 |        1 |      8 | Weighted — Ridge (linear)            |    0.19487 |   0.0946  |   0.16596 |     0.06101 |
+| leverage points      |                  20 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.19787 |   0.09735 |   0.17887 |     0.06525 |
+| leverage points      |                  20 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.20041 |   0.09303 |   0.1724  |     0.05761 |
+| leverage points      |                  20 |        1 |      8 | Weighted — Random Forest             |    0.16255 |   0.10618 |   0.21851 |     0.07358 |
+| leverage points      |                  20 |        1 |      8 | Weighted — Gradient Boosting         |    0.15396 |   0.09557 |   0.19377 |     0.06713 |
+| leverage points      |                  20 |        1 |      8 | IRLS — Ridge                         |    0.1882  |   0.09611 |   0.17458 |     0.06518 |
+| leverage points      |                  20 |        1 |      9 | No handling — Ridge                  |    0.13853 |   0.10183 |   0.21333 |     0.07612 |
+| leverage points      |                  20 |        1 |      9 | Hard removal — Ridge                 |    0.12788 |   0.09134 |   0.1817  |     0.06754 |
+| leverage points      |                  20 |        1 |      9 | Winsorizing — Ridge                  |    0.13889 |   0.10207 |   0.20897 |     0.07469 |
+| leverage points      |                  20 |        1 |      9 | Robust loss — HuberRegressor         |    0.14941 |   0.10316 |   0.2172  |     0.07232 |
+| leverage points      |                  20 |        1 |      9 | Weighted — Ridge (linear)            |    0.12514 |   0.0881  |   0.19377 |     0.06533 |
+| leverage points      |                  20 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.12632 |   0.08831 |   0.20808 |     0.06363 |
+| leverage points      |                  20 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.1225  |   0.08516 |   0.19469 |     0.06394 |
+| leverage points      |                  20 |        1 |      9 | Weighted — Random Forest             |    0.13544 |   0.09124 |   0.20823 |     0.06293 |
+| leverage points      |                  20 |        1 |      9 | Weighted — Gradient Boosting         |    0.12446 |   0.08915 |   0.18938 |     0.06374 |
+| leverage points      |                  20 |        1 |      9 | IRLS — Ridge                         |    0.12414 |   0.0882  |   0.18231 |     0.06138 |
+| leverage points      |                  20 |        1 |     10 | No handling — Ridge                  |    0.15621 |   0.1061  |   0.20215 |     0.08007 |
+| leverage points      |                  20 |        1 |     10 | Hard removal — Ridge                 |    0.15359 |   0.10233 |   0.1839  |     0.0748  |
+| leverage points      |                  20 |        1 |     10 | Winsorizing — Ridge                  |    0.1603  |   0.10827 |   0.21895 |     0.08029 |
+| leverage points      |                  20 |        1 |     10 | Robust loss — HuberRegressor         |    0.16461 |   0.11221 |   0.22813 |     0.07904 |
+| leverage points      |                  20 |        1 |     10 | Weighted — Ridge (linear)            |    0.15095 |   0.09597 |   0.18538 |     0.07058 |
+| leverage points      |                  20 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.15615 |   0.09689 |   0.20637 |     0.06519 |
+| leverage points      |                  20 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.15277 |   0.09517 |   0.1944  |     0.06242 |
+| leverage points      |                  20 |        1 |     10 | Weighted — Random Forest             |    0.18074 |   0.11166 |   0.26154 |     0.06541 |
+| leverage points      |                  20 |        1 |     10 | Weighted — Gradient Boosting         |    0.16337 |   0.1033  |   0.23333 |     0.06815 |
+| leverage points      |                  20 |        1 |     10 | IRLS — Ridge                         |    0.15246 |   0.09735 |   0.17529 |     0.06674 |
+| leverage points      |                  20 |        1 |     11 | No handling — Ridge                  |    0.18041 |   0.10674 |   0.21584 |     0.07867 |
+| leverage points      |                  20 |        1 |     11 | Hard removal — Ridge                 |    0.18383 |   0.10578 |   0.19793 |     0.07782 |
+| leverage points      |                  20 |        1 |     11 | Winsorizing — Ridge                  |    0.17553 |   0.10661 |   0.2189  |     0.07865 |
+| leverage points      |                  20 |        1 |     11 | Robust loss — HuberRegressor         |    0.20762 |   0.12557 |   0.26234 |     0.08236 |
+| leverage points      |                  20 |        1 |     11 | Weighted — Ridge (linear)            |    0.19149 |   0.10162 |   0.19725 |     0.07042 |
+| leverage points      |                  20 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.19614 |   0.10326 |   0.19418 |     0.07011 |
+| leverage points      |                  20 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.2     |   0.09988 |   0.18741 |     0.06528 |
+| leverage points      |                  20 |        1 |     11 | Weighted — Random Forest             |    0.15352 |   0.09767 |   0.21977 |     0.06631 |
+| leverage points      |                  20 |        1 |     11 | Weighted — Gradient Boosting         |    0.1478  |   0.09647 |   0.22729 |     0.06522 |
+| leverage points      |                  20 |        1 |     11 | IRLS — Ridge                         |    0.18507 |   0.10352 |   0.19051 |     0.07536 |
+| leverage points      |                  20 |        1 |     12 | No handling — Ridge                  |    0.14634 |   0.10596 |   0.21502 |     0.08599 |
+| leverage points      |                  20 |        1 |     12 | Hard removal — Ridge                 |    0.1321  |   0.09542 |   0.19732 |     0.07098 |
+| leverage points      |                  20 |        1 |     12 | Winsorizing — Ridge                  |    0.14798 |   0.10788 |   0.21585 |     0.08877 |
+| leverage points      |                  20 |        1 |     12 | Robust loss — HuberRegressor         |    0.18524 |   0.11709 |   0.23238 |     0.07751 |
+| leverage points      |                  20 |        1 |     12 | Weighted — Ridge (linear)            |    0.12524 |   0.09019 |   0.16775 |     0.07325 |
+| leverage points      |                  20 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.12763 |   0.09131 |   0.1819  |     0.07277 |
+| leverage points      |                  20 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.12158 |   0.0877  |   0.1712  |     0.06911 |
+| leverage points      |                  20 |        1 |     12 | Weighted — Random Forest             |    0.15326 |   0.10254 |   0.25076 |     0.06829 |
+| leverage points      |                  20 |        1 |     12 | Weighted — Gradient Boosting         |    0.14008 |   0.09833 |   0.19948 |     0.07054 |
+| leverage points      |                  20 |        1 |     12 | IRLS — Ridge                         |    0.12922 |   0.09311 |   0.1878  |     0.06931 |
+| leverage points      |                  20 |        1 |     13 | No handling — Ridge                  |    0.12663 |   0.09639 |   0.20117 |     0.07477 |
+| leverage points      |                  20 |        1 |     13 | Hard removal — Ridge                 |    0.12183 |   0.0918  |   0.18466 |     0.06987 |
+| leverage points      |                  20 |        1 |     13 | Winsorizing — Ridge                  |    0.13144 |   0.09805 |   0.21584 |     0.0778  |
+| leverage points      |                  20 |        1 |     13 | Robust loss — HuberRegressor         |    0.1418  |   0.09908 |   0.22523 |     0.06535 |
+| leverage points      |                  20 |        1 |     13 | Weighted — Ridge (linear)            |    0.11931 |   0.08798 |   0.19401 |     0.0665  |
+| leverage points      |                  20 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12732 |   0.09308 |   0.21869 |     0.06906 |
+| leverage points      |                  20 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.12213 |   0.08846 |   0.1997  |     0.06466 |
+| leverage points      |                  20 |        1 |     13 | Weighted — Random Forest             |    0.14086 |   0.10038 |   0.22914 |     0.07033 |
+| leverage points      |                  20 |        1 |     13 | Weighted — Gradient Boosting         |    0.13029 |   0.09267 |   0.18403 |     0.06895 |
+| leverage points      |                  20 |        1 |     13 | IRLS — Ridge                         |    0.11768 |   0.0877  |   0.17858 |     0.06614 |
+| leverage points      |                  20 |        1 |     14 | No handling — Ridge                  |    0.14106 |   0.10294 |   0.20488 |     0.08613 |
+| leverage points      |                  20 |        1 |     14 | Hard removal — Ridge                 |    0.13454 |   0.09524 |   0.19262 |     0.07205 |
+| leverage points      |                  20 |        1 |     14 | Winsorizing — Ridge                  |    0.14189 |   0.10229 |   0.21575 |     0.08281 |
+| leverage points      |                  20 |        1 |     14 | Robust loss — HuberRegressor         |    0.16054 |   0.11017 |   0.21576 |     0.08    |
+| leverage points      |                  20 |        1 |     14 | Weighted — Ridge (linear)            |    0.12884 |   0.08876 |   0.18716 |     0.06274 |
+| leverage points      |                  20 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.13179 |   0.09057 |   0.1908  |     0.06315 |
+| leverage points      |                  20 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12864 |   0.08618 |   0.19088 |     0.05984 |
+| leverage points      |                  20 |        1 |     14 | Weighted — Random Forest             |    0.15777 |   0.10414 |   0.24112 |     0.07074 |
+| leverage points      |                  20 |        1 |     14 | Weighted — Gradient Boosting         |    0.1384  |   0.09619 |   0.19082 |     0.06626 |
+| leverage points      |                  20 |        1 |     14 | IRLS — Ridge                         |    0.1324  |   0.09201 |   0.18916 |     0.07064 |
+| leverage points      |                  20 |        1 |     15 | No handling — Ridge                  |    0.16131 |   0.10672 |   0.20424 |     0.07808 |
+| leverage points      |                  20 |        1 |     15 | Hard removal — Ridge                 |    0.16586 |   0.10287 |   0.1932  |     0.0653  |
+| leverage points      |                  20 |        1 |     15 | Winsorizing — Ridge                  |    0.16466 |   0.1081  |   0.21407 |     0.07025 |
+| leverage points      |                  20 |        1 |     15 | Robust loss — HuberRegressor         |    0.17834 |   0.1121  |   0.25018 |     0.07355 |
+| leverage points      |                  20 |        1 |     15 | Weighted — Ridge (linear)            |    0.16198 |   0.09712 |   0.18363 |     0.06561 |
+| leverage points      |                  20 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16465 |   0.09726 |   0.19349 |     0.06514 |
+| leverage points      |                  20 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16304 |   0.09401 |   0.19523 |     0.06358 |
+| leverage points      |                  20 |        1 |     15 | Weighted — Random Forest             |    0.16435 |   0.10131 |   0.25245 |     0.05954 |
+| leverage points      |                  20 |        1 |     15 | Weighted — Gradient Boosting         |    0.16376 |   0.10018 |   0.20948 |     0.05796 |
+| leverage points      |                  20 |        1 |     15 | IRLS — Ridge                         |    0.16727 |   0.09978 |   0.1908  |     0.06595 |
+| leverage points      |                  20 |        2 |      1 | No handling — Ridge                  |    0.19277 |   0.1132  |   0.22061 |     0.08063 |
+| leverage points      |                  20 |        2 |      1 | Hard removal — Ridge                 |    0.19973 |   0.11098 |   0.20944 |     0.07508 |
+| leverage points      |                  20 |        2 |      1 | Winsorizing — Ridge                  |    0.18683 |   0.11234 |   0.2211  |     0.07723 |
+| leverage points      |                  20 |        2 |      1 | Robust loss — HuberRegressor         |    0.21794 |   0.12403 |   0.27292 |     0.08085 |
+| leverage points      |                  20 |        2 |      1 | Weighted — Ridge (linear)            |    0.19989 |   0.10518 |   0.1987  |     0.06916 |
+| leverage points      |                  20 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.20388 |   0.10639 |   0.21817 |     0.06745 |
+| leverage points      |                  20 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.20605 |   0.10324 |   0.19668 |     0.06343 |
+| leverage points      |                  20 |        2 |      1 | Weighted — Random Forest             |    0.1684  |   0.10671 |   0.25254 |     0.06413 |
+| leverage points      |                  20 |        2 |      1 | Weighted — Gradient Boosting         |    0.15795 |   0.09989 |   0.22739 |     0.06349 |
+| leverage points      |                  20 |        2 |      1 | IRLS — Ridge                         |    0.20575 |   0.10772 |   0.19533 |     0.06994 |
+| leverage points      |                  20 |        2 |      2 | No handling — Ridge                  |    0.13784 |   0.09984 |   0.19872 |     0.08027 |
+| leverage points      |                  20 |        2 |      2 | Hard removal — Ridge                 |    0.12696 |   0.09154 |   0.18667 |     0.06707 |
+| leverage points      |                  20 |        2 |      2 | Winsorizing — Ridge                  |    0.14028 |   0.10132 |   0.20342 |     0.07297 |
+| leverage points      |                  20 |        2 |      2 | Robust loss — HuberRegressor         |    0.14506 |   0.10436 |   0.21811 |     0.0764  |
+| leverage points      |                  20 |        2 |      2 | Weighted — Ridge (linear)            |    0.1241  |   0.08677 |   0.17488 |     0.06765 |
+| leverage points      |                  20 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.12575 |   0.08812 |   0.1786  |     0.06877 |
+| leverage points      |                  20 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12161 |   0.08448 |   0.17044 |     0.06482 |
+| leverage points      |                  20 |        2 |      2 | Weighted — Random Forest             |    0.14985 |   0.1009  |   0.24352 |     0.06523 |
+| leverage points      |                  20 |        2 |      2 | Weighted — Gradient Boosting         |    0.13313 |   0.09426 |   0.1852  |     0.07008 |
+| leverage points      |                  20 |        2 |      2 | IRLS — Ridge                         |    0.12882 |   0.09112 |   0.19383 |     0.06406 |
+| leverage points      |                  20 |        2 |      3 | No handling — Ridge                  |    0.1577  |   0.10337 |   0.21117 |     0.06701 |
+| leverage points      |                  20 |        2 |      3 | Hard removal — Ridge                 |    0.15909 |   0.09976 |   0.19489 |     0.06826 |
+| leverage points      |                  20 |        2 |      3 | Winsorizing — Ridge                  |    0.16208 |   0.10655 |   0.21778 |     0.0703  |
+| leverage points      |                  20 |        2 |      3 | Robust loss — HuberRegressor         |    0.17837 |   0.11257 |   0.23689 |     0.07156 |
+| leverage points      |                  20 |        2 |      3 | Weighted — Ridge (linear)            |    0.15694 |   0.09846 |   0.1882  |     0.06694 |
+| leverage points      |                  20 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16208 |   0.10211 |   0.21285 |     0.07172 |
+| leverage points      |                  20 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.15912 |   0.09677 |   0.20544 |     0.06443 |
+| leverage points      |                  20 |        2 |      3 | Weighted — Random Forest             |    0.17086 |   0.11299 |   0.26251 |     0.07165 |
+| leverage points      |                  20 |        2 |      3 | Weighted — Gradient Boosting         |    0.16091 |   0.1024  |   0.22947 |     0.06459 |
+| leverage points      |                  20 |        2 |      3 | IRLS — Ridge                         |    0.1574  |   0.09827 |   0.19388 |     0.06794 |
+| leverage points      |                  20 |        2 |      4 | No handling — Ridge                  |    0.14541 |   0.10322 |   0.20552 |     0.07737 |
+| leverage points      |                  20 |        2 |      4 | Hard removal — Ridge                 |    0.13941 |   0.09752 |   0.20552 |     0.06944 |
+| leverage points      |                  20 |        2 |      4 | Winsorizing — Ridge                  |    0.15031 |   0.1061  |   0.20431 |     0.08037 |
+| leverage points      |                  20 |        2 |      4 | Robust loss — HuberRegressor         |    0.14637 |   0.10598 |   0.22553 |     0.07481 |
+| leverage points      |                  20 |        2 |      4 | Weighted — Ridge (linear)            |    0.12962 |   0.08972 |   0.18423 |     0.0604  |
+| leverage points      |                  20 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.13405 |   0.09194 |   0.18816 |     0.06587 |
+| leverage points      |                  20 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.1257  |   0.08644 |   0.1838  |     0.05762 |
+| leverage points      |                  20 |        2 |      4 | Weighted — Random Forest             |    0.15199 |   0.09848 |   0.23264 |     0.06148 |
+| leverage points      |                  20 |        2 |      4 | Weighted — Gradient Boosting         |    0.13012 |   0.08842 |   0.1817  |     0.0611  |
+| leverage points      |                  20 |        2 |      4 | IRLS — Ridge                         |    0.1342  |   0.09382 |   0.19653 |     0.06353 |
+| leverage points      |                  20 |        2 |      5 | No handling — Ridge                  |    0.12466 |   0.09369 |   0.19262 |     0.07625 |
+| leverage points      |                  20 |        2 |      5 | Hard removal — Ridge                 |    0.11763 |   0.08834 |   0.19105 |     0.07151 |
+| leverage points      |                  20 |        2 |      5 | Winsorizing — Ridge                  |    0.12514 |   0.09411 |   0.19685 |     0.08235 |
+| leverage points      |                  20 |        2 |      5 | Robust loss — HuberRegressor         |    0.13274 |   0.09462 |   0.19827 |     0.07046 |
+| leverage points      |                  20 |        2 |      5 | Weighted — Ridge (linear)            |    0.11283 |   0.08501 |   0.1723  |     0.06957 |
+| leverage points      |                  20 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11662 |   0.0872  |   0.18116 |     0.07231 |
+| leverage points      |                  20 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11296 |   0.08387 |   0.17691 |     0.06834 |
+| leverage points      |                  20 |        2 |      5 | Weighted — Random Forest             |    0.13684 |   0.09382 |   0.22053 |     0.06308 |
+| leverage points      |                  20 |        2 |      5 | Weighted — Gradient Boosting         |    0.13031 |   0.09395 |   0.19628 |     0.07126 |
+| leverage points      |                  20 |        2 |      5 | IRLS — Ridge                         |    0.10799 |   0.08096 |   0.17148 |     0.06509 |
+| leverage points      |                  20 |        2 |      6 | No handling — Ridge                  |    0.12303 |   0.09647 |   0.19194 |     0.08129 |
+| leverage points      |                  20 |        2 |      6 | Hard removal — Ridge                 |    0.12093 |   0.09201 |   0.18523 |     0.07471 |
+| leverage points      |                  20 |        2 |      6 | Winsorizing — Ridge                  |    0.12821 |   0.09819 |   0.20258 |     0.08224 |
+| leverage points      |                  20 |        2 |      6 | Robust loss — HuberRegressor         |    0.15045 |   0.1106  |   0.23739 |     0.08962 |
+| leverage points      |                  20 |        2 |      6 | Weighted — Ridge (linear)            |    0.11058 |   0.08551 |   0.1677  |     0.06555 |
+| leverage points      |                  20 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.11619 |   0.08836 |   0.17449 |     0.06824 |
+| leverage points      |                  20 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.11132 |   0.0838  |   0.16999 |     0.06531 |
+| leverage points      |                  20 |        2 |      6 | Weighted — Random Forest             |    0.14455 |   0.09786 |   0.23886 |     0.06447 |
+| leverage points      |                  20 |        2 |      6 | Weighted — Gradient Boosting         |    0.12927 |   0.0919  |   0.20632 |     0.0678  |
+| leverage points      |                  20 |        2 |      6 | IRLS — Ridge                         |    0.11175 |   0.08515 |   0.16735 |     0.06924 |
+| leverage points      |                  20 |        2 |      7 | No handling — Ridge                  |    0.16398 |   0.11053 |   0.25064 |     0.07626 |
+| leverage points      |                  20 |        2 |      7 | Hard removal — Ridge                 |    0.15899 |   0.10402 |   0.22886 |     0.07293 |
+| leverage points      |                  20 |        2 |      7 | Winsorizing — Ridge                  |    0.16394 |   0.11123 |   0.24607 |     0.07798 |
+| leverage points      |                  20 |        2 |      7 | Robust loss — HuberRegressor         |    0.17818 |   0.11732 |   0.24159 |     0.07672 |
+| leverage points      |                  20 |        2 |      7 | Weighted — Ridge (linear)            |    0.16042 |   0.10037 |   0.21253 |     0.06541 |
+| leverage points      |                  20 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.16432 |   0.10359 |   0.22325 |     0.07239 |
+| leverage points      |                  20 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16231 |   0.09833 |   0.21149 |     0.06309 |
+| leverage points      |                  20 |        2 |      7 | Weighted — Random Forest             |    0.15958 |   0.10921 |   0.23925 |     0.07145 |
+| leverage points      |                  20 |        2 |      7 | Weighted — Gradient Boosting         |    0.15057 |   0.1027  |   0.21946 |     0.07458 |
+| leverage points      |                  20 |        2 |      7 | IRLS — Ridge                         |    0.16023 |   0.09935 |   0.20546 |     0.0641  |
+| leverage points      |                  20 |        2 |      8 | No handling — Ridge                  |    0.1795  |   0.10031 |   0.19227 |     0.07062 |
+| leverage points      |                  20 |        2 |      8 | Hard removal — Ridge                 |    0.18537 |   0.09764 |   0.17148 |     0.06973 |
+| leverage points      |                  20 |        2 |      8 | Winsorizing — Ridge                  |    0.17516 |   0.09947 |   0.18793 |     0.06778 |
+| leverage points      |                  20 |        2 |      8 | Robust loss — HuberRegressor         |    0.20124 |   0.10838 |   0.21437 |     0.07397 |
+| leverage points      |                  20 |        2 |      8 | Weighted — Ridge (linear)            |    0.18605 |   0.09324 |   0.16156 |     0.06318 |
+| leverage points      |                  20 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.1911  |   0.09501 |   0.16868 |     0.0628  |
+| leverage points      |                  20 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.19408 |   0.09132 |   0.17129 |     0.05724 |
+| leverage points      |                  20 |        2 |      8 | Weighted — Random Forest             |    0.16108 |   0.10416 |   0.21112 |     0.06955 |
+| leverage points      |                  20 |        2 |      8 | Weighted — Gradient Boosting         |    0.15286 |   0.09533 |   0.18554 |     0.0656  |
+| leverage points      |                  20 |        2 |      8 | IRLS — Ridge                         |    0.18757 |   0.0954  |   0.17216 |     0.0675  |
+| leverage points      |                  20 |        2 |      9 | No handling — Ridge                  |    0.13876 |   0.10156 |   0.21645 |     0.0831  |
+| leverage points      |                  20 |        2 |      9 | Hard removal — Ridge                 |    0.12581 |   0.09117 |   0.18499 |     0.07357 |
+| leverage points      |                  20 |        2 |      9 | Winsorizing — Ridge                  |    0.13836 |   0.1011  |   0.22088 |     0.07924 |
+| leverage points      |                  20 |        2 |      9 | Robust loss — HuberRegressor         |    0.14544 |   0.10105 |   0.22104 |     0.07066 |
+| leverage points      |                  20 |        2 |      9 | Weighted — Ridge (linear)            |    0.1218  |   0.08689 |   0.19076 |     0.06576 |
+| leverage points      |                  20 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12407 |   0.08814 |   0.19386 |     0.06595 |
+| leverage points      |                  20 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.1189  |   0.08399 |   0.1851  |     0.06276 |
+| leverage points      |                  20 |        2 |      9 | Weighted — Random Forest             |    0.13205 |   0.09001 |   0.20902 |     0.06474 |
+| leverage points      |                  20 |        2 |      9 | Weighted — Gradient Boosting         |    0.12458 |   0.08939 |   0.19797 |     0.06481 |
+| leverage points      |                  20 |        2 |      9 | IRLS — Ridge                         |    0.12229 |   0.08953 |   0.18275 |     0.07683 |
+| leverage points      |                  20 |        2 |     10 | No handling — Ridge                  |    0.16215 |   0.11014 |   0.21844 |     0.07523 |
+| leverage points      |                  20 |        2 |     10 | Hard removal — Ridge                 |    0.16279 |   0.10928 |   0.21711 |     0.07799 |
+| leverage points      |                  20 |        2 |     10 | Winsorizing — Ridge                  |    0.16641 |   0.11205 |   0.22808 |     0.07824 |
+| leverage points      |                  20 |        2 |     10 | Robust loss — HuberRegressor         |    0.17946 |   0.12231 |   0.26673 |     0.07859 |
+| leverage points      |                  20 |        2 |     10 | Weighted — Ridge (linear)            |    0.15461 |   0.10075 |   0.20095 |     0.06644 |
+| leverage points      |                  20 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.15927 |   0.10112 |   0.21272 |     0.06852 |
+| leverage points      |                  20 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.1555  |   0.09895 |   0.2111  |     0.0632  |
+| leverage points      |                  20 |        2 |     10 | Weighted — Random Forest             |    0.17827 |   0.10998 |   0.25731 |     0.06592 |
+| leverage points      |                  20 |        2 |     10 | Weighted — Gradient Boosting         |    0.16846 |   0.10609 |   0.22816 |     0.06595 |
+| leverage points      |                  20 |        2 |     10 | IRLS — Ridge                         |    0.15966 |   0.10309 |   0.20644 |     0.07427 |
+| leverage points      |                  20 |        2 |     11 | No handling — Ridge                  |    0.1767  |   0.1041  |   0.20803 |     0.0731  |
+| leverage points      |                  20 |        2 |     11 | Hard removal — Ridge                 |    0.18337 |   0.1023  |   0.18521 |     0.07428 |
+| leverage points      |                  20 |        2 |     11 | Winsorizing — Ridge                  |    0.17217 |   0.10416 |   0.21235 |     0.07363 |
+| leverage points      |                  20 |        2 |     11 | Robust loss — HuberRegressor         |    0.20908 |   0.12045 |   0.22283 |     0.08049 |
+| leverage points      |                  20 |        2 |     11 | Weighted — Ridge (linear)            |    0.18881 |   0.09637 |   0.18452 |     0.06666 |
+| leverage points      |                  20 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.19334 |   0.09756 |   0.18845 |     0.06888 |
+| leverage points      |                  20 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.19732 |   0.09434 |   0.18128 |     0.06513 |
+| leverage points      |                  20 |        2 |     11 | Weighted — Random Forest             |    0.15475 |   0.09792 |   0.21713 |     0.06318 |
+| leverage points      |                  20 |        2 |     11 | Weighted — Gradient Boosting         |    0.1495  |   0.09708 |   0.2122  |     0.06352 |
+| leverage points      |                  20 |        2 |     11 | IRLS — Ridge                         |    0.18803 |   0.09814 |   0.18561 |     0.06957 |
+| leverage points      |                  20 |        2 |     12 | No handling — Ridge                  |    0.1539  |   0.10998 |   0.21757 |     0.07792 |
+| leverage points      |                  20 |        2 |     12 | Hard removal — Ridge                 |    0.13532 |   0.09834 |   0.19596 |     0.07551 |
+| leverage points      |                  20 |        2 |     12 | Winsorizing — Ridge                  |    0.15475 |   0.11122 |   0.2298  |     0.07594 |
+| leverage points      |                  20 |        2 |     12 | Robust loss — HuberRegressor         |    0.19148 |   0.12584 |   0.26213 |     0.08632 |
+| leverage points      |                  20 |        2 |     12 | Weighted — Ridge (linear)            |    0.12743 |   0.09096 |   0.17882 |     0.06843 |
+| leverage points      |                  20 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.12908 |   0.09149 |   0.18091 |     0.06929 |
+| leverage points      |                  20 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.12281 |   0.08761 |   0.17252 |     0.0689  |
+| leverage points      |                  20 |        2 |     12 | Weighted — Random Forest             |    0.15342 |   0.10363 |   0.24921 |     0.06781 |
+| leverage points      |                  20 |        2 |     12 | Weighted — Gradient Boosting         |    0.14514 |   0.09937 |   0.20652 |     0.06999 |
+| leverage points      |                  20 |        2 |     12 | IRLS — Ridge                         |    0.13025 |   0.09314 |   0.19586 |     0.07381 |
+| leverage points      |                  20 |        2 |     13 | No handling — Ridge                  |    0.12825 |   0.09589 |   0.19985 |     0.07978 |
+| leverage points      |                  20 |        2 |     13 | Hard removal — Ridge                 |    0.12538 |   0.09303 |   0.19013 |     0.07087 |
+| leverage points      |                  20 |        2 |     13 | Winsorizing — Ridge                  |    0.1327  |   0.09911 |   0.19816 |     0.07592 |
+| leverage points      |                  20 |        2 |     13 | Robust loss — HuberRegressor         |    0.14892 |   0.10642 |   0.22287 |     0.07952 |
+| leverage points      |                  20 |        2 |     13 | Weighted — Ridge (linear)            |    0.12057 |   0.08837 |   0.19029 |     0.06513 |
+| leverage points      |                  20 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.12712 |   0.09228 |   0.20585 |     0.06924 |
+| leverage points      |                  20 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.12258 |   0.08856 |   0.19933 |     0.0667  |
+| leverage points      |                  20 |        2 |     13 | Weighted — Random Forest             |    0.1417  |   0.10003 |   0.23322 |     0.06684 |
+| leverage points      |                  20 |        2 |     13 | Weighted — Gradient Boosting         |    0.13008 |   0.0924  |   0.18462 |     0.06655 |
+| leverage points      |                  20 |        2 |     13 | IRLS — Ridge                         |    0.12039 |   0.08889 |   0.18125 |     0.06495 |
+| leverage points      |                  20 |        2 |     14 | No handling — Ridge                  |    0.14087 |   0.10179 |   0.21939 |     0.07788 |
+| leverage points      |                  20 |        2 |     14 | Hard removal — Ridge                 |    0.13371 |   0.09362 |   0.1967  |     0.07562 |
+| leverage points      |                  20 |        2 |     14 | Winsorizing — Ridge                  |    0.14264 |   0.10083 |   0.21523 |     0.08198 |
+| leverage points      |                  20 |        2 |     14 | Robust loss — HuberRegressor         |    0.1496  |   0.10399 |   0.22046 |     0.07446 |
+| leverage points      |                  20 |        2 |     14 | Weighted — Ridge (linear)            |    0.12917 |   0.08851 |   0.18028 |     0.06802 |
+| leverage points      |                  20 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.13333 |   0.09132 |   0.19747 |     0.06562 |
+| leverage points      |                  20 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12896 |   0.08529 |   0.18927 |     0.05949 |
+| leverage points      |                  20 |        2 |     14 | Weighted — Random Forest             |    0.1571  |   0.10623 |   0.24291 |     0.07672 |
+| leverage points      |                  20 |        2 |     14 | Weighted — Gradient Boosting         |    0.13829 |   0.09549 |   0.19443 |     0.0697  |
+| leverage points      |                  20 |        2 |     14 | IRLS — Ridge                         |    0.13108 |   0.09029 |   0.1872  |     0.06661 |
+| leverage points      |                  20 |        2 |     15 | No handling — Ridge                  |    0.16276 |   0.10698 |   0.20422 |     0.07531 |
+| leverage points      |                  20 |        2 |     15 | Hard removal — Ridge                 |    0.1678  |   0.10403 |   0.20345 |     0.067   |
+| leverage points      |                  20 |        2 |     15 | Winsorizing — Ridge                  |    0.16494 |   0.10828 |   0.22071 |     0.07246 |
+| leverage points      |                  20 |        2 |     15 | Robust loss — HuberRegressor         |    0.16464 |   0.10779 |   0.22732 |     0.07083 |
+| leverage points      |                  20 |        2 |     15 | Weighted — Ridge (linear)            |    0.16346 |   0.09715 |   0.18846 |     0.06615 |
+| leverage points      |                  20 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16614 |   0.0986  |   0.19633 |     0.06609 |
+| leverage points      |                  20 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16408 |   0.09508 |   0.19556 |     0.06308 |
+| leverage points      |                  20 |        2 |     15 | Weighted — Random Forest             |    0.16458 |   0.10186 |   0.25164 |     0.0666  |
+| leverage points      |                  20 |        2 |     15 | Weighted — Gradient Boosting         |    0.16237 |   0.10007 |   0.1988  |     0.06098 |
+| leverage points      |                  20 |        2 |     15 | IRLS — Ridge                         |    0.16787 |   0.10069 |   0.18992 |     0.06689 |
+| mixed                |                   0 |        1 |      1 | No handling — Ridge                  |    0.19195 |   0.09253 |   0.17024 |     0.0609  |
+| mixed                |                   0 |        1 |      1 | Hard removal — Ridge                 |    0.21574 |   0.09395 |   0.16993 |     0.0614  |
+| mixed                |                   0 |        1 |      1 | Winsorizing — Ridge                  |    0.1816  |   0.09163 |   0.17325 |     0.05564 |
+| mixed                |                   0 |        1 |      1 | Robust loss — HuberRegressor         |    0.2174  |   0.10363 |   0.20098 |     0.06084 |
+| mixed                |                   0 |        1 |      1 | Weighted — Ridge (linear)            |    0.21549 |   0.09371 |   0.17291 |     0.05866 |
+| mixed                |                   0 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.21491 |   0.09537 |   0.18685 |     0.05889 |
+| mixed                |                   0 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.217   |   0.09535 |   0.18282 |     0.05599 |
+| mixed                |                   0 |        1 |      1 | Weighted — Random Forest             |    0.17004 |   0.10735 |   0.24028 |     0.06803 |
+| mixed                |                   0 |        1 |      1 | Weighted — Gradient Boosting         |    0.16003 |   0.09782 |   0.23499 |     0.05753 |
+| mixed                |                   0 |        1 |      1 | IRLS — Ridge                         |    0.21545 |   0.09336 |   0.16557 |     0.05972 |
+| mixed                |                   0 |        1 |      2 | No handling — Ridge                  |    0.12091 |   0.08962 |   0.17231 |     0.07169 |
+| mixed                |                   0 |        1 |      2 | Hard removal — Ridge                 |    0.11976 |   0.08276 |   0.16665 |     0.0569  |
+| mixed                |                   0 |        1 |      2 | Winsorizing — Ridge                  |    0.1218  |   0.09029 |   0.1773  |     0.06846 |
+| mixed                |                   0 |        1 |      2 | Robust loss — HuberRegressor         |    0.12852 |   0.08847 |   0.18925 |     0.06325 |
+| mixed                |                   0 |        1 |      2 | Weighted — Ridge (linear)            |    0.11931 |   0.0831  |   0.16407 |     0.06208 |
+| mixed                |                   0 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.11992 |   0.08389 |   0.17479 |     0.06272 |
+| mixed                |                   0 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12117 |   0.08234 |   0.17422 |     0.05711 |
+| mixed                |                   0 |        1 |      2 | Weighted — Random Forest             |    0.14848 |   0.09915 |   0.24945 |     0.06921 |
+| mixed                |                   0 |        1 |      2 | Weighted — Gradient Boosting         |    0.13226 |   0.09483 |   0.19738 |     0.0759  |
+| mixed                |                   0 |        1 |      2 | IRLS — Ridge                         |    0.12082 |   0.08335 |   0.16422 |     0.06335 |
+| mixed                |                   0 |        1 |      3 | No handling — Ridge                  |    0.15529 |   0.09764 |   0.19479 |     0.06832 |
+| mixed                |                   0 |        1 |      3 | Hard removal — Ridge                 |    0.16615 |   0.08903 |   0.17762 |     0.0621  |
+| mixed                |                   0 |        1 |      3 | Winsorizing — Ridge                  |    0.15631 |   0.09971 |   0.18633 |     0.07296 |
+| mixed                |                   0 |        1 |      3 | Robust loss — HuberRegressor         |    0.17083 |   0.09345 |   0.20752 |     0.05395 |
+| mixed                |                   0 |        1 |      3 | Weighted — Ridge (linear)            |    0.16244 |   0.09148 |   0.1751  |     0.05986 |
+| mixed                |                   0 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16413 |   0.094   |   0.20138 |     0.05899 |
+| mixed                |                   0 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16544 |   0.09256 |   0.20534 |     0.05811 |
+| mixed                |                   0 |        1 |      3 | Weighted — Random Forest             |    0.16714 |   0.11017 |   0.26392 |     0.0679  |
+| mixed                |                   0 |        1 |      3 | Weighted — Gradient Boosting         |    0.1625  |   0.10472 |   0.22883 |     0.06156 |
+| mixed                |                   0 |        1 |      3 | IRLS — Ridge                         |    0.1648  |   0.0892  |   0.17984 |     0.05839 |
+| mixed                |                   0 |        1 |      4 | No handling — Ridge                  |    0.12307 |   0.08609 |   0.19985 |     0.05871 |
+| mixed                |                   0 |        1 |      4 | Hard removal — Ridge                 |    0.10698 |   0.07162 |   0.15119 |     0.04815 |
+| mixed                |                   0 |        1 |      4 | Winsorizing — Ridge                  |    0.12697 |   0.08848 |   0.18922 |     0.06316 |
+| mixed                |                   0 |        1 |      4 | Robust loss — HuberRegressor         |    0.11262 |   0.07568 |   0.16393 |     0.0518  |
+| mixed                |                   0 |        1 |      4 | Weighted — Ridge (linear)            |    0.10808 |   0.07477 |   0.17305 |     0.05597 |
+| mixed                |                   0 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11479 |   0.07999 |   0.17104 |     0.05977 |
+| mixed                |                   0 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11364 |   0.07808 |   0.17235 |     0.05785 |
+| mixed                |                   0 |        1 |      4 | Weighted — Random Forest             |    0.14859 |   0.09752 |   0.23696 |     0.06239 |
+| mixed                |                   0 |        1 |      4 | Weighted — Gradient Boosting         |    0.12446 |   0.08668 |   0.1783  |     0.06487 |
+| mixed                |                   0 |        1 |      4 | IRLS — Ridge                         |    0.1069  |   0.07163 |   0.15116 |     0.04864 |
+| mixed                |                   0 |        1 |      5 | No handling — Ridge                  |    0.12642 |   0.0927  |   0.19049 |     0.06955 |
+| mixed                |                   0 |        1 |      5 | Hard removal — Ridge                 |    0.10946 |   0.07869 |   0.16029 |     0.05422 |
+| mixed                |                   0 |        1 |      5 | Winsorizing — Ridge                  |    0.12571 |   0.09404 |   0.19058 |     0.0722  |
+| mixed                |                   0 |        1 |      5 | Robust loss — HuberRegressor         |    0.13241 |   0.08886 |   0.18901 |     0.05694 |
+| mixed                |                   0 |        1 |      5 | Weighted — Ridge (linear)            |    0.11028 |   0.08096 |   0.15378 |     0.05644 |
+| mixed                |                   0 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.11314 |   0.08365 |   0.15882 |     0.0639  |
+| mixed                |                   0 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.10972 |   0.08065 |   0.16056 |     0.05997 |
+| mixed                |                   0 |        1 |      5 | Weighted — Random Forest             |    0.13442 |   0.09266 |   0.20704 |     0.06269 |
+| mixed                |                   0 |        1 |      5 | Weighted — Gradient Boosting         |    0.12985 |   0.09509 |   0.21682 |     0.07028 |
+| mixed                |                   0 |        1 |      5 | IRLS — Ridge                         |    0.10872 |   0.07792 |   0.16408 |     0.05191 |
+| mixed                |                   0 |        1 |      6 | No handling — Ridge                  |    0.10975 |   0.08469 |   0.16417 |     0.06659 |
+| mixed                |                   0 |        1 |      6 | Hard removal — Ridge                 |    0.10126 |   0.07621 |   0.15191 |     0.06243 |
+| mixed                |                   0 |        1 |      6 | Winsorizing — Ridge                  |    0.11083 |   0.0856  |   0.16767 |     0.06637 |
+| mixed                |                   0 |        1 |      6 | Robust loss — HuberRegressor         |    0.12833 |   0.08923 |   0.18022 |     0.06252 |
+| mixed                |                   0 |        1 |      6 | Weighted — Ridge (linear)            |    0.10176 |   0.07667 |   0.16264 |     0.0572  |
+| mixed                |                   0 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.10545 |   0.08026 |   0.17006 |     0.06228 |
+| mixed                |                   0 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10339 |   0.0774  |   0.17367 |     0.05662 |
+| mixed                |                   0 |        1 |      6 | Weighted — Random Forest             |    0.14549 |   0.09668 |   0.23512 |     0.06435 |
+| mixed                |                   0 |        1 |      6 | Weighted — Gradient Boosting         |    0.12829 |   0.09092 |   0.19821 |     0.06459 |
+| mixed                |                   0 |        1 |      6 | IRLS — Ridge                         |    0.1005  |   0.07477 |   0.14659 |     0.05929 |
+| mixed                |                   0 |        1 |      7 | No handling — Ridge                  |    0.15154 |   0.09442 |   0.19985 |     0.06502 |
+| mixed                |                   0 |        1 |      7 | Hard removal — Ridge                 |    0.16048 |   0.08752 |   0.18177 |     0.05397 |
+| mixed                |                   0 |        1 |      7 | Winsorizing — Ridge                  |    0.15139 |   0.09499 |   0.19796 |     0.06371 |
+| mixed                |                   0 |        1 |      7 | Robust loss — HuberRegressor         |    0.15247 |   0.09245 |   0.19618 |     0.05786 |
+| mixed                |                   0 |        1 |      7 | Weighted — Ridge (linear)            |    0.15637 |   0.08962 |   0.18791 |     0.06067 |
+| mixed                |                   0 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15943 |   0.09353 |   0.19443 |     0.06267 |
+| mixed                |                   0 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.16108 |   0.09157 |   0.19408 |     0.06335 |
+| mixed                |                   0 |        1 |      7 | Weighted — Random Forest             |    0.15599 |   0.1068  |   0.2397  |     0.07401 |
+| mixed                |                   0 |        1 |      7 | Weighted — Gradient Boosting         |    0.14637 |   0.09656 |   0.22192 |     0.07031 |
+| mixed                |                   0 |        1 |      7 | IRLS — Ridge                         |    0.15599 |   0.08668 |   0.18121 |     0.05695 |
+| mixed                |                   0 |        1 |      8 | No handling — Ridge                  |    0.1903  |   0.09105 |   0.17576 |     0.05664 |
+| mixed                |                   0 |        1 |      8 | Hard removal — Ridge                 |    0.21616 |   0.09136 |   0.17404 |     0.05637 |
+| mixed                |                   0 |        1 |      8 | Winsorizing — Ridge                  |    0.18155 |   0.08888 |   0.16983 |     0.05728 |
+| mixed                |                   0 |        1 |      8 | Robust loss — HuberRegressor         |    0.20683 |   0.09607 |   0.16485 |     0.05737 |
+| mixed                |                   0 |        1 |      8 | Weighted — Ridge (linear)            |    0.21356 |   0.09049 |   0.1609  |     0.05661 |
+| mixed                |                   0 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.21113 |   0.09052 |   0.17015 |     0.05842 |
+| mixed                |                   0 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21434 |   0.09    |   0.16586 |     0.05472 |
+| mixed                |                   0 |        1 |      8 | Weighted — Random Forest             |    0.161   |   0.10541 |   0.21527 |     0.07109 |
+| mixed                |                   0 |        1 |      8 | Weighted — Gradient Boosting         |    0.15729 |   0.09517 |   0.18808 |     0.06686 |
+| mixed                |                   0 |        1 |      8 | IRLS — Ridge                         |    0.2185  |   0.09057 |   0.16431 |     0.05266 |
+| mixed                |                   0 |        1 |      9 | No handling — Ridge                  |    0.12583 |   0.0945  |   0.19158 |     0.07699 |
+| mixed                |                   0 |        1 |      9 | Hard removal — Ridge                 |    0.10758 |   0.07715 |   0.17048 |     0.05485 |
+| mixed                |                   0 |        1 |      9 | Winsorizing — Ridge                  |    0.12519 |   0.09399 |   0.19106 |     0.07625 |
+| mixed                |                   0 |        1 |      9 | Robust loss — HuberRegressor         |    0.12507 |   0.08216 |   0.18085 |     0.05743 |
+| mixed                |                   0 |        1 |      9 | Weighted — Ridge (linear)            |    0.11485 |   0.08247 |   0.17801 |     0.0616  |
+| mixed                |                   0 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.11809 |   0.0851  |   0.18922 |     0.06569 |
+| mixed                |                   0 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.11657 |   0.08275 |   0.18013 |     0.06281 |
+| mixed                |                   0 |        1 |      9 | Weighted — Random Forest             |    0.13378 |   0.09036 |   0.19632 |     0.06052 |
+| mixed                |                   0 |        1 |      9 | Weighted — Gradient Boosting         |    0.12379 |   0.08905 |   0.19016 |     0.06516 |
+| mixed                |                   0 |        1 |      9 | IRLS — Ridge                         |    0.1085  |   0.07718 |   0.1738  |     0.05416 |
+| mixed                |                   0 |        1 |     10 | No handling — Ridge                  |    0.1462  |   0.09716 |   0.18327 |     0.07192 |
+| mixed                |                   0 |        1 |     10 | Hard removal — Ridge                 |    0.14327 |   0.08741 |   0.16576 |     0.05543 |
+| mixed                |                   0 |        1 |     10 | Winsorizing — Ridge                  |    0.1502  |   0.10019 |   0.18792 |     0.07508 |
+| mixed                |                   0 |        1 |     10 | Robust loss — HuberRegressor         |    0.14633 |   0.09429 |   0.1915  |     0.06287 |
+| mixed                |                   0 |        1 |     10 | Weighted — Ridge (linear)            |    0.14245 |   0.0885  |   0.1836  |     0.05619 |
+| mixed                |                   0 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.14573 |   0.09012 |   0.18492 |     0.05618 |
+| mixed                |                   0 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.14507 |   0.08922 |   0.18806 |     0.05793 |
+| mixed                |                   0 |        1 |     10 | Weighted — Random Forest             |    0.1773  |   0.10966 |   0.26464 |     0.06665 |
+| mixed                |                   0 |        1 |     10 | Weighted — Gradient Boosting         |    0.16151 |   0.10231 |   0.21784 |     0.06582 |
+| mixed                |                   0 |        1 |     10 | IRLS — Ridge                         |    0.14524 |   0.08756 |   0.16618 |     0.05628 |
+| mixed                |                   0 |        1 |     11 | No handling — Ridge                  |    0.19712 |   0.09209 |   0.17067 |     0.05445 |
+| mixed                |                   0 |        1 |     11 | Hard removal — Ridge                 |    0.21486 |   0.09026 |   0.16024 |     0.05548 |
+| mixed                |                   0 |        1 |     11 | Winsorizing — Ridge                  |    0.18634 |   0.09189 |   0.16799 |     0.05592 |
+| mixed                |                   0 |        1 |     11 | Robust loss — HuberRegressor         |    0.22583 |   0.10561 |   0.24602 |     0.05582 |
+| mixed                |                   0 |        1 |     11 | Weighted — Ridge (linear)            |    0.21327 |   0.0908  |   0.16756 |     0.05401 |
+| mixed                |                   0 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.21117 |   0.09201 |   0.18663 |     0.05618 |
+| mixed                |                   0 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.21306 |   0.09107 |   0.18233 |     0.05326 |
+| mixed                |                   0 |        1 |     11 | Weighted — Random Forest             |    0.15247 |   0.09514 |   0.20301 |     0.05934 |
+| mixed                |                   0 |        1 |     11 | Weighted — Gradient Boosting         |    0.14712 |   0.09447 |   0.21242 |     0.06303 |
+| mixed                |                   0 |        1 |     11 | IRLS — Ridge                         |    0.21363 |   0.08969 |   0.16705 |     0.0566  |
+| mixed                |                   0 |        1 |     12 | No handling — Ridge                  |    0.126   |   0.08984 |   0.17499 |     0.0715  |
+| mixed                |                   0 |        1 |     12 | Hard removal — Ridge                 |    0.11429 |   0.07934 |   0.15933 |     0.06078 |
+| mixed                |                   0 |        1 |     12 | Winsorizing — Ridge                  |    0.12723 |   0.09098 |   0.17765 |     0.07729 |
+| mixed                |                   0 |        1 |     12 | Robust loss — HuberRegressor         |    0.1528  |   0.09457 |   0.1791  |     0.06191 |
+| mixed                |                   0 |        1 |     12 | Weighted — Ridge (linear)            |    0.11213 |   0.07995 |   0.16096 |     0.06526 |
+| mixed                |                   0 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11536 |   0.08236 |   0.16553 |     0.06514 |
+| mixed                |                   0 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.11555 |   0.08159 |   0.15849 |     0.06324 |
+| mixed                |                   0 |        1 |     12 | Weighted — Random Forest             |    0.15277 |   0.10352 |   0.24452 |     0.0701  |
+| mixed                |                   0 |        1 |     12 | Weighted — Gradient Boosting         |    0.14111 |   0.09847 |   0.19374 |     0.07086 |
+| mixed                |                   0 |        1 |     12 | IRLS — Ridge                         |    0.11592 |   0.07987 |   0.16189 |     0.05914 |
+| mixed                |                   0 |        1 |     13 | No handling — Ridge                  |    0.12253 |   0.0894  |   0.20027 |     0.06463 |
+| mixed                |                   0 |        1 |     13 | Hard removal — Ridge                 |    0.10734 |   0.07969 |   0.17021 |     0.06284 |
+| mixed                |                   0 |        1 |     13 | Winsorizing — Ridge                  |    0.12652 |   0.09244 |   0.20638 |     0.06783 |
+| mixed                |                   0 |        1 |     13 | Robust loss — HuberRegressor         |    0.1212  |   0.08609 |   0.17353 |     0.06357 |
+| mixed                |                   0 |        1 |     13 | Weighted — Ridge (linear)            |    0.11107 |   0.07978 |   0.166   |     0.05974 |
+| mixed                |                   0 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.11808 |   0.08398 |   0.1782  |     0.06145 |
+| mixed                |                   0 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11694 |   0.08185 |   0.17622 |     0.06107 |
+| mixed                |                   0 |        1 |     13 | Weighted — Random Forest             |    0.13941 |   0.09938 |   0.22732 |     0.0704  |
+| mixed                |                   0 |        1 |     13 | Weighted — Gradient Boosting         |    0.13052 |   0.0926  |   0.19466 |     0.06778 |
+| mixed                |                   0 |        1 |     13 | IRLS — Ridge                         |    0.1057  |   0.07841 |   0.15811 |     0.06029 |
+| mixed                |                   0 |        1 |     14 | No handling — Ridge                  |    0.12505 |   0.09055 |   0.17824 |     0.07257 |
+| mixed                |                   0 |        1 |     14 | Hard removal — Ridge                 |    0.11847 |   0.07856 |   0.15471 |     0.05376 |
+| mixed                |                   0 |        1 |     14 | Winsorizing — Ridge                  |    0.12469 |   0.08849 |   0.17503 |     0.0726  |
+| mixed                |                   0 |        1 |     14 | Robust loss — HuberRegressor         |    0.13057 |   0.08737 |   0.16543 |     0.06366 |
+| mixed                |                   0 |        1 |     14 | Weighted — Ridge (linear)            |    0.11757 |   0.08031 |   0.16845 |     0.06165 |
+| mixed                |                   0 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.1199  |   0.08201 |   0.17153 |     0.06387 |
+| mixed                |                   0 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.1197  |   0.08066 |   0.16753 |     0.06088 |
+| mixed                |                   0 |        1 |     14 | Weighted — Random Forest             |    0.15748 |   0.10365 |   0.23501 |     0.07056 |
+| mixed                |                   0 |        1 |     14 | Weighted — Gradient Boosting         |    0.136   |   0.09347 |   0.19338 |     0.06867 |
+| mixed                |                   0 |        1 |     14 | IRLS — Ridge                         |    0.11886 |   0.07849 |   0.15559 |     0.05934 |
+| mixed                |                   0 |        1 |     15 | No handling — Ridge                  |    0.16585 |   0.10204 |   0.19992 |     0.06874 |
+| mixed                |                   0 |        1 |     15 | Hard removal — Ridge                 |    0.17351 |   0.09444 |   0.18271 |     0.05921 |
+| mixed                |                   0 |        1 |     15 | Winsorizing — Ridge                  |    0.1658  |   0.10333 |   0.20609 |     0.07126 |
+| mixed                |                   0 |        1 |     15 | Robust loss — HuberRegressor         |    0.17863 |   0.09971 |   0.22437 |     0.06101 |
+| mixed                |                   0 |        1 |     15 | Weighted — Ridge (linear)            |    0.16901 |   0.09306 |   0.20283 |     0.05667 |
+| mixed                |                   0 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16864 |   0.09445 |   0.19323 |     0.06166 |
+| mixed                |                   0 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16983 |   0.09305 |   0.19926 |     0.06162 |
+| mixed                |                   0 |        1 |     15 | Weighted — Random Forest             |    0.16509 |   0.10187 |   0.23979 |     0.06271 |
+| mixed                |                   0 |        1 |     15 | Weighted — Gradient Boosting         |    0.15946 |   0.10062 |   0.20925 |     0.06089 |
+| mixed                |                   0 |        1 |     15 | IRLS — Ridge                         |    0.17232 |   0.09243 |   0.19371 |     0.05808 |
+| mixed                |                   0 |        2 |      1 | No handling — Ridge                  |    0.19195 |   0.09253 |   0.17024 |     0.0609  |
+| mixed                |                   0 |        2 |      1 | Hard removal — Ridge                 |    0.21574 |   0.09395 |   0.16993 |     0.0614  |
+| mixed                |                   0 |        2 |      1 | Winsorizing — Ridge                  |    0.1816  |   0.09163 |   0.17325 |     0.05564 |
+| mixed                |                   0 |        2 |      1 | Robust loss — HuberRegressor         |    0.2174  |   0.10363 |   0.20098 |     0.06084 |
+| mixed                |                   0 |        2 |      1 | Weighted — Ridge (linear)            |    0.21549 |   0.09371 |   0.17291 |     0.05866 |
+| mixed                |                   0 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.21491 |   0.09537 |   0.18685 |     0.05889 |
+| mixed                |                   0 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.217   |   0.09535 |   0.18282 |     0.05599 |
+| mixed                |                   0 |        2 |      1 | Weighted — Random Forest             |    0.17004 |   0.10735 |   0.24028 |     0.06803 |
+| mixed                |                   0 |        2 |      1 | Weighted — Gradient Boosting         |    0.16003 |   0.09782 |   0.23499 |     0.05753 |
+| mixed                |                   0 |        2 |      1 | IRLS — Ridge                         |    0.21545 |   0.09336 |   0.16557 |     0.05972 |
+| mixed                |                   0 |        2 |      2 | No handling — Ridge                  |    0.12091 |   0.08962 |   0.17231 |     0.07169 |
+| mixed                |                   0 |        2 |      2 | Hard removal — Ridge                 |    0.11976 |   0.08276 |   0.16665 |     0.0569  |
+| mixed                |                   0 |        2 |      2 | Winsorizing — Ridge                  |    0.1218  |   0.09029 |   0.1773  |     0.06846 |
+| mixed                |                   0 |        2 |      2 | Robust loss — HuberRegressor         |    0.12852 |   0.08847 |   0.18925 |     0.06325 |
+| mixed                |                   0 |        2 |      2 | Weighted — Ridge (linear)            |    0.11931 |   0.0831  |   0.16407 |     0.06208 |
+| mixed                |                   0 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.11992 |   0.08389 |   0.17479 |     0.06272 |
+| mixed                |                   0 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12117 |   0.08234 |   0.17422 |     0.05711 |
+| mixed                |                   0 |        2 |      2 | Weighted — Random Forest             |    0.14848 |   0.09915 |   0.24945 |     0.06921 |
+| mixed                |                   0 |        2 |      2 | Weighted — Gradient Boosting         |    0.13226 |   0.09483 |   0.19738 |     0.0759  |
+| mixed                |                   0 |        2 |      2 | IRLS — Ridge                         |    0.12082 |   0.08335 |   0.16422 |     0.06335 |
+| mixed                |                   0 |        2 |      3 | No handling — Ridge                  |    0.15529 |   0.09764 |   0.19479 |     0.06832 |
+| mixed                |                   0 |        2 |      3 | Hard removal — Ridge                 |    0.16615 |   0.08903 |   0.17762 |     0.0621  |
+| mixed                |                   0 |        2 |      3 | Winsorizing — Ridge                  |    0.15631 |   0.09971 |   0.18633 |     0.07296 |
+| mixed                |                   0 |        2 |      3 | Robust loss — HuberRegressor         |    0.17083 |   0.09345 |   0.20752 |     0.05395 |
+| mixed                |                   0 |        2 |      3 | Weighted — Ridge (linear)            |    0.16244 |   0.09148 |   0.1751  |     0.05986 |
+| mixed                |                   0 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16413 |   0.094   |   0.20138 |     0.05899 |
+| mixed                |                   0 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16544 |   0.09256 |   0.20534 |     0.05811 |
+| mixed                |                   0 |        2 |      3 | Weighted — Random Forest             |    0.16714 |   0.11017 |   0.26392 |     0.0679  |
+| mixed                |                   0 |        2 |      3 | Weighted — Gradient Boosting         |    0.1625  |   0.10472 |   0.22883 |     0.06156 |
+| mixed                |                   0 |        2 |      3 | IRLS — Ridge                         |    0.1648  |   0.0892  |   0.17984 |     0.05839 |
+| mixed                |                   0 |        2 |      4 | No handling — Ridge                  |    0.12307 |   0.08609 |   0.19985 |     0.05871 |
+| mixed                |                   0 |        2 |      4 | Hard removal — Ridge                 |    0.10698 |   0.07162 |   0.15119 |     0.04815 |
+| mixed                |                   0 |        2 |      4 | Winsorizing — Ridge                  |    0.12697 |   0.08848 |   0.18922 |     0.06316 |
+| mixed                |                   0 |        2 |      4 | Robust loss — HuberRegressor         |    0.11262 |   0.07568 |   0.16393 |     0.0518  |
+| mixed                |                   0 |        2 |      4 | Weighted — Ridge (linear)            |    0.10808 |   0.07477 |   0.17305 |     0.05597 |
+| mixed                |                   0 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11479 |   0.07999 |   0.17104 |     0.05977 |
+| mixed                |                   0 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11364 |   0.07808 |   0.17235 |     0.05785 |
+| mixed                |                   0 |        2 |      4 | Weighted — Random Forest             |    0.14859 |   0.09752 |   0.23696 |     0.06239 |
+| mixed                |                   0 |        2 |      4 | Weighted — Gradient Boosting         |    0.12446 |   0.08668 |   0.1783  |     0.06487 |
+| mixed                |                   0 |        2 |      4 | IRLS — Ridge                         |    0.1069  |   0.07163 |   0.15116 |     0.04864 |
+| mixed                |                   0 |        2 |      5 | No handling — Ridge                  |    0.12642 |   0.0927  |   0.19049 |     0.06955 |
+| mixed                |                   0 |        2 |      5 | Hard removal — Ridge                 |    0.10946 |   0.07869 |   0.16029 |     0.05422 |
+| mixed                |                   0 |        2 |      5 | Winsorizing — Ridge                  |    0.12571 |   0.09404 |   0.19058 |     0.0722  |
+| mixed                |                   0 |        2 |      5 | Robust loss — HuberRegressor         |    0.13241 |   0.08886 |   0.18901 |     0.05694 |
+| mixed                |                   0 |        2 |      5 | Weighted — Ridge (linear)            |    0.11028 |   0.08096 |   0.15378 |     0.05644 |
+| mixed                |                   0 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11314 |   0.08365 |   0.15882 |     0.0639  |
+| mixed                |                   0 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.10972 |   0.08065 |   0.16056 |     0.05997 |
+| mixed                |                   0 |        2 |      5 | Weighted — Random Forest             |    0.13442 |   0.09266 |   0.20704 |     0.06269 |
+| mixed                |                   0 |        2 |      5 | Weighted — Gradient Boosting         |    0.12985 |   0.09509 |   0.21682 |     0.07028 |
+| mixed                |                   0 |        2 |      5 | IRLS — Ridge                         |    0.10872 |   0.07792 |   0.16408 |     0.05191 |
+| mixed                |                   0 |        2 |      6 | No handling — Ridge                  |    0.10975 |   0.08469 |   0.16417 |     0.06659 |
+| mixed                |                   0 |        2 |      6 | Hard removal — Ridge                 |    0.10126 |   0.07621 |   0.15191 |     0.06243 |
+| mixed                |                   0 |        2 |      6 | Winsorizing — Ridge                  |    0.11083 |   0.0856  |   0.16767 |     0.06637 |
+| mixed                |                   0 |        2 |      6 | Robust loss — HuberRegressor         |    0.12833 |   0.08923 |   0.18022 |     0.06252 |
+| mixed                |                   0 |        2 |      6 | Weighted — Ridge (linear)            |    0.10176 |   0.07667 |   0.16264 |     0.0572  |
+| mixed                |                   0 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.10545 |   0.08026 |   0.17006 |     0.06228 |
+| mixed                |                   0 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10339 |   0.0774  |   0.17367 |     0.05662 |
+| mixed                |                   0 |        2 |      6 | Weighted — Random Forest             |    0.14549 |   0.09668 |   0.23512 |     0.06435 |
+| mixed                |                   0 |        2 |      6 | Weighted — Gradient Boosting         |    0.12829 |   0.09092 |   0.19821 |     0.06459 |
+| mixed                |                   0 |        2 |      6 | IRLS — Ridge                         |    0.1005  |   0.07477 |   0.14659 |     0.05929 |
+| mixed                |                   0 |        2 |      7 | No handling — Ridge                  |    0.15154 |   0.09442 |   0.19985 |     0.06502 |
+| mixed                |                   0 |        2 |      7 | Hard removal — Ridge                 |    0.16048 |   0.08752 |   0.18177 |     0.05397 |
+| mixed                |                   0 |        2 |      7 | Winsorizing — Ridge                  |    0.15139 |   0.09499 |   0.19796 |     0.06371 |
+| mixed                |                   0 |        2 |      7 | Robust loss — HuberRegressor         |    0.15247 |   0.09245 |   0.19618 |     0.05786 |
+| mixed                |                   0 |        2 |      7 | Weighted — Ridge (linear)            |    0.15637 |   0.08962 |   0.18791 |     0.06067 |
+| mixed                |                   0 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.15943 |   0.09353 |   0.19443 |     0.06267 |
+| mixed                |                   0 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16108 |   0.09157 |   0.19408 |     0.06335 |
+| mixed                |                   0 |        2 |      7 | Weighted — Random Forest             |    0.15599 |   0.1068  |   0.2397  |     0.07401 |
+| mixed                |                   0 |        2 |      7 | Weighted — Gradient Boosting         |    0.14637 |   0.09656 |   0.22192 |     0.07031 |
+| mixed                |                   0 |        2 |      7 | IRLS — Ridge                         |    0.15599 |   0.08668 |   0.18121 |     0.05695 |
+| mixed                |                   0 |        2 |      8 | No handling — Ridge                  |    0.1903  |   0.09105 |   0.17576 |     0.05664 |
+| mixed                |                   0 |        2 |      8 | Hard removal — Ridge                 |    0.21616 |   0.09136 |   0.17404 |     0.05637 |
+| mixed                |                   0 |        2 |      8 | Winsorizing — Ridge                  |    0.18155 |   0.08888 |   0.16983 |     0.05728 |
+| mixed                |                   0 |        2 |      8 | Robust loss — HuberRegressor         |    0.20683 |   0.09607 |   0.16485 |     0.05737 |
+| mixed                |                   0 |        2 |      8 | Weighted — Ridge (linear)            |    0.21356 |   0.09049 |   0.1609  |     0.05661 |
+| mixed                |                   0 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.21113 |   0.09052 |   0.17015 |     0.05842 |
+| mixed                |                   0 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.21434 |   0.09    |   0.16586 |     0.05472 |
+| mixed                |                   0 |        2 |      8 | Weighted — Random Forest             |    0.161   |   0.10541 |   0.21527 |     0.07109 |
+| mixed                |                   0 |        2 |      8 | Weighted — Gradient Boosting         |    0.15729 |   0.09517 |   0.18808 |     0.06686 |
+| mixed                |                   0 |        2 |      8 | IRLS — Ridge                         |    0.2185  |   0.09057 |   0.16431 |     0.05266 |
+| mixed                |                   0 |        2 |      9 | No handling — Ridge                  |    0.12583 |   0.0945  |   0.19158 |     0.07699 |
+| mixed                |                   0 |        2 |      9 | Hard removal — Ridge                 |    0.10758 |   0.07715 |   0.17048 |     0.05485 |
+| mixed                |                   0 |        2 |      9 | Winsorizing — Ridge                  |    0.12519 |   0.09399 |   0.19106 |     0.07625 |
+| mixed                |                   0 |        2 |      9 | Robust loss — HuberRegressor         |    0.12507 |   0.08216 |   0.18085 |     0.05743 |
+| mixed                |                   0 |        2 |      9 | Weighted — Ridge (linear)            |    0.11485 |   0.08247 |   0.17801 |     0.0616  |
+| mixed                |                   0 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.11809 |   0.0851  |   0.18922 |     0.06569 |
+| mixed                |                   0 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11657 |   0.08275 |   0.18013 |     0.06281 |
+| mixed                |                   0 |        2 |      9 | Weighted — Random Forest             |    0.13378 |   0.09036 |   0.19632 |     0.06052 |
+| mixed                |                   0 |        2 |      9 | Weighted — Gradient Boosting         |    0.12379 |   0.08905 |   0.19016 |     0.06516 |
+| mixed                |                   0 |        2 |      9 | IRLS — Ridge                         |    0.1085  |   0.07718 |   0.1738  |     0.05416 |
+| mixed                |                   0 |        2 |     10 | No handling — Ridge                  |    0.1462  |   0.09716 |   0.18327 |     0.07192 |
+| mixed                |                   0 |        2 |     10 | Hard removal — Ridge                 |    0.14327 |   0.08741 |   0.16576 |     0.05543 |
+| mixed                |                   0 |        2 |     10 | Winsorizing — Ridge                  |    0.1502  |   0.10019 |   0.18792 |     0.07508 |
+| mixed                |                   0 |        2 |     10 | Robust loss — HuberRegressor         |    0.14633 |   0.09429 |   0.1915  |     0.06287 |
+| mixed                |                   0 |        2 |     10 | Weighted — Ridge (linear)            |    0.14245 |   0.0885  |   0.1836  |     0.05619 |
+| mixed                |                   0 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.14573 |   0.09012 |   0.18492 |     0.05618 |
+| mixed                |                   0 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14507 |   0.08922 |   0.18806 |     0.05793 |
+| mixed                |                   0 |        2 |     10 | Weighted — Random Forest             |    0.1773  |   0.10966 |   0.26464 |     0.06665 |
+| mixed                |                   0 |        2 |     10 | Weighted — Gradient Boosting         |    0.16151 |   0.10231 |   0.21784 |     0.06582 |
+| mixed                |                   0 |        2 |     10 | IRLS — Ridge                         |    0.14524 |   0.08756 |   0.16618 |     0.05628 |
+| mixed                |                   0 |        2 |     11 | No handling — Ridge                  |    0.19712 |   0.09209 |   0.17067 |     0.05445 |
+| mixed                |                   0 |        2 |     11 | Hard removal — Ridge                 |    0.21486 |   0.09026 |   0.16024 |     0.05548 |
+| mixed                |                   0 |        2 |     11 | Winsorizing — Ridge                  |    0.18634 |   0.09189 |   0.16799 |     0.05592 |
+| mixed                |                   0 |        2 |     11 | Robust loss — HuberRegressor         |    0.22583 |   0.10561 |   0.24602 |     0.05582 |
+| mixed                |                   0 |        2 |     11 | Weighted — Ridge (linear)            |    0.21327 |   0.0908  |   0.16756 |     0.05401 |
+| mixed                |                   0 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.21117 |   0.09201 |   0.18663 |     0.05618 |
+| mixed                |                   0 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21306 |   0.09107 |   0.18233 |     0.05326 |
+| mixed                |                   0 |        2 |     11 | Weighted — Random Forest             |    0.15247 |   0.09514 |   0.20301 |     0.05934 |
+| mixed                |                   0 |        2 |     11 | Weighted — Gradient Boosting         |    0.14712 |   0.09447 |   0.21242 |     0.06303 |
+| mixed                |                   0 |        2 |     11 | IRLS — Ridge                         |    0.21363 |   0.08969 |   0.16705 |     0.0566  |
+| mixed                |                   0 |        2 |     12 | No handling — Ridge                  |    0.126   |   0.08984 |   0.17499 |     0.0715  |
+| mixed                |                   0 |        2 |     12 | Hard removal — Ridge                 |    0.11429 |   0.07934 |   0.15933 |     0.06078 |
+| mixed                |                   0 |        2 |     12 | Winsorizing — Ridge                  |    0.12723 |   0.09098 |   0.17765 |     0.07729 |
+| mixed                |                   0 |        2 |     12 | Robust loss — HuberRegressor         |    0.1528  |   0.09457 |   0.1791  |     0.06191 |
+| mixed                |                   0 |        2 |     12 | Weighted — Ridge (linear)            |    0.11213 |   0.07995 |   0.16096 |     0.06526 |
+| mixed                |                   0 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11536 |   0.08236 |   0.16553 |     0.06514 |
+| mixed                |                   0 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11555 |   0.08159 |   0.15849 |     0.06324 |
+| mixed                |                   0 |        2 |     12 | Weighted — Random Forest             |    0.15277 |   0.10352 |   0.24452 |     0.0701  |
+| mixed                |                   0 |        2 |     12 | Weighted — Gradient Boosting         |    0.14111 |   0.09847 |   0.19374 |     0.07086 |
+| mixed                |                   0 |        2 |     12 | IRLS — Ridge                         |    0.11592 |   0.07987 |   0.16189 |     0.05914 |
+| mixed                |                   0 |        2 |     13 | No handling — Ridge                  |    0.12253 |   0.0894  |   0.20027 |     0.06463 |
+| mixed                |                   0 |        2 |     13 | Hard removal — Ridge                 |    0.10734 |   0.07969 |   0.17021 |     0.06284 |
+| mixed                |                   0 |        2 |     13 | Winsorizing — Ridge                  |    0.12652 |   0.09244 |   0.20638 |     0.06783 |
+| mixed                |                   0 |        2 |     13 | Robust loss — HuberRegressor         |    0.1212  |   0.08609 |   0.17353 |     0.06357 |
+| mixed                |                   0 |        2 |     13 | Weighted — Ridge (linear)            |    0.11107 |   0.07978 |   0.166   |     0.05974 |
+| mixed                |                   0 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11808 |   0.08398 |   0.1782  |     0.06145 |
+| mixed                |                   0 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.11694 |   0.08185 |   0.17622 |     0.06107 |
+| mixed                |                   0 |        2 |     13 | Weighted — Random Forest             |    0.13941 |   0.09938 |   0.22732 |     0.0704  |
+| mixed                |                   0 |        2 |     13 | Weighted — Gradient Boosting         |    0.13052 |   0.0926  |   0.19466 |     0.06778 |
+| mixed                |                   0 |        2 |     13 | IRLS — Ridge                         |    0.1057  |   0.07841 |   0.15811 |     0.06029 |
+| mixed                |                   0 |        2 |     14 | No handling — Ridge                  |    0.12505 |   0.09055 |   0.17824 |     0.07257 |
+| mixed                |                   0 |        2 |     14 | Hard removal — Ridge                 |    0.11847 |   0.07856 |   0.15471 |     0.05376 |
+| mixed                |                   0 |        2 |     14 | Winsorizing — Ridge                  |    0.12469 |   0.08849 |   0.17503 |     0.0726  |
+| mixed                |                   0 |        2 |     14 | Robust loss — HuberRegressor         |    0.13057 |   0.08737 |   0.16543 |     0.06366 |
+| mixed                |                   0 |        2 |     14 | Weighted — Ridge (linear)            |    0.11757 |   0.08031 |   0.16845 |     0.06165 |
+| mixed                |                   0 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.1199  |   0.08201 |   0.17153 |     0.06387 |
+| mixed                |                   0 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.1197  |   0.08066 |   0.16753 |     0.06088 |
+| mixed                |                   0 |        2 |     14 | Weighted — Random Forest             |    0.15748 |   0.10365 |   0.23501 |     0.07056 |
+| mixed                |                   0 |        2 |     14 | Weighted — Gradient Boosting         |    0.136   |   0.09347 |   0.19338 |     0.06867 |
+| mixed                |                   0 |        2 |     14 | IRLS — Ridge                         |    0.11886 |   0.07849 |   0.15559 |     0.05934 |
+| mixed                |                   0 |        2 |     15 | No handling — Ridge                  |    0.16585 |   0.10204 |   0.19992 |     0.06874 |
+| mixed                |                   0 |        2 |     15 | Hard removal — Ridge                 |    0.17351 |   0.09444 |   0.18271 |     0.05921 |
+| mixed                |                   0 |        2 |     15 | Winsorizing — Ridge                  |    0.1658  |   0.10333 |   0.20609 |     0.07126 |
+| mixed                |                   0 |        2 |     15 | Robust loss — HuberRegressor         |    0.17863 |   0.09971 |   0.22437 |     0.06101 |
+| mixed                |                   0 |        2 |     15 | Weighted — Ridge (linear)            |    0.16901 |   0.09306 |   0.20283 |     0.05667 |
+| mixed                |                   0 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16864 |   0.09445 |   0.19323 |     0.06166 |
+| mixed                |                   0 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16983 |   0.09305 |   0.19926 |     0.06162 |
+| mixed                |                   0 |        2 |     15 | Weighted — Random Forest             |    0.16509 |   0.10187 |   0.23979 |     0.06271 |
+| mixed                |                   0 |        2 |     15 | Weighted — Gradient Boosting         |    0.15946 |   0.10062 |   0.20925 |     0.06089 |
+| mixed                |                   0 |        2 |     15 | IRLS — Ridge                         |    0.17232 |   0.09243 |   0.19371 |     0.05808 |
+| mixed                |                   2 |        1 |      1 | No handling — Ridge                  |    0.189   |   0.09794 |   0.1836  |     0.06605 |
+| mixed                |                   2 |        1 |      1 | Hard removal — Ridge                 |    0.20508 |   0.09534 |   0.16773 |     0.06402 |
+| mixed                |                   2 |        1 |      1 | Winsorizing — Ridge                  |    0.17974 |   0.09601 |   0.18182 |     0.06879 |
+| mixed                |                   2 |        1 |      1 | Robust loss — HuberRegressor         |    0.22615 |   0.11031 |   0.21378 |     0.06624 |
+| mixed                |                   2 |        1 |      1 | Weighted — Ridge (linear)            |    0.2072  |   0.09412 |   0.18663 |     0.06029 |
+| mixed                |                   2 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.20635 |   0.0951  |   0.19199 |     0.05814 |
+| mixed                |                   2 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.20935 |   0.09512 |   0.19023 |     0.05748 |
+| mixed                |                   2 |        1 |      1 | Weighted — Random Forest             |    0.16896 |   0.10662 |   0.24087 |     0.06235 |
+| mixed                |                   2 |        1 |      1 | Weighted — Gradient Boosting         |    0.15492 |   0.09792 |   0.22394 |     0.06015 |
+| mixed                |                   2 |        1 |      1 | IRLS — Ridge                         |    0.20981 |   0.09489 |   0.17915 |     0.06213 |
+| mixed                |                   2 |        1 |      2 | No handling — Ridge                  |    0.12675 |   0.09345 |   0.18507 |     0.07198 |
+| mixed                |                   2 |        1 |      2 | Hard removal — Ridge                 |    0.12457 |   0.08589 |   0.17085 |     0.06385 |
+| mixed                |                   2 |        1 |      2 | Winsorizing — Ridge                  |    0.12816 |   0.09467 |   0.19397 |     0.07285 |
+| mixed                |                   2 |        1 |      2 | Robust loss — HuberRegressor         |    0.13744 |   0.09746 |   0.17824 |     0.07144 |
+| mixed                |                   2 |        1 |      2 | Weighted — Ridge (linear)            |    0.1187  |   0.08405 |   0.17245 |     0.06369 |
+| mixed                |                   2 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.12063 |   0.0861  |   0.17999 |     0.06285 |
+| mixed                |                   2 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12055 |   0.0843  |   0.17909 |     0.0597  |
+| mixed                |                   2 |        1 |      2 | Weighted — Random Forest             |    0.15145 |   0.10237 |   0.25573 |     0.06781 |
+| mixed                |                   2 |        1 |      2 | Weighted — Gradient Boosting         |    0.13969 |   0.09778 |   0.1998  |     0.07028 |
+| mixed                |                   2 |        1 |      2 | IRLS — Ridge                         |    0.12254 |   0.08377 |   0.17197 |     0.06316 |
+| mixed                |                   2 |        1 |      3 | No handling — Ridge                  |    0.16541 |   0.10704 |   0.21801 |     0.07753 |
+| mixed                |                   2 |        1 |      3 | Hard removal — Ridge                 |    0.16675 |   0.09376 |   0.1728  |     0.06714 |
+| mixed                |                   2 |        1 |      3 | Winsorizing — Ridge                  |    0.1641  |   0.10644 |   0.21339 |     0.07373 |
+| mixed                |                   2 |        1 |      3 | Robust loss — HuberRegressor         |    0.17209 |   0.0979  |   0.22111 |     0.05834 |
+| mixed                |                   2 |        1 |      3 | Weighted — Ridge (linear)            |    0.16467 |   0.09332 |   0.18031 |     0.06049 |
+| mixed                |                   2 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16651 |   0.09642 |   0.20735 |     0.06274 |
+| mixed                |                   2 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16656 |   0.0939  |   0.19415 |     0.05693 |
+| mixed                |                   2 |        1 |      3 | Weighted — Random Forest             |    0.16719 |   0.11078 |   0.25539 |     0.06818 |
+| mixed                |                   2 |        1 |      3 | Weighted — Gradient Boosting         |    0.1613  |   0.10445 |   0.23274 |     0.06843 |
+| mixed                |                   2 |        1 |      3 | IRLS — Ridge                         |    0.16523 |   0.09187 |   0.16997 |     0.06131 |
+| mixed                |                   2 |        1 |      4 | No handling — Ridge                  |    0.13298 |   0.0962  |   0.19266 |     0.07263 |
+| mixed                |                   2 |        1 |      4 | Hard removal — Ridge                 |    0.11323 |   0.07908 |   0.18043 |     0.05495 |
+| mixed                |                   2 |        1 |      4 | Winsorizing — Ridge                  |    0.13663 |   0.09861 |   0.19794 |     0.07504 |
+| mixed                |                   2 |        1 |      4 | Robust loss — HuberRegressor         |    0.11178 |   0.07831 |   0.16292 |     0.05736 |
+| mixed                |                   2 |        1 |      4 | Weighted — Ridge (linear)            |    0.11258 |   0.0781  |   0.1674  |     0.05421 |
+| mixed                |                   2 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.11945 |   0.08333 |   0.17804 |     0.05727 |
+| mixed                |                   2 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11687 |   0.08045 |   0.17087 |     0.05617 |
+| mixed                |                   2 |        1 |      4 | Weighted — Random Forest             |    0.15035 |   0.09839 |   0.23551 |     0.06288 |
+| mixed                |                   2 |        1 |      4 | Weighted — Gradient Boosting         |    0.13124 |   0.09089 |   0.1755  |     0.06976 |
+| mixed                |                   2 |        1 |      4 | IRLS — Ridge                         |    0.11016 |   0.07523 |   0.16607 |     0.05332 |
+| mixed                |                   2 |        1 |      5 | No handling — Ridge                  |    0.13389 |   0.09914 |   0.20777 |     0.07741 |
+| mixed                |                   2 |        1 |      5 | Hard removal — Ridge                 |    0.11358 |   0.08189 |   0.17093 |     0.06024 |
+| mixed                |                   2 |        1 |      5 | Winsorizing — Ridge                  |    0.13164 |   0.09842 |   0.19277 |     0.07867 |
+| mixed                |                   2 |        1 |      5 | Robust loss — HuberRegressor         |    0.13698 |   0.09283 |   0.20806 |     0.05876 |
+| mixed                |                   2 |        1 |      5 | Weighted — Ridge (linear)            |    0.11373 |   0.08298 |   0.16774 |     0.06075 |
+| mixed                |                   2 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.1175  |   0.08582 |   0.17897 |     0.06286 |
+| mixed                |                   2 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.113   |   0.08211 |   0.17272 |     0.05686 |
+| mixed                |                   2 |        1 |      5 | Weighted — Random Forest             |    0.13836 |   0.09591 |   0.20648 |     0.06942 |
+| mixed                |                   2 |        1 |      5 | Weighted — Gradient Boosting         |    0.12931 |   0.09559 |   0.21309 |     0.07516 |
+| mixed                |                   2 |        1 |      5 | IRLS — Ridge                         |    0.11081 |   0.07974 |   0.16158 |     0.05458 |
+| mixed                |                   2 |        1 |      6 | No handling — Ridge                  |    0.12034 |   0.09353 |   0.18607 |     0.0762  |
+| mixed                |                   2 |        1 |      6 | Hard removal — Ridge                 |    0.10477 |   0.07834 |   0.14644 |     0.06169 |
+| mixed                |                   2 |        1 |      6 | Winsorizing — Ridge                  |    0.1233  |   0.0958  |   0.17725 |     0.08195 |
+| mixed                |                   2 |        1 |      6 | Robust loss — HuberRegressor         |    0.1276  |   0.08994 |   0.18725 |     0.06411 |
+| mixed                |                   2 |        1 |      6 | Weighted — Ridge (linear)            |    0.10435 |   0.07924 |   0.15181 |     0.06382 |
+| mixed                |                   2 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.10895 |   0.08319 |   0.17281 |     0.06778 |
+| mixed                |                   2 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10499 |   0.07889 |   0.16089 |     0.06017 |
+| mixed                |                   2 |        1 |      6 | Weighted — Random Forest             |    0.14844 |   0.09869 |   0.2501  |     0.06788 |
+| mixed                |                   2 |        1 |      6 | Weighted — Gradient Boosting         |    0.12935 |   0.09073 |   0.19894 |     0.06306 |
+| mixed                |                   2 |        1 |      6 | IRLS — Ridge                         |    0.10237 |   0.07609 |   0.15554 |     0.0622  |
+| mixed                |                   2 |        1 |      7 | No handling — Ridge                  |    0.15838 |   0.10429 |   0.21815 |     0.0705  |
+| mixed                |                   2 |        1 |      7 | Hard removal — Ridge                 |    0.15758 |   0.09028 |   0.18915 |     0.06354 |
+| mixed                |                   2 |        1 |      7 | Winsorizing — Ridge                  |    0.15888 |   0.10293 |   0.21083 |     0.0746  |
+| mixed                |                   2 |        1 |      7 | Robust loss — HuberRegressor         |    0.15568 |   0.09661 |   0.20112 |     0.06218 |
+| mixed                |                   2 |        1 |      7 | Weighted — Ridge (linear)            |    0.15531 |   0.09276 |   0.18963 |     0.06605 |
+| mixed                |                   2 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15829 |   0.09692 |   0.2018  |     0.06698 |
+| mixed                |                   2 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.15867 |   0.09351 |   0.19418 |     0.06436 |
+| mixed                |                   2 |        1 |      7 | Weighted — Random Forest             |    0.15591 |   0.10796 |   0.24483 |     0.07683 |
+| mixed                |                   2 |        1 |      7 | Weighted — Gradient Boosting         |    0.14522 |   0.09826 |   0.22683 |     0.06827 |
+| mixed                |                   2 |        1 |      7 | IRLS — Ridge                         |    0.15441 |   0.08916 |   0.1791  |     0.06197 |
+| mixed                |                   2 |        1 |      8 | No handling — Ridge                  |    0.19615 |   0.10148 |   0.20258 |     0.06665 |
+| mixed                |                   2 |        1 |      8 | Hard removal — Ridge                 |    0.21162 |   0.09106 |   0.16862 |     0.05926 |
+| mixed                |                   2 |        1 |      8 | Winsorizing — Ridge                  |    0.18691 |   0.09933 |   0.19102 |     0.06336 |
+| mixed                |                   2 |        1 |      8 | Robust loss — HuberRegressor         |    0.21065 |   0.10347 |   0.18636 |     0.06333 |
+| mixed                |                   2 |        1 |      8 | Weighted — Ridge (linear)            |    0.21197 |   0.09401 |   0.1672  |     0.05826 |
+| mixed                |                   2 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.20992 |   0.09477 |   0.17045 |     0.06196 |
+| mixed                |                   2 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21382 |   0.09267 |   0.16908 |     0.0612  |
+| mixed                |                   2 |        1 |      8 | Weighted — Random Forest             |    0.16273 |   0.10497 |   0.20483 |     0.06906 |
+| mixed                |                   2 |        1 |      8 | Weighted — Gradient Boosting         |    0.14788 |   0.09629 |   0.19649 |     0.0713  |
+| mixed                |                   2 |        1 |      8 | IRLS — Ridge                         |    0.21704 |   0.09098 |   0.15753 |     0.05475 |
+| mixed                |                   2 |        1 |      9 | No handling — Ridge                  |    0.13969 |   0.10165 |   0.21928 |     0.08155 |
+| mixed                |                   2 |        1 |      9 | Hard removal — Ridge                 |    0.11193 |   0.08154 |   0.17454 |     0.06018 |
+| mixed                |                   2 |        1 |      9 | Winsorizing — Ridge                  |    0.13895 |   0.10218 |   0.21197 |     0.08173 |
+| mixed                |                   2 |        1 |      9 | Robust loss — HuberRegressor         |    0.12988 |   0.08768 |   0.18276 |     0.06568 |
+| mixed                |                   2 |        1 |      9 | Weighted — Ridge (linear)            |    0.12012 |   0.08535 |   0.17971 |     0.06246 |
+| mixed                |                   2 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.12339 |   0.08746 |   0.19284 |     0.0651  |
+| mixed                |                   2 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.12153 |   0.08501 |   0.18628 |     0.06096 |
+| mixed                |                   2 |        1 |      9 | Weighted — Random Forest             |    0.134   |   0.09148 |   0.19252 |     0.06431 |
+| mixed                |                   2 |        1 |      9 | Weighted — Gradient Boosting         |    0.12405 |   0.08945 |   0.19896 |     0.06556 |
+| mixed                |                   2 |        1 |      9 | IRLS — Ridge                         |    0.11245 |   0.08055 |   0.17269 |     0.05699 |
+| mixed                |                   2 |        1 |     10 | No handling — Ridge                  |    0.16166 |   0.10597 |   0.21382 |     0.07101 |
+| mixed                |                   2 |        1 |     10 | Hard removal — Ridge                 |    0.14631 |   0.09218 |   0.17696 |     0.0559  |
+| mixed                |                   2 |        1 |     10 | Winsorizing — Ridge                  |    0.16151 |   0.10558 |   0.21511 |     0.0723  |
+| mixed                |                   2 |        1 |     10 | Robust loss — HuberRegressor         |    0.15102 |   0.09768 |   0.20642 |     0.06128 |
+| mixed                |                   2 |        1 |     10 | Weighted — Ridge (linear)            |    0.14509 |   0.09082 |   0.16783 |     0.05779 |
+| mixed                |                   2 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.15015 |   0.09281 |   0.19476 |     0.05885 |
+| mixed                |                   2 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.14837 |   0.09188 |   0.1862  |     0.05696 |
+| mixed                |                   2 |        1 |     10 | Weighted — Random Forest             |    0.17804 |   0.11022 |   0.25994 |     0.064   |
+| mixed                |                   2 |        1 |     10 | Weighted — Gradient Boosting         |    0.1674  |   0.1045  |   0.21994 |     0.07012 |
+| mixed                |                   2 |        1 |     10 | IRLS — Ridge                         |    0.14647 |   0.09045 |   0.17914 |     0.05685 |
+| mixed                |                   2 |        1 |     11 | No handling — Ridge                  |    0.19719 |   0.10129 |   0.19939 |     0.06771 |
+| mixed                |                   2 |        1 |     11 | Hard removal — Ridge                 |    0.19152 |   0.09166 |   0.18044 |     0.05704 |
+| mixed                |                   2 |        1 |     11 | Winsorizing — Ridge                  |    0.1896  |   0.10064 |   0.19704 |     0.06846 |
+| mixed                |                   2 |        1 |     11 | Robust loss — HuberRegressor         |    0.21894 |   0.111   |   0.25483 |     0.06502 |
+| mixed                |                   2 |        1 |     11 | Weighted — Ridge (linear)            |    0.20688 |   0.09357 |   0.17812 |     0.05932 |
+| mixed                |                   2 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.20573 |   0.09457 |   0.17786 |     0.06027 |
+| mixed                |                   2 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.20865 |   0.09308 |   0.18076 |     0.05529 |
+| mixed                |                   2 |        1 |     11 | Weighted — Random Forest             |    0.1521  |   0.09616 |   0.21284 |     0.05634 |
+| mixed                |                   2 |        1 |     11 | Weighted — Gradient Boosting         |    0.14928 |   0.09602 |   0.21447 |     0.06662 |
+| mixed                |                   2 |        1 |     11 | IRLS — Ridge                         |    0.20671 |   0.09128 |   0.16678 |     0.05536 |
+| mixed                |                   2 |        1 |     12 | No handling — Ridge                  |    0.12932 |   0.09342 |   0.18277 |     0.06852 |
+| mixed                |                   2 |        1 |     12 | Hard removal — Ridge                 |    0.11278 |   0.07911 |   0.15873 |     0.06091 |
+| mixed                |                   2 |        1 |     12 | Winsorizing — Ridge                  |    0.12751 |   0.09092 |   0.18092 |     0.07259 |
+| mixed                |                   2 |        1 |     12 | Robust loss — HuberRegressor         |    0.16295 |   0.09667 |   0.1739  |     0.0625  |
+| mixed                |                   2 |        1 |     12 | Weighted — Ridge (linear)            |    0.10859 |   0.07794 |   0.14768 |     0.06353 |
+| mixed                |                   2 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11342 |   0.08154 |   0.1596  |     0.06488 |
+| mixed                |                   2 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.11156 |   0.07915 |   0.1474  |     0.06265 |
+| mixed                |                   2 |        1 |     12 | Weighted — Random Forest             |    0.15131 |   0.10167 |   0.23867 |     0.06502 |
+| mixed                |                   2 |        1 |     12 | Weighted — Gradient Boosting         |    0.13827 |   0.09675 |   0.18075 |     0.07068 |
+| mixed                |                   2 |        1 |     12 | IRLS — Ridge                         |    0.11105 |   0.07722 |   0.15817 |     0.05769 |
+| mixed                |                   2 |        1 |     13 | No handling — Ridge                  |    0.12948 |   0.09329 |   0.19985 |     0.07079 |
+| mixed                |                   2 |        1 |     13 | Hard removal — Ridge                 |    0.1094  |   0.08117 |   0.16871 |     0.06034 |
+| mixed                |                   2 |        1 |     13 | Winsorizing — Ridge                  |    0.13152 |   0.09581 |   0.20274 |     0.07438 |
+| mixed                |                   2 |        1 |     13 | Robust loss — HuberRegressor         |    0.12131 |   0.08589 |   0.19176 |     0.05803 |
+| mixed                |                   2 |        1 |     13 | Weighted — Ridge (linear)            |    0.1128  |   0.08186 |   0.18239 |     0.0619  |
+| mixed                |                   2 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.11954 |   0.08545 |   0.18898 |     0.06485 |
+| mixed                |                   2 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.1171  |   0.08233 |   0.18383 |     0.06213 |
+| mixed                |                   2 |        1 |     13 | Weighted — Random Forest             |    0.13893 |   0.09925 |   0.225   |     0.06957 |
+| mixed                |                   2 |        1 |     13 | Weighted — Gradient Boosting         |    0.12958 |   0.09295 |   0.19836 |     0.07037 |
+| mixed                |                   2 |        1 |     13 | IRLS — Ridge                         |    0.10772 |   0.07925 |   0.16441 |     0.05914 |
+| mixed                |                   2 |        1 |     14 | No handling — Ridge                  |    0.12872 |   0.09275 |   0.18212 |     0.07238 |
+| mixed                |                   2 |        1 |     14 | Hard removal — Ridge                 |    0.12    |   0.08041 |   0.1639  |     0.06117 |
+| mixed                |                   2 |        1 |     14 | Winsorizing — Ridge                  |    0.12811 |   0.08998 |   0.18286 |     0.07152 |
+| mixed                |                   2 |        1 |     14 | Robust loss — HuberRegressor         |    0.13016 |   0.08911 |   0.18354 |     0.06592 |
+| mixed                |                   2 |        1 |     14 | Weighted — Ridge (linear)            |    0.11835 |   0.07886 |   0.16659 |     0.06138 |
+| mixed                |                   2 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.12103 |   0.08122 |   0.1804  |     0.05978 |
+| mixed                |                   2 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12054 |   0.07947 |   0.17189 |     0.05598 |
+| mixed                |                   2 |        1 |     14 | Weighted — Random Forest             |    0.15731 |   0.10494 |   0.24024 |     0.06175 |
+| mixed                |                   2 |        1 |     14 | Weighted — Gradient Boosting         |    0.134   |   0.09373 |   0.18562 |     0.0669  |
+| mixed                |                   2 |        1 |     14 | IRLS — Ridge                         |    0.12013 |   0.07862 |   0.16133 |     0.05563 |
+| mixed                |                   2 |        1 |     15 | No handling — Ridge                  |    0.16349 |   0.10393 |   0.22075 |     0.07574 |
+| mixed                |                   2 |        1 |     15 | Hard removal — Ridge                 |    0.17115 |   0.09409 |   0.18392 |     0.05918 |
+| mixed                |                   2 |        1 |     15 | Winsorizing — Ridge                  |    0.16466 |   0.10504 |   0.21672 |     0.0736  |
+| mixed                |                   2 |        1 |     15 | Robust loss — HuberRegressor         |    0.18166 |   0.09998 |   0.20552 |     0.05657 |
+| mixed                |                   2 |        1 |     15 | Weighted — Ridge (linear)            |    0.16521 |   0.09367 |   0.19819 |     0.06182 |
+| mixed                |                   2 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.16561 |   0.09515 |   0.20157 |     0.06397 |
+| mixed                |                   2 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16656 |   0.09384 |   0.20062 |     0.06146 |
+| mixed                |                   2 |        1 |     15 | Weighted — Random Forest             |    0.16129 |   0.10017 |   0.23305 |     0.06132 |
+| mixed                |                   2 |        1 |     15 | Weighted — Gradient Boosting         |    0.15896 |   0.10144 |   0.21312 |     0.06224 |
+| mixed                |                   2 |        1 |     15 | IRLS — Ridge                         |    0.16881 |   0.09207 |   0.1812  |     0.05668 |
+| mixed                |                   2 |        2 |      1 | No handling — Ridge                  |    0.19209 |   0.09847 |   0.19244 |     0.06736 |
+| mixed                |                   2 |        2 |      1 | Hard removal — Ridge                 |    0.21151 |   0.09418 |   0.16714 |     0.05823 |
+| mixed                |                   2 |        2 |      1 | Winsorizing — Ridge                  |    0.18468 |   0.09781 |   0.19319 |     0.06702 |
+| mixed                |                   2 |        2 |      1 | Robust loss — HuberRegressor         |    0.21874 |   0.10781 |   0.21311 |     0.06622 |
+| mixed                |                   2 |        2 |      1 | Weighted — Ridge (linear)            |    0.21587 |   0.09609 |   0.18708 |     0.06185 |
+| mixed                |                   2 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.21475 |   0.09706 |   0.20017 |     0.06097 |
+| mixed                |                   2 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.21772 |   0.09694 |   0.1964  |     0.06026 |
+| mixed                |                   2 |        2 |      1 | Weighted — Random Forest             |    0.17014 |   0.10627 |   0.23844 |     0.06917 |
+| mixed                |                   2 |        2 |      1 | Weighted — Gradient Boosting         |    0.1575  |   0.09827 |   0.21538 |     0.06223 |
+| mixed                |                   2 |        2 |      1 | IRLS — Ridge                         |    0.21419 |   0.0951  |   0.17341 |     0.06162 |
+| mixed                |                   2 |        2 |      2 | No handling — Ridge                  |    0.13656 |   0.10185 |   0.20504 |     0.08076 |
+| mixed                |                   2 |        2 |      2 | Hard removal — Ridge                 |    0.13269 |   0.09308 |   0.18152 |     0.06998 |
+| mixed                |                   2 |        2 |      2 | Winsorizing — Ridge                  |    0.13839 |   0.10294 |   0.20043 |     0.08364 |
+| mixed                |                   2 |        2 |      2 | Robust loss — HuberRegressor         |    0.13767 |   0.09468 |   0.18969 |     0.06585 |
+| mixed                |                   2 |        2 |      2 | Weighted — Ridge (linear)            |    0.12774 |   0.09005 |   0.17911 |     0.07094 |
+| mixed                |                   2 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.12889 |   0.09198 |   0.18468 |     0.07521 |
+| mixed                |                   2 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12957 |   0.08955 |   0.18518 |     0.06788 |
+| mixed                |                   2 |        2 |      2 | Weighted — Random Forest             |    0.14937 |   0.10011 |   0.24195 |     0.06785 |
+| mixed                |                   2 |        2 |      2 | Weighted — Gradient Boosting         |    0.13239 |   0.09557 |   0.19067 |     0.06836 |
+| mixed                |                   2 |        2 |      2 | IRLS — Ridge                         |    0.1272  |   0.08854 |   0.16999 |     0.06804 |
+| mixed                |                   2 |        2 |      3 | No handling — Ridge                  |    0.16004 |   0.10325 |   0.21372 |     0.07216 |
+| mixed                |                   2 |        2 |      3 | Hard removal — Ridge                 |    0.16774 |   0.09898 |   0.20129 |     0.06862 |
+| mixed                |                   2 |        2 |      3 | Winsorizing — Ridge                  |    0.16411 |   0.10652 |   0.22562 |     0.0703  |
+| mixed                |                   2 |        2 |      3 | Robust loss — HuberRegressor         |    0.1692  |   0.09699 |   0.21572 |     0.05755 |
+| mixed                |                   2 |        2 |      3 | Weighted — Ridge (linear)            |    0.16526 |   0.09553 |   0.20068 |     0.06066 |
+| mixed                |                   2 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.167   |   0.0982  |   0.2168  |     0.06439 |
+| mixed                |                   2 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.1675  |   0.09553 |   0.21094 |     0.06128 |
+| mixed                |                   2 |        2 |      3 | Weighted — Random Forest             |    0.1667  |   0.10947 |   0.2359  |     0.06494 |
+| mixed                |                   2 |        2 |      3 | Weighted — Gradient Boosting         |    0.16773 |   0.10876 |   0.24642 |     0.0705  |
+| mixed                |                   2 |        2 |      3 | IRLS — Ridge                         |    0.16581 |   0.09266 |   0.18629 |     0.05499 |
+| mixed                |                   2 |        2 |      4 | No handling — Ridge                  |    0.12308 |   0.08837 |   0.20273 |     0.06783 |
+| mixed                |                   2 |        2 |      4 | Hard removal — Ridge                 |    0.10818 |   0.0753  |   0.16132 |     0.05742 |
+| mixed                |                   2 |        2 |      4 | Winsorizing — Ridge                  |    0.12628 |   0.09001 |   0.19617 |     0.0702  |
+| mixed                |                   2 |        2 |      4 | Robust loss — HuberRegressor         |    0.11472 |   0.07829 |   0.16385 |     0.05774 |
+| mixed                |                   2 |        2 |      4 | Weighted — Ridge (linear)            |    0.10684 |   0.07531 |   0.16687 |     0.0555  |
+| mixed                |                   2 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11394 |   0.08054 |   0.15973 |     0.05903 |
+| mixed                |                   2 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11176 |   0.07805 |   0.1572  |     0.0586  |
+| mixed                |                   2 |        2 |      4 | Weighted — Random Forest             |    0.14817 |   0.09648 |   0.23062 |     0.06313 |
+| mixed                |                   2 |        2 |      4 | Weighted — Gradient Boosting         |    0.12847 |   0.08845 |   0.16451 |     0.06519 |
+| mixed                |                   2 |        2 |      4 | IRLS — Ridge                         |    0.10641 |   0.07251 |   0.15086 |     0.05316 |
+| mixed                |                   2 |        2 |      5 | No handling — Ridge                  |    0.14148 |   0.10392 |   0.22007 |     0.08326 |
+| mixed                |                   2 |        2 |      5 | Hard removal — Ridge                 |    0.1128  |   0.08169 |   0.16014 |     0.06373 |
+| mixed                |                   2 |        2 |      5 | Winsorizing — Ridge                  |    0.13843 |   0.10221 |   0.21993 |     0.07976 |
+| mixed                |                   2 |        2 |      5 | Robust loss — HuberRegressor         |    0.13931 |   0.09228 |   0.20154 |     0.06635 |
+| mixed                |                   2 |        2 |      5 | Weighted — Ridge (linear)            |    0.117   |   0.0858  |   0.17584 |     0.06536 |
+| mixed                |                   2 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.11974 |   0.08834 |   0.18243 |     0.0654  |
+| mixed                |                   2 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11618 |   0.08475 |   0.17712 |     0.06176 |
+| mixed                |                   2 |        2 |      5 | Weighted — Random Forest             |    0.13498 |   0.09251 |   0.19483 |     0.06751 |
+| mixed                |                   2 |        2 |      5 | Weighted — Gradient Boosting         |    0.12671 |   0.09144 |   0.19448 |     0.06754 |
+| mixed                |                   2 |        2 |      5 | IRLS — Ridge                         |    0.11338 |   0.08148 |   0.16953 |     0.05821 |
+| mixed                |                   2 |        2 |      6 | No handling — Ridge                  |    0.11931 |   0.09133 |   0.18661 |     0.07567 |
+| mixed                |                   2 |        2 |      6 | Hard removal — Ridge                 |    0.10659 |   0.07678 |   0.16147 |     0.06016 |
+| mixed                |                   2 |        2 |      6 | Winsorizing — Ridge                  |    0.12072 |   0.09205 |   0.18361 |     0.07531 |
+| mixed                |                   2 |        2 |      6 | Robust loss — HuberRegressor         |    0.12943 |   0.09074 |   0.18117 |     0.06132 |
+| mixed                |                   2 |        2 |      6 | Weighted — Ridge (linear)            |    0.10574 |   0.0785  |   0.16646 |     0.05822 |
+| mixed                |                   2 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.10986 |   0.08292 |   0.17632 |     0.06678 |
+| mixed                |                   2 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.10643 |   0.07933 |   0.17192 |     0.06048 |
+| mixed                |                   2 |        2 |      6 | Weighted — Random Forest             |    0.14304 |   0.09574 |   0.23306 |     0.06263 |
+| mixed                |                   2 |        2 |      6 | Weighted — Gradient Boosting         |    0.12985 |   0.09318 |   0.20327 |     0.06595 |
+| mixed                |                   2 |        2 |      6 | IRLS — Ridge                         |    0.10289 |   0.07552 |   0.15769 |     0.05858 |
+| mixed                |                   2 |        2 |      7 | No handling — Ridge                  |    0.15626 |   0.0989  |   0.19469 |     0.07279 |
+| mixed                |                   2 |        2 |      7 | Hard removal — Ridge                 |    0.15854 |   0.0873  |   0.18639 |     0.05568 |
+| mixed                |                   2 |        2 |      7 | Winsorizing — Ridge                  |    0.15569 |   0.09871 |   0.20484 |     0.07388 |
+| mixed                |                   2 |        2 |      7 | Robust loss — HuberRegressor         |    0.1617  |   0.09591 |   0.21617 |     0.06096 |
+| mixed                |                   2 |        2 |      7 | Weighted — Ridge (linear)            |    0.15955 |   0.0904  |   0.18726 |     0.05845 |
+| mixed                |                   2 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.16206 |   0.09477 |   0.19273 |     0.06594 |
+| mixed                |                   2 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16631 |   0.09329 |   0.1983  |     0.06415 |
+| mixed                |                   2 |        2 |      7 | Weighted — Random Forest             |    0.15655 |   0.10869 |   0.23031 |     0.07875 |
+| mixed                |                   2 |        2 |      7 | Weighted — Gradient Boosting         |    0.14953 |   0.09825 |   0.21846 |     0.06891 |
+| mixed                |                   2 |        2 |      7 | IRLS — Ridge                         |    0.15764 |   0.08719 |   0.19423 |     0.05285 |
+| mixed                |                   2 |        2 |      8 | No handling — Ridge                  |    0.20026 |   0.0965  |   0.186   |     0.06153 |
+| mixed                |                   2 |        2 |      8 | Hard removal — Ridge                 |    0.21933 |   0.0943  |   0.16505 |     0.06128 |
+| mixed                |                   2 |        2 |      8 | Winsorizing — Ridge                  |    0.18935 |   0.09381 |   0.18026 |     0.06466 |
+| mixed                |                   2 |        2 |      8 | Robust loss — HuberRegressor         |    0.2099  |   0.10136 |   0.17378 |     0.06093 |
+| mixed                |                   2 |        2 |      8 | Weighted — Ridge (linear)            |    0.2175  |   0.09111 |   0.16637 |     0.05278 |
+| mixed                |                   2 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.21608 |   0.09171 |   0.16924 |     0.05446 |
+| mixed                |                   2 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.21885 |   0.09123 |   0.17071 |     0.05514 |
+| mixed                |                   2 |        2 |      8 | Weighted — Random Forest             |    0.1587  |   0.10072 |   0.20646 |     0.06416 |
+| mixed                |                   2 |        2 |      8 | Weighted — Gradient Boosting         |    0.15701 |   0.09523 |   0.19216 |     0.06122 |
+| mixed                |                   2 |        2 |      8 | IRLS — Ridge                         |    0.21895 |   0.09102 |   0.1645  |     0.05754 |
+| mixed                |                   2 |        2 |      9 | No handling — Ridge                  |    0.12618 |   0.09546 |   0.1982  |     0.07772 |
+| mixed                |                   2 |        2 |      9 | Hard removal — Ridge                 |    0.11005 |   0.07886 |   0.17452 |     0.05873 |
+| mixed                |                   2 |        2 |      9 | Winsorizing — Ridge                  |    0.12532 |   0.09602 |   0.20129 |     0.07704 |
+| mixed                |                   2 |        2 |      9 | Robust loss — HuberRegressor         |    0.12867 |   0.08595 |   0.18513 |     0.06148 |
+| mixed                |                   2 |        2 |      9 | Weighted — Ridge (linear)            |    0.11469 |   0.08316 |   0.17706 |     0.06504 |
+| mixed                |                   2 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.11755 |   0.08549 |   0.18643 |     0.06846 |
+| mixed                |                   2 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.11642 |   0.08324 |   0.18305 |     0.06211 |
+| mixed                |                   2 |        2 |      9 | Weighted — Random Forest             |    0.13473 |   0.09085 |   0.22806 |     0.06199 |
+| mixed                |                   2 |        2 |      9 | Weighted — Gradient Boosting         |    0.12379 |   0.08939 |   0.1961  |     0.06439 |
+| mixed                |                   2 |        2 |      9 | IRLS — Ridge                         |    0.10852 |   0.07788 |   0.1748  |     0.05784 |
+| mixed                |                   2 |        2 |     10 | No handling — Ridge                  |    0.14824 |   0.10103 |   0.1953  |     0.07585 |
+| mixed                |                   2 |        2 |     10 | Hard removal — Ridge                 |    0.14164 |   0.08979 |   0.17343 |     0.05651 |
+| mixed                |                   2 |        2 |     10 | Winsorizing — Ridge                  |    0.1509  |   0.10284 |   0.20312 |     0.0764  |
+| mixed                |                   2 |        2 |     10 | Robust loss — HuberRegressor         |    0.15052 |   0.09816 |   0.204   |     0.06982 |
+| mixed                |                   2 |        2 |     10 | Weighted — Ridge (linear)            |    0.14267 |   0.09076 |   0.18596 |     0.05864 |
+| mixed                |                   2 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.14567 |   0.09191 |   0.18672 |     0.05854 |
+| mixed                |                   2 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14488 |   0.09056 |   0.18662 |     0.05517 |
+| mixed                |                   2 |        2 |     10 | Weighted — Random Forest             |    0.17778 |   0.11037 |   0.25382 |     0.06697 |
+| mixed                |                   2 |        2 |     10 | Weighted — Gradient Boosting         |    0.16352 |   0.104   |   0.22098 |     0.06777 |
+| mixed                |                   2 |        2 |     10 | IRLS — Ridge                         |    0.14597 |   0.0903  |   0.16566 |     0.05884 |
+| mixed                |                   2 |        2 |     11 | No handling — Ridge                  |    0.19098 |   0.09377 |   0.18838 |     0.05793 |
+| mixed                |                   2 |        2 |     11 | Hard removal — Ridge                 |    0.21105 |   0.09156 |   0.1677  |     0.05539 |
+| mixed                |                   2 |        2 |     11 | Winsorizing — Ridge                  |    0.18344 |   0.0933  |   0.18382 |     0.06181 |
+| mixed                |                   2 |        2 |     11 | Robust loss — HuberRegressor         |    0.22626 |   0.10422 |   0.22287 |     0.05315 |
+| mixed                |                   2 |        2 |     11 | Weighted — Ridge (linear)            |    0.20744 |   0.0911  |   0.16719 |     0.0552  |
+| mixed                |                   2 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.20475 |   0.09242 |   0.18072 |     0.05852 |
+| mixed                |                   2 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.20693 |   0.09134 |   0.17417 |     0.05745 |
+| mixed                |                   2 |        2 |     11 | Weighted — Random Forest             |    0.15245 |   0.09661 |   0.20543 |     0.05909 |
+| mixed                |                   2 |        2 |     11 | Weighted — Gradient Boosting         |    0.14652 |   0.09421 |   0.20277 |     0.06193 |
+| mixed                |                   2 |        2 |     11 | IRLS — Ridge                         |    0.20845 |   0.08991 |   0.16322 |     0.0528  |
+| mixed                |                   2 |        2 |     12 | No handling — Ridge                  |    0.14853 |   0.1058  |   0.2133  |     0.08423 |
+| mixed                |                   2 |        2 |     12 | Hard removal — Ridge                 |    0.11673 |   0.08027 |   0.17271 |     0.05772 |
+| mixed                |                   2 |        2 |     12 | Winsorizing — Ridge                  |    0.15125 |   0.10757 |   0.21738 |     0.08199 |
+| mixed                |                   2 |        2 |     12 | Robust loss — HuberRegressor         |    0.16976 |   0.09772 |   0.20293 |     0.05849 |
+| mixed                |                   2 |        2 |     12 | Weighted — Ridge (linear)            |    0.11245 |   0.08005 |   0.15438 |     0.06547 |
+| mixed                |                   2 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11762 |   0.08447 |   0.16331 |     0.06096 |
+| mixed                |                   2 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11421 |   0.08127 |   0.1605  |     0.05823 |
+| mixed                |                   2 |        2 |     12 | Weighted — Random Forest             |    0.15363 |   0.1036  |   0.25857 |     0.06615 |
+| mixed                |                   2 |        2 |     12 | Weighted — Gradient Boosting         |    0.14093 |   0.09986 |   0.19324 |     0.073   |
+| mixed                |                   2 |        2 |     12 | IRLS — Ridge                         |    0.11565 |   0.08002 |   0.16283 |     0.05634 |
+| mixed                |                   2 |        2 |     13 | No handling — Ridge                  |    0.13069 |   0.09601 |   0.20672 |     0.06718 |
+| mixed                |                   2 |        2 |     13 | Hard removal — Ridge                 |    0.11414 |   0.08435 |   0.17973 |     0.06556 |
+| mixed                |                   2 |        2 |     13 | Winsorizing — Ridge                  |    0.13031 |   0.09617 |   0.22042 |     0.06906 |
+| mixed                |                   2 |        2 |     13 | Robust loss — HuberRegressor         |    0.13058 |   0.09341 |   0.20889 |     0.06633 |
+| mixed                |                   2 |        2 |     13 | Weighted — Ridge (linear)            |    0.11268 |   0.0829  |   0.18603 |     0.06107 |
+| mixed                |                   2 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.11893 |   0.08701 |   0.18975 |     0.0651  |
+| mixed                |                   2 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.11578 |   0.08373 |   0.17715 |     0.06109 |
+| mixed                |                   2 |        2 |     13 | Weighted — Random Forest             |    0.1393  |   0.09864 |   0.22512 |     0.07247 |
+| mixed                |                   2 |        2 |     13 | Weighted — Gradient Boosting         |    0.131   |   0.09384 |   0.19046 |     0.07003 |
+| mixed                |                   2 |        2 |     13 | IRLS — Ridge                         |    0.10871 |   0.08091 |   0.16604 |     0.06171 |
+| mixed                |                   2 |        2 |     14 | No handling — Ridge                  |    0.1225  |   0.08911 |   0.16535 |     0.0753  |
+| mixed                |                   2 |        2 |     14 | Hard removal — Ridge                 |    0.11832 |   0.08143 |   0.16399 |     0.06427 |
+| mixed                |                   2 |        2 |     14 | Winsorizing — Ridge                  |    0.12304 |   0.08807 |   0.16047 |     0.06758 |
+| mixed                |                   2 |        2 |     14 | Robust loss — HuberRegressor         |    0.12972 |   0.08612 |   0.16662 |     0.06236 |
+| mixed                |                   2 |        2 |     14 | Weighted — Ridge (linear)            |    0.11576 |   0.07921 |   0.15976 |     0.06274 |
+| mixed                |                   2 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.119   |   0.08141 |   0.17267 |     0.06364 |
+| mixed                |                   2 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.11883 |   0.07933 |   0.16914 |     0.06061 |
+| mixed                |                   2 |        2 |     14 | Weighted — Random Forest             |    0.15543 |   0.10332 |   0.23603 |     0.07159 |
+| mixed                |                   2 |        2 |     14 | Weighted — Gradient Boosting         |    0.13918 |   0.09596 |   0.18886 |     0.07194 |
+| mixed                |                   2 |        2 |     14 | IRLS — Ridge                         |    0.11672 |   0.07865 |   0.15524 |     0.06109 |
+| mixed                |                   2 |        2 |     15 | No handling — Ridge                  |    0.16331 |   0.10054 |   0.20099 |     0.07106 |
+| mixed                |                   2 |        2 |     15 | Hard removal — Ridge                 |    0.16913 |   0.09345 |   0.17222 |     0.05911 |
+| mixed                |                   2 |        2 |     15 | Winsorizing — Ridge                  |    0.16346 |   0.10078 |   0.21149 |     0.07125 |
+| mixed                |                   2 |        2 |     15 | Robust loss — HuberRegressor         |    0.18621 |   0.10211 |   0.20894 |     0.06017 |
+| mixed                |                   2 |        2 |     15 | Weighted — Ridge (linear)            |    0.16872 |   0.09383 |   0.19687 |     0.05714 |
+| mixed                |                   2 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16897 |   0.09541 |   0.20903 |     0.06053 |
+| mixed                |                   2 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16936 |   0.09334 |   0.19886 |     0.05728 |
+| mixed                |                   2 |        2 |     15 | Weighted — Random Forest             |    0.16105 |   0.10022 |   0.23595 |     0.06374 |
+| mixed                |                   2 |        2 |     15 | Weighted — Gradient Boosting         |    0.16002 |   0.10113 |   0.20503 |     0.06315 |
+| mixed                |                   2 |        2 |     15 | IRLS — Ridge                         |    0.17025 |   0.09216 |   0.17183 |     0.0571  |
+| mixed                |                   5 |        1 |      1 | No handling — Ridge                  |    0.21932 |   0.11271 |   0.21932 |     0.08109 |
+| mixed                |                   5 |        1 |      1 | Hard removal — Ridge                 |    0.2184  |   0.09968 |   0.19359 |     0.06132 |
+| mixed                |                   5 |        1 |      1 | Winsorizing — Ridge                  |    0.21381 |   0.11305 |   0.22057 |     0.07791 |
+| mixed                |                   5 |        1 |      1 | Robust loss — HuberRegressor         |    0.23374 |   0.11189 |   0.21774 |     0.06826 |
+| mixed                |                   5 |        1 |      1 | Weighted — Ridge (linear)            |    0.21923 |   0.10032 |   0.19722 |     0.06413 |
+| mixed                |                   5 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.2183  |   0.10023 |   0.20149 |     0.06271 |
+| mixed                |                   5 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.22107 |   0.09959 |   0.19444 |     0.06465 |
+| mixed                |                   5 |        1 |      1 | Weighted — Random Forest             |    0.16968 |   0.10606 |   0.25458 |     0.05937 |
+| mixed                |                   5 |        1 |      1 | Weighted — Gradient Boosting         |    0.15888 |   0.09994 |   0.23511 |     0.06303 |
+| mixed                |                   5 |        1 |      1 | IRLS — Ridge                         |    0.21988 |   0.09749 |   0.19037 |     0.05825 |
+| mixed                |                   5 |        1 |      2 | No handling — Ridge                  |    0.14217 |   0.10068 |   0.2013  |     0.07255 |
+| mixed                |                   5 |        1 |      2 | Hard removal — Ridge                 |    0.13066 |   0.08998 |   0.177   |     0.06392 |
+| mixed                |                   5 |        1 |      2 | Winsorizing — Ridge                  |    0.1437  |   0.10195 |   0.20368 |     0.07175 |
+| mixed                |                   5 |        1 |      2 | Robust loss — HuberRegressor         |    0.14093 |   0.09651 |   0.20083 |     0.07261 |
+| mixed                |                   5 |        1 |      2 | Weighted — Ridge (linear)            |    0.12856 |   0.08794 |   0.17544 |     0.06521 |
+| mixed                |                   5 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.13042 |   0.09028 |   0.19638 |     0.06665 |
+| mixed                |                   5 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.13101 |   0.08829 |   0.18867 |     0.06156 |
+| mixed                |                   5 |        1 |      2 | Weighted — Random Forest             |    0.14752 |   0.09746 |   0.24856 |     0.0655  |
+| mixed                |                   5 |        1 |      2 | Weighted — Gradient Boosting         |    0.13474 |   0.09392 |   0.18845 |     0.0696  |
+| mixed                |                   5 |        1 |      2 | IRLS — Ridge                         |    0.12712 |   0.08602 |   0.17565 |     0.06335 |
+| mixed                |                   5 |        1 |      3 | No handling — Ridge                  |    0.16323 |   0.10874 |   0.21703 |     0.08058 |
+| mixed                |                   5 |        1 |      3 | Hard removal — Ridge                 |    0.16313 |   0.09346 |   0.1727  |     0.06573 |
+| mixed                |                   5 |        1 |      3 | Winsorizing — Ridge                  |    0.16638 |   0.11064 |   0.22044 |     0.07997 |
+| mixed                |                   5 |        1 |      3 | Robust loss — HuberRegressor         |    0.17859 |   0.10488 |   0.22387 |     0.06508 |
+| mixed                |                   5 |        1 |      3 | Weighted — Ridge (linear)            |    0.16255 |   0.0942  |   0.19525 |     0.064   |
+| mixed                |                   5 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16612 |   0.09792 |   0.21888 |     0.06368 |
+| mixed                |                   5 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16601 |   0.09459 |   0.21868 |     0.05747 |
+| mixed                |                   5 |        1 |      3 | Weighted — Random Forest             |    0.16568 |   0.10873 |   0.24477 |     0.07397 |
+| mixed                |                   5 |        1 |      3 | Weighted — Gradient Boosting         |    0.16625 |   0.10853 |   0.22694 |     0.07019 |
+| mixed                |                   5 |        1 |      3 | IRLS — Ridge                         |    0.1637  |   0.09178 |   0.18044 |     0.06111 |
+| mixed                |                   5 |        1 |      4 | No handling — Ridge                  |    0.1456  |   0.10378 |   0.21677 |     0.07722 |
+| mixed                |                   5 |        1 |      4 | Hard removal — Ridge                 |    0.11281 |   0.07856 |   0.17565 |     0.05351 |
+| mixed                |                   5 |        1 |      4 | Winsorizing — Ridge                  |    0.14908 |   0.10705 |   0.23638 |     0.07954 |
+| mixed                |                   5 |        1 |      4 | Robust loss — HuberRegressor         |    0.14026 |   0.09639 |   0.20838 |     0.06595 |
+| mixed                |                   5 |        1 |      4 | Weighted — Ridge (linear)            |    0.11396 |   0.07865 |   0.18184 |     0.05246 |
+| mixed                |                   5 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.12051 |   0.08401 |   0.20044 |     0.06224 |
+| mixed                |                   5 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11685 |   0.08053 |   0.18483 |     0.0551  |
+| mixed                |                   5 |        1 |      4 | Weighted — Random Forest             |    0.14929 |   0.09602 |   0.2336  |     0.05893 |
+| mixed                |                   5 |        1 |      4 | Weighted — Gradient Boosting         |    0.13187 |   0.08829 |   0.18764 |     0.0632  |
+| mixed                |                   5 |        1 |      4 | IRLS — Ridge                         |    0.11171 |   0.07564 |   0.16402 |     0.05046 |
+| mixed                |                   5 |        1 |      5 | No handling — Ridge                  |    0.13324 |   0.09895 |   0.19112 |     0.07624 |
+| mixed                |                   5 |        1 |      5 | Hard removal — Ridge                 |    0.11603 |   0.08446 |   0.16768 |     0.06295 |
+| mixed                |                   5 |        1 |      5 | Winsorizing — Ridge                  |    0.13155 |   0.09781 |   0.19774 |     0.0727  |
+| mixed                |                   5 |        1 |      5 | Robust loss — HuberRegressor         |    0.1352  |   0.09104 |   0.19112 |     0.05849 |
+| mixed                |                   5 |        1 |      5 | Weighted — Ridge (linear)            |    0.10978 |   0.08101 |   0.1704  |     0.05745 |
+| mixed                |                   5 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.1114  |   0.08251 |   0.17155 |     0.06025 |
+| mixed                |                   5 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.10734 |   0.07892 |   0.16641 |     0.05186 |
+| mixed                |                   5 |        1 |      5 | Weighted — Random Forest             |    0.13536 |   0.09511 |   0.19379 |     0.06454 |
+| mixed                |                   5 |        1 |      5 | Weighted — Gradient Boosting         |    0.1312  |   0.09597 |   0.20759 |     0.06849 |
+| mixed                |                   5 |        1 |      5 | IRLS — Ridge                         |    0.1106  |   0.08019 |   0.17219 |     0.05951 |
+| mixed                |                   5 |        1 |      6 | No handling — Ridge                  |    0.12845 |   0.09919 |   0.20971 |     0.08165 |
+| mixed                |                   5 |        1 |      6 | Hard removal — Ridge                 |    0.11243 |   0.08079 |   0.16547 |     0.06278 |
+| mixed                |                   5 |        1 |      6 | Winsorizing — Ridge                  |    0.12824 |   0.09816 |   0.20069 |     0.08152 |
+| mixed                |                   5 |        1 |      6 | Robust loss — HuberRegressor         |    0.12966 |   0.09075 |   0.18035 |     0.06731 |
+| mixed                |                   5 |        1 |      6 | Weighted — Ridge (linear)            |    0.10505 |   0.07947 |   0.14912 |     0.06381 |
+| mixed                |                   5 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.1098  |   0.08308 |   0.15956 |     0.06365 |
+| mixed                |                   5 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10585 |   0.07898 |   0.15757 |     0.05995 |
+| mixed                |                   5 |        1 |      6 | Weighted — Random Forest             |    0.14269 |   0.09762 |   0.23095 |     0.06641 |
+| mixed                |                   5 |        1 |      6 | Weighted — Gradient Boosting         |    0.13187 |   0.09325 |   0.20515 |     0.0651  |
+| mixed                |                   5 |        1 |      6 | IRLS — Ridge                         |    0.10264 |   0.07616 |   0.15108 |     0.06083 |
+| mixed                |                   5 |        1 |      7 | No handling — Ridge                  |    0.16392 |   0.11019 |   0.23216 |     0.08033 |
+| mixed                |                   5 |        1 |      7 | Hard removal — Ridge                 |    0.15767 |   0.09564 |   0.21578 |     0.06276 |
+| mixed                |                   5 |        1 |      7 | Winsorizing — Ridge                  |    0.16461 |   0.10942 |   0.23252 |     0.07921 |
+| mixed                |                   5 |        1 |      7 | Robust loss — HuberRegressor         |    0.16171 |   0.10444 |   0.24306 |     0.06168 |
+| mixed                |                   5 |        1 |      7 | Weighted — Ridge (linear)            |    0.15576 |   0.09463 |   0.19797 |     0.06649 |
+| mixed                |                   5 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.15871 |   0.09812 |   0.2018  |     0.06811 |
+| mixed                |                   5 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.15784 |   0.09427 |   0.19301 |     0.06302 |
+| mixed                |                   5 |        1 |      7 | Weighted — Random Forest             |    0.15955 |   0.11032 |   0.24166 |     0.08271 |
+| mixed                |                   5 |        1 |      7 | Weighted — Gradient Boosting         |    0.15479 |   0.10409 |   0.21229 |     0.0684  |
+| mixed                |                   5 |        1 |      7 | IRLS — Ridge                         |    0.1554  |   0.09249 |   0.19612 |     0.06121 |
+| mixed                |                   5 |        1 |      8 | No handling — Ridge                  |    0.21117 |   0.11011 |   0.20873 |     0.08145 |
+| mixed                |                   5 |        1 |      8 | Hard removal — Ridge                 |    0.21293 |   0.09871 |   0.18715 |     0.06548 |
+| mixed                |                   5 |        1 |      8 | Winsorizing — Ridge                  |    0.20398 |   0.10631 |   0.20416 |     0.07624 |
+| mixed                |                   5 |        1 |      8 | Robust loss — HuberRegressor         |    0.21483 |   0.09922 |   0.18599 |     0.06284 |
+| mixed                |                   5 |        1 |      8 | Weighted — Ridge (linear)            |    0.20872 |   0.09244 |   0.16249 |     0.06075 |
+| mixed                |                   5 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.20892 |   0.0937  |   0.16929 |     0.06505 |
+| mixed                |                   5 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21183 |   0.09131 |   0.16678 |     0.06249 |
+| mixed                |                   5 |        1 |      8 | Weighted — Random Forest             |    0.16044 |   0.10288 |   0.20652 |     0.06893 |
+| mixed                |                   5 |        1 |      8 | Weighted — Gradient Boosting         |    0.15881 |   0.09714 |   0.19589 |     0.06641 |
+| mixed                |                   5 |        1 |      8 | IRLS — Ridge                         |    0.21096 |   0.09358 |   0.16728 |     0.06511 |
+| mixed                |                   5 |        1 |      9 | No handling — Ridge                  |    0.13902 |   0.10468 |   0.22284 |     0.08421 |
+| mixed                |                   5 |        1 |      9 | Hard removal — Ridge                 |    0.1132  |   0.08459 |   0.1838  |     0.06599 |
+| mixed                |                   5 |        1 |      9 | Winsorizing — Ridge                  |    0.13666 |   0.10254 |   0.21937 |     0.08034 |
+| mixed                |                   5 |        1 |      9 | Robust loss — HuberRegressor         |    0.12688 |   0.09074 |   0.19266 |     0.06336 |
+| mixed                |                   5 |        1 |      9 | Weighted — Ridge (linear)            |    0.11655 |   0.08522 |   0.18249 |     0.07029 |
+| mixed                |                   5 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.12204 |   0.08908 |   0.19721 |     0.07301 |
+| mixed                |                   5 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.1195  |   0.08617 |   0.18215 |     0.06725 |
+| mixed                |                   5 |        1 |      9 | Weighted — Random Forest             |    0.1348  |   0.09227 |   0.20884 |     0.06614 |
+| mixed                |                   5 |        1 |      9 | Weighted — Gradient Boosting         |    0.12533 |   0.09245 |   0.20712 |     0.07259 |
+| mixed                |                   5 |        1 |      9 | IRLS — Ridge                         |    0.11167 |   0.08255 |   0.17083 |     0.0632  |
+| mixed                |                   5 |        1 |     10 | No handling — Ridge                  |    0.17026 |   0.12102 |   0.23997 |     0.08666 |
+| mixed                |                   5 |        1 |     10 | Hard removal — Ridge                 |    0.14856 |   0.09707 |   0.19338 |     0.06415 |
+| mixed                |                   5 |        1 |     10 | Winsorizing — Ridge                  |    0.17064 |   0.11903 |   0.23397 |     0.09072 |
+| mixed                |                   5 |        1 |     10 | Robust loss — HuberRegressor         |    0.15632 |   0.1013  |   0.20951 |     0.0622  |
+| mixed                |                   5 |        1 |     10 | Weighted — Ridge (linear)            |    0.15026 |   0.09648 |   0.18017 |     0.06776 |
+| mixed                |                   5 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.15497 |   0.09955 |   0.18708 |     0.06805 |
+| mixed                |                   5 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.15252 |   0.09587 |   0.18455 |     0.06488 |
+| mixed                |                   5 |        1 |     10 | Weighted — Random Forest             |    0.18008 |   0.1108  |   0.27203 |     0.06237 |
+| mixed                |                   5 |        1 |     10 | Weighted — Gradient Boosting         |    0.15956 |   0.10405 |   0.23825 |     0.06919 |
+| mixed                |                   5 |        1 |     10 | IRLS — Ridge                         |    0.14836 |   0.09086 |   0.17063 |     0.05982 |
+| mixed                |                   5 |        1 |     11 | No handling — Ridge                  |    0.18909 |   0.10609 |   0.19769 |     0.07028 |
+| mixed                |                   5 |        1 |     11 | Hard removal — Ridge                 |    0.21179 |   0.10231 |   0.19854 |     0.06596 |
+| mixed                |                   5 |        1 |     11 | Winsorizing — Ridge                  |    0.18362 |   0.10494 |   0.19506 |     0.07339 |
+| mixed                |                   5 |        1 |     11 | Robust loss — HuberRegressor         |    0.21504 |   0.11279 |   0.21956 |     0.0629  |
+| mixed                |                   5 |        1 |     11 | Weighted — Ridge (linear)            |    0.20727 |   0.09415 |   0.17403 |     0.06004 |
+| mixed                |                   5 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.20531 |   0.09492 |   0.1765  |     0.06315 |
+| mixed                |                   5 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.20879 |   0.0928  |   0.1808  |     0.05773 |
+| mixed                |                   5 |        1 |     11 | Weighted — Random Forest             |    0.15213 |   0.09596 |   0.19946 |     0.05905 |
+| mixed                |                   5 |        1 |     11 | Weighted — Gradient Boosting         |    0.14565 |   0.09852 |   0.21124 |     0.06529 |
+| mixed                |                   5 |        1 |     11 | IRLS — Ridge                         |    0.20648 |   0.09365 |   0.17443 |     0.05948 |
+| mixed                |                   5 |        1 |     12 | No handling — Ridge                  |    0.14386 |   0.10228 |   0.20834 |     0.07686 |
+| mixed                |                   5 |        1 |     12 | Hard removal — Ridge                 |    0.12366 |   0.09066 |   0.17664 |     0.07217 |
+| mixed                |                   5 |        1 |     12 | Winsorizing — Ridge                  |    0.14413 |   0.10287 |   0.21341 |     0.07853 |
+| mixed                |                   5 |        1 |     12 | Robust loss — HuberRegressor         |    0.18907 |   0.11378 |   0.22385 |     0.07317 |
+| mixed                |                   5 |        1 |     12 | Weighted — Ridge (linear)            |    0.12021 |   0.0862  |   0.17142 |     0.06588 |
+| mixed                |                   5 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.12424 |   0.08843 |   0.17675 |     0.0672  |
+| mixed                |                   5 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.12204 |   0.08615 |   0.16946 |     0.0631  |
+| mixed                |                   5 |        1 |     12 | Weighted — Random Forest             |    0.15208 |   0.10174 |   0.24077 |     0.06891 |
+| mixed                |                   5 |        1 |     12 | Weighted — Gradient Boosting         |    0.14971 |   0.09998 |   0.19668 |     0.06976 |
+| mixed                |                   5 |        1 |     12 | IRLS — Ridge                         |    0.1201  |   0.08487 |   0.16838 |     0.06429 |
+| mixed                |                   5 |        1 |     13 | No handling — Ridge                  |    0.13738 |   0.10018 |   0.19897 |     0.07348 |
+| mixed                |                   5 |        1 |     13 | Hard removal — Ridge                 |    0.12415 |   0.09605 |   0.18624 |     0.07893 |
+| mixed                |                   5 |        1 |     13 | Winsorizing — Ridge                  |    0.13857 |   0.10034 |   0.19935 |     0.07741 |
+| mixed                |                   5 |        1 |     13 | Robust loss — HuberRegressor         |    0.13123 |   0.09689 |   0.19687 |     0.07061 |
+| mixed                |                   5 |        1 |     13 | Weighted — Ridge (linear)            |    0.11729 |   0.08519 |   0.17938 |     0.06313 |
+| mixed                |                   5 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12278 |   0.08884 |   0.18741 |     0.06488 |
+| mixed                |                   5 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11939 |   0.08574 |   0.1725  |     0.06187 |
+| mixed                |                   5 |        1 |     13 | Weighted — Random Forest             |    0.13987 |   0.09992 |   0.23268 |     0.06622 |
+| mixed                |                   5 |        1 |     13 | Weighted — Gradient Boosting         |    0.13436 |   0.09645 |   0.22662 |     0.07168 |
+| mixed                |                   5 |        1 |     13 | IRLS — Ridge                         |    0.11327 |   0.08511 |   0.17049 |     0.06665 |
+| mixed                |                   5 |        1 |     14 | No handling — Ridge                  |    0.14053 |   0.10282 |   0.22042 |     0.07244 |
+| mixed                |                   5 |        1 |     14 | Hard removal — Ridge                 |    0.11833 |   0.08188 |   0.16885 |     0.05727 |
+| mixed                |                   5 |        1 |     14 | Winsorizing — Ridge                  |    0.13978 |   0.10164 |   0.2162  |     0.07446 |
+| mixed                |                   5 |        1 |     14 | Robust loss — HuberRegressor         |    0.13612 |   0.09619 |   0.20439 |     0.06492 |
+| mixed                |                   5 |        1 |     14 | Weighted — Ridge (linear)            |    0.11951 |   0.08326 |   0.17143 |     0.06197 |
+| mixed                |                   5 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.12221 |   0.08525 |   0.17056 |     0.05895 |
+| mixed                |                   5 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12061 |   0.08234 |   0.17077 |     0.05577 |
+| mixed                |                   5 |        1 |     14 | Weighted — Random Forest             |    0.1586  |   0.10865 |   0.25099 |     0.07235 |
+| mixed                |                   5 |        1 |     14 | Weighted — Gradient Boosting         |    0.14063 |   0.09789 |   0.19895 |     0.07279 |
+| mixed                |                   5 |        1 |     14 | IRLS — Ridge                         |    0.12046 |   0.08259 |   0.16554 |     0.06082 |
+| mixed                |                   5 |        1 |     15 | No handling — Ridge                  |    0.17059 |   0.1098  |   0.22398 |     0.07383 |
+| mixed                |                   5 |        1 |     15 | Hard removal — Ridge                 |    0.17706 |   0.09751 |   0.19455 |     0.05978 |
+| mixed                |                   5 |        1 |     15 | Winsorizing — Ridge                  |    0.17029 |   0.10902 |   0.21656 |     0.06948 |
+| mixed                |                   5 |        1 |     15 | Robust loss — HuberRegressor         |    0.18093 |   0.10417 |   0.20561 |     0.06285 |
+| mixed                |                   5 |        1 |     15 | Weighted — Ridge (linear)            |    0.16949 |   0.09283 |   0.18633 |     0.06008 |
+| mixed                |                   5 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.17031 |   0.09385 |   0.19632 |     0.06186 |
+| mixed                |                   5 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.16933 |   0.09129 |   0.19826 |     0.05737 |
+| mixed                |                   5 |        1 |     15 | Weighted — Random Forest             |    0.16472 |   0.10043 |   0.2376  |     0.05739 |
+| mixed                |                   5 |        1 |     15 | Weighted — Gradient Boosting         |    0.16626 |   0.10287 |   0.22871 |     0.06376 |
+| mixed                |                   5 |        1 |     15 | IRLS — Ridge                         |    0.17385 |   0.09209 |   0.18803 |     0.05667 |
+| mixed                |                   5 |        2 |      1 | No handling — Ridge                  |    0.22211 |   0.11293 |   0.21467 |     0.0768  |
+| mixed                |                   5 |        2 |      1 | Hard removal — Ridge                 |    0.23089 |   0.10407 |   0.18206 |     0.06532 |
+| mixed                |                   5 |        2 |      1 | Winsorizing — Ridge                  |    0.21469 |   0.11355 |   0.22229 |     0.07968 |
+| mixed                |                   5 |        2 |      1 | Robust loss — HuberRegressor         |    0.24296 |   0.11631 |   0.2175  |     0.07109 |
+| mixed                |                   5 |        2 |      1 | Weighted — Ridge (linear)            |    0.22348 |   0.10306 |   0.19014 |     0.06764 |
+| mixed                |                   5 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.2228  |   0.10667 |   0.19761 |     0.06552 |
+| mixed                |                   5 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.22265 |   0.10354 |   0.18689 |     0.06159 |
+| mixed                |                   5 |        2 |      1 | Weighted — Random Forest             |    0.1699  |   0.10682 |   0.23524 |     0.06335 |
+| mixed                |                   5 |        2 |      1 | Weighted — Gradient Boosting         |    0.16477 |   0.10331 |   0.24038 |     0.06415 |
+| mixed                |                   5 |        2 |      1 | IRLS — Ridge                         |    0.21954 |   0.10105 |   0.18174 |     0.06471 |
+| mixed                |                   5 |        2 |      2 | No handling — Ridge                  |    0.13494 |   0.09677 |   0.18354 |     0.07189 |
+| mixed                |                   5 |        2 |      2 | Hard removal — Ridge                 |    0.11973 |   0.08319 |   0.17    |     0.06563 |
+| mixed                |                   5 |        2 |      2 | Winsorizing — Ridge                  |    0.13497 |   0.09676 |   0.1844  |     0.07388 |
+| mixed                |                   5 |        2 |      2 | Robust loss — HuberRegressor         |    0.15358 |   0.09706 |   0.19731 |     0.06534 |
+| mixed                |                   5 |        2 |      2 | Weighted — Ridge (linear)            |    0.11777 |   0.08003 |   0.15973 |     0.05658 |
+| mixed                |                   5 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.12007 |   0.08139 |   0.17052 |     0.06059 |
+| mixed                |                   5 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.11973 |   0.07984 |   0.16176 |     0.05616 |
+| mixed                |                   5 |        2 |      2 | Weighted — Random Forest             |    0.14925 |   0.10026 |   0.23752 |     0.06545 |
+| mixed                |                   5 |        2 |      2 | Weighted — Gradient Boosting         |    0.13612 |   0.09547 |   0.19326 |     0.07177 |
+| mixed                |                   5 |        2 |      2 | IRLS — Ridge                         |    0.11978 |   0.08216 |   0.16926 |     0.06522 |
+| mixed                |                   5 |        2 |      3 | No handling — Ridge                  |    0.16251 |   0.10972 |   0.23584 |     0.07886 |
+| mixed                |                   5 |        2 |      3 | Hard removal — Ridge                 |    0.16558 |   0.09408 |   0.19153 |     0.06267 |
+| mixed                |                   5 |        2 |      3 | Winsorizing — Ridge                  |    0.16392 |   0.10928 |   0.23554 |     0.07362 |
+| mixed                |                   5 |        2 |      3 | Robust loss — HuberRegressor         |    0.22311 |   0.11262 |   0.22398 |     0.0549  |
+| mixed                |                   5 |        2 |      3 | Weighted — Ridge (linear)            |    0.15992 |   0.09511 |   0.18871 |     0.06552 |
+| mixed                |                   5 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16159 |   0.09739 |   0.18962 |     0.0645  |
+| mixed                |                   5 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16262 |   0.09489 |   0.19586 |     0.06181 |
+| mixed                |                   5 |        2 |      3 | Weighted — Random Forest             |    0.16806 |   0.11068 |   0.26217 |     0.07323 |
+| mixed                |                   5 |        2 |      3 | Weighted — Gradient Boosting         |    0.15933 |   0.10321 |   0.22181 |     0.06185 |
+| mixed                |                   5 |        2 |      3 | IRLS — Ridge                         |    0.16446 |   0.09395 |   0.19016 |     0.06489 |
+| mixed                |                   5 |        2 |      4 | No handling — Ridge                  |    0.13091 |   0.09634 |   0.20156 |     0.0755  |
+| mixed                |                   5 |        2 |      4 | Hard removal — Ridge                 |    0.11268 |   0.07928 |   0.16219 |     0.05661 |
+| mixed                |                   5 |        2 |      4 | Winsorizing — Ridge                  |    0.13368 |   0.09859 |   0.19779 |     0.07804 |
+| mixed                |                   5 |        2 |      4 | Robust loss — HuberRegressor         |    0.12186 |   0.08692 |   0.18763 |     0.06643 |
+| mixed                |                   5 |        2 |      4 | Weighted — Ridge (linear)            |    0.10946 |   0.07827 |   0.16561 |     0.05532 |
+| mixed                |                   5 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.11635 |   0.08278 |   0.1703  |     0.06026 |
+| mixed                |                   5 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11245 |   0.0785  |   0.16783 |     0.05506 |
+| mixed                |                   5 |        2 |      4 | Weighted — Random Forest             |    0.15288 |   0.09959 |   0.23421 |     0.05949 |
+| mixed                |                   5 |        2 |      4 | Weighted — Gradient Boosting         |    0.13078 |   0.08813 |   0.17697 |     0.06233 |
+| mixed                |                   5 |        2 |      4 | IRLS — Ridge                         |    0.10778 |   0.07542 |   0.1544  |     0.053   |
+| mixed                |                   5 |        2 |      5 | No handling — Ridge                  |    0.13675 |   0.1043  |   0.20774 |     0.08157 |
+| mixed                |                   5 |        2 |      5 | Hard removal — Ridge                 |    0.11924 |   0.08847 |   0.18257 |     0.07023 |
+| mixed                |                   5 |        2 |      5 | Winsorizing — Ridge                  |    0.13277 |   0.10187 |   0.20056 |     0.08228 |
+| mixed                |                   5 |        2 |      5 | Robust loss — HuberRegressor         |    0.15719 |   0.10581 |   0.24677 |     0.07342 |
+| mixed                |                   5 |        2 |      5 | Weighted — Ridge (linear)            |    0.11383 |   0.08523 |   0.16658 |     0.06728 |
+| mixed                |                   5 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.1159  |   0.08706 |   0.17022 |     0.06831 |
+| mixed                |                   5 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11242 |   0.08325 |   0.16091 |     0.06153 |
+| mixed                |                   5 |        2 |      5 | Weighted — Random Forest             |    0.13242 |   0.09233 |   0.20559 |     0.06845 |
+| mixed                |                   5 |        2 |      5 | Weighted — Gradient Boosting         |    0.12616 |   0.09211 |   0.20985 |     0.06794 |
+| mixed                |                   5 |        2 |      5 | IRLS — Ridge                         |    0.11363 |   0.08264 |   0.18332 |     0.06065 |
+| mixed                |                   5 |        2 |      6 | No handling — Ridge                  |    0.14048 |   0.10041 |   0.21185 |     0.07559 |
+| mixed                |                   5 |        2 |      6 | Hard removal — Ridge                 |    0.12267 |   0.08356 |   0.17939 |     0.05784 |
+| mixed                |                   5 |        2 |      6 | Winsorizing — Ridge                  |    0.14022 |   0.10134 |   0.20837 |     0.08458 |
+| mixed                |                   5 |        2 |      6 | Robust loss — HuberRegressor         |    0.15929 |   0.09943 |   0.2103  |     0.06765 |
+| mixed                |                   5 |        2 |      6 | Weighted — Ridge (linear)            |    0.11473 |   0.08079 |   0.1715  |     0.06359 |
+| mixed                |                   5 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.11842 |   0.08548 |   0.17557 |     0.06779 |
+| mixed                |                   5 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.11376 |   0.08111 |   0.16853 |     0.06263 |
+| mixed                |                   5 |        2 |      6 | Weighted — Random Forest             |    0.14246 |   0.09566 |   0.23725 |     0.06053 |
+| mixed                |                   5 |        2 |      6 | Weighted — Gradient Boosting         |    0.13074 |   0.09108 |   0.20706 |     0.06101 |
+| mixed                |                   5 |        2 |      6 | IRLS — Ridge                         |    0.11028 |   0.07944 |   0.16365 |     0.05854 |
+| mixed                |                   5 |        2 |      7 | No handling — Ridge                  |    0.1562  |   0.10661 |   0.21521 |     0.08586 |
+| mixed                |                   5 |        2 |      7 | Hard removal — Ridge                 |    0.15696 |   0.09579 |   0.20073 |     0.07037 |
+| mixed                |                   5 |        2 |      7 | Winsorizing — Ridge                  |    0.15602 |   0.10843 |   0.2208  |     0.08486 |
+| mixed                |                   5 |        2 |      7 | Robust loss — HuberRegressor         |    0.15536 |   0.10335 |   0.21388 |     0.07723 |
+| mixed                |                   5 |        2 |      7 | Weighted — Ridge (linear)            |    0.15549 |   0.09603 |   0.19236 |     0.06721 |
+| mixed                |                   5 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.15746 |   0.09863 |   0.19809 |     0.0672  |
+| mixed                |                   5 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.15745 |   0.09473 |   0.19633 |     0.06539 |
+| mixed                |                   5 |        2 |      7 | Weighted — Random Forest             |    0.15798 |   0.10834 |   0.24514 |     0.07116 |
+| mixed                |                   5 |        2 |      7 | Weighted — Gradient Boosting         |    0.15052 |   0.09911 |   0.20929 |     0.07194 |
+| mixed                |                   5 |        2 |      7 | IRLS — Ridge                         |    0.15465 |   0.09379 |   0.19277 |     0.06522 |
+| mixed                |                   5 |        2 |      8 | No handling — Ridge                  |    0.20534 |   0.10661 |   0.18438 |     0.07575 |
+| mixed                |                   5 |        2 |      8 | Hard removal — Ridge                 |    0.21734 |   0.09585 |   0.17621 |     0.06487 |
+| mixed                |                   5 |        2 |      8 | Winsorizing — Ridge                  |    0.19382 |   0.10297 |   0.18292 |     0.07479 |
+| mixed                |                   5 |        2 |      8 | Robust loss — HuberRegressor         |    0.19389 |   0.09764 |   0.17574 |     0.06492 |
+| mixed                |                   5 |        2 |      8 | Weighted — Ridge (linear)            |    0.21808 |   0.09347 |   0.16385 |     0.05701 |
+| mixed                |                   5 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.21745 |   0.09445 |   0.16526 |     0.05833 |
+| mixed                |                   5 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.22023 |   0.09299 |   0.1751  |     0.05998 |
+| mixed                |                   5 |        2 |      8 | Weighted — Random Forest             |    0.16376 |   0.10714 |   0.21296 |     0.07156 |
+| mixed                |                   5 |        2 |      8 | Weighted — Gradient Boosting         |    0.15481 |   0.09854 |   0.18849 |     0.06571 |
+| mixed                |                   5 |        2 |      8 | IRLS — Ridge                         |    0.21746 |   0.09212 |   0.15442 |     0.05837 |
+| mixed                |                   5 |        2 |      9 | No handling — Ridge                  |    0.14683 |   0.11288 |   0.23418 |     0.08996 |
+| mixed                |                   5 |        2 |      9 | Hard removal — Ridge                 |    0.11184 |   0.08002 |   0.17488 |     0.056   |
+| mixed                |                   5 |        2 |      9 | Winsorizing — Ridge                  |    0.14466 |   0.11144 |   0.22314 |     0.08743 |
+| mixed                |                   5 |        2 |      9 | Robust loss — HuberRegressor         |    0.14982 |   0.09603 |   0.2022  |     0.06505 |
+| mixed                |                   5 |        2 |      9 | Weighted — Ridge (linear)            |    0.12051 |   0.08714 |   0.18245 |     0.06404 |
+| mixed                |                   5 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12409 |   0.09011 |   0.19867 |     0.06907 |
+| mixed                |                   5 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.12155 |   0.08692 |   0.1865  |     0.06639 |
+| mixed                |                   5 |        2 |      9 | Weighted — Random Forest             |    0.1352  |   0.09262 |   0.21976 |     0.06303 |
+| mixed                |                   5 |        2 |      9 | Weighted — Gradient Boosting         |    0.12801 |   0.09358 |   0.21005 |     0.06761 |
+| mixed                |                   5 |        2 |      9 | IRLS — Ridge                         |    0.11262 |   0.08078 |   0.1783  |     0.05889 |
+| mixed                |                   5 |        2 |     10 | No handling — Ridge                  |    0.1681  |   0.11408 |   0.22349 |     0.08436 |
+| mixed                |                   5 |        2 |     10 | Hard removal — Ridge                 |    0.14557 |   0.09449 |   0.18203 |     0.06704 |
+| mixed                |                   5 |        2 |     10 | Winsorizing — Ridge                  |    0.16871 |   0.11499 |   0.23768 |     0.08363 |
+| mixed                |                   5 |        2 |     10 | Robust loss — HuberRegressor         |    0.16365 |   0.10328 |   0.22642 |     0.06801 |
+| mixed                |                   5 |        2 |     10 | Weighted — Ridge (linear)            |    0.14715 |   0.093   |   0.17839 |     0.06355 |
+| mixed                |                   5 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.15267 |   0.09531 |   0.20008 |     0.06156 |
+| mixed                |                   5 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.14956 |   0.09167 |   0.18074 |     0.05651 |
+| mixed                |                   5 |        2 |     10 | Weighted — Random Forest             |    0.17717 |   0.11063 |   0.25038 |     0.06134 |
+| mixed                |                   5 |        2 |     10 | Weighted — Gradient Boosting         |    0.16542 |   0.10423 |   0.22804 |     0.06532 |
+| mixed                |                   5 |        2 |     10 | IRLS — Ridge                         |    0.14742 |   0.09089 |   0.16753 |     0.05829 |
+| mixed                |                   5 |        2 |     11 | No handling — Ridge                  |    0.19007 |   0.10247 |   0.20193 |     0.07046 |
+| mixed                |                   5 |        2 |     11 | Hard removal — Ridge                 |    0.20605 |   0.09448 |   0.17487 |     0.06038 |
+| mixed                |                   5 |        2 |     11 | Winsorizing — Ridge                  |    0.18246 |   0.10262 |   0.20214 |     0.07462 |
+| mixed                |                   5 |        2 |     11 | Robust loss — HuberRegressor         |    0.21722 |   0.10597 |   0.2137  |     0.06034 |
+| mixed                |                   5 |        2 |     11 | Weighted — Ridge (linear)            |    0.20557 |   0.09402 |   0.17975 |     0.05728 |
+| mixed                |                   5 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.20506 |   0.09585 |   0.19436 |     0.05813 |
+| mixed                |                   5 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.20706 |   0.09296 |   0.18522 |     0.055   |
+| mixed                |                   5 |        2 |     11 | Weighted — Random Forest             |    0.15016 |   0.09599 |   0.2058  |     0.06177 |
+| mixed                |                   5 |        2 |     11 | Weighted — Gradient Boosting         |    0.13907 |   0.09324 |   0.21294 |     0.06299 |
+| mixed                |                   5 |        2 |     11 | IRLS — Ridge                         |    0.20713 |   0.0925  |   0.17705 |     0.05797 |
+| mixed                |                   5 |        2 |     12 | No handling — Ridge                  |    0.14113 |   0.10387 |   0.20726 |     0.08583 |
+| mixed                |                   5 |        2 |     12 | Hard removal — Ridge                 |    0.1145  |   0.08131 |   0.16041 |     0.06669 |
+| mixed                |                   5 |        2 |     12 | Winsorizing — Ridge                  |    0.14426 |   0.10621 |   0.21536 |     0.07949 |
+| mixed                |                   5 |        2 |     12 | Robust loss — HuberRegressor         |    0.16472 |   0.0998  |   0.17391 |     0.06967 |
+| mixed                |                   5 |        2 |     12 | Weighted — Ridge (linear)            |    0.11156 |   0.08135 |   0.15913 |     0.06691 |
+| mixed                |                   5 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.11603 |   0.08456 |   0.15962 |     0.0658  |
+| mixed                |                   5 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.11327 |   0.08172 |   0.15646 |     0.06461 |
+| mixed                |                   5 |        2 |     12 | Weighted — Random Forest             |    0.15114 |   0.10245 |   0.2507  |     0.07087 |
+| mixed                |                   5 |        2 |     12 | Weighted — Gradient Boosting         |    0.14098 |   0.09993 |   0.20093 |     0.08029 |
+| mixed                |                   5 |        2 |     12 | IRLS — Ridge                         |    0.11341 |   0.08064 |   0.16105 |     0.06345 |
+| mixed                |                   5 |        2 |     13 | No handling — Ridge                  |    0.1454  |   0.10671 |   0.22925 |     0.0859  |
+| mixed                |                   5 |        2 |     13 | Hard removal — Ridge                 |    0.1183  |   0.08863 |   0.18513 |     0.07029 |
+| mixed                |                   5 |        2 |     13 | Winsorizing — Ridge                  |    0.14884 |   0.10693 |   0.2338  |     0.0794  |
+| mixed                |                   5 |        2 |     13 | Robust loss — HuberRegressor         |    0.14066 |   0.10324 |   0.21494 |     0.07846 |
+| mixed                |                   5 |        2 |     13 | Weighted — Ridge (linear)            |    0.12192 |   0.08726 |   0.19872 |     0.06555 |
+| mixed                |                   5 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.12998 |   0.09244 |   0.20691 |     0.06986 |
+| mixed                |                   5 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.12617 |   0.08845 |   0.20095 |     0.06562 |
+| mixed                |                   5 |        2 |     13 | Weighted — Random Forest             |    0.14235 |   0.10186 |   0.23843 |     0.07497 |
+| mixed                |                   5 |        2 |     13 | Weighted — Gradient Boosting         |    0.13602 |   0.09818 |   0.20171 |     0.07529 |
+| mixed                |                   5 |        2 |     13 | IRLS — Ridge                         |    0.1114  |   0.08282 |   0.16766 |     0.06571 |
+| mixed                |                   5 |        2 |     14 | No handling — Ridge                  |    0.15605 |   0.11614 |   0.22485 |     0.09063 |
+| mixed                |                   5 |        2 |     14 | Hard removal — Ridge                 |    0.13246 |   0.09261 |   0.18595 |     0.06223 |
+| mixed                |                   5 |        2 |     14 | Winsorizing — Ridge                  |    0.15167 |   0.11126 |   0.2178  |     0.08703 |
+| mixed                |                   5 |        2 |     14 | Robust loss — HuberRegressor         |    0.1421  |   0.09572 |   0.19841 |     0.0706  |
+| mixed                |                   5 |        2 |     14 | Weighted — Ridge (linear)            |    0.12677 |   0.08862 |   0.18019 |     0.06997 |
+| mixed                |                   5 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.12892 |   0.09009 |   0.18089 |     0.07012 |
+| mixed                |                   5 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.12579 |   0.08565 |   0.17257 |     0.06317 |
+| mixed                |                   5 |        2 |     14 | Weighted — Random Forest             |    0.15562 |   0.10286 |   0.21789 |     0.07069 |
+| mixed                |                   5 |        2 |     14 | Weighted — Gradient Boosting         |    0.14674 |   0.10116 |   0.20543 |     0.07173 |
+| mixed                |                   5 |        2 |     14 | IRLS — Ridge                         |    0.12671 |   0.08623 |   0.17118 |     0.06476 |
+| mixed                |                   5 |        2 |     15 | No handling — Ridge                  |    0.17173 |   0.11485 |   0.24823 |     0.08154 |
+| mixed                |                   5 |        2 |     15 | Hard removal — Ridge                 |    0.1681  |   0.09669 |   0.19399 |     0.0668  |
+| mixed                |                   5 |        2 |     15 | Winsorizing — Ridge                  |    0.16965 |   0.1114  |   0.23376 |     0.0817  |
+| mixed                |                   5 |        2 |     15 | Robust loss — HuberRegressor         |    0.17365 |   0.10542 |   0.2319  |     0.06167 |
+| mixed                |                   5 |        2 |     15 | Weighted — Ridge (linear)            |    0.16551 |   0.0938  |   0.19154 |     0.06079 |
+| mixed                |                   5 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16719 |   0.09449 |   0.20481 |     0.05887 |
+| mixed                |                   5 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16658 |   0.09125 |   0.19459 |     0.05556 |
+| mixed                |                   5 |        2 |     15 | Weighted — Random Forest             |    0.1649  |   0.10144 |   0.2364  |     0.06598 |
+| mixed                |                   5 |        2 |     15 | Weighted — Gradient Boosting         |    0.16166 |   0.10082 |   0.20911 |     0.06273 |
+| mixed                |                   5 |        2 |     15 | IRLS — Ridge                         |    0.16531 |   0.09242 |   0.1754  |     0.06139 |
+| mixed                |                  10 |        1 |      1 | No handling — Ridge                  |    0.21234 |   0.12438 |   0.24154 |     0.09545 |
+| mixed                |                  10 |        1 |      1 | Hard removal — Ridge                 |    0.22574 |   0.11052 |   0.19306 |     0.07713 |
+| mixed                |                  10 |        1 |      1 | Winsorizing — Ridge                  |    0.20198 |   0.12026 |   0.23609 |     0.0965  |
+| mixed                |                  10 |        1 |      1 | Robust loss — HuberRegressor         |    0.23006 |   0.12381 |   0.21953 |     0.08088 |
+| mixed                |                  10 |        1 |      1 | Weighted — Ridge (linear)            |    0.21424 |   0.09995 |   0.18028 |     0.06543 |
+| mixed                |                  10 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.21823 |   0.10193 |   0.18489 |     0.06832 |
+| mixed                |                  10 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.21819 |   0.09916 |   0.17468 |     0.06445 |
+| mixed                |                  10 |        1 |      1 | Weighted — Random Forest             |    0.16929 |   0.10584 |   0.23979 |     0.06769 |
+| mixed                |                  10 |        1 |      1 | Weighted — Gradient Boosting         |    0.15623 |   0.10156 |   0.22981 |     0.06338 |
+| mixed                |                  10 |        1 |      1 | IRLS — Ridge                         |    0.21639 |   0.1014  |   0.17852 |     0.06851 |
+| mixed                |                  10 |        1 |      2 | No handling — Ridge                  |    0.16948 |   0.11819 |   0.21783 |     0.09685 |
+| mixed                |                  10 |        1 |      2 | Hard removal — Ridge                 |    0.13908 |   0.09876 |   0.1934  |     0.07394 |
+| mixed                |                  10 |        1 |      2 | Winsorizing — Ridge                  |    0.16636 |   0.11688 |   0.22088 |     0.09015 |
+| mixed                |                  10 |        1 |      2 | Robust loss — HuberRegressor         |    0.16904 |   0.10783 |   0.23048 |     0.07235 |
+| mixed                |                  10 |        1 |      2 | Weighted — Ridge (linear)            |    0.13212 |   0.09044 |   0.17418 |     0.06683 |
+| mixed                |                  10 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.13107 |   0.09075 |   0.18956 |     0.06533 |
+| mixed                |                  10 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12998 |   0.08768 |   0.17807 |     0.06384 |
+| mixed                |                  10 |        1 |      2 | Weighted — Random Forest             |    0.14826 |   0.10057 |   0.22439 |     0.06627 |
+| mixed                |                  10 |        1 |      2 | Weighted — Gradient Boosting         |    0.1411  |   0.09972 |   0.20956 |     0.07256 |
+| mixed                |                  10 |        1 |      2 | IRLS — Ridge                         |    0.13023 |   0.08995 |   0.17515 |     0.07057 |
+| mixed                |                  10 |        1 |      3 | No handling — Ridge                  |    0.16852 |   0.11176 |   0.24286 |     0.08322 |
+| mixed                |                  10 |        1 |      3 | Hard removal — Ridge                 |    0.165   |   0.09804 |   0.20453 |     0.06842 |
+| mixed                |                  10 |        1 |      3 | Winsorizing — Ridge                  |    0.17048 |   0.11108 |   0.24209 |     0.07779 |
+| mixed                |                  10 |        1 |      3 | Robust loss — HuberRegressor         |    0.18031 |   0.10768 |   0.23862 |     0.06989 |
+| mixed                |                  10 |        1 |      3 | Weighted — Ridge (linear)            |    0.16514 |   0.09646 |   0.18908 |     0.06368 |
+| mixed                |                  10 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16824 |   0.09882 |   0.2125  |     0.06363 |
+| mixed                |                  10 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16809 |   0.09586 |   0.19929 |     0.05943 |
+| mixed                |                  10 |        1 |      3 | Weighted — Random Forest             |    0.16554 |   0.10848 |   0.26578 |     0.0663  |
+| mixed                |                  10 |        1 |      3 | Weighted — Gradient Boosting         |    0.16581 |   0.1055  |   0.24727 |     0.07009 |
+| mixed                |                  10 |        1 |      3 | IRLS — Ridge                         |    0.16756 |   0.0929  |   0.18891 |     0.06165 |
+| mixed                |                  10 |        1 |      4 | No handling — Ridge                  |    0.15229 |   0.11208 |   0.24241 |     0.08865 |
+| mixed                |                  10 |        1 |      4 | Hard removal — Ridge                 |    0.11795 |   0.08322 |   0.16732 |     0.05891 |
+| mixed                |                  10 |        1 |      4 | Winsorizing — Ridge                  |    0.15403 |   0.11318 |   0.23662 |     0.08911 |
+| mixed                |                  10 |        1 |      4 | Robust loss — HuberRegressor         |    0.11918 |   0.08635 |   0.18351 |     0.06203 |
+| mixed                |                  10 |        1 |      4 | Weighted — Ridge (linear)            |    0.11862 |   0.08377 |   0.18029 |     0.06008 |
+| mixed                |                  10 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.12566 |   0.08791 |   0.18012 |     0.06257 |
+| mixed                |                  10 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11918 |   0.08325 |   0.17511 |     0.058   |
+| mixed                |                  10 |        1 |      4 | Weighted — Random Forest             |    0.15212 |   0.10101 |   0.23476 |     0.06635 |
+| mixed                |                  10 |        1 |      4 | Weighted — Gradient Boosting         |    0.12958 |   0.09165 |   0.18195 |     0.06946 |
+| mixed                |                  10 |        1 |      4 | IRLS — Ridge                         |    0.11056 |   0.07754 |   0.15725 |     0.05893 |
+| mixed                |                  10 |        1 |      5 | No handling — Ridge                  |    0.15233 |   0.11306 |   0.23239 |     0.09389 |
+| mixed                |                  10 |        1 |      5 | Hard removal — Ridge                 |    0.12562 |   0.08987 |   0.19823 |     0.06856 |
+| mixed                |                  10 |        1 |      5 | Winsorizing — Ridge                  |    0.14794 |   0.11146 |   0.22491 |     0.0933  |
+| mixed                |                  10 |        1 |      5 | Robust loss — HuberRegressor         |    0.16947 |   0.11502 |   0.26125 |     0.07485 |
+| mixed                |                  10 |        1 |      5 | Weighted — Ridge (linear)            |    0.12093 |   0.08639 |   0.17306 |     0.06483 |
+| mixed                |                  10 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.12275 |   0.08823 |   0.16822 |     0.06554 |
+| mixed                |                  10 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.11813 |   0.08345 |   0.1737  |     0.0578  |
+| mixed                |                  10 |        1 |      5 | Weighted — Random Forest             |    0.13903 |   0.09537 |   0.2029  |     0.06881 |
+| mixed                |                  10 |        1 |      5 | Weighted — Gradient Boosting         |    0.13598 |   0.09695 |   0.19736 |     0.06753 |
+| mixed                |                  10 |        1 |      5 | IRLS — Ridge                         |    0.11416 |   0.08043 |   0.17105 |     0.05879 |
+| mixed                |                  10 |        1 |      6 | No handling — Ridge                  |    0.12549 |   0.09947 |   0.20124 |     0.08011 |
+| mixed                |                  10 |        1 |      6 | Hard removal — Ridge                 |    0.11202 |   0.08334 |   0.16757 |     0.06236 |
+| mixed                |                  10 |        1 |      6 | Winsorizing — Ridge                  |    0.1275  |   0.09987 |   0.21017 |     0.0797  |
+| mixed                |                  10 |        1 |      6 | Robust loss — HuberRegressor         |    0.14905 |   0.09775 |   0.1995  |     0.06513 |
+| mixed                |                  10 |        1 |      6 | Weighted — Ridge (linear)            |    0.10688 |   0.08008 |   0.16874 |     0.06357 |
+| mixed                |                  10 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.11068 |   0.08303 |   0.17856 |     0.06402 |
+| mixed                |                  10 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.10629 |   0.07834 |   0.17731 |     0.05921 |
+| mixed                |                  10 |        1 |      6 | Weighted — Random Forest             |    0.14677 |   0.09969 |   0.26166 |     0.06454 |
+| mixed                |                  10 |        1 |      6 | Weighted — Gradient Boosting         |    0.13737 |   0.09811 |   0.23057 |     0.06874 |
+| mixed                |                  10 |        1 |      6 | IRLS — Ridge                         |    0.10358 |   0.07765 |   0.16445 |     0.06013 |
+| mixed                |                  10 |        1 |      7 | No handling — Ridge                  |    0.17693 |   0.1265  |   0.27188 |     0.09414 |
+| mixed                |                  10 |        1 |      7 | Hard removal — Ridge                 |    0.15344 |   0.09635 |   0.19522 |     0.06833 |
+| mixed                |                  10 |        1 |      7 | Winsorizing — Ridge                  |    0.17627 |   0.12568 |   0.26967 |     0.09204 |
+| mixed                |                  10 |        1 |      7 | Robust loss — HuberRegressor         |    0.17894 |   0.11155 |   0.21948 |     0.08171 |
+| mixed                |                  10 |        1 |      7 | Weighted — Ridge (linear)            |    0.15963 |   0.09957 |   0.2074  |     0.0626  |
+| mixed                |                  10 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.16187 |   0.10203 |   0.22058 |     0.06714 |
+| mixed                |                  10 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.16099 |   0.09794 |   0.20405 |     0.0631  |
+| mixed                |                  10 |        1 |      7 | Weighted — Random Forest             |    0.16297 |   0.11241 |   0.25659 |     0.07237 |
+| mixed                |                  10 |        1 |      7 | Weighted — Gradient Boosting         |    0.15741 |   0.10391 |   0.22822 |     0.07237 |
+| mixed                |                  10 |        1 |      7 | IRLS — Ridge                         |    0.15374 |   0.09247 |   0.19178 |     0.06953 |
+| mixed                |                  10 |        1 |      8 | No handling — Ridge                  |    0.21147 |   0.11391 |   0.2154  |     0.07396 |
+| mixed                |                  10 |        1 |      8 | Hard removal — Ridge                 |    0.22496 |   0.10316 |   0.17577 |     0.07308 |
+| mixed                |                  10 |        1 |      8 | Winsorizing — Ridge                  |    0.20478 |   0.11195 |   0.20772 |     0.07375 |
+| mixed                |                  10 |        1 |      8 | Robust loss — HuberRegressor         |    0.20748 |   0.10244 |   0.18571 |     0.06782 |
+| mixed                |                  10 |        1 |      8 | Weighted — Ridge (linear)            |    0.21044 |   0.09503 |   0.16719 |     0.06322 |
+| mixed                |                  10 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.21109 |   0.0971  |   0.17404 |     0.06641 |
+| mixed                |                  10 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.21465 |   0.09354 |   0.17053 |     0.05986 |
+| mixed                |                  10 |        1 |      8 | Weighted — Random Forest             |    0.16275 |   0.10384 |   0.21161 |     0.07166 |
+| mixed                |                  10 |        1 |      8 | Weighted — Gradient Boosting         |    0.15897 |   0.09904 |   0.20459 |     0.0655  |
+| mixed                |                  10 |        1 |      8 | IRLS — Ridge                         |    0.21953 |   0.09388 |   0.15808 |     0.05976 |
+| mixed                |                  10 |        1 |      9 | No handling — Ridge                  |    0.16017 |   0.11917 |   0.2473  |     0.09314 |
+| mixed                |                  10 |        1 |      9 | Hard removal — Ridge                 |    0.13798 |   0.09995 |   0.20602 |     0.07669 |
+| mixed                |                  10 |        1 |      9 | Winsorizing — Ridge                  |    0.15957 |   0.11819 |   0.25321 |     0.09013 |
+| mixed                |                  10 |        1 |      9 | Robust loss — HuberRegressor         |    0.14448 |   0.10162 |   0.21923 |     0.07515 |
+| mixed                |                  10 |        1 |      9 | Weighted — Ridge (linear)            |    0.12823 |   0.09031 |   0.19956 |     0.0705  |
+| mixed                |                  10 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.12898 |   0.09062 |   0.18797 |     0.06792 |
+| mixed                |                  10 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.12468 |   0.08744 |   0.19773 |     0.06147 |
+| mixed                |                  10 |        1 |      9 | Weighted — Random Forest             |    0.13286 |   0.08993 |   0.2027  |     0.06407 |
+| mixed                |                  10 |        1 |      9 | Weighted — Gradient Boosting         |    0.12705 |   0.09125 |   0.20481 |     0.07359 |
+| mixed                |                  10 |        1 |      9 | IRLS — Ridge                         |    0.1246  |   0.0867  |   0.19274 |     0.059   |
+| mixed                |                  10 |        1 |     10 | No handling — Ridge                  |    0.18074 |   0.12634 |   0.25386 |     0.09022 |
+| mixed                |                  10 |        1 |     10 | Hard removal — Ridge                 |    0.16448 |   0.10332 |   0.2001  |     0.06622 |
+| mixed                |                  10 |        1 |     10 | Winsorizing — Ridge                  |    0.17958 |   0.12543 |   0.24797 |     0.09241 |
+| mixed                |                  10 |        1 |     10 | Robust loss — HuberRegressor         |    0.18634 |   0.11807 |   0.2604  |     0.07669 |
+| mixed                |                  10 |        1 |     10 | Weighted — Ridge (linear)            |    0.15645 |   0.09932 |   0.19854 |     0.06511 |
+| mixed                |                  10 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.16046 |   0.10096 |   0.23434 |     0.06741 |
+| mixed                |                  10 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.15635 |   0.09749 |   0.2078  |     0.06451 |
+| mixed                |                  10 |        1 |     10 | Weighted — Random Forest             |    0.18334 |   0.11309 |   0.28036 |     0.06371 |
+| mixed                |                  10 |        1 |     10 | Weighted — Gradient Boosting         |    0.17625 |   0.11079 |   0.23494 |     0.07444 |
+| mixed                |                  10 |        1 |     10 | IRLS — Ridge                         |    0.15634 |   0.09613 |   0.19286 |     0.05959 |
+| mixed                |                  10 |        1 |     11 | No handling — Ridge                  |    0.21661 |   0.11612 |   0.21839 |     0.07436 |
+| mixed                |                  10 |        1 |     11 | Hard removal — Ridge                 |    0.21596 |   0.10512 |   0.19757 |     0.07094 |
+| mixed                |                  10 |        1 |     11 | Winsorizing — Ridge                  |    0.20969 |   0.11573 |   0.23334 |     0.07634 |
+| mixed                |                  10 |        1 |     11 | Robust loss — HuberRegressor         |    0.2295  |   0.12034 |   0.25825 |     0.06619 |
+| mixed                |                  10 |        1 |     11 | Weighted — Ridge (linear)            |    0.21179 |   0.09755 |   0.18204 |     0.05618 |
+| mixed                |                  10 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.21354 |   0.09955 |   0.18838 |     0.06007 |
+| mixed                |                  10 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.21327 |   0.09599 |   0.19843 |     0.05558 |
+| mixed                |                  10 |        1 |     11 | Weighted — Random Forest             |    0.15749 |   0.09796 |   0.21959 |     0.05869 |
+| mixed                |                  10 |        1 |     11 | Weighted — Gradient Boosting         |    0.17167 |   0.10275 |   0.20053 |     0.0696  |
+| mixed                |                  10 |        1 |     11 | IRLS — Ridge                         |    0.21437 |   0.09631 |   0.17179 |     0.05473 |
+| mixed                |                  10 |        1 |     12 | No handling — Ridge                  |    0.1475  |   0.10613 |   0.20168 |     0.08169 |
+| mixed                |                  10 |        1 |     12 | Hard removal — Ridge                 |    0.1162  |   0.0833  |   0.18964 |     0.0637  |
+| mixed                |                  10 |        1 |     12 | Winsorizing — Ridge                  |    0.14613 |   0.10512 |   0.20852 |     0.08556 |
+| mixed                |                  10 |        1 |     12 | Robust loss — HuberRegressor         |    0.20127 |   0.11433 |   0.20754 |     0.07104 |
+| mixed                |                  10 |        1 |     12 | Weighted — Ridge (linear)            |    0.11311 |   0.08219 |   0.16426 |     0.06704 |
+| mixed                |                  10 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.11588 |   0.08367 |   0.16346 |     0.06676 |
+| mixed                |                  10 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.1126  |   0.08048 |   0.16169 |     0.06478 |
+| mixed                |                  10 |        1 |     12 | Weighted — Random Forest             |    0.14737 |   0.10244 |   0.22721 |     0.06948 |
+| mixed                |                  10 |        1 |     12 | Weighted — Gradient Boosting         |    0.14005 |   0.09849 |   0.19724 |     0.07446 |
+| mixed                |                  10 |        1 |     12 | IRLS — Ridge                         |    0.11182 |   0.07887 |   0.1604  |     0.06284 |
+| mixed                |                  10 |        1 |     13 | No handling — Ridge                  |    0.14496 |   0.11102 |   0.22923 |     0.09249 |
+| mixed                |                  10 |        1 |     13 | Hard removal — Ridge                 |    0.12051 |   0.0911  |   0.19142 |     0.07201 |
+| mixed                |                  10 |        1 |     13 | Winsorizing — Ridge                  |    0.14582 |   0.11178 |   0.23536 |     0.0919  |
+| mixed                |                  10 |        1 |     13 | Robust loss — HuberRegressor         |    0.14951 |   0.09877 |   0.23817 |     0.06513 |
+| mixed                |                  10 |        1 |     13 | Weighted — Ridge (linear)            |    0.11687 |   0.08734 |   0.17405 |     0.07181 |
+| mixed                |                  10 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12411 |   0.09251 |   0.18244 |     0.07401 |
+| mixed                |                  10 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11991 |   0.08763 |   0.16564 |     0.06862 |
+| mixed                |                  10 |        1 |     13 | Weighted — Random Forest             |    0.14131 |   0.10083 |   0.24228 |     0.06896 |
+| mixed                |                  10 |        1 |     13 | Weighted — Gradient Boosting         |    0.13637 |   0.09886 |   0.22275 |     0.07555 |
+| mixed                |                  10 |        1 |     13 | IRLS — Ridge                         |    0.10922 |   0.08236 |   0.15802 |     0.06889 |
+| mixed                |                  10 |        1 |     14 | No handling — Ridge                  |    0.1472  |   0.109   |   0.23099 |     0.08153 |
+| mixed                |                  10 |        1 |     14 | Hard removal — Ridge                 |    0.13243 |   0.09474 |   0.18738 |     0.07546 |
+| mixed                |                  10 |        1 |     14 | Winsorizing — Ridge                  |    0.14807 |   0.10861 |   0.22123 |     0.0813  |
+| mixed                |                  10 |        1 |     14 | Robust loss — HuberRegressor         |    0.14203 |   0.09964 |   0.19834 |     0.07957 |
+| mixed                |                  10 |        1 |     14 | Weighted — Ridge (linear)            |    0.12481 |   0.08868 |   0.17717 |     0.06771 |
+| mixed                |                  10 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.12794 |   0.09002 |   0.18764 |     0.06621 |
+| mixed                |                  10 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12397 |   0.08466 |   0.17737 |     0.05946 |
+| mixed                |                  10 |        1 |     14 | Weighted — Random Forest             |    0.16099 |   0.10931 |   0.25201 |     0.07259 |
+| mixed                |                  10 |        1 |     14 | Weighted — Gradient Boosting         |    0.14032 |   0.0973  |   0.20763 |     0.06968 |
+| mixed                |                  10 |        1 |     14 | IRLS — Ridge                         |    0.12621 |   0.08864 |   0.1681  |     0.07031 |
+| mixed                |                  10 |        1 |     15 | No handling — Ridge                  |    0.1967  |   0.12892 |   0.29318 |     0.08848 |
+| mixed                |                  10 |        1 |     15 | Hard removal — Ridge                 |    0.20793 |   0.11632 |   0.24202 |     0.06786 |
+| mixed                |                  10 |        1 |     15 | Winsorizing — Ridge                  |    0.19664 |   0.12692 |   0.27549 |     0.08396 |
+| mixed                |                  10 |        1 |     15 | Robust loss — HuberRegressor         |    0.25514 |   0.13595 |   0.28328 |     0.07484 |
+| mixed                |                  10 |        1 |     15 | Weighted — Ridge (linear)            |    0.18326 |   0.10664 |   0.232   |     0.06744 |
+| mixed                |                  10 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.18554 |   0.1084  |   0.23188 |     0.066   |
+| mixed                |                  10 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.18151 |   0.10427 |   0.21511 |     0.06356 |
+| mixed                |                  10 |        1 |     15 | Weighted — Random Forest             |    0.16541 |   0.10347 |   0.24005 |     0.06493 |
+| mixed                |                  10 |        1 |     15 | Weighted — Gradient Boosting         |    0.16406 |   0.10298 |   0.20391 |     0.06475 |
+| mixed                |                  10 |        1 |     15 | IRLS — Ridge                         |    0.17991 |   0.10079 |   0.20419 |     0.06596 |
+| mixed                |                  10 |        2 |      1 | No handling — Ridge                  |    0.19731 |   0.13272 |   0.23724 |     0.10485 |
+| mixed                |                  10 |        2 |      1 | Hard removal — Ridge                 |    0.2037  |   0.11843 |   0.21728 |     0.09653 |
+| mixed                |                  10 |        2 |      1 | Winsorizing — Ridge                  |    0.19321 |   0.13042 |   0.2385  |     0.10243 |
+| mixed                |                  10 |        2 |      1 | Robust loss — HuberRegressor         |    0.22512 |   0.12603 |   0.24681 |     0.0815  |
+| mixed                |                  10 |        2 |      1 | Weighted — Ridge (linear)            |    0.19864 |   0.10663 |   0.22339 |     0.07211 |
+| mixed                |                  10 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.19859 |   0.10612 |   0.22438 |     0.06994 |
+| mixed                |                  10 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.20215 |   0.10357 |   0.21043 |     0.06672 |
+| mixed                |                  10 |        2 |      1 | Weighted — Random Forest             |    0.17172 |   0.11031 |   0.23685 |     0.06915 |
+| mixed                |                  10 |        2 |      1 | Weighted — Gradient Boosting         |    0.15795 |   0.10353 |   0.2357  |     0.06675 |
+| mixed                |                  10 |        2 |      1 | IRLS — Ridge                         |    0.20611 |   0.10285 |   0.1929  |     0.06806 |
+| mixed                |                  10 |        2 |      2 | No handling — Ridge                  |    0.16169 |   0.11237 |   0.22934 |     0.08703 |
+| mixed                |                  10 |        2 |      2 | Hard removal — Ridge                 |    0.13099 |   0.09251 |   0.18152 |     0.07254 |
+| mixed                |                  10 |        2 |      2 | Winsorizing — Ridge                  |    0.15838 |   0.1105  |   0.21915 |     0.0835  |
+| mixed                |                  10 |        2 |      2 | Robust loss — HuberRegressor         |    0.20157 |   0.11696 |   0.24698 |     0.07816 |
+| mixed                |                  10 |        2 |      2 | Weighted — Ridge (linear)            |    0.13245 |   0.08939 |   0.18399 |     0.06972 |
+| mixed                |                  10 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.13497 |   0.09028 |   0.19083 |     0.06938 |
+| mixed                |                  10 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.13323 |   0.08819 |   0.2027  |     0.06482 |
+| mixed                |                  10 |        2 |      2 | Weighted — Random Forest             |    0.15308 |   0.10372 |   0.23509 |     0.0693  |
+| mixed                |                  10 |        2 |      2 | Weighted — Gradient Boosting         |    0.13881 |   0.09765 |   0.2056  |     0.06741 |
+| mixed                |                  10 |        2 |      2 | IRLS — Ridge                         |    0.13111 |   0.0883  |   0.16805 |     0.06711 |
+| mixed                |                  10 |        2 |      3 | No handling — Ridge                  |    0.16249 |   0.11879 |   0.24042 |     0.09357 |
+| mixed                |                  10 |        2 |      3 | Hard removal — Ridge                 |    0.16172 |   0.1056  |   0.20109 |     0.08    |
+| mixed                |                  10 |        2 |      3 | Winsorizing — Ridge                  |    0.1615  |   0.1168  |   0.22883 |     0.09093 |
+| mixed                |                  10 |        2 |      3 | Robust loss — HuberRegressor         |    0.18115 |   0.11753 |   0.22679 |     0.09122 |
+| mixed                |                  10 |        2 |      3 | Weighted — Ridge (linear)            |    0.1557  |   0.09845 |   0.18972 |     0.07206 |
+| mixed                |                  10 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.15817 |   0.09957 |   0.19634 |     0.07032 |
+| mixed                |                  10 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.1576  |   0.09613 |   0.18794 |     0.06271 |
+| mixed                |                  10 |        2 |      3 | Weighted — Random Forest             |    0.16667 |   0.10691 |   0.23603 |     0.06652 |
+| mixed                |                  10 |        2 |      3 | Weighted — Gradient Boosting         |    0.16496 |   0.10685 |   0.24219 |     0.07184 |
+| mixed                |                  10 |        2 |      3 | IRLS — Ridge                         |    0.1588  |   0.09761 |   0.18062 |     0.06848 |
+| mixed                |                  10 |        2 |      4 | No handling — Ridge                  |    0.14698 |   0.10687 |   0.20873 |     0.08285 |
+| mixed                |                  10 |        2 |      4 | Hard removal — Ridge                 |    0.12004 |   0.08671 |   0.1715  |     0.0625  |
+| mixed                |                  10 |        2 |      4 | Winsorizing — Ridge                  |    0.14626 |   0.10546 |   0.21774 |     0.08435 |
+| mixed                |                  10 |        2 |      4 | Robust loss — HuberRegressor         |    0.12729 |   0.09052 |   0.19439 |     0.06543 |
+| mixed                |                  10 |        2 |      4 | Weighted — Ridge (linear)            |    0.11772 |   0.08316 |   0.17157 |     0.05862 |
+| mixed                |                  10 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.12328 |   0.08703 |   0.17961 |     0.06097 |
+| mixed                |                  10 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.11721 |   0.08231 |   0.17086 |     0.05929 |
+| mixed                |                  10 |        2 |      4 | Weighted — Random Forest             |    0.14769 |   0.09729 |   0.21627 |     0.06292 |
+| mixed                |                  10 |        2 |      4 | Weighted — Gradient Boosting         |    0.15058 |   0.09733 |   0.22792 |     0.06634 |
+| mixed                |                  10 |        2 |      4 | IRLS — Ridge                         |    0.11143 |   0.07735 |   0.1567  |     0.05595 |
+| mixed                |                  10 |        2 |      5 | No handling — Ridge                  |    0.14751 |   0.11511 |   0.23446 |     0.10061 |
+| mixed                |                  10 |        2 |      5 | Hard removal — Ridge                 |    0.12053 |   0.08863 |   0.18067 |     0.07123 |
+| mixed                |                  10 |        2 |      5 | Winsorizing — Ridge                  |    0.14683 |   0.11367 |   0.23536 |     0.09884 |
+| mixed                |                  10 |        2 |      5 | Robust loss — HuberRegressor         |    0.14068 |   0.10249 |   0.21952 |     0.0759  |
+| mixed                |                  10 |        2 |      5 | Weighted — Ridge (linear)            |    0.11891 |   0.08827 |   0.16925 |     0.06852 |
+| mixed                |                  10 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.12126 |   0.08966 |   0.18119 |     0.06993 |
+| mixed                |                  10 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.11727 |   0.08609 |   0.17401 |     0.0659  |
+| mixed                |                  10 |        2 |      5 | Weighted — Random Forest             |    0.13819 |   0.09626 |   0.1917  |     0.06622 |
+| mixed                |                  10 |        2 |      5 | Weighted — Gradient Boosting         |    0.13624 |   0.09775 |   0.23048 |     0.07376 |
+| mixed                |                  10 |        2 |      5 | IRLS — Ridge                         |    0.11894 |   0.08661 |   0.17068 |     0.06787 |
+| mixed                |                  10 |        2 |      6 | No handling — Ridge                  |    0.14499 |   0.11149 |   0.20529 |     0.08948 |
+| mixed                |                  10 |        2 |      6 | Hard removal — Ridge                 |    0.11842 |   0.08892 |   0.16481 |     0.07297 |
+| mixed                |                  10 |        2 |      6 | Winsorizing — Ridge                  |    0.14239 |   0.11029 |   0.20076 |     0.09274 |
+| mixed                |                  10 |        2 |      6 | Robust loss — HuberRegressor         |    0.13322 |   0.09481 |   0.20762 |     0.06928 |
+| mixed                |                  10 |        2 |      6 | Weighted — Ridge (linear)            |    0.11343 |   0.08312 |   0.14631 |     0.06807 |
+| mixed                |                  10 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.11583 |   0.08662 |   0.16269 |     0.06819 |
+| mixed                |                  10 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.11023 |   0.0798  |   0.15997 |     0.05847 |
+| mixed                |                  10 |        2 |      6 | Weighted — Random Forest             |    0.14729 |   0.09974 |   0.24047 |     0.06411 |
+| mixed                |                  10 |        2 |      6 | Weighted — Gradient Boosting         |    0.13263 |   0.09662 |   0.20383 |     0.07145 |
+| mixed                |                  10 |        2 |      6 | IRLS — Ridge                         |    0.10984 |   0.07926 |   0.15357 |     0.06469 |
+| mixed                |                  10 |        2 |      7 | No handling — Ridge                  |    0.18368 |   0.12669 |   0.28172 |     0.08502 |
+| mixed                |                  10 |        2 |      7 | Hard removal — Ridge                 |    0.16744 |   0.10474 |   0.22285 |     0.07696 |
+| mixed                |                  10 |        2 |      7 | Winsorizing — Ridge                  |    0.18106 |   0.12418 |   0.26028 |     0.08074 |
+| mixed                |                  10 |        2 |      7 | Robust loss — HuberRegressor         |    0.20641 |   0.12398 |   0.26201 |     0.07557 |
+| mixed                |                  10 |        2 |      7 | Weighted — Ridge (linear)            |    0.16785 |   0.10355 |   0.2237  |     0.07067 |
+| mixed                |                  10 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.17    |   0.10575 |   0.2326  |     0.07107 |
+| mixed                |                  10 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16784 |   0.1005  |   0.2087  |     0.07031 |
+| mixed                |                  10 |        2 |      7 | Weighted — Random Forest             |    0.15927 |   0.11162 |   0.24699 |     0.07923 |
+| mixed                |                  10 |        2 |      7 | Weighted — Gradient Boosting         |    0.15425 |   0.10564 |   0.22675 |     0.07049 |
+| mixed                |                  10 |        2 |      7 | IRLS — Ridge                         |    0.16168 |   0.09667 |   0.21162 |     0.06367 |
+| mixed                |                  10 |        2 |      8 | No handling — Ridge                  |    0.19586 |   0.11314 |   0.21531 |     0.07548 |
+| mixed                |                  10 |        2 |      8 | Hard removal — Ridge                 |    0.21656 |   0.10236 |   0.19647 |     0.06778 |
+| mixed                |                  10 |        2 |      8 | Winsorizing — Ridge                  |    0.1873  |   0.11157 |   0.2275  |     0.07524 |
+| mixed                |                  10 |        2 |      8 | Robust loss — HuberRegressor         |    0.21166 |   0.11442 |   0.2657  |     0.06618 |
+| mixed                |                  10 |        2 |      8 | Weighted — Ridge (linear)            |    0.20419 |   0.09568 |   0.18908 |     0.05967 |
+| mixed                |                  10 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.20256 |   0.09665 |   0.17375 |     0.0605  |
+| mixed                |                  10 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.20626 |   0.09382 |   0.17472 |     0.0549  |
+| mixed                |                  10 |        2 |      8 | Weighted — Random Forest             |    0.16615 |   0.1099  |   0.22198 |     0.07758 |
+| mixed                |                  10 |        2 |      8 | Weighted — Gradient Boosting         |    0.16614 |   0.10333 |   0.21603 |     0.06612 |
+| mixed                |                  10 |        2 |      8 | IRLS — Ridge                         |    0.20799 |   0.09516 |   0.17312 |     0.06269 |
+| mixed                |                  10 |        2 |      9 | No handling — Ridge                  |    0.14747 |   0.11153 |   0.24823 |     0.08851 |
+| mixed                |                  10 |        2 |      9 | Hard removal — Ridge                 |    0.11988 |   0.08638 |   0.18742 |     0.06349 |
+| mixed                |                  10 |        2 |      9 | Winsorizing — Ridge                  |    0.14628 |   0.11002 |   0.24519 |     0.08634 |
+| mixed                |                  10 |        2 |      9 | Robust loss — HuberRegressor         |    0.12961 |   0.09053 |   0.19134 |     0.06138 |
+| mixed                |                  10 |        2 |      9 | Weighted — Ridge (linear)            |    0.12025 |   0.08664 |   0.20024 |     0.06296 |
+| mixed                |                  10 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12291 |   0.08797 |   0.19518 |     0.06497 |
+| mixed                |                  10 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.1192  |   0.08385 |   0.20017 |     0.05893 |
+| mixed                |                  10 |        2 |      9 | Weighted — Random Forest             |    0.13237 |   0.09218 |   0.20436 |     0.06754 |
+| mixed                |                  10 |        2 |      9 | Weighted — Gradient Boosting         |    0.12937 |   0.09456 |   0.19315 |     0.07222 |
+| mixed                |                  10 |        2 |      9 | IRLS — Ridge                         |    0.11338 |   0.08183 |   0.18073 |     0.05733 |
+| mixed                |                  10 |        2 |     10 | No handling — Ridge                  |    0.17459 |   0.12546 |   0.24657 |     0.09203 |
+| mixed                |                  10 |        2 |     10 | Hard removal — Ridge                 |    0.15516 |   0.10491 |   0.20857 |     0.06959 |
+| mixed                |                  10 |        2 |     10 | Winsorizing — Ridge                  |    0.17137 |   0.12345 |   0.24235 |     0.0913  |
+| mixed                |                  10 |        2 |     10 | Robust loss — HuberRegressor         |    0.16557 |   0.10846 |   0.24555 |     0.07448 |
+| mixed                |                  10 |        2 |     10 | Weighted — Ridge (linear)            |    0.15034 |   0.09704 |   0.18708 |     0.06685 |
+| mixed                |                  10 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.15533 |   0.09876 |   0.19577 |     0.06112 |
+| mixed                |                  10 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.15231 |   0.09575 |   0.1956  |     0.05785 |
+| mixed                |                  10 |        2 |     10 | Weighted — Random Forest             |    0.17802 |   0.11013 |   0.26301 |     0.06603 |
+| mixed                |                  10 |        2 |     10 | Weighted — Gradient Boosting         |    0.17442 |   0.11029 |   0.24043 |     0.07031 |
+| mixed                |                  10 |        2 |     10 | IRLS — Ridge                         |    0.15177 |   0.09623 |   0.19292 |     0.06483 |
+| mixed                |                  10 |        2 |     11 | No handling — Ridge                  |    0.20367 |   0.11481 |   0.22095 |     0.07804 |
+| mixed                |                  10 |        2 |     11 | Hard removal — Ridge                 |    0.20277 |   0.1021  |   0.20781 |     0.06771 |
+| mixed                |                  10 |        2 |     11 | Winsorizing — Ridge                  |    0.19491 |   0.11284 |   0.22102 |     0.07956 |
+| mixed                |                  10 |        2 |     11 | Robust loss — HuberRegressor         |    0.2319  |   0.1238  |   0.26853 |     0.07423 |
+| mixed                |                  10 |        2 |     11 | Weighted — Ridge (linear)            |    0.21151 |   0.09922 |   0.18278 |     0.06298 |
+| mixed                |                  10 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.21345 |   0.10067 |   0.18959 |     0.06458 |
+| mixed                |                  10 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.21624 |   0.09644 |   0.19637 |     0.05925 |
+| mixed                |                  10 |        2 |     11 | Weighted — Random Forest             |    0.15236 |   0.09629 |   0.2016  |     0.06178 |
+| mixed                |                  10 |        2 |     11 | Weighted — Gradient Boosting         |    0.15173 |   0.09873 |   0.21718 |     0.06419 |
+| mixed                |                  10 |        2 |     11 | IRLS — Ridge                         |    0.2059  |   0.09661 |   0.17188 |     0.06308 |
+| mixed                |                  10 |        2 |     12 | No handling — Ridge                  |    0.15784 |   0.11091 |   0.20729 |     0.08248 |
+| mixed                |                  10 |        2 |     12 | Hard removal — Ridge                 |    0.15811 |   0.09946 |   0.1949  |     0.06906 |
+| mixed                |                  10 |        2 |     12 | Winsorizing — Ridge                  |    0.15642 |   0.11009 |   0.20302 |     0.08346 |
+| mixed                |                  10 |        2 |     12 | Robust loss — HuberRegressor         |    0.1811  |   0.10193 |   0.18288 |     0.0666  |
+| mixed                |                  10 |        2 |     12 | Weighted — Ridge (linear)            |    0.13219 |   0.0928  |   0.17283 |     0.07123 |
+| mixed                |                  10 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.13458 |   0.09305 |   0.18994 |     0.07127 |
+| mixed                |                  10 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.13065 |   0.09079 |   0.17681 |     0.06956 |
+| mixed                |                  10 |        2 |     12 | Weighted — Random Forest             |    0.15115 |   0.10219 |   0.23553 |     0.06679 |
+| mixed                |                  10 |        2 |     12 | Weighted — Gradient Boosting         |    0.13911 |   0.09756 |   0.19887 |     0.06956 |
+| mixed                |                  10 |        2 |     12 | IRLS — Ridge                         |    0.1213  |   0.0852  |   0.17341 |     0.06136 |
+| mixed                |                  10 |        2 |     13 | No handling — Ridge                  |    0.1396  |   0.10414 |   0.22653 |     0.07623 |
+| mixed                |                  10 |        2 |     13 | Hard removal — Ridge                 |    0.12602 |   0.09207 |   0.22092 |     0.06427 |
+| mixed                |                  10 |        2 |     13 | Winsorizing — Ridge                  |    0.14082 |   0.1054  |   0.22279 |     0.07872 |
+| mixed                |                  10 |        2 |     13 | Robust loss — HuberRegressor         |    0.15468 |   0.10685 |   0.26478 |     0.07498 |
+| mixed                |                  10 |        2 |     13 | Weighted — Ridge (linear)            |    0.12471 |   0.08897 |   0.17938 |     0.06457 |
+| mixed                |                  10 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.13063 |   0.09254 |   0.1956  |     0.07203 |
+| mixed                |                  10 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.1269  |   0.08901 |   0.18609 |     0.06634 |
+| mixed                |                  10 |        2 |     13 | Weighted — Random Forest             |    0.14137 |   0.10105 |   0.23391 |     0.07468 |
+| mixed                |                  10 |        2 |     13 | Weighted — Gradient Boosting         |    0.13869 |   0.09997 |   0.19927 |     0.07368 |
+| mixed                |                  10 |        2 |     13 | IRLS — Ridge                         |    0.11685 |   0.08518 |   0.19311 |     0.06567 |
+| mixed                |                  10 |        2 |     14 | No handling — Ridge                  |    0.14525 |   0.10444 |   0.21381 |     0.08173 |
+| mixed                |                  10 |        2 |     14 | Hard removal — Ridge                 |    0.13107 |   0.09238 |   0.18043 |     0.07541 |
+| mixed                |                  10 |        2 |     14 | Winsorizing — Ridge                  |    0.14529 |   0.10383 |   0.20996 |     0.07989 |
+| mixed                |                  10 |        2 |     14 | Robust loss — HuberRegressor         |    0.15579 |   0.10352 |   0.20334 |     0.07033 |
+| mixed                |                  10 |        2 |     14 | Weighted — Ridge (linear)            |    0.12276 |   0.08463 |   0.16997 |     0.06335 |
+| mixed                |                  10 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.12595 |   0.08739 |   0.18064 |     0.06732 |
+| mixed                |                  10 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.123   |   0.08237 |   0.17599 |     0.05878 |
+| mixed                |                  10 |        2 |     14 | Weighted — Random Forest             |    0.15403 |   0.10238 |   0.22045 |     0.06562 |
+| mixed                |                  10 |        2 |     14 | Weighted — Gradient Boosting         |    0.14441 |   0.09946 |   0.20651 |     0.0734  |
+| mixed                |                  10 |        2 |     14 | IRLS — Ridge                         |    0.12309 |   0.08408 |   0.16109 |     0.0591  |
+| mixed                |                  10 |        2 |     15 | No handling — Ridge                  |    0.1796  |   0.12416 |   0.25075 |     0.09337 |
+| mixed                |                  10 |        2 |     15 | Hard removal — Ridge                 |    0.18291 |   0.11582 |   0.24402 |     0.07979 |
+| mixed                |                  10 |        2 |     15 | Winsorizing — Ridge                  |    0.17791 |   0.12179 |   0.23932 |     0.09395 |
+| mixed                |                  10 |        2 |     15 | Robust loss — HuberRegressor         |    0.19689 |   0.12239 |   0.21535 |     0.08595 |
+| mixed                |                  10 |        2 |     15 | Weighted — Ridge (linear)            |    0.1664  |   0.09979 |   0.19549 |     0.07325 |
+| mixed                |                  10 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16784 |   0.10194 |   0.2097  |     0.07068 |
+| mixed                |                  10 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16639 |   0.09745 |   0.19507 |     0.06767 |
+| mixed                |                  10 |        2 |     15 | Weighted — Random Forest             |    0.16539 |   0.10441 |   0.2485  |     0.06485 |
+| mixed                |                  10 |        2 |     15 | Weighted — Gradient Boosting         |    0.18102 |   0.11006 |   0.23782 |     0.06322 |
+| mixed                |                  10 |        2 |     15 | IRLS — Ridge                         |    0.17203 |   0.10221 |   0.19614 |     0.07187 |
+| mixed                |                  20 |        1 |      1 | No handling — Ridge                  |    0.2288  |   0.13491 |   0.26646 |     0.1047  |
+| mixed                |                  20 |        1 |      1 | Hard removal — Ridge                 |    0.22251 |   0.11853 |   0.22773 |     0.08266 |
+| mixed                |                  20 |        1 |      1 | Winsorizing — Ridge                  |    0.22404 |   0.13369 |   0.25946 |     0.09775 |
+| mixed                |                  20 |        1 |      1 | Robust loss — HuberRegressor         |    0.2436  |   0.13286 |   0.25555 |     0.08394 |
+| mixed                |                  20 |        1 |      1 | Weighted — Ridge (linear)            |    0.21677 |   0.10655 |   0.20958 |     0.07569 |
+| mixed                |                  20 |        1 |      1 | Weighted — Ridge (tuned exponential) |    0.21703 |   0.10709 |   0.21794 |     0.06927 |
+| mixed                |                  20 |        1 |      1 | Weighted — Ridge (sigmoid)           |    0.21601 |   0.10183 |   0.20202 |     0.06669 |
+| mixed                |                  20 |        1 |      1 | Weighted — Random Forest             |    0.17854 |   0.11422 |   0.24545 |     0.07584 |
+| mixed                |                  20 |        1 |      1 | Weighted — Gradient Boosting         |    0.17402 |   0.10986 |   0.25436 |     0.06911 |
+| mixed                |                  20 |        1 |      1 | IRLS — Ridge                         |    0.22023 |   0.1063  |   0.19519 |     0.07939 |
+| mixed                |                  20 |        1 |      2 | No handling — Ridge                  |    0.17296 |   0.1305  |   0.24326 |     0.10501 |
+| mixed                |                  20 |        1 |      2 | Hard removal — Ridge                 |    0.17087 |   0.12696 |   0.26138 |     0.09977 |
+| mixed                |                  20 |        1 |      2 | Winsorizing — Ridge                  |    0.17142 |   0.12913 |   0.24223 |     0.10197 |
+| mixed                |                  20 |        1 |      2 | Robust loss — HuberRegressor         |    0.17863 |   0.12248 |   0.27807 |     0.08824 |
+| mixed                |                  20 |        1 |      2 | Weighted — Ridge (linear)            |    0.12702 |   0.08981 |   0.18094 |     0.06854 |
+| mixed                |                  20 |        1 |      2 | Weighted — Ridge (tuned exponential) |    0.12556 |   0.08914 |   0.1751  |     0.06791 |
+| mixed                |                  20 |        1 |      2 | Weighted — Ridge (sigmoid)           |    0.12132 |   0.08409 |   0.16443 |     0.0659  |
+| mixed                |                  20 |        1 |      2 | Weighted — Random Forest             |    0.14949 |   0.10197 |   0.21452 |     0.07353 |
+| mixed                |                  20 |        1 |      2 | Weighted — Gradient Boosting         |    0.14321 |   0.10209 |   0.21566 |     0.07538 |
+| mixed                |                  20 |        1 |      2 | IRLS — Ridge                         |    0.1294  |   0.09333 |   0.18827 |     0.06866 |
+| mixed                |                  20 |        1 |      3 | No handling — Ridge                  |    0.17946 |   0.12556 |   0.25171 |     0.09041 |
+| mixed                |                  20 |        1 |      3 | Hard removal — Ridge                 |    0.17578 |   0.11389 |   0.22678 |     0.07881 |
+| mixed                |                  20 |        1 |      3 | Winsorizing — Ridge                  |    0.17859 |   0.12465 |   0.25792 |     0.09533 |
+| mixed                |                  20 |        1 |      3 | Robust loss — HuberRegressor         |    0.21685 |   0.12901 |   0.23746 |     0.09616 |
+| mixed                |                  20 |        1 |      3 | Weighted — Ridge (linear)            |    0.16036 |   0.09997 |   0.19532 |     0.06779 |
+| mixed                |                  20 |        1 |      3 | Weighted — Ridge (tuned exponential) |    0.16225 |   0.10123 |   0.19545 |     0.06519 |
+| mixed                |                  20 |        1 |      3 | Weighted — Ridge (sigmoid)           |    0.16094 |   0.09744 |   0.18844 |     0.05996 |
+| mixed                |                  20 |        1 |      3 | Weighted — Random Forest             |    0.16848 |   0.11111 |   0.24612 |     0.07141 |
+| mixed                |                  20 |        1 |      3 | Weighted — Gradient Boosting         |    0.17553 |   0.11114 |   0.26714 |     0.07355 |
+| mixed                |                  20 |        1 |      3 | IRLS — Ridge                         |    0.16836 |   0.09908 |   0.18716 |     0.06861 |
+| mixed                |                  20 |        1 |      4 | No handling — Ridge                  |    0.16295 |   0.12529 |   0.26915 |     0.09472 |
+| mixed                |                  20 |        1 |      4 | Hard removal — Ridge                 |    0.1419  |   0.10541 |   0.23544 |     0.08148 |
+| mixed                |                  20 |        1 |      4 | Winsorizing — Ridge                  |    0.16398 |   0.12558 |   0.26567 |     0.09159 |
+| mixed                |                  20 |        1 |      4 | Robust loss — HuberRegressor         |    0.15213 |   0.1055  |   0.23242 |     0.07229 |
+| mixed                |                  20 |        1 |      4 | Weighted — Ridge (linear)            |    0.12417 |   0.08937 |   0.20399 |     0.06167 |
+| mixed                |                  20 |        1 |      4 | Weighted — Ridge (tuned exponential) |    0.12846 |   0.09172 |   0.20262 |     0.06414 |
+| mixed                |                  20 |        1 |      4 | Weighted — Ridge (sigmoid)           |    0.11885 |   0.08327 |   0.18448 |     0.05758 |
+| mixed                |                  20 |        1 |      4 | Weighted — Random Forest             |    0.14805 |   0.09879 |   0.24671 |     0.06908 |
+| mixed                |                  20 |        1 |      4 | Weighted — Gradient Boosting         |    0.1307  |   0.09106 |   0.17728 |     0.06676 |
+| mixed                |                  20 |        1 |      4 | IRLS — Ridge                         |    0.12011 |   0.08557 |   0.18984 |     0.0606  |
+| mixed                |                  20 |        1 |      5 | No handling — Ridge                  |    0.18441 |   0.13694 |   0.28638 |     0.09583 |
+| mixed                |                  20 |        1 |      5 | Hard removal — Ridge                 |    0.16725 |   0.12682 |   0.28195 |     0.10072 |
+| mixed                |                  20 |        1 |      5 | Winsorizing — Ridge                  |    0.17979 |   0.13428 |   0.28893 |     0.09363 |
+| mixed                |                  20 |        1 |      5 | Robust loss — HuberRegressor         |    0.20553 |   0.14045 |   0.30495 |     0.09444 |
+| mixed                |                  20 |        1 |      5 | Weighted — Ridge (linear)            |    0.13648 |   0.10037 |   0.21063 |     0.0766  |
+| mixed                |                  20 |        1 |      5 | Weighted — Ridge (tuned exponential) |    0.13573 |   0.09994 |   0.21379 |     0.074   |
+| mixed                |                  20 |        1 |      5 | Weighted — Ridge (sigmoid)           |    0.12841 |   0.09288 |   0.19072 |     0.06775 |
+| mixed                |                  20 |        1 |      5 | Weighted — Random Forest             |    0.14657 |   0.10448 |   0.21411 |     0.07391 |
+| mixed                |                  20 |        1 |      5 | Weighted — Gradient Boosting         |    0.13964 |   0.10188 |   0.20803 |     0.07649 |
+| mixed                |                  20 |        1 |      5 | IRLS — Ridge                         |    0.13789 |   0.10265 |   0.22288 |     0.07604 |
+| mixed                |                  20 |        1 |      6 | No handling — Ridge                  |    0.28615 |   0.1335  |   0.26299 |     0.09036 |
+| mixed                |                  20 |        1 |      6 | Hard removal — Ridge                 |    0.27778 |   0.12984 |   0.2179  |     0.09561 |
+| mixed                |                  20 |        1 |      6 | Winsorizing — Ridge                  |    0.28004 |   0.13485 |   0.26146 |     0.09426 |
+| mixed                |                  20 |        1 |      6 | Robust loss — HuberRegressor         |    0.3327  |   0.13662 |   0.25731 |     0.08956 |
+| mixed                |                  20 |        1 |      6 | Weighted — Ridge (linear)            |    0.19901 |   0.09755 |   0.18244 |     0.06819 |
+| mixed                |                  20 |        1 |      6 | Weighted — Ridge (tuned exponential) |    0.18139 |   0.09678 |   0.17591 |     0.06777 |
+| mixed                |                  20 |        1 |      6 | Weighted — Ridge (sigmoid)           |    0.16817 |   0.08864 |   0.16986 |     0.06406 |
+| mixed                |                  20 |        1 |      6 | Weighted — Random Forest             |    0.14486 |   0.10209 |   0.23171 |     0.07102 |
+| mixed                |                  20 |        1 |      6 | Weighted — Gradient Boosting         |    0.15482 |   0.10997 |   0.25252 |     0.07442 |
+| mixed                |                  20 |        1 |      6 | IRLS — Ridge                         |    0.22438 |   0.10212 |   0.1861  |     0.07433 |
+| mixed                |                  20 |        1 |      7 | No handling — Ridge                  |    0.17993 |   0.13606 |   0.28161 |     0.09917 |
+| mixed                |                  20 |        1 |      7 | Hard removal — Ridge                 |    0.16997 |   0.12159 |   0.25886 |     0.08539 |
+| mixed                |                  20 |        1 |      7 | Winsorizing — Ridge                  |    0.17804 |   0.13414 |   0.27288 |     0.10103 |
+| mixed                |                  20 |        1 |      7 | Robust loss — HuberRegressor         |    0.18334 |   0.13218 |   0.28013 |     0.09455 |
+| mixed                |                  20 |        1 |      7 | Weighted — Ridge (linear)            |    0.16021 |   0.10683 |   0.2363  |     0.07627 |
+| mixed                |                  20 |        1 |      7 | Weighted — Ridge (tuned exponential) |    0.16278 |   0.10635 |   0.24857 |     0.06858 |
+| mixed                |                  20 |        1 |      7 | Weighted — Ridge (sigmoid)           |    0.15939 |   0.10104 |   0.2321  |     0.06666 |
+| mixed                |                  20 |        1 |      7 | Weighted — Random Forest             |    0.16069 |   0.11219 |   0.25134 |     0.076   |
+| mixed                |                  20 |        1 |      7 | Weighted — Gradient Boosting         |    0.14999 |   0.10306 |   0.2282  |     0.07052 |
+| mixed                |                  20 |        1 |      7 | IRLS — Ridge                         |    0.15722 |   0.10428 |   0.22331 |     0.08217 |
+| mixed                |                  20 |        1 |      8 | No handling — Ridge                  |    0.22022 |   0.13681 |   0.26701 |     0.10432 |
+| mixed                |                  20 |        1 |      8 | Hard removal — Ridge                 |    0.21527 |   0.12548 |   0.23163 |     0.09532 |
+| mixed                |                  20 |        1 |      8 | Winsorizing — Ridge                  |    0.21458 |   0.13571 |   0.26667 |     0.10513 |
+| mixed                |                  20 |        1 |      8 | Robust loss — HuberRegressor         |    0.29253 |   0.15541 |   0.27309 |     0.09081 |
+| mixed                |                  20 |        1 |      8 | Weighted — Ridge (linear)            |    0.20257 |   0.10225 |   0.18412 |     0.06908 |
+| mixed                |                  20 |        1 |      8 | Weighted — Ridge (tuned exponential) |    0.20143 |   0.10064 |   0.18514 |     0.07156 |
+| mixed                |                  20 |        1 |      8 | Weighted — Ridge (sigmoid)           |    0.20184 |   0.09464 |   0.17081 |     0.06267 |
+| mixed                |                  20 |        1 |      8 | Weighted — Random Forest             |    0.15805 |   0.10268 |   0.1972  |     0.06746 |
+| mixed                |                  20 |        1 |      8 | Weighted — Gradient Boosting         |    0.1524  |   0.09795 |   0.19169 |     0.06652 |
+| mixed                |                  20 |        1 |      8 | IRLS — Ridge                         |    0.20496 |   0.10482 |   0.19149 |     0.07301 |
+| mixed                |                  20 |        1 |      9 | No handling — Ridge                  |    0.16479 |   0.12247 |   0.23342 |     0.09942 |
+| mixed                |                  20 |        1 |      9 | Hard removal — Ridge                 |    0.16303 |   0.11892 |   0.23253 |     0.09233 |
+| mixed                |                  20 |        1 |      9 | Winsorizing — Ridge                  |    0.16134 |   0.1205  |   0.2317  |     0.09453 |
+| mixed                |                  20 |        1 |      9 | Robust loss — HuberRegressor         |    0.18643 |   0.12333 |   0.25089 |     0.08543 |
+| mixed                |                  20 |        1 |      9 | Weighted — Ridge (linear)            |    0.13336 |   0.09578 |   0.20397 |     0.07192 |
+| mixed                |                  20 |        1 |      9 | Weighted — Ridge (tuned exponential) |    0.1333  |   0.09506 |   0.20512 |     0.07279 |
+| mixed                |                  20 |        1 |      9 | Weighted — Ridge (sigmoid)           |    0.12829 |   0.08971 |   0.20147 |     0.06549 |
+| mixed                |                  20 |        1 |      9 | Weighted — Random Forest             |    0.13229 |   0.09049 |   0.20061 |     0.06479 |
+| mixed                |                  20 |        1 |      9 | Weighted — Gradient Boosting         |    0.13467 |   0.09507 |   0.22242 |     0.06258 |
+| mixed                |                  20 |        1 |      9 | IRLS — Ridge                         |    0.13496 |   0.09425 |   0.19173 |     0.07577 |
+| mixed                |                  20 |        1 |     10 | No handling — Ridge                  |    0.20293 |   0.14524 |   0.30934 |     0.11    |
+| mixed                |                  20 |        1 |     10 | Hard removal — Ridge                 |    0.1918  |   0.12987 |   0.28088 |     0.09444 |
+| mixed                |                  20 |        1 |     10 | Winsorizing — Ridge                  |    0.19811 |   0.14117 |   0.28218 |     0.10083 |
+| mixed                |                  20 |        1 |     10 | Robust loss — HuberRegressor         |    0.20882 |   0.13482 |   0.29184 |     0.08524 |
+| mixed                |                  20 |        1 |     10 | Weighted — Ridge (linear)            |    0.16385 |   0.10676 |   0.21902 |     0.07424 |
+| mixed                |                  20 |        1 |     10 | Weighted — Ridge (tuned exponential) |    0.16687 |   0.107   |   0.20542 |     0.06805 |
+| mixed                |                  20 |        1 |     10 | Weighted — Ridge (sigmoid)           |    0.1611  |   0.1008  |   0.2051  |     0.06574 |
+| mixed                |                  20 |        1 |     10 | Weighted — Random Forest             |    0.17579 |   0.11178 |   0.23028 |     0.06885 |
+| mixed                |                  20 |        1 |     10 | Weighted — Gradient Boosting         |    0.17722 |   0.11173 |   0.24258 |     0.07315 |
+| mixed                |                  20 |        1 |     10 | IRLS — Ridge                         |    0.16396 |   0.10573 |   0.21935 |     0.07382 |
+| mixed                |                  20 |        1 |     11 | No handling — Ridge                  |    0.19403 |   0.12995 |   0.25459 |     0.10696 |
+| mixed                |                  20 |        1 |     11 | Hard removal — Ridge                 |    0.18849 |   0.12098 |   0.23744 |     0.09491 |
+| mixed                |                  20 |        1 |     11 | Winsorizing — Ridge                  |    0.18813 |   0.12847 |   0.26166 |     0.1093  |
+| mixed                |                  20 |        1 |     11 | Robust loss — HuberRegressor         |    0.2234  |   0.14109 |   0.32768 |     0.09103 |
+| mixed                |                  20 |        1 |     11 | Weighted — Ridge (linear)            |    0.18529 |   0.10347 |   0.1991  |     0.07109 |
+| mixed                |                  20 |        1 |     11 | Weighted — Ridge (tuned exponential) |    0.18753 |   0.1018  |   0.20341 |     0.06959 |
+| mixed                |                  20 |        1 |     11 | Weighted — Ridge (sigmoid)           |    0.18945 |   0.09763 |   0.18933 |     0.06163 |
+| mixed                |                  20 |        1 |     11 | Weighted — Random Forest             |    0.1555  |   0.10213 |   0.22025 |     0.06784 |
+| mixed                |                  20 |        1 |     11 | Weighted — Gradient Boosting         |    0.15725 |   0.10037 |   0.21372 |     0.06892 |
+| mixed                |                  20 |        1 |     11 | IRLS — Ridge                         |    0.18851 |   0.10339 |   0.20269 |     0.07018 |
+| mixed                |                  20 |        1 |     12 | No handling — Ridge                  |    0.18284 |   0.14087 |   0.28076 |     0.11093 |
+| mixed                |                  20 |        1 |     12 | Hard removal — Ridge                 |    0.18476 |   0.13912 |   0.29054 |     0.10736 |
+| mixed                |                  20 |        1 |     12 | Winsorizing — Ridge                  |    0.18468 |   0.14188 |   0.28541 |     0.1123  |
+| mixed                |                  20 |        1 |     12 | Robust loss — HuberRegressor         |    0.21921 |   0.13583 |   0.29516 |     0.08604 |
+| mixed                |                  20 |        1 |     12 | Weighted — Ridge (linear)            |    0.13877 |   0.10236 |   0.21388 |     0.07576 |
+| mixed                |                  20 |        1 |     12 | Weighted — Ridge (tuned exponential) |    0.13684 |   0.09989 |   0.21867 |     0.07477 |
+| mixed                |                  20 |        1 |     12 | Weighted — Ridge (sigmoid)           |    0.1284  |   0.09373 |   0.20263 |     0.0694  |
+| mixed                |                  20 |        1 |     12 | Weighted — Random Forest             |    0.14794 |   0.10056 |   0.22779 |     0.06408 |
+| mixed                |                  20 |        1 |     12 | Weighted — Gradient Boosting         |    0.15229 |   0.10512 |   0.22285 |     0.06847 |
+| mixed                |                  20 |        1 |     12 | IRLS — Ridge                         |    0.13694 |   0.10183 |   0.20923 |     0.07845 |
+| mixed                |                  20 |        1 |     13 | No handling — Ridge                  |    0.15679 |   0.12114 |   0.24096 |     0.09781 |
+| mixed                |                  20 |        1 |     13 | Hard removal — Ridge                 |    0.13463 |   0.10562 |   0.21139 |     0.0956  |
+| mixed                |                  20 |        1 |     13 | Winsorizing — Ridge                  |    0.15497 |   0.11984 |   0.23972 |     0.0997  |
+| mixed                |                  20 |        1 |     13 | Robust loss — HuberRegressor         |    0.16277 |   0.12513 |   0.27007 |     0.09571 |
+| mixed                |                  20 |        1 |     13 | Weighted — Ridge (linear)            |    0.12314 |   0.09356 |   0.19553 |     0.07478 |
+| mixed                |                  20 |        1 |     13 | Weighted — Ridge (tuned exponential) |    0.12422 |   0.09422 |   0.20355 |     0.07205 |
+| mixed                |                  20 |        1 |     13 | Weighted — Ridge (sigmoid)           |    0.11858 |   0.08865 |   0.17657 |     0.06704 |
+| mixed                |                  20 |        1 |     13 | Weighted — Random Forest             |    0.13617 |   0.09724 |   0.21393 |     0.06577 |
+| mixed                |                  20 |        1 |     13 | Weighted — Gradient Boosting         |    0.14252 |   0.10445 |   0.21811 |     0.07922 |
+| mixed                |                  20 |        1 |     13 | IRLS — Ridge                         |    0.11243 |   0.08658 |   0.17281 |     0.07272 |
+| mixed                |                  20 |        1 |     14 | No handling — Ridge                  |    0.18291 |   0.13249 |   0.2793  |     0.10337 |
+| mixed                |                  20 |        1 |     14 | Hard removal — Ridge                 |    0.16635 |   0.12303 |   0.23489 |     0.09784 |
+| mixed                |                  20 |        1 |     14 | Winsorizing — Ridge                  |    0.18287 |   0.13165 |   0.27806 |     0.10216 |
+| mixed                |                  20 |        1 |     14 | Robust loss — HuberRegressor         |    0.15627 |   0.11255 |   0.2327  |     0.09064 |
+| mixed                |                  20 |        1 |     14 | Weighted — Ridge (linear)            |    0.13765 |   0.09536 |   0.189   |     0.07743 |
+| mixed                |                  20 |        1 |     14 | Weighted — Ridge (tuned exponential) |    0.13746 |   0.09542 |   0.1975  |     0.07228 |
+| mixed                |                  20 |        1 |     14 | Weighted — Ridge (sigmoid)           |    0.12995 |   0.08797 |   0.18134 |     0.06689 |
+| mixed                |                  20 |        1 |     14 | Weighted — Random Forest             |    0.1655  |   0.11125 |   0.25971 |     0.0757  |
+| mixed                |                  20 |        1 |     14 | Weighted — Gradient Boosting         |    0.14966 |   0.10055 |   0.224   |     0.06762 |
+| mixed                |                  20 |        1 |     14 | IRLS — Ridge                         |    0.13489 |   0.09464 |   0.19734 |     0.07158 |
+| mixed                |                  20 |        1 |     15 | No handling — Ridge                  |    0.20951 |   0.13338 |   0.30635 |     0.08673 |
+| mixed                |                  20 |        1 |     15 | Hard removal — Ridge                 |    0.2074  |   0.12177 |   0.25112 |     0.08293 |
+| mixed                |                  20 |        1 |     15 | Winsorizing — Ridge                  |    0.20717 |   0.13187 |   0.29091 |     0.08665 |
+| mixed                |                  20 |        1 |     15 | Robust loss — HuberRegressor         |    0.2529  |   0.13486 |   0.28786 |     0.07819 |
+| mixed                |                  20 |        1 |     15 | Weighted — Ridge (linear)            |    0.18758 |   0.10766 |   0.21118 |     0.06887 |
+| mixed                |                  20 |        1 |     15 | Weighted — Ridge (tuned exponential) |    0.18369 |   0.10562 |   0.20749 |     0.06605 |
+| mixed                |                  20 |        1 |     15 | Weighted — Ridge (sigmoid)           |    0.18033 |   0.10121 |   0.21961 |     0.06194 |
+| mixed                |                  20 |        1 |     15 | Weighted — Random Forest             |    0.16932 |   0.10727 |   0.24823 |     0.06803 |
+| mixed                |                  20 |        1 |     15 | Weighted — Gradient Boosting         |    0.17432 |   0.10567 |   0.23571 |     0.06283 |
+| mixed                |                  20 |        1 |     15 | IRLS — Ridge                         |    0.18002 |   0.10507 |   0.20543 |     0.07056 |
+| mixed                |                  20 |        2 |      1 | No handling — Ridge                  |    0.20781 |   0.14182 |   0.28713 |     0.10583 |
+| mixed                |                  20 |        2 |      1 | Hard removal — Ridge                 |    0.20588 |   0.12577 |   0.27006 |     0.08852 |
+| mixed                |                  20 |        2 |      1 | Winsorizing — Ridge                  |    0.20348 |   0.13765 |   0.28627 |     0.10104 |
+| mixed                |                  20 |        2 |      1 | Robust loss — HuberRegressor         |    0.22585 |   0.13966 |   0.30129 |     0.09136 |
+| mixed                |                  20 |        2 |      1 | Weighted — Ridge (linear)            |    0.1992  |   0.11052 |   0.22271 |     0.07708 |
+| mixed                |                  20 |        2 |      1 | Weighted — Ridge (tuned exponential) |    0.20334 |   0.11186 |   0.23365 |     0.07899 |
+| mixed                |                  20 |        2 |      1 | Weighted — Ridge (sigmoid)           |    0.20381 |   0.10541 |   0.20743 |     0.07035 |
+| mixed                |                  20 |        2 |      1 | Weighted — Random Forest             |    0.17779 |   0.11587 |   0.27181 |     0.07132 |
+| mixed                |                  20 |        2 |      1 | Weighted — Gradient Boosting         |    0.1669  |   0.10627 |   0.25515 |     0.06859 |
+| mixed                |                  20 |        2 |      1 | IRLS — Ridge                         |    0.20454 |   0.11057 |   0.20404 |     0.07784 |
+| mixed                |                  20 |        2 |      2 | No handling — Ridge                  |    0.19076 |   0.14408 |   0.2935  |     0.11591 |
+| mixed                |                  20 |        2 |      2 | Hard removal — Ridge                 |    0.17379 |   0.12733 |   0.24792 |     0.10185 |
+| mixed                |                  20 |        2 |      2 | Winsorizing — Ridge                  |    0.18934 |   0.14325 |   0.28885 |     0.11696 |
+| mixed                |                  20 |        2 |      2 | Robust loss — HuberRegressor         |    0.19236 |   0.12416 |   0.23188 |     0.08594 |
+| mixed                |                  20 |        2 |      2 | Weighted — Ridge (linear)            |    0.13805 |   0.10162 |   0.19772 |     0.08273 |
+| mixed                |                  20 |        2 |      2 | Weighted — Ridge (tuned exponential) |    0.1328  |   0.09601 |   0.19247 |     0.08042 |
+| mixed                |                  20 |        2 |      2 | Weighted — Ridge (sigmoid)           |    0.12719 |   0.08996 |   0.18044 |     0.07199 |
+| mixed                |                  20 |        2 |      2 | Weighted — Random Forest             |    0.15353 |   0.10512 |   0.24633 |     0.07449 |
+| mixed                |                  20 |        2 |      2 | Weighted — Gradient Boosting         |    0.14401 |   0.10349 |   0.21733 |     0.07578 |
+| mixed                |                  20 |        2 |      2 | IRLS — Ridge                         |    0.13638 |   0.09706 |   0.19873 |     0.07571 |
+| mixed                |                  20 |        2 |      3 | No handling — Ridge                  |    0.18386 |   0.12515 |   0.25706 |     0.09043 |
+| mixed                |                  20 |        2 |      3 | Hard removal — Ridge                 |    0.18129 |   0.11492 |   0.24263 |     0.07848 |
+| mixed                |                  20 |        2 |      3 | Winsorizing — Ridge                  |    0.18608 |   0.12653 |   0.26738 |     0.09336 |
+| mixed                |                  20 |        2 |      3 | Robust loss — HuberRegressor         |    0.21915 |   0.12228 |   0.25257 |     0.07044 |
+| mixed                |                  20 |        2 |      3 | Weighted — Ridge (linear)            |    0.16567 |   0.10171 |   0.20822 |     0.07263 |
+| mixed                |                  20 |        2 |      3 | Weighted — Ridge (tuned exponential) |    0.16956 |   0.10512 |   0.22688 |     0.07056 |
+| mixed                |                  20 |        2 |      3 | Weighted — Ridge (sigmoid)           |    0.16535 |   0.09886 |   0.20121 |     0.06628 |
+| mixed                |                  20 |        2 |      3 | Weighted — Random Forest             |    0.1749  |   0.11593 |   0.25875 |     0.07843 |
+| mixed                |                  20 |        2 |      3 | Weighted — Gradient Boosting         |    0.19736 |   0.13133 |   0.29421 |     0.07995 |
+| mixed                |                  20 |        2 |      3 | IRLS — Ridge                         |    0.16769 |   0.09781 |   0.19561 |     0.06392 |
+| mixed                |                  20 |        2 |      4 | No handling — Ridge                  |    0.18671 |   0.13832 |   0.30159 |     0.10388 |
+| mixed                |                  20 |        2 |      4 | Hard removal — Ridge                 |    0.15357 |   0.11722 |   0.2484  |     0.09629 |
+| mixed                |                  20 |        2 |      4 | Winsorizing — Ridge                  |    0.18676 |   0.13753 |   0.29319 |     0.09941 |
+| mixed                |                  20 |        2 |      4 | Robust loss — HuberRegressor         |    0.18588 |   0.12611 |   0.28279 |     0.09112 |
+| mixed                |                  20 |        2 |      4 | Weighted — Ridge (linear)            |    0.13819 |   0.09631 |   0.20991 |     0.06774 |
+| mixed                |                  20 |        2 |      4 | Weighted — Ridge (tuned exponential) |    0.14111 |   0.09711 |   0.21399 |     0.06492 |
+| mixed                |                  20 |        2 |      4 | Weighted — Ridge (sigmoid)           |    0.12886 |   0.08853 |   0.18972 |     0.05541 |
+| mixed                |                  20 |        2 |      4 | Weighted — Random Forest             |    0.14947 |   0.10061 |   0.22346 |     0.06403 |
+| mixed                |                  20 |        2 |      4 | Weighted — Gradient Boosting         |    0.14431 |   0.09874 |   0.21832 |     0.07383 |
+| mixed                |                  20 |        2 |      4 | IRLS — Ridge                         |    0.13504 |   0.09623 |   0.19614 |     0.07221 |
+| mixed                |                  20 |        2 |      5 | No handling — Ridge                  |    0.16682 |   0.1257  |   0.26275 |     0.10085 |
+| mixed                |                  20 |        2 |      5 | Hard removal — Ridge                 |    0.1569  |   0.12215 |   0.25763 |     0.09528 |
+| mixed                |                  20 |        2 |      5 | Winsorizing — Ridge                  |    0.16381 |   0.125   |   0.25429 |     0.09413 |
+| mixed                |                  20 |        2 |      5 | Robust loss — HuberRegressor         |    0.21726 |   0.14434 |   0.3118  |     0.10069 |
+| mixed                |                  20 |        2 |      5 | Weighted — Ridge (linear)            |    0.12908 |   0.09662 |   0.19516 |     0.07469 |
+| mixed                |                  20 |        2 |      5 | Weighted — Ridge (tuned exponential) |    0.12613 |   0.0942  |   0.19696 |     0.07025 |
+| mixed                |                  20 |        2 |      5 | Weighted — Ridge (sigmoid)           |    0.12081 |   0.09013 |   0.18988 |     0.06615 |
+| mixed                |                  20 |        2 |      5 | Weighted — Random Forest             |    0.13849 |   0.09936 |   0.22258 |     0.07303 |
+| mixed                |                  20 |        2 |      5 | Weighted — Gradient Boosting         |    0.13295 |   0.09902 |   0.21974 |     0.07544 |
+| mixed                |                  20 |        2 |      5 | IRLS — Ridge                         |    0.13136 |   0.1     |   0.1978  |     0.08577 |
+| mixed                |                  20 |        2 |      6 | No handling — Ridge                  |    0.1574  |   0.12221 |   0.2585  |     0.09563 |
+| mixed                |                  20 |        2 |      6 | Hard removal — Ridge                 |    0.14859 |   0.11169 |   0.24224 |     0.08459 |
+| mixed                |                  20 |        2 |      6 | Winsorizing — Ridge                  |    0.15627 |   0.11973 |   0.24937 |     0.08937 |
+| mixed                |                  20 |        2 |      6 | Robust loss — HuberRegressor         |    0.20753 |   0.128   |   0.26419 |     0.0845  |
+| mixed                |                  20 |        2 |      6 | Weighted — Ridge (linear)            |    0.12783 |   0.09295 |   0.18509 |     0.07163 |
+| mixed                |                  20 |        2 |      6 | Weighted — Ridge (tuned exponential) |    0.12597 |   0.0937  |   0.19037 |     0.07363 |
+| mixed                |                  20 |        2 |      6 | Weighted — Ridge (sigmoid)           |    0.12043 |   0.08685 |   0.18127 |     0.06981 |
+| mixed                |                  20 |        2 |      6 | Weighted — Random Forest             |    0.14621 |   0.10146 |   0.23965 |     0.07109 |
+| mixed                |                  20 |        2 |      6 | Weighted — Gradient Boosting         |    0.14644 |   0.10223 |   0.22297 |     0.07167 |
+| mixed                |                  20 |        2 |      6 | IRLS — Ridge                         |    0.12074 |   0.08953 |   0.19127 |     0.06598 |
+| mixed                |                  20 |        2 |      7 | No handling — Ridge                  |    0.18194 |   0.12958 |   0.26507 |     0.09329 |
+| mixed                |                  20 |        2 |      7 | Hard removal — Ridge                 |    0.16623 |   0.11586 |   0.25412 |     0.08418 |
+| mixed                |                  20 |        2 |      7 | Winsorizing — Ridge                  |    0.1797  |   0.12876 |   0.26159 |     0.09123 |
+| mixed                |                  20 |        2 |      7 | Robust loss — HuberRegressor         |    0.17232 |   0.11758 |   0.25457 |     0.0821  |
+| mixed                |                  20 |        2 |      7 | Weighted — Ridge (linear)            |    0.16345 |   0.10432 |   0.2332  |     0.07446 |
+| mixed                |                  20 |        2 |      7 | Weighted — Ridge (tuned exponential) |    0.16549 |   0.10565 |   0.23964 |     0.0744  |
+| mixed                |                  20 |        2 |      7 | Weighted — Ridge (sigmoid)           |    0.16033 |   0.09866 |   0.22898 |     0.06793 |
+| mixed                |                  20 |        2 |      7 | Weighted — Random Forest             |    0.15583 |   0.10882 |   0.2311  |     0.07622 |
+| mixed                |                  20 |        2 |      7 | Weighted — Gradient Boosting         |    0.15734 |   0.10436 |   0.21795 |     0.07261 |
+| mixed                |                  20 |        2 |      7 | IRLS — Ridge                         |    0.1535  |   0.09964 |   0.21356 |     0.0667  |
+| mixed                |                  20 |        2 |      8 | No handling — Ridge                  |    0.21142 |   0.13285 |   0.25272 |     0.09883 |
+| mixed                |                  20 |        2 |      8 | Hard removal — Ridge                 |    0.21113 |   0.12575 |   0.2508  |     0.08496 |
+| mixed                |                  20 |        2 |      8 | Winsorizing — Ridge                  |    0.20938 |   0.13149 |   0.23871 |     0.09922 |
+| mixed                |                  20 |        2 |      8 | Robust loss — HuberRegressor         |    0.29721 |   0.1644  |   0.36912 |     0.09858 |
+| mixed                |                  20 |        2 |      8 | Weighted — Ridge (linear)            |    0.19732 |   0.10083 |   0.19367 |     0.06087 |
+| mixed                |                  20 |        2 |      8 | Weighted — Ridge (tuned exponential) |    0.19652 |   0.10124 |   0.19208 |     0.06181 |
+| mixed                |                  20 |        2 |      8 | Weighted — Ridge (sigmoid)           |    0.20078 |   0.09529 |   0.17612 |     0.05788 |
+| mixed                |                  20 |        2 |      8 | Weighted — Random Forest             |    0.16216 |   0.10726 |   0.2066  |     0.08393 |
+| mixed                |                  20 |        2 |      8 | Weighted — Gradient Boosting         |    0.15572 |   0.10047 |   0.19703 |     0.06705 |
+| mixed                |                  20 |        2 |      8 | IRLS — Ridge                         |    0.19976 |   0.10387 |   0.19339 |     0.06424 |
+| mixed                |                  20 |        2 |      9 | No handling — Ridge                  |    0.17137 |   0.13131 |   0.2557  |     0.10817 |
+| mixed                |                  20 |        2 |      9 | Hard removal — Ridge                 |    0.14475 |   0.11064 |   0.22551 |     0.09379 |
+| mixed                |                  20 |        2 |      9 | Winsorizing — Ridge                  |    0.16413 |   0.12637 |   0.24415 |     0.10578 |
+| mixed                |                  20 |        2 |      9 | Robust loss — HuberRegressor         |    0.15424 |   0.10803 |   0.22476 |     0.07996 |
+| mixed                |                  20 |        2 |      9 | Weighted — Ridge (linear)            |    0.1289  |   0.09478 |   0.19643 |     0.07781 |
+| mixed                |                  20 |        2 |      9 | Weighted — Ridge (tuned exponential) |    0.12837 |   0.09311 |   0.19578 |     0.07446 |
+| mixed                |                  20 |        2 |      9 | Weighted — Ridge (sigmoid)           |    0.12179 |   0.08768 |   0.1922  |     0.07352 |
+| mixed                |                  20 |        2 |      9 | Weighted — Random Forest             |    0.13976 |   0.09832 |   0.21532 |     0.06719 |
+| mixed                |                  20 |        2 |      9 | Weighted — Gradient Boosting         |    0.14016 |   0.09856 |   0.21477 |     0.06927 |
+| mixed                |                  20 |        2 |      9 | IRLS — Ridge                         |    0.12381 |   0.09039 |   0.17672 |     0.07015 |
+| mixed                |                  20 |        2 |     10 | No handling — Ridge                  |    0.18002 |   0.12851 |   0.26227 |     0.09391 |
+| mixed                |                  20 |        2 |     10 | Hard removal — Ridge                 |    0.16531 |   0.11559 |   0.23605 |     0.08431 |
+| mixed                |                  20 |        2 |     10 | Winsorizing — Ridge                  |    0.18237 |   0.12966 |   0.27083 |     0.10032 |
+| mixed                |                  20 |        2 |     10 | Robust loss — HuberRegressor         |    0.21865 |   0.13837 |   0.36219 |     0.08876 |
+| mixed                |                  20 |        2 |     10 | Weighted — Ridge (linear)            |    0.15406 |   0.09916 |   0.20481 |     0.06987 |
+| mixed                |                  20 |        2 |     10 | Weighted — Ridge (tuned exponential) |    0.15768 |   0.09895 |   0.22601 |     0.06935 |
+| mixed                |                  20 |        2 |     10 | Weighted — Ridge (sigmoid)           |    0.15202 |   0.09436 |   0.20793 |     0.06294 |
+| mixed                |                  20 |        2 |     10 | Weighted — Random Forest             |    0.18151 |   0.11151 |   0.25665 |     0.06509 |
+| mixed                |                  20 |        2 |     10 | Weighted — Gradient Boosting         |    0.18351 |   0.11451 |   0.25872 |     0.06909 |
+| mixed                |                  20 |        2 |     10 | IRLS — Ridge                         |    0.14998 |   0.09747 |   0.20671 |     0.06561 |
+| mixed                |                  20 |        2 |     11 | No handling — Ridge                  |    0.21121 |   0.15142 |   0.32137 |     0.1085  |
+| mixed                |                  20 |        2 |     11 | Hard removal — Ridge                 |    0.20648 |   0.13783 |   0.27704 |     0.1031  |
+| mixed                |                  20 |        2 |     11 | Winsorizing — Ridge                  |    0.20606 |   0.14856 |   0.31482 |     0.10818 |
+| mixed                |                  20 |        2 |     11 | Robust loss — HuberRegressor         |    0.28355 |   0.15796 |   0.30429 |     0.09746 |
+| mixed                |                  20 |        2 |     11 | Weighted — Ridge (linear)            |    0.18384 |   0.11161 |   0.23493 |     0.07691 |
+| mixed                |                  20 |        2 |     11 | Weighted — Ridge (tuned exponential) |    0.18869 |   0.11032 |   0.2234  |     0.07414 |
+| mixed                |                  20 |        2 |     11 | Weighted — Ridge (sigmoid)           |    0.18916 |   0.10337 |   0.20627 |     0.06621 |
+| mixed                |                  20 |        2 |     11 | Weighted — Random Forest             |    0.15218 |   0.10222 |   0.19685 |     0.07398 |
+| mixed                |                  20 |        2 |     11 | Weighted — Gradient Boosting         |    0.15695 |   0.10364 |   0.23402 |     0.06806 |
+| mixed                |                  20 |        2 |     11 | IRLS — Ridge                         |    0.1866  |   0.11091 |   0.2267  |     0.08197 |
+| mixed                |                  20 |        2 |     12 | No handling — Ridge                  |    0.18257 |   0.13543 |   0.27962 |     0.09794 |
+| mixed                |                  20 |        2 |     12 | Hard removal — Ridge                 |    0.17078 |   0.12595 |   0.25553 |     0.10109 |
+| mixed                |                  20 |        2 |     12 | Winsorizing — Ridge                  |    0.18385 |   0.13448 |   0.28878 |     0.10335 |
+| mixed                |                  20 |        2 |     12 | Robust loss — HuberRegressor         |    0.2493  |   0.13556 |   0.27907 |     0.08457 |
+| mixed                |                  20 |        2 |     12 | Weighted — Ridge (linear)            |    0.13694 |   0.09936 |   0.20588 |     0.08017 |
+| mixed                |                  20 |        2 |     12 | Weighted — Ridge (tuned exponential) |    0.13852 |   0.10004 |   0.21957 |     0.07942 |
+| mixed                |                  20 |        2 |     12 | Weighted — Ridge (sigmoid)           |    0.12932 |   0.09431 |   0.19998 |     0.07483 |
+| mixed                |                  20 |        2 |     12 | Weighted — Random Forest             |    0.1539  |   0.10535 |   0.23247 |     0.06956 |
+| mixed                |                  20 |        2 |     12 | Weighted — Gradient Boosting         |    0.16125 |   0.11097 |   0.23644 |     0.07338 |
+| mixed                |                  20 |        2 |     12 | IRLS — Ridge                         |    0.13344 |   0.09623 |   0.19912 |     0.07609 |
+| mixed                |                  20 |        2 |     13 | No handling — Ridge                  |    0.16176 |   0.12076 |   0.27986 |     0.09103 |
+| mixed                |                  20 |        2 |     13 | Hard removal — Ridge                 |    0.13744 |   0.10379 |   0.24291 |     0.08297 |
+| mixed                |                  20 |        2 |     13 | Winsorizing — Ridge                  |    0.1646  |   0.1218  |   0.28081 |     0.09166 |
+| mixed                |                  20 |        2 |     13 | Robust loss — HuberRegressor         |    0.17243 |   0.12299 |   0.29719 |     0.07529 |
+| mixed                |                  20 |        2 |     13 | Weighted — Ridge (linear)            |    0.12341 |   0.09066 |   0.19928 |     0.06436 |
+| mixed                |                  20 |        2 |     13 | Weighted — Ridge (tuned exponential) |    0.12674 |   0.09285 |   0.20918 |     0.06475 |
+| mixed                |                  20 |        2 |     13 | Weighted — Ridge (sigmoid)           |    0.12228 |   0.08897 |   0.19336 |     0.06486 |
+| mixed                |                  20 |        2 |     13 | Weighted — Random Forest             |    0.13931 |   0.09879 |   0.22763 |     0.07272 |
+| mixed                |                  20 |        2 |     13 | Weighted — Gradient Boosting         |    0.14286 |   0.104   |   0.21819 |     0.07387 |
+| mixed                |                  20 |        2 |     13 | IRLS — Ridge                         |    0.11981 |   0.08984 |   0.20211 |     0.0673  |
+| mixed                |                  20 |        2 |     14 | No handling — Ridge                  |    0.18545 |   0.14184 |   0.30307 |     0.10537 |
+| mixed                |                  20 |        2 |     14 | Hard removal — Ridge                 |    0.15909 |   0.11923 |   0.24889 |     0.09989 |
+| mixed                |                  20 |        2 |     14 | Winsorizing — Ridge                  |    0.18428 |   0.14052 |   0.2992  |     0.10772 |
+| mixed                |                  20 |        2 |     14 | Robust loss — HuberRegressor         |    0.16902 |   0.12162 |   0.26344 |     0.09601 |
+| mixed                |                  20 |        2 |     14 | Weighted — Ridge (linear)            |    0.13828 |   0.10038 |   0.20156 |     0.07533 |
+| mixed                |                  20 |        2 |     14 | Weighted — Ridge (tuned exponential) |    0.13895 |   0.09994 |   0.21109 |     0.07926 |
+| mixed                |                  20 |        2 |     14 | Weighted — Ridge (sigmoid)           |    0.13209 |   0.09231 |   0.19018 |     0.06675 |
+| mixed                |                  20 |        2 |     14 | Weighted — Random Forest             |    0.16742 |   0.11598 |   0.25617 |     0.08676 |
+| mixed                |                  20 |        2 |     14 | Weighted — Gradient Boosting         |    0.15303 |   0.1073  |   0.23746 |     0.0757  |
+| mixed                |                  20 |        2 |     14 | IRLS — Ridge                         |    0.13449 |   0.09723 |   0.20216 |     0.07787 |
+| mixed                |                  20 |        2 |     15 | No handling — Ridge                  |    0.18517 |   0.12999 |   0.29814 |     0.08768 |
+| mixed                |                  20 |        2 |     15 | Hard removal — Ridge                 |    0.18755 |   0.11901 |   0.25423 |     0.07723 |
+| mixed                |                  20 |        2 |     15 | Winsorizing — Ridge                  |    0.18232 |   0.12747 |   0.28085 |     0.09318 |
+| mixed                |                  20 |        2 |     15 | Robust loss — HuberRegressor         |    0.20246 |   0.13019 |   0.26705 |     0.08943 |
+| mixed                |                  20 |        2 |     15 | Weighted — Ridge (linear)            |    0.1663  |   0.10127 |   0.20954 |     0.06329 |
+| mixed                |                  20 |        2 |     15 | Weighted — Ridge (tuned exponential) |    0.16899 |   0.1009  |   0.1946  |     0.0628  |
+| mixed                |                  20 |        2 |     15 | Weighted — Ridge (sigmoid)           |    0.16641 |   0.09661 |   0.18576 |     0.06248 |
+| mixed                |                  20 |        2 |     15 | Weighted — Random Forest             |    0.16338 |   0.10157 |   0.2123  |     0.06628 |
+| mixed                |                  20 |        2 |     15 | Weighted — Gradient Boosting         |    0.16044 |   0.10179 |   0.21916 |     0.0628  |
+| mixed                |                  20 |        2 |     15 | IRLS — Ridge                         |    0.1689  |   0.10146 |   0.20716 |     0.06482 |

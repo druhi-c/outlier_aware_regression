@@ -1,0 +1,4 @@
+hypothesis,status,evidence
+H1 Accuracy,Supported,Preselected Weighted — Gradient Boosting vs No handling — HistGBDT: hold-out RMSE reduction 5.12% (success threshold ≥1%).
+H2 Contamination robustness,Not assessed yet,Requires the planned Stage 8 synthetic-contamination experiment.
+H3 Fold stability,Partially supported,Lowest weighted CV RMSE SD is 1.2% lower than the lowest standard-baseline CV SD; success threshold ≥20%.

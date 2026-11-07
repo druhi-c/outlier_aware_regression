@@ -1,0 +1,7 @@
+strategy,frozen_config,frozen_n_estimators,mean_inner_MAE_for_frozen_config,selection_source
+Weighted Ridge,"{'scorer_type': 'rank_average', 'k': 3.0, 'w_min': 0.05}",,0.08880331490783357,Development inner-validation records only
+Weighted Random Forest,"{'scorer_type': 'mean', 'k': 1.0, 'w_min': 0.05}",,0.10473231795845708,Development inner-validation records only
+Weighted Gradient Boosting,"{'scorer_type': 'rank_average', 'k': 3.0, 'w_min': 0.05, 'learning_rate': 0.05, 'n_estimators_ceiling': 200}",200.0,0.09617750685444489,Development inner-validation records only
+HuberRegressor,{'epsilon': 1.5},,0.09146621513195051,Development inner-validation records only
+Gradient Boosting (Huber loss),"{'learning_rate': 0.05, 'n_estimators_ceiling': 200}",200.0,0.09588092607114547,Development inner-validation records only
+Gradient Boosting (Median quantile),"{'learning_rate': 0.05, 'n_estimators_ceiling': 200}",200.0,0.10206788910748484,Development inner-validation records only

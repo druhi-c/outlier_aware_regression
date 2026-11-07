@@ -1,0 +1,2 @@
+method,mean,std,min,max,fraction_at_floor
+IRLS-Huber,0.930781,0.168248,0.054703,1.0,0.0

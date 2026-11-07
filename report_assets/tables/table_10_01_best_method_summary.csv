@@ -1,0 +1,6 @@
+method,selection_view,CV_RMSE_log,CV_RMSE_SD,test_RMSE_log,test_RMSE_95CI,interpretation
+Hard removal — HistGBDT,Lowest mean development-CV RMSE,0.139475,0.015009,0.120701,"[0.10208, 0.14203]",CV leader; paired Holm comparison not significant.
+No handling — HistGBDT,No-handling reference,0.140085,0.014545,0.130434,"[0.10662, 0.15307]",Strong standard tree baseline.
+Weighted — Gradient Boosting,Preselected weighted strategy,0.142683,0.014532,0.123756,"[0.10754, 0.13958]",5.12% lower test RMSE point estimate than no-handling HistGBDT; CIs overlap.
+Hard removal — Ridge,Lowest one-time test RMSE (descriptive),0.145021,0.04324,0.1135,"[0.09838, 0.12842]",Post-hoc test point-estimate leader; not selected using test results.
+Weighted — Ridge (tuned exponential),Weighted linear-model comparison,0.144163,0.034653,0.11859,"[0.10190, 0.13589]",Small CV point-estimate gain; relatively high fold variability.

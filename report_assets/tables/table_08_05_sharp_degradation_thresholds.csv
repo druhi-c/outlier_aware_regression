@@ -1,0 +1,31 @@
+contamination_type,strategy,clean_RMSE,sharp_degradation_at_pct,threshold
+target noise,No handling — Ridge,0.14518733333333333,10.0,≥10% above clean mean RMSE
+target noise,Hard removal — Ridge,0.14502066666666666,20.0,≥10% above clean mean RMSE
+target noise,Winsorizing — Ridge,0.144142,10.0,≥10% above clean mean RMSE
+target noise,Robust loss — HuberRegressor,0.15532266666666666,10.0,≥10% above clean mean RMSE
+target noise,Weighted — Ridge (linear),0.14450933333333332,20.0,≥10% above clean mean RMSE
+target noise,Weighted — Ridge (tuned exponential),0.146658,,≥10% above clean mean RMSE
+target noise,Weighted — Ridge (sigmoid),0.14683333333333334,,≥10% above clean mean RMSE
+target noise,Weighted — Random Forest,0.15396333333333334,,≥10% above clean mean RMSE
+target noise,Weighted — Gradient Boosting,0.142704,,≥10% above clean mean RMSE
+target noise,IRLS — Ridge,0.14479,,≥10% above clean mean RMSE
+leverage points,No handling — Ridge,0.14518733333333333,,≥10% above clean mean RMSE
+leverage points,Hard removal — Ridge,0.14502066666666666,,≥10% above clean mean RMSE
+leverage points,Winsorizing — Ridge,0.144142,,≥10% above clean mean RMSE
+leverage points,Robust loss — HuberRegressor,0.15532266666666666,,≥10% above clean mean RMSE
+leverage points,Weighted — Ridge (linear),0.14450933333333332,,≥10% above clean mean RMSE
+leverage points,Weighted — Ridge (tuned exponential),0.146658,,≥10% above clean mean RMSE
+leverage points,Weighted — Ridge (sigmoid),0.14683333333333334,,≥10% above clean mean RMSE
+leverage points,Weighted — Random Forest,0.15396333333333334,,≥10% above clean mean RMSE
+leverage points,Weighted — Gradient Boosting,0.142704,,≥10% above clean mean RMSE
+leverage points,IRLS — Ridge,0.14479,,≥10% above clean mean RMSE
+mixed,No handling — Ridge,0.14518733333333333,5.0,≥10% above clean mean RMSE
+mixed,Hard removal — Ridge,0.14502066666666666,20.0,≥10% above clean mean RMSE
+mixed,Winsorizing — Ridge,0.144142,5.0,≥10% above clean mean RMSE
+mixed,Robust loss — HuberRegressor,0.15532266666666666,10.0,≥10% above clean mean RMSE
+mixed,Weighted — Ridge (linear),0.14450933333333332,,≥10% above clean mean RMSE
+mixed,Weighted — Ridge (tuned exponential),0.146658,,≥10% above clean mean RMSE
+mixed,Weighted — Ridge (sigmoid),0.14683333333333334,,≥10% above clean mean RMSE
+mixed,Weighted — Random Forest,0.15396333333333334,,≥10% above clean mean RMSE
+mixed,Weighted — Gradient Boosting,0.142704,,≥10% above clean mean RMSE
+mixed,IRLS — Ridge,0.14479,,≥10% above clean mean RMSE

@@ -1,0 +1,4 @@
+group,n,mean_score,median_score,precision_at_k,injected_sample_AUROC
+Natural top-5% candidates (development data),59,0.8973805101330061,0.8885763209393348,,0.9870146008077043
+Injected rows (5% mixed contamination),58,0.9118656791956272,0.9154231898238748,0.7241379310344828,0.9870146008077043
+Unchanged rows in injected sample,1110,0.4789295410870753,0.4823874755381605,,0.9870146008077043

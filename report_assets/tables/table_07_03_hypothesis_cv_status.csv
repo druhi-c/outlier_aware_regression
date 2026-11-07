@@ -1,0 +1,4 @@
+hypothesis,stage7_CV_status,evidence
+H1 Accuracy,Provisional; confirm against frozen hold-out predictions,Best weighted CV RMSE=0.14268; best standard baseline=0.14009
+H2 Contamination robustness,Not assessed here; requires Stage 8,Synthetic-contamination degradation is not part of this CV comparison.
+H3 Fold stability,Partially supported,Lowest weighted RMSE fold SD / best standard baseline fold SD = 0.878; H3 threshold is <= 0.80.
